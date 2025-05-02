@@ -1,0 +1,17 @@
+*.pyc
+__pycache__
+*.egg-info
+*.egg
+*.pyo
+*.pyd
+*.whl
+*.db
+*.sqlite
+*.log
+*.DS_Store
+*.aux
+*.log
+*.toc
+*.out
+*.nav
+*.snm
