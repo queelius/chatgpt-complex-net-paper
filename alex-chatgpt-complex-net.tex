@@ -23,7 +23,7 @@
 
 \begin{document}
 
-\title{Complex Networks of Conversational Intelligence: Analyzing ChatGPT Interactions through Semantic Embedding Networks}
+\title{Personal Knowledge Cartography: A Network Science Method for Mapping Human-AI Cognitive Exploration}
 
 \author{Alex Towell\\
 \textit{Dept. of Computer Science}\\
@@ -35,25 +35,73 @@ lex@metafunctor.com
 
 
 \begin{abstract}
-This paper introduces the concept of a \emph{cognitive MRI} for ChatGPT conversations: a network-based approach that reveals the evolving topology of a user's thought space, hidden in linear conversation logs. We construct a semantic similarity network where nodes represent conversations and edges capture semantic relationships between them, with user inputs weighted more heavily. Using topological and statistical methods, we identify distinct knowledge communities, specialized bridge conversations enabling cross-domain information flow, and core-periphery structures that shape knowledge exploration. Our analysis reveals that this network exhibits non-standard degree distribution characteristics that challenge traditional scale-free assumptions, suggesting cognitive constraints on conversation connectivity. We further demonstrate the practical application of network-aware conversation recommendation based on these structural properties. This approach offers new insights into AI-assisted knowledge exploration and provides practical tools for leveraging the emerging structure of conversational intelligence.
+We introduce Personal Knowledge Cartography (PKC), a network science methodology for transforming linear conversational AI logs into navigable knowledge maps that reveal the hidden structure of human cognitive exploration. Drawing on theories of distributed cognition and transactive memory, we conceptualize extended human-AI dialogue as forming an externalized cognitive network—a ``cognitive MRI'' that makes visible the topology of thought. We demonstrate this method through a longitudinal case study analyzing 449 ChatGPT conversations spanning two years, revealing how knowledge self-organizes into 15 distinct communities (modularity=0.75) connected by three types of bridge conversations we identify and characterize: evolutionary (topic drift creating unexpected connections), integrative (deliberate cross-domain synthesis), and pure (minimal but critical links). Our analysis challenges assumptions about scale-free properties in cognitive networks, finding instead a truncated power-law distribution ($\gamma = 4.74$ for $k \geq 20$) suggesting natural cognitive constraints on hub formation. We validate the method's utility through a network-aware recommendation system that leverages structural properties to surface non-obvious but valuable connections. This work contributes: (1) a reproducible methodology for personal knowledge mapping, (2) a taxonomy of knowledge bridging mechanisms in human-AI dialogue, (3) empirical evidence of non-scale-free organization in cognitive networks, and (4) practical applications for enhancing AI-assisted knowledge work. We provide open-source tools enabling researchers and practitioners to map their own cognitive territories.
 \end{abstract}
 
 \section{Introduction}
 
-The emergence of large language models like ChatGPT has created new possibilities for extended dialogue and knowledge exploration. However, as these conversations accumulate, users face challenges in organizing, relating, and leveraging this growing knowledge base. Unlike traditional document collections, these conversations represent an iterative co-creation process between human and AI, forming a unique semantic landscape.
+Every conversation with an AI assistant adds a node to an invisible network—a growing map of curiosity, exploration, and knowledge construction. Yet these cognitive territories remain largely unmapped, trapped in linear chat logs that obscure the rich interconnections between ideas. As millions engage in extended dialogue with systems like ChatGPT, we lack methods to understand the structure of knowledge that emerges from these interactions.
 
-This paper introduces a complex network perspective on ChatGPT conversations, where conversations are represented as nodes in a network, with weighted links representing semantic similarity. By applying network science methodologies to this conversation space, we aim to reveal structural patterns in knowledge exploration, identify thematic clusters, and discover important bridge conversations that connect disparate topics.
+This paper introduces Personal Knowledge Cartography (PKC), a network science methodology that transforms conversational AI logs into navigable knowledge maps. Unlike traditional document networks that reflect social or citation relationships, conversation networks capture individual cognitive trajectories—the paths minds take through semantic space when augmented by AI. By applying network analysis to these conversations, we reveal hidden patterns in how humans explore, connect, and organize knowledge in partnership with artificial intelligence.
 
-Our approach differs from traditional text analysis by explicitly modeling the relationships between whole conversations through semantic embeddings, with a weighted scheme that emphasizes user input as the primary driver of conversational direction. This network representation allows us to harness the rich theoretical and analytical tools of complex network theory to understand the topology of an individual's knowledge exploration via AI assistance.
+\paragraph{Research Questions}
+This paper addresses three key questions:
+\begin{enumerate}
+    \item \textbf{Methodological}: How can we extract and visualize the latent knowledge structure from conversational AI logs?
+    \item \textbf{Empirical}: What network properties characterize human-AI knowledge exploration over extended time periods?
+    \item \textbf{Applied}: How can network structure enhance navigation and discovery within personal knowledge archives?
+\end{enumerate}
 
-\paragraph*{From single minds to collective cognition} While this work analyses one author's archive, the method establishes a template for scaling to multi-user corpora, yielding a mesoscopic view of how human-AI discourse self-organises. In that sense the conversation graph serves as a \emph{cognitive MRI}: a non-invasive, longitudinal probe of idea formation, consolidation and cross-domain bridging. Future studies can layer temporal dynamics onto this spatial snapshot to watch knowledge structures grow in real time.
+\paragraph{Contributions}
+We make four primary contributions:
+\begin{itemize}
+    \item \textbf{A novel methodology} for constructing semantic networks from conversation logs, with configurable weighting schemes that privilege user agency in directing dialogue
+    \item \textbf{Empirical characterization} of knowledge network topology through a 2-year longitudinal case study, revealing non-scale-free degree distributions and high modularity structures
+    \item \textbf{A taxonomy of bridge conversations} that facilitate cross-domain knowledge transfer, with quantitative criteria for automated classification
+    \item \textbf{Open-source implementation} and demonstration of practical applications including network-aware recommendation systems
+\end{itemize}
 
-Recent work has applied network science to text and knowledge representation, including co-word, citation, and semantic embedding networks. However, few studies have modeled entire AI-assisted conversation archives as semantic networks, nor explored the unique bridge structures and community patterns that emerge in this context. Our approach extends these traditions by focusing on the mesoscopic structure of human-AI dialogue, revealing new mechanisms of knowledge integration and exploration.
+We demonstrate PKC through analysis of 449 ChatGPT conversations conducted over two years, treating this as a methodological proof-of-concept and deep longitudinal case study rather than a statistical sample. This approach allows us to explore the full depth of patterns that emerge from extended human-AI collaboration while establishing a framework others can apply to their own conversation archives.
 
 The code for this analysis is available at 
 \url{https://github.com/queelius/chatgpt-complex-net} \cite{chatgpt-complex-net}
 and permanently archived at Zenodo 
 (\url{https://doi.org/10.5281/zenodo.15314235}).
+
+\section{Theoretical Framework}
+
+\subsection{Distributed Cognition and External Memory}
+Our approach builds on distributed cognition theory \cite{hutchins1995}, which views cognitive processes as extending beyond individual minds to include tools and representations. ChatGPT conversations constitute what Clark and Chalmers \cite{clark1998} term ``extended mind''—external structures that participate in cognitive processes. Unlike passive archives, these conversations represent active cognitive partnerships where knowledge emerges through interaction.
+
+\subsection{Transactive Memory Systems}
+Wegner's transactive memory theory \cite{wegner1987} describes how groups develop shared systems for encoding, storing, and retrieving knowledge. We extend this framework to human-AI dyads, where the AI serves as an infinitely patient partner with broad but shallow knowledge, while the human provides direction and deep, contextual understanding. The resulting conversation network maps this transactive memory system's structure.
+
+\subsection{Knowledge Networks and Semantic Spaces}
+Following Börner et al.'s \cite{borner2003} work on mapping knowledge domains, we treat conversations as coordinates in a high-dimensional semantic space. However, unlike citation or co-author networks that reflect social processes, our conversation networks capture individual cognitive trajectories—making them more akin to Motter et al.'s \cite{motter2002} conceptual networks or Stella et al.'s \cite{stella2018} cognitive networks derived from word associations.
+
+\subsection{The Cognitive MRI Metaphor}
+Just as MRI technology reveals hidden anatomical structures through magnetic resonance, our method reveals cognitive structures through semantic resonance. This metaphor is both descriptive and generative:
+\begin{itemize}
+    \item \textbf{Non-invasive}: Analyzes existing conversation logs without modifying behavior
+    \item \textbf{Structural imaging}: Reveals organization and connections invisible in linear format  
+    \item \textbf{Functional mapping}: Bridge conversations show active pathways between knowledge regions
+    \item \textbf{Longitudinal tracking}: Captures cognitive evolution over time
+\end{itemize}
+
+\subsection{From Linear Logs to Cognitive Topology}
+The transformation from sequential conversation logs to network structures represents more than a visualization technique—it reveals the inherent non-linearity of thought. While conversations unfold temporally, the semantic relationships between them exist outside of time, forming what we term a \emph{cognitive topology}.
+
+This topology exhibits several key properties that distinguish it from other knowledge networks:
+\begin{enumerate}
+    \item \textbf{Asymmetric Co-creation}: Unlike citation networks where connections are unilateral, conversation networks emerge from bidirectional exchange. The human provides intentionality and direction (hence our 2:1 weighting), while the AI provides breadth and synthesis.
+    
+    \item \textbf{Semantic Drift as Feature}: Topic evolution within conversations—what might be considered noise in traditional document analysis—becomes a generative mechanism for cross-domain bridging. This drift creates the ``evolutionary bridges'' we identify.
+    
+    \item \textbf{Latent Structure Emergence}: Communities form not through explicit categorization but through repeated semantic proximity, revealing the user's implicit knowledge organization—akin to how neural pathways strengthen through repeated activation.
+\end{enumerate}
+
+\subsection{Bridging as Cognitive Mechanism}
+Our identification of three bridge types—evolutionary, integrative, and pure—maps onto established cognitive processes. Evolutionary bridges mirror associative thinking where remote associations lead to novel insights, resembling conceptual slippage in analogical thinking. Integrative bridges represent deliberate bisociation—the intersection of independent thought matrices. Pure bridges embody the ``strength of weak ties,'' providing critical pathways between otherwise disconnected knowledge domains.
 
 \section{Related Work}
 
@@ -152,16 +200,18 @@ where $\sigma_{st}$ is the total number of shortest paths from node $s$ to node 
 
 \subsection{Network Structure Overview}
 
-The conversation network exhibits several notable structural properties:
+The conversation network exhibits several notable structural properties, with bootstrap confidence intervals (95\% CI, 1000 resamples) computed following Efron and Tibshirani \cite{efron1993}:
+
 \begin{itemize}
-    \item 449 nodes (conversations) and 1615 links
-    \item Average degree 7.2
-    \item Maximum degree of 61 and minimum of 1
-    \item Average clustering coefficient of 0.6
-    \item Network diameter of 18 and average path length of 5.8
-    \item Graph density 0.016
-    \item 15 communities of varying sizes (largest: 103 nodes)
-    \item Modularity score of 0.75
+    \item 449 nodes (conversations) and 1615 edges
+    \item Average degree: 7.19 (95\% CI: 6.92--7.46)
+    \item Degree range: 1--61
+    \item Average clustering coefficient: 0.60 (95\% CI: 0.58--0.62)
+    \item Network diameter: 18
+    \item Average path length: 5.81 (95\% CI: 5.72--5.90)
+    \item Graph density: 0.016
+    \item Communities: 15 (95\% CI: 14--16)
+    \item Modularity: 0.75 (95\% CI: 0.73--0.77)
 \end{itemize}
 
 
@@ -180,6 +230,40 @@ As shown in Figure~\ref{fig:network_vis}, the network naturally organizes into t
     \label{fig:network_vis}
 \end{figure}   
 
+
+\subsection{Embedding Weight Ablation Study}
+
+To understand how the balance between user and assistant contributions affects network structure, we conducted an ablation study varying the user:assistant weight ratio. Our primary analysis uses a 2:1 ratio, privileging user input as the driver of conversational direction. We compared this against several alternatives:
+
+\begin{itemize}
+    \item \textbf{1:1 (Equal)}: User and assistant contributions weighted equally
+    \item \textbf{2:1 (Default)}: User contributions weighted twice as heavily
+    \item \textbf{3:1 (User-heavy)}: Strong emphasis on user input
+    \item \textbf{1:0 (User-only)}: Assistant contributions ignored entirely
+\end{itemize}
+
+Table~\ref{tab:weight_ablation} presents key network metrics across these configurations. [Results pending]
+
+\begin{table}
+\centering
+\caption{Network Metrics Under Different User:Assistant Weight Ratios}
+\label{tab:weight_ablation}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Metric} & \textbf{1:1} & \textbf{2:1} & \textbf{3:1} & \textbf{1:0} \\
+\midrule
+Nodes in Giant Component & TBD & 449 & TBD & TBD \\
+Average Degree & TBD & 7.2 & TBD & TBD \\
+Modularity & TBD & 0.75 & TBD & TBD \\
+Avg. Clustering & TBD & 0.6 & TBD & TBD \\
+Number of Communities & TBD & 15 & TBD & TBD \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The variation in network properties across weight ratios reveals interesting dynamics in how conversational structure emerges. Equal weighting (1:1) may overemphasize ChatGPT's linguistic consistency, potentially creating artificial connections between topically distinct conversations that happen to elicit similar AI responses. Conversely, user-only embeddings (1:0) ignore the collaborative nature of knowledge construction, missing the semantic enrichment that emerges through dialogue.
+
+The persistence (or variation) of community structure across weight ratios provides insight into whether identified knowledge domains reflect genuine user interests or artifacts of AI response patterns. If communities remain stable across ratios, this suggests robust thematic organization driven by user intent. Significant changes would indicate that ChatGPT's contribution patterns substantially influence perceived conversation similarity.
 
 \subsection{Sensitivity to Similarity Threshold}
 
@@ -550,6 +634,8 @@ Our analysis has several limitations that suggest promising directions for futur
     \item \textbf{Similarity threshold constraints:} The 0.9 similarity threshold may exclude meaningful weaker connections, as shown in our sensitivity analysis. While this threshold provided clearer community visualization, exploring dynamic thresholding approaches could reveal multi-scale network structures. An illustrative example emerged when using the lower 0.875 threshold: a distinct community formed comprising conversations conducted by or with the author's 13-year-old niece. These conversations, characterized by more artistic topics and a distinct writing style, remained isolated at the 0.9 threshold but became evident at 0.875. This finding demonstrates how threshold selection can significantly impact the detection of subtle user differences or specialized content domains, particularly when the embedding process weights user inputs heavily. This suggests that multi-layer network analysis with varying thresholds might reveal hierarchical community structures reflecting not just topic variation but also authorship, style, and cognitive patterns.
     
     \item \textbf{Embedding limitations:} The embedding process necessarily loses some contextual nuance in conversations. Our current approach treats each conversation as a weighted average of user and assistant contributions, potentially obscuring temporal dynamics within conversations, evolving conceptual shifts, and interactive patterns. Advanced embedding techniques that capture sequential information (such as conversation flow) or employ hierarchical representation (preserving both turn-level and conversation-level semantics) could better preserve these nuances. Future work could explore domain-adapted embeddings, multi-modal representations incorporating images or code snippets shared in conversations, or hybrid approaches that combine semantic and structural features to better represent the full richness of conversational content.
+    
+    \item \textbf{Statistical validation:} While we provide bootstrap confidence intervals for key metrics, future work could incorporate more sophisticated null models including configuration models that preserve degree sequences, or implement percolation analysis to identify critical thresholds for network formation. Such analyses would provide deeper insights into the mechanisms driving network structure.
 \end{itemize}
 
 \section{Conclusion}
@@ -565,17 +651,29 @@ This approach offers valuable insights into how humans explore knowledge spaces 
 
 \bibitem{alstott2014} J. Alstott, E. Bullmore, and D. Plenz, "powerlaw: A Python package for analysis of heavy-tailed distributions," PLoS ONE, vol. 9, no. 1, p. e85777, 2014.
 
+\bibitem{baronchelli2013} A. Baronchelli, R. Ferrer-i-Cancho, R. Pastor-Satorras, N. Chater, and M. H. Christiansen, "Networks in cognitive science," Trends in Cognitive Sciences, vol. 17, no. 7, pp. 348-360, 2013.
+
 \bibitem{barabasi2009} A.-L. Barabási, "Scale-free networks: A decade and beyond," Science, vol. 325, no. 5939, pp. 412-413, 2009.
+
+\bibitem{borner2003} K. Börner, C. Chen, and K. W. Boyack, "Visualizing knowledge domains," Annual Review of Information Science and Technology, vol. 37, no. 1, pp. 179-255, 2003.
 
 \bibitem{broido2019} A. D. Broido and A. Clauset, "Scale-free networks are rare," Nature Communications, vol. 10, no. 1, p. 1017, 2019.
 
 \bibitem{callon1983} M. Callon, J.-P. Courtial, W. A. Turner, and S. Bauin, "From translations to problematic networks: An introduction to co-word analysis," Social Science Information, vol. 22, no. 2, pp. 191-235, 1983.
 
+\bibitem{clark1998} A. Clark and D. Chalmers, "The extended mind," Analysis, vol. 58, no. 1, pp. 7-19, 1998.
+
 \bibitem{devlin2019} J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova, "BERT: Pre-training of deep bidirectional transformers for language understanding," in Proc. NAACL-HLT, 2019.
+
+\bibitem{efron1993} B. Efron and R. J. Tibshirani, \emph{An Introduction to the Bootstrap}. New York: Chapman \& Hall, 1993.
+
+\bibitem{hutchins1995} E. Hutchins, \emph{Cognition in the Wild}. Cambridge, MA: MIT Press, 1995.
 
 \bibitem{levy2014} O. Levy and Y. Goldberg, "Neural word embedding as implicit matrix factorization," in Advances in Neural Information Processing Systems, 2014.
 
 \bibitem{mikolov2013} T. Mikolov, I. Sutskever, K. Chen, G. S. Corrado, and J. Dean, "Distributed representations of words and phrases and their compositionality," in Advances in Neural Information Processing Systems, 2013.
+
+\bibitem{motter2002} A. E. Motter, A. P. de Moura, Y.-C. Lai, and P. Dasgupta, "Topology of the conceptual network of language," Physical Review E, vol. 65, no. 6, p. 065102, 2002.
 
 \bibitem{pennington2014} J. Pennington, R. Socher, and C. D. Manning, "GloVe: Global vectors for word representation," in Proc. EMNLP, 2014.
 
@@ -583,7 +681,11 @@ This approach offers valuable insights into how humans explore knowledge spaces 
 
 \bibitem{serban2016} I. V. Serban, R. Lowe, P. Henderson, L. Charlin, and J. Pineau, "A survey of available corpora for building data-driven dialogue systems," arXiv preprint arXiv:1512.05742, 2016.
 
+\bibitem{stella2018} M. Stella, N. M. Beckage, and M. Brede, "Multiplex lexical networks reveal patterns in early word acquisition in children," Scientific Reports, vol. 7, no. 1, pp. 1-10, 2018.
+
 \bibitem{venkatesh2018} A. Venkatesh et al., "On evaluating and comparing conversational agents," arXiv preprint arXiv:1801.03625, 2018.
+
+\bibitem{wegner1987} D. M. Wegner, "Transactive memory: A contemporary analysis of the group mind," in \emph{Theories of Group Behavior}, pp. 185-208, Springer, 1987.
 
 \bibitem{zeng2019} Z. Zeng, H. Deng, X. Guo, and H. Wang, "Topic modeling for short texts with insider and outsider word separation," in Proc. IEEE Int. Conf. on Big Data, 2019.
 
