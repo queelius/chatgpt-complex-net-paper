@@ -1,0 +1,730 @@
+#!/usr/bin/env python3
+"""
+Generate Ablation Study Data: User-AI Embedding Weight Ratios
+This script generates embeddings and edges for different weight ratios.
+The data is saved for later analysis with analyze_ablation_results.py
+"""
+
+import os
+import sys
+import json
+import subprocess
+import numpy as np
+from pathlib import Path
+import argparse
+from tqdm import tqdm
+import logging
+from dotenv import load_dotenv
+from datetime import datetime
+import hashlib
+import time
+import signal
+import atexit
+
+# Load environment variables
+load_dotenv()
+
+# Global variables for cleanup
+PROGRESS_FILE = None
+LOG_FILE_HANDLER = None
+
+def setup_logging(base_dir):
+    """Set up dual logging to console and file with progress tracking."""
+    global LOG_FILE_HANDLER, PROGRESS_FILE
+    
+    # Create logs directory
+    log_dir = base_dir / "logs"
+    log_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Set up main log file
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_file = log_dir / f"generation_{timestamp}.log"
+    
+    # Configure root logger
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+    
+    # Console handler (INFO and above)
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_format = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', 
+                                       datefmt='%H:%M:%S')
+    console_handler.setFormatter(console_format)
+    
+    # File handler (all levels)
+    LOG_FILE_HANDLER = logging.FileHandler(log_file)
+    LOG_FILE_HANDLER.setLevel(logging.DEBUG)
+    file_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    LOG_FILE_HANDLER.setFormatter(file_format)
+    
+    # Add handlers
+    logger.addHandler(console_handler)
+    logger.addHandler(LOG_FILE_HANDLER)
+    
+    # Set up progress tracking file
+    PROGRESS_FILE = base_dir / "generation_progress.json"
+    
+    logging.info(f"Logging to: {log_file}")
+    return log_file
+
+def update_progress(status, current_ratio=None, completed_ratios=None, failed_ratios=None, 
+                   message=None, percentage=0):
+    """Update progress tracking file."""
+    global PROGRESS_FILE
+    
+    if PROGRESS_FILE is None:
+        return
+    
+    try:
+        # Load existing progress if it exists
+        if PROGRESS_FILE.exists():
+            with open(PROGRESS_FILE, 'r') as f:
+                progress = json.load(f)
+        else:
+            progress = {
+                'start_time': datetime.now().isoformat(),
+                'status': 'initializing',
+                'completed_ratios': [],
+                'failed_ratios': [],
+                'current_ratio': None,
+                'percentage': 0,
+                'messages': []
+            }
+        
+        # Update fields
+        progress['status'] = status
+        progress['last_update'] = datetime.now().isoformat()
+        
+        if current_ratio is not None:
+            progress['current_ratio'] = current_ratio
+        if completed_ratios is not None:
+            progress['completed_ratios'] = completed_ratios
+        if failed_ratios is not None:
+            progress['failed_ratios'] = failed_ratios
+        if percentage > 0:
+            progress['percentage'] = percentage
+        
+        # Add message to history (keep last 100)
+        if message:
+            progress['messages'].append({
+                'time': datetime.now().isoformat(),
+                'message': message
+            })
+            progress['messages'] = progress['messages'][-100:]
+        
+        # Save progress
+        with open(PROGRESS_FILE, 'w') as f:
+            json.dump(progress, f, indent=2)
+            
+    except Exception as e:
+        logging.error(f"Failed to update progress file: {e}")
+
+def signal_handler(signum, frame):
+    """Handle interruption gracefully."""
+    logging.warning(f"Received signal {signum}. Cleaning up...")
+    update_progress('interrupted', message=f"Process interrupted by signal {signum}")
+    cleanup()
+    sys.exit(1)
+
+def cleanup():
+    """Cleanup function called on exit."""
+    global LOG_FILE_HANDLER
+    
+    if LOG_FILE_HANDLER:
+        logging.info("Closing log file...")
+        LOG_FILE_HANDLER.close()
+
+# Register signal handlers and cleanup
+signal.signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGTERM, signal_handler)
+atexit.register(cleanup)
+
+# Define weight ratios for ablation study
+WEIGHT_RATIOS = [
+    (100.0, 1.0),   # Near-pure user perspective
+    (4.0, 1.0),     # Strong user emphasis
+    (2.0, 1.0),     # Paper's ratio
+    (1.618, 1.0),   # Golden ratio (user-favored)
+    (1.0, 1.0),     # Perfect balance
+    (1.0, 1.618),   # Inverse golden ratio
+    (1.0, 2.0),     # Inverse paper ratio
+    (1.0, 4.0),     # Strong AI emphasis
+    (1.0, 100.0),   # Near-pure AI perspective
+]
+
+# Load configuration from environment
+SIMILARITY_THRESHOLD = float(os.getenv("SIMILARITY_THRESHOLD", "0.9"))
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+MODEL_NAME = os.getenv("MODEL_NAME", "nomic-embed-text")
+
+# Import requests for testing Ollama connection
+import requests
+
+def get_config_hash():
+    """Generate hash of configuration for cache invalidation."""
+    config_str = f"{OLLAMA_HOST}_{MODEL_NAME}_{SIMILARITY_THRESHOLD}"
+    return hashlib.md5(config_str.encode()).hexdigest()[:8]
+
+def run_command(cmd, description="Running command"):
+    """Execute shell command with detailed logging."""
+    logging.debug(f"Executing: {cmd}")
+    update_progress('running', message=description)
+    
+    try:
+        # Run with real-time output capture
+        # Force tqdm and color output
+        env = os.environ.copy()
+        env['PYTHONUNBUFFERED'] = '1'
+        env['FORCE_COLOR'] = '1'
+        
+        process = subprocess.Popen(
+            cmd, 
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            bufsize=1,
+            env=env
+        )
+        
+        stdout_lines = []
+        stderr_lines = []
+        
+        # Read output in real-time
+        while True:
+            stdout_line = process.stdout.readline()
+            stderr_line = process.stderr.readline()
+            
+            if stdout_line:
+                stdout_lines.append(stdout_line.strip())
+                # Show progress bars and important output directly
+                if "%" in stdout_line or "embedding" in stdout_line.lower() or "progress" in stdout_line.lower():
+                    print(stdout_line.strip())  # Direct to console
+                logging.debug(f"STDOUT: {stdout_line.strip()}")
+            
+            if stderr_line:
+                stderr_lines.append(stderr_line.strip())
+                # Show tqdm progress (comes through stderr)
+                if any(x in stderr_line for x in ['%', '|', '/', 'it/s', 'embedding']):
+                    print(stderr_line.strip(), flush=True)  # Direct to console
+                logging.debug(f"STDERR: {stderr_line.strip()}")
+            
+            # Check if process has finished
+            if not stdout_line and not stderr_line and process.poll() is not None:
+                break
+        
+        return_code = process.wait()
+        
+        if return_code == 0:
+            logging.debug(f"Command completed successfully")
+            return '\n'.join(stdout_lines)
+        else:
+            logging.error(f"Command failed with return code {return_code}")
+            logging.error(f"STDERR output (first 1000 chars): {' '.join(stderr_lines)[:1000]}")
+            if "ConnectionError" in ' '.join(stderr_lines) or "requests.exceptions" in ' '.join(stderr_lines):
+                logging.error("Connection error detected - Ollama may not be running")
+            return None
+            
+    except Exception as e:
+        logging.error(f"Exception running command: {e}")
+        return None
+
+def generate_embeddings(input_dir, user_weight, ai_weight, base_output_dir):
+    """Generate embeddings for a specific weight ratio."""
+    import shutil
+    
+    output_dir = f"{base_output_dir}/chatgpt-json-llm-user{user_weight}-ai{ai_weight}"
+    
+    # Check if already exists with metadata
+    metadata_file = Path(output_dir) / "generation_metadata.json"
+    if os.path.exists(output_dir) and metadata_file.exists():
+        with open(metadata_file, 'r') as f:
+            metadata = json.load(f)
+        
+        # Check if configuration matches
+        if metadata.get('config_hash') == get_config_hash():
+            logging.info(f"Embeddings already exist at {output_dir} with matching config, skipping...")
+            return output_dir
+        else:
+            logging.warning(f"Embeddings exist but config changed, regenerating...")
+    
+    # Create output directory and copy input files
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    
+    # Copy JSON files to output directory if not already there
+    logging.info(f"Copying input files to {output_dir}")
+    input_files = list(Path(input_dir).glob("*.json"))
+    
+    # Check if input files exist
+    if len(input_files) == 0:
+        logging.error(f"No JSON files found in {input_dir}")
+        return None
+    
+    # Count existing files with embeddings
+    existing_with_embeddings = 0
+    existing_without_embeddings = 0
+    
+    for json_file in Path(output_dir).glob("*.json"):
+        try:
+            with open(json_file, 'r') as f:
+                data = json.load(f)
+            if 'embeddings' in data and 'role_aggregate' in data['embeddings']:
+                if data['embeddings']['role_aggregate'].get('vector') is not None:
+                    existing_with_embeddings += 1
+                else:
+                    existing_without_embeddings += 1
+            else:
+                existing_without_embeddings += 1
+        except Exception as e:
+            logging.warning(f"Error checking {json_file}: {e}")
+            existing_without_embeddings += 1
+    
+    logging.info(f"Pre-check: {existing_with_embeddings} files have embeddings, {existing_without_embeddings} need embeddings")
+    
+    # Copy missing files
+    copied = 0
+    for input_file in input_files:
+        output_file = Path(output_dir) / input_file.name
+        if not output_file.exists():
+            shutil.copy2(input_file, output_file)
+            copied += 1
+    
+    logging.info(f"Copied {copied}/{len(input_files)} files to {output_dir}")
+    
+    # If all files already have embeddings, skip
+    if existing_with_embeddings == len(input_files) and copied == 0:
+        logging.info(f"All {existing_with_embeddings} files already have embeddings, skipping generation")
+        return output_dir
+    
+    # Generate embeddings on the copied files
+    cmd = f"""python cli.py node-embeddings \
+        --input-dir {output_dir} \
+        --method role-aggregate \
+        --embedding-method llm \
+        --user-weight {user_weight} \
+        --assistant-weight {ai_weight}"""
+    
+    logging.info(f"Generating embeddings with user:{user_weight} ai:{ai_weight}")
+    update_progress('generating_embeddings', 
+                   current_ratio=f"user{user_weight}-ai{ai_weight}",
+                   message=f"Starting embedding generation for user:{user_weight} ai:{ai_weight}")
+    
+    # Test Ollama connection first
+    try:
+        test_response = requests.post(
+            f"{OLLAMA_HOST}/api/embeddings",
+            json={"model": MODEL_NAME, "prompt": "test"},
+            timeout=5
+        )
+        if test_response.status_code != 200:
+            logging.error(f"Ollama API test failed with status {test_response.status_code}")
+            logging.error(f"Response: {test_response.text[:500]}")
+            logging.error(f"Make sure Ollama is running: ollama serve")
+            return None
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Cannot connect to Ollama at {OLLAMA_HOST}: {e}")
+        logging.error(f"Start Ollama with: ollama serve")
+        return None
+    
+    start_time = datetime.now()
+    result = run_command(cmd, f"Generating embeddings for ratio {user_weight}:{ai_weight}")
+    
+    if result is not None:
+        elapsed = (datetime.now() - start_time).total_seconds()
+        
+        # Check how many files now have embeddings
+        post_check_with = 0
+        post_check_without = 0
+        for json_file in Path(output_dir).glob("*.json"):
+            try:
+                with open(json_file, 'r') as f:
+                    data = json.load(f)
+                if 'embeddings' in data and 'role_aggregate' in data['embeddings']:
+                    if data['embeddings']['role_aggregate'].get('vector') is not None:
+                        post_check_with += 1
+                    else:
+                        post_check_without += 1
+                else:
+                    post_check_without += 1
+            except Exception as e:
+                logging.warning(f"Error post-checking {json_file}: {e}")
+                post_check_without += 1
+        
+        logging.info(f"Post-check: {post_check_with} files have embeddings, {post_check_without} still need embeddings")
+        
+        if post_check_without > 0:
+            logging.warning(f"WARNING: {post_check_without} files still missing embeddings after generation!")
+            # List first few files without embeddings
+            count = 0
+            for json_file in Path(output_dir).glob("*.json"):
+                if count >= 5:
+                    break
+                try:
+                    with open(json_file, 'r') as f:
+                        data = json.load(f)
+                    if 'embeddings' not in data or 'role_aggregate' not in data.get('embeddings', {}):
+                        logging.warning(f"  Missing embedding: {json_file.name}")
+                        count += 1
+                    elif data['embeddings']['role_aggregate'].get('vector') is None:
+                        logging.warning(f"  Null embedding: {json_file.name}")
+                        count += 1
+                except:
+                    pass
+        
+        # Save generation metadata
+        Path(output_dir).mkdir(parents=True, exist_ok=True)
+        metadata = {
+            'user_weight': user_weight,
+            'ai_weight': ai_weight,
+            'generation_time': datetime.now().isoformat(),
+            'elapsed_seconds': elapsed,
+            'config_hash': get_config_hash(),
+            'ollama_host': OLLAMA_HOST,
+            'model_name': MODEL_NAME,
+            'input_dir': input_dir
+        }
+        
+        with open(metadata_file, 'w') as f:
+            json.dump(metadata, f, indent=2)
+        
+        logging.info(f"Successfully generated embeddings at {output_dir} in {elapsed:.1f}s")
+        return output_dir
+    else:
+        logging.error(f"Failed to generate embeddings for ratio {user_weight}:{ai_weight}")
+        return None
+
+def generate_edges(embeddings_dir, output_file, use_gpu=False):
+    """Generate edge list from embeddings."""
+    
+    # Check if already exists with metadata
+    metadata_file = Path(output_file).with_suffix('.metadata.json')
+    if os.path.exists(output_file) and metadata_file.exists():
+        with open(metadata_file, 'r') as f:
+            metadata = json.load(f)
+        
+        if metadata.get('embeddings_dir') == str(embeddings_dir):
+            logging.info(f"Edges already exist at {output_file}, skipping...")
+            return output_file
+    
+    cmd_type = "edges-gpu" if use_gpu else "edges"
+    cmd = f"""python cli.py {cmd_type} \
+        --input-dir {embeddings_dir} \
+        --output-file {output_file}"""
+    
+    logging.info(f"Generating edges from {embeddings_dir}")
+    start_time = datetime.now()
+    result = run_command(cmd, f"Generating edges for {Path(embeddings_dir).name}")
+    
+    if result is not None:
+        elapsed = (datetime.now() - start_time).total_seconds()
+        
+        # Save generation metadata
+        metadata = {
+            'embeddings_dir': str(embeddings_dir),
+            'generation_time': datetime.now().isoformat(),
+            'elapsed_seconds': elapsed,
+            'use_gpu': use_gpu
+        }
+        
+        with open(metadata_file, 'w') as f:
+            json.dump(metadata, f, indent=2)
+        
+        logging.info(f"Successfully generated edges at {output_file} in {elapsed:.1f}s")
+        return output_file
+    else:
+        logging.error(f"Failed to generate edges from {embeddings_dir}")
+        return None
+
+def filter_edges(input_file, output_file, cutoff=SIMILARITY_THRESHOLD):
+    """Filter edges by similarity threshold."""
+    
+    # Check if already exists with metadata
+    metadata_file = Path(output_file).with_suffix('.metadata.json')
+    if os.path.exists(output_file) and metadata_file.exists():
+        with open(metadata_file, 'r') as f:
+            metadata = json.load(f)
+        
+        if metadata.get('cutoff') == cutoff:
+            logging.info(f"Filtered edges already exist at {output_file}, skipping...")
+            return output_file
+    
+    cmd = f"""python cli.py cut-off \
+        --input-file {input_file} \
+        --output-file {output_file} \
+        --cutoff {cutoff}"""
+    
+    logging.info(f"Filtering edges with cutoff {cutoff}")
+    start_time = datetime.now()
+    result = run_command(cmd, f"Filtering edges with cutoff {cutoff}")
+    
+    if result is not None:
+        elapsed = (datetime.now() - start_time).total_seconds()
+        
+        # Count edges before and after filtering
+        with open(input_file, 'r') as f:
+            original_edges = len(json.load(f))
+        with open(output_file, 'r') as f:
+            filtered_edges = len(json.load(f))
+        
+        # Save generation metadata
+        metadata = {
+            'input_file': str(input_file),
+            'cutoff': cutoff,
+            'generation_time': datetime.now().isoformat(),
+            'elapsed_seconds': elapsed,
+            'original_edges': original_edges,
+            'filtered_edges': filtered_edges,
+            'retention_rate': filtered_edges / original_edges if original_edges > 0 else 0
+        }
+        
+        with open(metadata_file, 'w') as f:
+            json.dump(metadata, f, indent=2)
+        
+        logging.info(f"Successfully filtered edges at {output_file} in {elapsed:.1f}s")
+        logging.info(f"  Retained {filtered_edges}/{original_edges} edges ({metadata['retention_rate']:.1%})")
+        return output_file
+    else:
+        logging.error(f"Failed to filter edges")
+        return None
+
+def main():
+    parser = argparse.ArgumentParser(description="Generate data for ablation study on user-AI embedding weight ratios")
+    parser.add_argument("--input-dir", default="../dev/chatgpt-4-11-2025_json_no_embeddings",
+                      help="Input directory with raw conversation JSONs")
+    parser.add_argument("--output-base", default="../dev/ablation_study",
+                      help="Base output directory for all results")
+    parser.add_argument("--use-gpu", action="store_true", 
+                      help="Use GPU for edge generation")
+    parser.add_argument("--skip-embeddings", action="store_true",
+                      help="Skip embedding generation if already exists")
+    parser.add_argument("--skip-edges", action="store_true",
+                      help="Skip edge generation if already exists")
+    parser.add_argument("--ratios", type=str,
+                      help="Comma-separated list of ratios to process (e.g., '2.0:1.0,1.0:1.0')")
+    parser.add_argument("--cutoffs", type=str, default=str(SIMILARITY_THRESHOLD),
+                      help="Comma-separated list of similarity cutoffs (default: 0.9)")
+    parser.add_argument("--resume", action="store_true",
+                      help="Resume from previous progress file")
+    args = parser.parse_args()
+    
+    # Parse custom ratios if provided
+    if args.ratios:
+        ratios_to_process = []
+        for ratio_str in args.ratios.split(','):
+            user_w, ai_w = ratio_str.strip().split(':')
+            ratios_to_process.append((float(user_w), float(ai_w)))
+    else:
+        ratios_to_process = WEIGHT_RATIOS
+    
+    # Parse cutoffs
+    cutoffs = [float(c.strip()) for c in args.cutoffs.split(',')]
+    
+    # Create output directory structure
+    base_dir = Path(args.output_base)
+    base_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Set up logging
+    log_file = setup_logging(base_dir)
+    
+    logging.info("="*80)
+    logging.info("ABLATION STUDY DATA GENERATION")
+    logging.info("="*80)
+    logging.info(f"Input directory: {args.input_dir}")
+    logging.info(f"Output base: {base_dir}")
+    logging.info(f"Weight ratios: {len(ratios_to_process)}")
+    logging.info(f"Cutoff values: {cutoffs}")
+    logging.info(f"Use GPU: {args.use_gpu}")
+    logging.info(f"Log file: {log_file}")
+    
+    # Check for resume
+    completed_ratios = []
+    failed_ratios = []
+    if args.resume and PROGRESS_FILE and PROGRESS_FILE.exists():
+        with open(PROGRESS_FILE, 'r') as f:
+            prev_progress = json.load(f)
+        completed_ratios = prev_progress.get('completed_ratios', [])
+        failed_ratios = prev_progress.get('failed_ratios', [])
+        logging.info(f"Resuming with {len(completed_ratios)} completed, {len(failed_ratios)} failed")
+    
+    update_progress('starting', message='Initializing ablation study data generation')
+    
+    data_dir = base_dir / "data"
+    embeddings_dir = data_dir / "embeddings"
+    edges_dir = data_dir / "edges"
+    
+    for d in [data_dir, embeddings_dir, edges_dir]:
+        d.mkdir(parents=True, exist_ok=True)
+    
+    # Save study configuration
+    study_config = {
+        'generation_time': datetime.now().isoformat(),
+        'input_dir': args.input_dir,
+        'weight_ratios': ratios_to_process,
+        'cutoffs': cutoffs,
+        'use_gpu': args.use_gpu,
+        'ollama_host': OLLAMA_HOST,
+        'model_name': MODEL_NAME,
+        'config_hash': get_config_hash()
+    }
+    
+    config_file = base_dir / "study_config.json"
+    with open(config_file, 'w') as f:
+        json.dump(study_config, f, indent=2)
+    
+    logging.info(f"Saved study configuration to {config_file}")
+    
+    # Track all generated data
+    generation_summary = {
+        'successful_ratios': [],
+        'failed_ratios': [],
+        'data_files': {},
+        'total_time': 0
+    }
+    
+    overall_start = datetime.now()
+    
+    # Process each weight ratio
+    total_ratios = len(ratios_to_process)
+    for idx, (user_w, ai_w) in enumerate(tqdm(ratios_to_process, desc="Processing weight ratios")):
+        ratio_label = f"user{user_w}-ai{ai_w}"
+        
+        # Calculate progress percentage
+        percentage = int((idx / total_ratios) * 100)
+        
+        # Skip if already completed (for resume)
+        if ratio_label in completed_ratios:
+            logging.info(f"Skipping {ratio_label} (already completed)")
+            continue
+        
+        logging.info(f"\n{'='*60}")
+        logging.info(f"Processing ratio {ratio_label} ({idx+1}/{total_ratios})")
+        logging.info(f"{'='*60}")
+        
+        update_progress('processing', 
+                       current_ratio=ratio_label,
+                       completed_ratios=completed_ratios,
+                       failed_ratios=failed_ratios,
+                       percentage=percentage,
+                       message=f"Starting {ratio_label}")
+        
+        ratio_data = {
+            'embeddings': None,
+            'edges': {},
+            'filtered_edges': {}
+        }
+        
+        # Step 1: Generate embeddings
+        if not args.skip_embeddings:
+            emb_dir = generate_embeddings(
+                args.input_dir, user_w, ai_w, str(embeddings_dir)
+            )
+        else:
+            emb_dir = f"{embeddings_dir}/chatgpt-json-llm-user{user_w}-ai{ai_w}"
+            if os.path.exists(emb_dir):
+                logging.info(f"Using existing embeddings at {emb_dir}")
+            else:
+                logging.error(f"Embeddings not found at {emb_dir}")
+                emb_dir = None
+        
+        if not emb_dir or not os.path.exists(emb_dir):
+            logging.error(f"Skipping ratio {ratio_label} due to missing embeddings")
+            generation_summary['failed_ratios'].append(ratio_label)
+            failed_ratios.append(ratio_label)
+            update_progress('processing',
+                           completed_ratios=completed_ratios,
+                           failed_ratios=failed_ratios,
+                           message=f"Failed embeddings for {ratio_label}")
+            continue
+        
+        ratio_data['embeddings'] = str(emb_dir)
+        
+        # Step 2: Generate edges
+        if not args.skip_edges:
+            edges_file = edges_dir / f"edges_{ratio_label}.json"
+            edges_result = generate_edges(emb_dir, str(edges_file), args.use_gpu)
+            
+            if not edges_result:
+                logging.error(f"Skipping ratio {ratio_label} due to edge generation failure")
+                generation_summary['failed_ratios'].append(ratio_label)
+                failed_ratios.append(ratio_label)
+                update_progress('processing',
+                               completed_ratios=completed_ratios,
+                               failed_ratios=failed_ratios,
+                               message=f"Failed edge generation for {ratio_label}")
+                continue
+            
+            ratio_data['edges']['full'] = str(edges_file)
+            
+            # Step 3: Filter edges for each cutoff
+            for cutoff in cutoffs:
+                filtered_edges_file = edges_dir / f"edges_{ratio_label}_filtered_{cutoff}.json"
+                filtered_result = filter_edges(str(edges_file), str(filtered_edges_file), cutoff)
+                
+                if filtered_result:
+                    ratio_data['filtered_edges'][str(cutoff)] = str(filtered_edges_file)
+                else:
+                    logging.error(f"Failed to filter edges for cutoff {cutoff}")
+        else:
+            # Check for existing edge files
+            edges_file = edges_dir / f"edges_{ratio_label}.json"
+            if edges_file.exists():
+                ratio_data['edges']['full'] = str(edges_file)
+                
+                for cutoff in cutoffs:
+                    filtered_edges_file = edges_dir / f"edges_{ratio_label}_filtered_{cutoff}.json"
+                    if filtered_edges_file.exists():
+                        ratio_data['filtered_edges'][str(cutoff)] = str(filtered_edges_file)
+        
+        generation_summary['successful_ratios'].append(ratio_label)
+        generation_summary['data_files'][ratio_label] = ratio_data
+        completed_ratios.append(ratio_label)
+        
+        # Update progress with completion
+        update_progress('processing',
+                       current_ratio=None,
+                       completed_ratios=completed_ratios,
+                       failed_ratios=failed_ratios,
+                       percentage=int(((idx + 1) / total_ratios) * 100),
+                       message=f"Completed {ratio_label}")
+        
+        logging.info(f"Successfully completed {ratio_label}")
+    
+    # Calculate total time
+    generation_summary['total_time'] = (datetime.now() - overall_start).total_seconds()
+    
+    # Save generation summary
+    summary_file = base_dir / "generation_summary.json"
+    with open(summary_file, 'w') as f:
+        json.dump(generation_summary, f, indent=2)
+    
+    # Update final status
+    update_progress('completed',
+                   completed_ratios=generation_summary['successful_ratios'],
+                   failed_ratios=generation_summary['failed_ratios'],
+                   percentage=100,
+                   message=f"Generation complete: {len(generation_summary['successful_ratios'])} successful, {len(generation_summary['failed_ratios'])} failed")
+    
+    # Print summary
+    print("\n" + "="*80)
+    print("DATA GENERATION COMPLETE")
+    print("="*80)
+    print(f"Successful ratios: {len(generation_summary['successful_ratios'])}/{len(ratios_to_process)}")
+    print(f"Failed ratios: {len(generation_summary['failed_ratios'])}")
+    print(f"Total time: {generation_summary['total_time']:.1f} seconds ({generation_summary['total_time']/3600:.2f} hours)")
+    print(f"\nData saved to: {base_dir}")
+    print(f"Summary file: {summary_file}")
+    print(f"Log file: {log_file}")
+    print(f"Progress file: {PROGRESS_FILE}")
+    
+    if generation_summary['failed_ratios']:
+        print(f"\nFailed ratios: {', '.join(generation_summary['failed_ratios'])}")
+    
+    print(f"\nTo monitor progress in real-time:")
+    print(f"  python monitor_progress.py --progress-file {PROGRESS_FILE}")
+    print(f"\nTo analyze results, run:")
+    print(f"  python analyze_ablation_results.py --data-dir {base_dir}")
+    
+    logging.info("Generation script completed successfully")
+
+if __name__ == "__main__":
+    main()

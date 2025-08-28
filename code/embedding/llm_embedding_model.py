@@ -1,9 +1,15 @@
 import numpy as np
 import requests
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Configuration for the Ollama model API
-OLLAMA_HOST = "http://192.168.0.225:11434"  # Adjust the port if necessary
-MODEL_NAME = "nomic-embed-text"  # Replace with your actual model name
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+MODEL_NAME = os.getenv("MODEL_NAME", "nomic-embed-text")
+OLLAMA_TIMEOUT = int(os.getenv("OLLAMA_TIMEOUT", "120"))
 
 def get_llm_embedding(text):
     """
@@ -16,7 +22,7 @@ def get_llm_embedding(text):
         "model": MODEL_NAME,
         "prompt": text
     }
-    response = requests.post(endpoint, json=payload)
+    response = requests.post(endpoint, json=payload, timeout=OLLAMA_TIMEOUT)
     response.raise_for_status()  # Raise an error for bad status codes.
     data = response.json()
     embedding = data.get("embedding")
