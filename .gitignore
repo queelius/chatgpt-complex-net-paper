@@ -15,3 +15,13 @@ __pycache__
 *.out
 *.nav
 *.snm
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bcf
+*.run.xml
+*.lof
+*.lot
+dev

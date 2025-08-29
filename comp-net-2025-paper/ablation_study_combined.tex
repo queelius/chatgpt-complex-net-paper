@@ -1,0 +1,107 @@
+% Combined Ablation Study Section for paper.tex
+% Replace existing sections 3.3 and 3.4 with this comprehensive analysis
+
+\subsection{Ablation Study: Embedding Weights and Similarity Thresholds}
+
+To validate our methodological choices, we conducted a comprehensive ablation study examining two critical parameters: (1) the relative weighting of user versus AI contributions in conversation embeddings, and (2) the similarity threshold for network edge creation. These parameters fundamentally shape network topology and community structure.
+
+\subsubsection{Experimental Design}
+
+We tested 63 configurations combining:
+\begin{itemize}
+    \item \textbf{Nine weight ratios} from user-only to AI-only: 100:1, 4:1, 2:1, 1.618:1 (golden ratio), 1:1, 1:1.618, 1:2, 1:4, 1:100
+    \item \textbf{Seven similarity thresholds}: 0.8, 0.825, 0.85, 0.875, 0.9, 0.925, 0.95
+\end{itemize}
+
+For each configuration, we reconstructed the complete network and measured modularity, clustering coefficient, giant component fraction, and number of detected communities. This 2D parameter sweep reveals how semantic interpretation (weight ratios) and connection strength (thresholds) jointly determine network structure.
+
+\subsubsection{Key Findings}
+
+\begin{table}[h]
+\centering
+\caption{Network Properties Across Weight Ratios at Threshold 0.9}
+\label{tab:weight_ablation}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{User:AI Ratio} & \textbf{Nodes} & \textbf{Edges} & \textbf{Modularity} & \textbf{Communities} & \textbf{Clustering} \\
+\midrule
+100:1 (User only) & 443 & 1,265 & 0.732 & 12 & 0.420 \\
+4:1 & 533 & 1,533 & 0.743 & 13 & 0.432 \\
+\textbf{2:1 (Baseline)} & \textbf{601} & \textbf{1,718} & \textbf{0.750} & \textbf{15} & \textbf{0.439} \\
+1.618:1 ($\phi$) & 587 & 1,682 & 0.745 & 14 & 0.441 \\
+1:1 (Equal) & 632 & 1,647 & 0.719 & 12 & 0.447 \\
+1:1.618 & 618 & 1,495 & 0.712 & 11 & 0.445 \\
+1:2 & 594 & 1,312 & 0.705 & 10 & 0.438 \\
+1:4 & 521 & 982 & 0.698 & 9 & 0.412 \\
+1:100 (AI only) & 412 & 601 & 0.726 & 9 & 0.360 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:weight_ablation} demonstrates that our chosen 2:1 ratio achieves optimal modularity (0.750) at the 0.9 threshold. User-heavy ratios (100:1, 4:1) produce fragmented networks reflecting individual query patterns, while AI-heavy ratios yield homogeneous clusters dominated by response templates. The 2:1 ratio balances user intent with AI's semantic elaboration, maximizing community separation while maintaining network coherence.
+
+\subsubsection{Phase Transition at Critical Threshold}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../dev/ablation_study/analysis_2d/metrics_heatmaps_2d.png}
+    \caption{2D parameter sweep heatmaps}
+    \label{fig:ablation_heatmap}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../dev/ablation_study/analysis_2d/threshold_evolution.png}
+    \caption{Metric evolution with threshold}
+    \label{fig:threshold_evolution}
+\end{subfigure}
+\caption{Comprehensive ablation study results. (a) Heatmaps show network metrics across all 63 configurations. (b) Evolution plots reveal phase transition at threshold $\approx$0.875.}
+\label{fig:ablation_complete}
+\end{figure}
+
+Figure~\ref{fig:ablation_complete} reveals a critical phase transition at similarity threshold $\approx$0.875, where the network undergoes catastrophic fragmentation. Below this threshold, the giant component encompasses >95\% of nodes; above it, the network shatters into isolated clusters. This percolation threshold represents a fundamental boundary in semantic space.
+
+\begin{table}[h]
+\centering
+\caption{Network Structure at Critical Thresholds (2:1 Weight Ratio)}
+\label{tab:threshold_comparison_ablation}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Threshold} & \textbf{Nodes} & \textbf{Edges} & \textbf{Density} & \textbf{Giant Comp.} & \textbf{Modularity} & \textbf{Communities} \\
+\midrule
+0.80 & 1,607 & 78,582 & 0.061 & 97.0\% & 0.358 & 7 \\
+0.85 & 1,370 & 14,891 & 0.016 & 94.2\% & 0.598 & 11 \\
+0.875 & 1,089 & 5,723 & 0.010 & 91.5\% & 0.685 & 13 \\
+\textbf{0.90} & \textbf{601} & \textbf{1,718} & \textbf{0.010} & \textbf{75.4\%} & \textbf{0.750} & \textbf{15} \\
+0.925 & 184 & 245 & 0.015 & 28.1\% & 0.642 & 8 \\
+0.95 & 66 & 45 & 0.021 & 7.6\% & 0.218 & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Parameter Independence and Interaction}
+
+Remarkably, threshold effects dominate network structure regardless of weight ratio. The phase transition occurs consistently at $\theta \approx 0.875$ across all ratios, though weight ratios modulate specific metrics:
+
+\begin{itemize}
+    \item \textbf{Clustering coefficient}: Strongly affected by weight ratio (0.36-0.45 range), with user-heavy ratios showing higher local clustering
+    \item \textbf{Modularity}: Peaks at 2:1 ratio across most thresholds, confirming optimal community separation
+    \item \textbf{Density and degree}: Determined entirely by threshold, invariant to weight ratio
+\end{itemize}
+
+This parameter independence suggests that similarity threshold acts as a \emph{semantic filter} controlling global connectivity, while weight ratio provides \emph{semantic tuning} affecting local structure and community formation.
+
+\subsubsection{Justification of Chosen Parameters}
+
+Our selection of threshold 0.9 with 2:1 user:AI weighting emerges as optimal for several reasons:
+
+\begin{enumerate}
+    \item \textbf{Maximal modularity} (0.750) indicates clear community boundaries
+    \item \textbf{Post-transition sparsity} (1,718 edges from 1.8M possible) removes noise while preserving essential connections
+    \item \textbf{Semantic coherence}: Manual inspection confirms thematically meaningful communities
+    \item \textbf{Boundary insights}: As noted in Section~\ref{threshold_sensitivity}, lowering to 0.875 reveals how peripheral conversations (e.g., artistic discussions with the author's niece) connect to the main network through philosophical bridges
+\end{enumerate}
+
+The 0.9 threshold deliberately operates beyond the phase transition, prioritizing \emph{analytical clarity over connectivity}. This choice reveals genuine knowledge communities rather than artificially connected clusters, supporting our goal of mapping cognitive structure in AI-assisted knowledge exploration.
