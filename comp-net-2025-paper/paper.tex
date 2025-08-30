@@ -102,10 +102,7 @@ We generated embeddings for each conversation using the \texttt{nomic-embed-text
 
 We weight user inputs more heavily (weight $\alpha$) to prioritize user intent while still incorporating AI contributions. This reflects our assumption that user prompts better represent the conversation's semantic focus than AI responses, which tend to be lengthier and more elaborative. The optimal value $\alpha = 2$ is determined through comprehensive ablation study (Section 3.3). Unit normalization preserves relative semantic relationships regardless of conversation length.
 
-% INTEGRATED ABLATION STUDY SECTION
-% Replace sections 3.3, 3.4, and parts of 4.2 with this comprehensive analysis
-
-\subsection{Comprehensive Ablation Study}
+\subsection{Ablation Study}
 
 To validate our methodological choices and understand their impact on network structure, we conducted an extensive ablation study examining 63 parameter configurations. This analysis reveals how embedding weights and similarity thresholds jointly determine both quantitative network properties and qualitative knowledge organization.
 
@@ -119,16 +116,14 @@ We performed a complete 2D parameter sweep examining:
 
 For each configuration, we reconstructed the complete network, detected communities using the Louvain method, and analyzed both structural metrics and semantic coherence.
 
-\subsubsection{Phase Transition and Critical Threshold}
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{./images/threshold_evolution_clean.png}
-\caption{Network metrics across similarity thresholds showing universal phase transition at $\theta \approx 0.875$ independent of weight ratio.}
+\caption{Network metrics across similarity thresholds. Critical phase transition occurs at $\theta \approx 0.875$: below this threshold, the network maintains over 90\% connectivity; above it, catastrophic fragmentation occurs. This percolation phenomenon is remarkably consistent across all weight ratios, confirming a fundamental boundary in semantic space.}
 \label{fig:phase_transition}
 \end{figure}
 
-Figure~\ref{fig:phase_transition} reveals a critical phase transition at similarity threshold $\theta \approx 0.875$. Below this threshold, the network maintains over 90\% connectivity; above it, catastrophic fragmentation occurs. This percolation phenomenon is remarkably consistent across all weight ratios, suggesting a fundamental boundary in semantic coherence.
+As shown in Figure~\ref{fig:phase_transition}, the phase transition at $\theta \approx 0.875$ is remarkably consistent across all weight ratios. Table~\ref{tab:threshold_critical} quantifies these network properties at critical thresholds.
 
 \begin{table}[h]
 \centering
@@ -146,53 +141,41 @@ Figure~\ref{fig:phase_transition} reveals a critical phase transition at similar
 \end{tabular}
 \end{table}
 
-
-\subsubsection{Optimal Weight Ratio Determination}
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{./images/weight_ratio_analysis_clean.png}
-\caption{Weight ratio optimization at $\theta = 0.9$. The 2:1 user:AI ratio maximizes modularity (0.750) while maintaining 15 distinct communities.}
+\caption{Weight ratio optimization at $\theta = 0.9$. Systematic variation of weight ratios reveals that the 2:1 user:AI configuration (green) maximizes modularity (0.750) while preserving network coherence. This ratio achieves optimal balance across multiple metrics with 15 distinct communities.}
 \label{fig:weight_ratio_analysis}
 \end{figure}
 
-At our chosen threshold of 0.9, systematic variation of weight ratios reveals that the 2:1 user:AI configuration maximizes modularity (0.750) while preserving network coherence. Figure~\ref{fig:weight_ratio_analysis} demonstrates how this ratio achieves optimal balance across multiple metrics.
-
 \subsubsection{Knowledge Organization Across Weight Ratios}
 
-While weight ratios affect modularity optimization, our analysis reveals that the underlying topic distribution remains remarkably stable across configurations (ML/AI: 26-37\%, General topics: 47-55\%). This stability suggests that knowledge domains are inherent to the conversation content rather than imposed by weighting schemes. 
+As demonstrated in Figure~\ref{fig:weight_ratio_analysis}, weight ratios affect modularity optimization, yet our analysis reveals that the underlying topic distribution remains remarkably stable across configurations (ML/AI: 26-37\%, General topics: 47-55\%). This stability suggests that knowledge domains are inherent to the conversation content rather than imposed by weighting schemes. 
 
 The 2:1 user:AI ratio proves optimal precisely because it maximizes modularity (0.750) without distorting this natural topic structure. At this ratio, we observe 15 well-defined communities that preserve topic focus while incorporating semantic breadth from AI responses. User-heavy ratios (100:1, 4:1) create overly fragmented communities that separate related concepts, while AI-heavy ratios (1:4, 1:100) merge distinct domains based on response patterns rather than knowledge structure.
 
 \subsubsection{Case Study: Semantic Boundaries at the Phase Transition}
 
-The phase transition at $\theta = 0.875$ reveals more than statistical fragmentation, exposing semantic boundaries between distinct conversational contexts, as illustrated in Figure~\ref{fig:semantic_boundary}:
+To illustrate these semantic boundaries empirically, we examine a specific case study in Figure~\ref{fig:semantic_boundary}.
 
 \begin{figure}[h]
 \centering
 \begin{subfigure}{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{./images/cluster-vis-topics-better.png}
+    \includegraphics[width=\textwidth]{./images/refine/crop-left.png}
     \caption{$\theta=0.9$: Distinct contexts separated}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.48\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{./images/0.875-wild-better.png}
+    \includegraphics[width=\textwidth]{./images/refine/crop-right.png}
     \caption{$\theta=0.875$: Peripheral context emerges}
 \end{subfigure}
-\caption{Semantic boundaries revealed by threshold variation. Niece conversations remain isolated at $\theta=0.9$ (left) but connect through philosophical bridges at $\theta=0.875$ (right).}
+\caption{Semantic boundaries revealed by threshold variation. At $\theta=0.9$ (left), the niece conversation cluster remains isolated from the main network (zoomed region of the full network shown in Figure~\ref{fig:network_vis}). At $\theta=0.875$ (right), this cluster connects to the giant component through philosophical bridge conversations, illustrating the 2.5\% semantic distance between conversational contexts.}
 \label{fig:semantic_boundary}
 \end{figure}
 
-As shown in Figure~\ref{fig:semantic_boundary}, conversations with the author's 13-year-old niece, characterized by artistic topics, informal language, and creative storytelling, remain isolated at threshold 0.9 (left panel) but connect to the giant component at 0.875 (right panel) through philosophical bridge conversations. This 2.5\% difference in similarity threshold captures the semantic distance between:
-
-\begin{itemize}
-    \item Primary knowledge network: Technical vocabulary, formal register, domain expertise
-    \item Peripheral context: Age-appropriate explanations, creative topics, informal style
-\end{itemize}
-
-This validates our threshold selection: $\theta=0.9$ preserves analytical clarity by maintaining natural boundaries between cognitive contexts.
+This 2.5\% threshold difference reveals the semantic distance between the primary knowledge network (technical vocabulary, formal register) and peripheral contexts (age-appropriate explanations, creative topics). Our selection of $\theta=0.9$ thus preserves analytical clarity by maintaining natural boundaries between distinct cognitive contexts.
 
 \subsubsection{Parameter Selection Justification}
 

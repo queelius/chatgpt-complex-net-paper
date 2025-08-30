@@ -128,12 +128,6 @@ def create_focused_threshold_figure(csv_path, output_dir):
     fig.suptitle('Phase Transition at θ ≈ 0.875: Universal Across All Weight Ratios',
                  fontsize=14, fontweight='bold', y=1.02)
     
-    # Add interpretation text
-    fig.text(0.5, -0.05, 
-             'All weight ratios experience catastrophic fragmentation at the same critical threshold, '
-             'confirming a fundamental boundary in semantic space',
-             ha='center', fontsize=10, style='italic', wrap=True)
-    
     plt.tight_layout()
     
     # Save figures

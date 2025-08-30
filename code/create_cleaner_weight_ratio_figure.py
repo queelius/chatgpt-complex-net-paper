@@ -136,12 +136,6 @@ def create_focused_weight_ratio_figure(csv_path, output_dir):
     fig.suptitle('Weight Ratio Effects at Threshold θ = 0.9', 
                 fontsize=14, fontweight='bold', y=1.00)
     
-    # Add interpretation note
-    fig.text(0.5, -0.12, 
-            'The 2:1 user:AI ratio (green) achieves maximum modularity (0.750) with 15 distinct communities, '
-            'providing optimal balance between community separation and network coherence',
-            ha='center', fontsize=10, style='italic', wrap=True)
-    
     plt.tight_layout()
     
     # Save figures
