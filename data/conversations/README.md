@@ -1,18 +1,10 @@
 # Conversation Corpus
 
-This directory is a placeholder for the raw conversation data used in both papers.
+The sanitized conversation corpus has been published as a standalone dataset:
 
-## Status: Sanitization in Progress
+**Repository:** [chatgpt-conversation-corpus](https://github.com/queelius/chatgpt-conversation-corpus)
 
-The corpus consists of 1,908 ChatGPT conversations spanning December 2022 to April 2025. These conversations contain personal information that must be removed before public release.
-
-The sanitized corpus will be included in a future version of this compendium.
-
-## What Will Be Released
-
-- Conversation metadata (timestamps, titles, model used)
-- Sanitized message text (personal identifiers replaced with placeholders)
-- Pre-computed embeddings for each conversation
+The dataset contains 1,906 sanitized ChatGPT conversations (Dec 2022 -- Apr 2025) with typed PII placeholders and a complete redaction audit trail. Licensed under CC-BY-4.0.
 
 ## Reproducing Published Results Without Raw Data
 

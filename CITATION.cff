@@ -57,3 +57,11 @@ references:
     repository-code: "https://github.com/queelius/chatgpt-complex-net"
     doi: "10.5281/zenodo.15314235"
     year: 2025
+  - type: dataset
+    title: "Sanitized ChatGPT Conversation Corpus"
+    authors:
+      - family-names: Towell
+        given-names: Alexander
+    repository-code: "https://github.com/queelius/chatgpt-conversation-corpus"
+    license: CC-BY-4.0
+    year: 2026

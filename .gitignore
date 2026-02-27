@@ -60,6 +60,9 @@ dev
 venv/
 code/venv/
 
+# Sanitization script (published in dataset repo)
+code/sanitize_conversations.py
+
 # Uncomment to ignore PDFs (currently tracking them)
 # *.pdf
 

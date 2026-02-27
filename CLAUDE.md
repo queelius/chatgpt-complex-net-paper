@@ -10,7 +10,9 @@ The core idea: transform linear conversation logs into semantic similarity netwo
 
 ## Active Work
 
-**Journal extension**: Extending the conference paper for PLOS Complex Systems special issue. Deadline: February 27, 2026. The extension adds temporal network evolution analysis (densification, preferential attachment, community dynamics, bridge persistence, model era effects). The paper is drafted and submission-ready in `comp-net-2025-journal/paper/PLOS/`.
+**Journal extension**: Extending the conference paper for PLOS Complex Systems special issue. The extension adds temporal network evolution analysis (densification, preferential attachment, community dynamics, bridge persistence, model era effects). The paper is drafted and submission-ready in `comp-net-2025-journal/paper/PLOS/`.
+
+**Dataset repo**: A standalone dataset repo at `~/github/chatgpt-conversation-corpus/` is being prepared for the sanitized conversation corpus. Pre-release — sanitization still in progress. See that repo's CLAUDE.md for full context.
 
 ## Project Structure
 
@@ -43,9 +45,11 @@ The core idea: transform linear conversation logs into semantic similarity netwo
 │   ├── network/                       # Primary edge list (601 nodes, 1718 edges)
 │   ├── temporal/                      # Journal paper: monthly network snapshots
 │   ├── ablation/                      # Conference paper: 63-config parameter study
-│   └── conversations/                 # Placeholder (privacy sanitization in progress)
+│   └── conversations/                 # README only (corpus lives in dev/ and dataset repo)
 └── dev/                               # Research data (gitignored)
     ├── chatgpt-4-11-2025_json_no_embeddings/  # 1908 raw conversation JSONs
+    ├── conversations-sanitized/       # 1906 sanitized JSONs + metadata (WIP)
+    ├── conversations-held/            # 2 excluded conversations
     └── ablation_study/                # Ablation study results & metadata
 ```
 

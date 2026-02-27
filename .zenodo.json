@@ -30,6 +30,11 @@
       "identifier": "10.5281/zenodo.15314235",
       "relation": "isSupplementedBy",
       "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/queelius/chatgpt-conversation-corpus",
+      "relation": "isSupplementedBy",
+      "resource_type": "dataset"
     }
   ],
   "access_right": "open"
