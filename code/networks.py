@@ -39,7 +39,8 @@ def generate_node_embeddings_role_aggregate(
                 role_msgs = [m['content'].strip() for m in msgs if m.get('role') == role and m.get('content', '').strip()]
                 msg_embs = []
                 for msg in role_msgs:
-                    if chunk_size is not None and len(msg) > chunk_size:
+                    word_count = len(msg.split())
+                    if chunk_size is not None and word_count > chunk_size:
                         chunks = chunk_text(msg, chunk_size=chunk_size, overlap=chunk_overlap)
                         chunk_embs = [embedding_fn(chunk) for chunk in chunks if chunk.strip()]
                         if chunk_embs:
