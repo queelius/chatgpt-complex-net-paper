@@ -1,3 +1,4 @@
+import logging
 import networkx as nx
 import json
 import glob
@@ -9,21 +10,28 @@ from data.message_utils import messages_to_transcript
 from embedding.utils import chunk_text
 import datetime
 
+logger = logging.getLogger(__name__)
+
+
 def generate_node_embeddings_role_aggregate(
         input_dir,
         embedding_fn,
         role_config,
         embedding_key='embeddings',
         aggregation_fn=None,
-        chunk_size=None,  # New: None means no chunking, otherwise chunk messages
+        chunk_size=None,  # None means no chunking, otherwise chunk messages (in words)
         chunk_overlap=0,
         chunk_aggregation="mean"
     ):
     """
     Generalized role-based node embedding generator with optional chunking for long messages.
+    Skips files that already have embeddings. Logs errors and continues on failure.
     """
     files = glob.glob(os.path.join(input_dir, "*"))
-    iterator = tqdm(files, total=len(files), desc="General role-based node embeddings")
+    skipped = 0
+    errors = 0
+    processed = 0
+    iterator = tqdm(files, total=len(files), desc="Role-aggregate embeddings")
 
     for file in iterator:
         if not file.endswith('.json'):
@@ -31,8 +39,17 @@ def generate_node_embeddings_role_aggregate(
 
         with open(file, 'r', encoding='utf-8') as f:
             json_doc = json.load(f)
-            msgs = json_doc['messages']
 
+        # Skip files that already have embeddings
+        if embedding_key in json_doc and "role_aggregate" in json_doc.get(embedding_key, {}):
+            existing = json_doc[embedding_key]["role_aggregate"]
+            if existing.get("vector") is not None:
+                skipped += 1
+                iterator.set_postfix(done=processed, skip=skipped, err=errors)
+                continue
+
+        try:
+            msgs = json_doc['messages']
             role_embs = {}
             per_role = {}
             for role, cfg in role_config.items():
@@ -87,7 +104,7 @@ def generate_node_embeddings_role_aggregate(
                         "metadata": {"role": role, "aggregate": agg}
                     }
 
-            # Combine role embeddings (unchanged)
+            # Combine role embeddings
             if aggregation_fn is None:
                 weights = np.array([cfg["weight"] for role, cfg in role_config.items() if role_embs[role] is not None])
                 embs = np.array([role_embs[role] for role, cfg in role_config.items() if role_embs[role] is not None])
@@ -112,8 +129,17 @@ def generate_node_embeddings_role_aggregate(
                 "per_role": per_role
             }
 
-        with open(file, 'w', encoding='utf-8') as f:
-            json.dump(json_doc, f, ensure_ascii=False, indent=2)
+            with open(file, 'w', encoding='utf-8') as f:
+                json.dump(json_doc, f, ensure_ascii=False, indent=2)
+            processed += 1
+
+        except Exception as e:
+            errors += 1
+            logger.error(f"Failed to embed {os.path.basename(file)}: {e}")
+
+        iterator.set_postfix(done=processed, skip=skipped, err=errors)
+
+    logger.info(f"Embedding complete: {processed} processed, {skipped} skipped, {errors} errors")
 
 def generate_node_embeddings_chunking(
         path,
