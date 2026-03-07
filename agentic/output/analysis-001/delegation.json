@@ -1,0 +1,18 @@
+{
+  "num_nodes": 3945,
+  "num_edges": 2884,
+  "agent_type_counts": {
+    "user_spawned": 2077,
+    "compact": 518,
+    "prompt_suggestion": 289
+  },
+  "fan_out_stats": {
+    "mean": 2.718190386427898,
+    "max": 156,
+    "min": 0
+  },
+  "delegation_ratio_stats": {
+    "mean": 0.31557668519715065,
+    "max": 7.0
+  }
+}
