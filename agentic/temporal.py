@@ -11,7 +11,6 @@ import numpy as np
 from scipy import stats
 
 from agentic.extract import Session
-from agentic.semantic import compute_network_metrics
 
 
 def _parse_date(dt_str: str) -> Optional[datetime]:
@@ -22,23 +21,38 @@ def _parse_date(dt_str: str) -> Optional[datetime]:
         return None
 
 
+def _snapshot_metrics(G: nx.Graph) -> Dict[str, Any]:
+    """Lightweight metrics for temporal snapshots — O(n+e), no Louvain."""
+    n = G.number_of_nodes()
+    e = G.number_of_edges()
+    components = list(nx.connected_components(G))
+    giant = max(len(c) for c in components) if components else 0
+    return {
+        "node_count": n,
+        "edge_count": e,
+        "density": nx.density(G) if n > 1 else 0.0,
+        "num_components": len(components),
+        "giant_component_size": giant,
+        "giant_component_fraction": giant / n if n > 0 else 0.0,
+    }
+
+
 def build_daily_snapshots(
     sessions: List[Session],
     edges: List[Tuple[str, str, float]],
-    random_state: int = 42,
 ) -> List[Dict[str, Any]]:
     """Build cumulative daily network snapshots.
 
     For each day in the observation period, constructs the network from all
-    sessions and edges up to that day, then computes metrics.
+    sessions and edges up to that day, then computes lightweight metrics
+    (node/edge counts, density, components — no Louvain or clustering).
 
     Args:
         sessions: All sessions (parents + subagents).
         edges: List of (source_id, target_id, weight) tuples — semantic edges.
-        random_state: For community detection reproducibility.
 
     Returns:
-        List of dicts, one per day, with date + all network metrics.
+        List of dicts, one per day, with date + network growth metrics.
     """
     # Map session ID to date
     session_dates = {}
@@ -55,36 +69,42 @@ def build_daily_snapshots(
     if not all_dates:
         return []
 
-    # Build edge index
-    edge_set = [(s, t, w) for s, t, w in edges]
+    # Group sessions by date for incremental construction
+    nodes_by_date = {}
+    for sid, d in session_dates.items():
+        nodes_by_date.setdefault(d, []).append(sid)
+
+    # Index edges by node for fast lookup
+    node_edges = {}  # node -> list of (other_node, weight)
+    for s, t, w in edges:
+        node_edges.setdefault(s, []).append((t, w))
+        node_edges.setdefault(t, []).append((s, w))
 
     snapshots = []
-    cumulative_nodes = set()
+    G = nx.Graph()
 
     for day in all_dates:
-        # Add nodes active on or before this day
-        for sid, d in session_dates.items():
-            if d <= day:
-                cumulative_nodes.add(sid)
+        # Add new nodes for this day
+        new_nodes = nodes_by_date.get(day, [])
+        G.add_nodes_from(new_nodes)
 
-        # Build graph from cumulative edges
-        G = nx.Graph()
-        G.add_nodes_from(cumulative_nodes)
-        for s, t, w in edge_set:
-            if s in cumulative_nodes and t in cumulative_nodes:
-                G.add_edge(s, t, weight=w)
+        # Add edges where both endpoints are now in the graph
+        for node in new_nodes:
+            for other, w in node_edges.get(node, []):
+                if other in G:
+                    G.add_edge(node, other, weight=w)
 
-        metrics = compute_network_metrics(G, random_state=random_state)
+        metrics = _snapshot_metrics(G)
         metrics["date"] = day.isoformat()
 
         # Delegation metrics for this snapshot
         parent_nodes = [
-            sid for sid in cumulative_nodes
+            sid for sid in G.nodes
             if sid in sessions_by_id
             and sessions_by_id[sid].parent_conversation_id is None
         ]
         child_nodes = [
-            sid for sid in cumulative_nodes
+            sid for sid in G.nodes
             if sid in sessions_by_id
             and sessions_by_id[sid].parent_conversation_id is not None
         ]
@@ -167,13 +187,13 @@ def compute_preferential_attachment(
 
     # For each date, collect cumulative node set
     cumulative_by_date = {}
-    cumulative_nodes = set()
+    seen_nodes = set()
     for date_str in all_dates:
         date_obj = datetime.fromisoformat(date_str).date()
         for sid, d in session_dates.items():
             if d <= date_obj:
-                cumulative_nodes.add(sid)
-        cumulative_by_date[date_str] = cumulative_nodes.copy()
+                seen_nodes.add(sid)
+        cumulative_by_date[date_str] = seen_nodes.copy()
 
     # Build graph for each date and record degrees
     degree_records = []

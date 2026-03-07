@@ -93,12 +93,18 @@ def do_analyze(args):
     sessions = extract_sessions(args.db, include_subagents=args.include_subagents)
     print(f"  {len(sessions)} sessions")
 
-    # Load edges
+    # Load edges and translate filename-safe IDs back to session IDs
+    # (export_json replaces : with _ for filesystem safety)
     print(f"Loading edges from {args.edges_file}...")
     with open(args.edges_file) as f:
         raw_edges = json.load(f)
-    edges = [(s, t, w) for s, t, w in raw_edges]
-    print(f"  {len(edges)} edges")
+    session_ids = {s.id for s in sessions}
+    safe_to_id = {sid.replace(":", "_"): sid for sid in session_ids}
+    edges = [
+        (safe_to_id.get(s, s), safe_to_id.get(t, t), w)
+        for s, t, w in raw_edges
+    ]
+    print(f"  {len(edges)} edges loaded")
 
     # --- Delegation network ---
     print("Building delegation network...")
@@ -128,7 +134,6 @@ def do_analyze(args):
     # --- Semantic network ---
     print("Building semantic network...")
     sem_G = nx.Graph()
-    session_ids = {s.id for s in sessions}
     for s, t, w in edges:
         if s in session_ids and t in session_ids:
             sem_G.add_edge(s, t, weight=w)
