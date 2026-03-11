@@ -25,7 +25,7 @@ import networkx as nx
 
 from agentic.extract import extract_sessions
 from agentic.export_json import export_sessions_to_json
-from agentic.preprocess import (
+from agentic.preprocess import (  # noqa: F401 — available for future ablation
     extract_text_full,
     extract_text_only,
     extract_user_only,
@@ -41,19 +41,18 @@ from agentic.semantic import compute_network_metrics
 from agentic.temporal import (
     build_daily_snapshots,
     fit_densification_law,
+    compute_preferential_attachment,
 )
 from agentic.multilayer import (
     compute_interlayer_degree_correlation,
     compute_participation_coefficient,
     compare_community_assignments,
 )
-
-CONTENT_MODES = {
-    "text-full": extract_text_full,
-    "text-only": extract_text_only,
-    "user-only": extract_user_only,
-    "tool-names-only": extract_tool_names_only,
-}
+from agentic.null_models import (
+    configuration_model_baseline,
+    permutation_interlayer_test,
+    permutation_nmi_test,
+)
 
 try:
     import community.community_louvain as community_louvain
@@ -75,9 +74,8 @@ def do_extract(args):
     children = [s for s in sessions if s.parent_conversation_id is not None]
     print(f"  {len(parents)} parents, {len(children)} subagents")
 
-    extractor = CONTENT_MODES.get(args.content_mode, extract_text_only)
-    print(f"Exporting to {args.output_dir} (mode: {args.content_mode})...")
-    export_sessions_to_json(sessions, args.output_dir, content_extractor=extractor)
+    print(f"Exporting to {args.output_dir} (text-only mode)...")
+    export_sessions_to_json(sessions, args.output_dir)
     print(f"  {len(sessions)} JSON files written")
 
     return sessions
@@ -153,15 +151,19 @@ def do_analyze(args):
     snapshots = build_daily_snapshots(sessions, edges)
     densification = fit_densification_law(snapshots)
 
+    pref_attach = compute_preferential_attachment(snapshots, edges, sessions)
+
     temporal_results = {
         "num_snapshots": len(snapshots),
         "densification": densification,
+        "preferential_attachment": pref_attach,
         "snapshots": snapshots,
     }
     with open(out / "temporal.json", "w") as f:
         json.dump(temporal_results, f, indent=2, default=str)
     print(f"  {len(snapshots)} daily snapshots")
     print(f"  Densification gamma: {densification.get('gamma', 'N/A')}")
+    print(f"  Preferential attachment beta: {pref_attach.get('beta', 'N/A')}")
 
     # --- Multi-layer analysis ---
     print("Computing multi-layer metrics...")
@@ -193,6 +195,48 @@ def do_analyze(args):
     print(f"  Interlayer correlation: {interlayer.get('correlation', 'N/A')}")
     print(f"  Community NMI: {nmi:.4f}")
 
+    # --- Null model baselines ---
+    print("Running null model baselines...")
+
+    # Configuration model for semantic network
+    print("  Configuration model baseline (semantic)...")
+    config_result = configuration_model_baseline(sem_G, n_samples=20, random_state=42)
+    for metric, vals in config_result.items():
+        obs = vals.get("observed")
+        z = vals.get("z_score")
+        p = vals.get("p_value")
+        if obs is not None and z is not None and p is not None:
+            print(f"    {metric}: obs={obs:.4f}, z={z:.2f}, p={p:.4f}")
+
+    # Permutation test for inter-layer degree correlation
+    print("  Permutation test (interlayer degree correlation)...")
+    perm_interlayer = permutation_interlayer_test(
+        sem_G, deleg_G, n_perms=1000, random_state=42
+    )
+    if perm_interlayer["observed_rho"] is not None:
+        print(f"    rho={perm_interlayer['observed_rho']:.4f}, "
+              f"p={perm_interlayer['perm_p_value']:.4f}")
+    else:
+        print(f"    Too few shared nodes ({perm_interlayer['n_shared']})")
+
+    # Permutation test for community NMI
+    perm_nmi_result = {"observed_nmi": 0.0, "perm_p_value": None, "n_shared": 0}
+    if HAS_COMMUNITY and sem_G.number_of_edges() > 0:
+        print("  Permutation test (community NMI)...")
+        perm_nmi_result = permutation_nmi_test(
+            sem_partition, del_partition, n_perms=1000, random_state=42
+        )
+        print(f"    NMI={perm_nmi_result['observed_nmi']:.4f}, "
+              f"p={perm_nmi_result['perm_p_value']:.4f}")
+
+    null_results = {
+        "configuration_model": config_result,
+        "permutation_interlayer": perm_interlayer,
+        "permutation_nmi": perm_nmi_result,
+    }
+    with open(out / "null_models.json", "w") as f:
+        json.dump(null_results, f, indent=2, default=str)
+
     print(f"\nResults written to {out}/")
 
 
@@ -200,9 +244,6 @@ def main():
     parser = argparse.ArgumentParser(description="Agentic Cognitive MRI analysis pipeline")
     parser.add_argument("--db", required=True, help="Path to memex SQLite database")
     parser.add_argument("--output-dir", required=True, help="Output directory")
-    parser.add_argument("--content-mode", default="text-only",
-                        choices=list(CONTENT_MODES.keys()),
-                        help="Content extraction mode (default: text-only)")
     parser.add_argument("--include-subagents", action="store_true", default=True,
                         help="Include subagent sessions (default: True)")
     parser.add_argument("--no-subagents", dest="include_subagents", action="store_false",

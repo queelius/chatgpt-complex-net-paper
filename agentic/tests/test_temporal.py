@@ -111,3 +111,37 @@ def test_fit_densification_insufficient_data():
 def test_preferential_attachment_insufficient_data():
     result = compute_preferential_attachment([], [], [])
     assert result["beta"] is None
+
+
+def test_preferential_attachment_with_data():
+    """Verify preferential attachment computation returns valid results.
+
+    Needs enough sessions (20+) across enough days to produce >=10 degree
+    records for the log-log fit.
+    """
+    sessions = []
+    # 5 days, 4 sessions each = 20 sessions
+    for day in range(5):
+        for i in range(4):
+            sessions.append(Session(
+                id=f"d{day}-p{i}", title=f"Day {day} session {i}",
+                source="claude_code", model="claude-opus-4-6",
+                message_count=50,
+                created_at=f"2025-12-{day+1:02d}T{10+i}:00:00",
+                updated_at=f"2025-12-{day+1:02d}T{11+i}:00:00",
+                metadata={}, parent_conversation_id=None, messages=[],
+            ))
+
+    # Dense edges: connect each node to all earlier nodes (simulates growth)
+    edges = []
+    ids = [s.id for s in sessions]
+    for i in range(len(ids)):
+        for j in range(i + 1, len(ids)):
+            edges.append((ids[i], ids[j], 0.92))
+
+    snapshots = build_daily_snapshots(sessions, edges)
+    result = compute_preferential_attachment(snapshots, edges, sessions)
+    assert result["beta"] is not None
+    assert isinstance(result["beta"], float)
+    assert result["r_squared"] is not None
+    assert 0.0 <= result["r_squared"] <= 1.0

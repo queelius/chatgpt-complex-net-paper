@@ -181,51 +181,50 @@ def compute_preferential_attachment(
         if dt:
             session_dates[s.id] = dt.date()
 
-    # Build daily graphs to track degree at each snapshot
-    all_dates = sorted(set(d.isoformat() for d in session_dates.values()))
-    date_to_idx = {d: i for i, d in enumerate(all_dates)}
+    all_dates = sorted(set(session_dates.values()))
 
-    # For each date, collect cumulative node set
-    cumulative_by_date = {}
-    seen_nodes = set()
-    for date_str in all_dates:
-        date_obj = datetime.fromisoformat(date_str).date()
-        for sid, d in session_dates.items():
-            if d <= date_obj:
-                seen_nodes.add(sid)
-        cumulative_by_date[date_str] = seen_nodes.copy()
+    # Group sessions by date for incremental construction
+    nodes_by_date = {}
+    for sid, d in session_dates.items():
+        nodes_by_date.setdefault(d, []).append(sid)
 
-    # Build graph for each date and record degrees
+    # Index edges by node for fast lookup
+    node_edges = {}  # node -> list of (other_node, weight)
+    for s, t, w in edges:
+        node_edges.setdefault(s, []).append((t, w))
+        node_edges.setdefault(t, []).append((s, w))
+
+    # Incrementally build the graph, recording degree of endpoints for new edges
+    G = nx.Graph()
     degree_records = []
-    prev_edges = set()
 
-    for date_str in all_dates:
-        nodes = cumulative_by_date[date_str]
-        # Current edges
-        current_edges = set()
-        for s, t, w in edges:
-            if s in nodes and t in nodes:
-                current_edges.add((min(s, t), max(s, t)))
+    for day in all_dates:
+        new_nodes = nodes_by_date.get(day, [])
 
-        # New edges this snapshot
-        new_edges = current_edges - prev_edges
+        # Record degrees of existing endpoints BEFORE adding new edges
+        # For each new node, find edges to existing nodes
+        new_edges_this_day = []
+        for node in new_nodes:
+            for other, w in node_edges.get(node, []):
+                if other in G and not G.has_edge(node, other):
+                    new_edges_this_day.append((node, other, w))
 
-        if prev_edges and new_edges:
-            # Build graph from previous edges to get degree
-            G_prev = nx.Graph()
-            G_prev.add_nodes_from(nodes)
-            for s, t in prev_edges:
-                G_prev.add_edge(s, t)
+        # Record pre-attachment degree for endpoints of new edges
+        for _, other, _ in new_edges_this_day:
+            d = G.degree(other)
+            if d > 0:
+                degree_records.append(d)
 
-            for s, t in new_edges:
-                ds = G_prev.degree(s) if s in G_prev else 0
-                dt_val = G_prev.degree(t) if t in G_prev else 0
-                if ds > 0:
-                    degree_records.append(ds)
-                if dt_val > 0:
-                    degree_records.append(dt_val)
+        # Now add new nodes and their edges
+        G.add_nodes_from(new_nodes)
+        for node, other, w in new_edges_this_day:
+            G.add_edge(node, other, weight=w)
 
-        prev_edges = current_edges
+        # Also add edges between new same-day nodes
+        for i, node in enumerate(new_nodes):
+            for other, w in node_edges.get(node, []):
+                if other in G and not G.has_edge(node, other):
+                    G.add_edge(node, other, weight=w)
 
     if len(degree_records) < 10:
         return {"beta": None, "r_squared": None, "p_value": None}

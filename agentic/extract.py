@@ -42,61 +42,60 @@ def extract_sessions(
     Returns:
         List of Session objects with their messages populated.
     """
-    conn = sqlite3.connect(db_path)
-    conn.row_factory = sqlite3.Row
+    with sqlite3.connect(db_path) as conn:
+        conn.row_factory = sqlite3.Row
 
-    where = "WHERE c.source = ?"
-    params: list = [source]
-    if not include_subagents:
-        where += " AND c.parent_conversation_id IS NULL"
+        where = "WHERE c.source = ?"
+        params: list = [source]
+        if not include_subagents:
+            where += " AND c.parent_conversation_id IS NULL"
 
-    rows = conn.execute(
-        f"""
-        SELECT c.id, c.title, c.source, c.model, c.message_count,
-               c.created_at, c.updated_at, c.metadata, c.parent_conversation_id
-        FROM conversations c
-        {where}
-        ORDER BY c.created_at
-        """,
-        params,
-    ).fetchall()
-
-    sessions = []
-    for r in rows:
-        meta = json.loads(r["metadata"]) if r["metadata"] else {}
-        session = Session(
-            id=r["id"],
-            title=r["title"] or "",
-            source=r["source"],
-            model=r["model"],
-            message_count=r["message_count"],
-            created_at=r["created_at"],
-            updated_at=r["updated_at"],
-            metadata=meta,
-            parent_conversation_id=r["parent_conversation_id"],
-        )
-
-        msg_rows = conn.execute(
-            """
-            SELECT id, role, content, parent_id
-            FROM messages
-            WHERE conversation_id = ?
-            ORDER BY id
+        rows = conn.execute(
+            f"""
+            SELECT c.id, c.title, c.source, c.model, c.message_count,
+                   c.created_at, c.updated_at, c.metadata, c.parent_conversation_id
+            FROM conversations c
+            {where}
+            ORDER BY c.created_at
             """,
-            (r["id"],),
+            params,
         ).fetchall()
 
-        for m in msg_rows:
-            content = json.loads(m["content"]) if m["content"] else []
-            session.messages.append(
-                Message(
-                    id=m["id"],
-                    role=m["role"],
-                    content=content,
-                    parent_id=m["parent_id"],
-                )
+        sessions = []
+        for r in rows:
+            meta = json.loads(r["metadata"]) if r["metadata"] else {}
+            session = Session(
+                id=r["id"],
+                title=r["title"] or "",
+                source=r["source"],
+                model=r["model"],
+                message_count=r["message_count"],
+                created_at=r["created_at"],
+                updated_at=r["updated_at"],
+                metadata=meta,
+                parent_conversation_id=r["parent_conversation_id"],
             )
-        sessions.append(session)
 
-    conn.close()
+            msg_rows = conn.execute(
+                """
+                SELECT id, role, content, parent_id
+                FROM messages
+                WHERE conversation_id = ?
+                ORDER BY id
+                """,
+                (r["id"],),
+            ).fetchall()
+
+            for m in msg_rows:
+                content = json.loads(m["content"]) if m["content"] else []
+                session.messages.append(
+                    Message(
+                        id=m["id"],
+                        role=m["role"],
+                        content=content,
+                        parent_id=m["parent_id"],
+                    )
+                )
+            sessions.append(session)
+
     return sessions
