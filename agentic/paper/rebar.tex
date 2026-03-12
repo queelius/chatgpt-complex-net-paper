@@ -1,0 +1,522 @@
+% ============================================================
+% Rebar in Concrete: How Process Knowledge Binds a
+% Cross-Platform Cognitive Network
+%
+% Paper 4 in the Cognitive MRI series
+% ============================================================
+
+\documentclass[11pt,twocolumn]{article}
+
+% --- Page geometry ---
+\usepackage[margin=0.75in]{geometry}
+
+% --- Math ---
+\usepackage{amsmath,amssymb}
+
+% --- Tables ---
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% --- Graphics ---
+\usepackage{graphicx}
+
+% --- Typography ---
+\usepackage{microtype}
+
+% --- Compact lists ---
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+
+% --- Citations ---
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+
+% --- Cross-references and links ---
+\usepackage[breaklinks=true]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  citecolor=blue!70!black,
+  urlcolor=blue!70!black,
+}
+\usepackage{xurl}
+
+% --- Colors for figures ---
+\usepackage{xcolor}
+\definecolor{cgblue}{HTML}{4A90D9}
+\definecolor{agred}{HTML}{D94A4A}
+
+% --- Captions ---
+\usepackage[font=small,labelfont=bf]{caption}
+
+% --- Compact title ---
+\usepackage{titling}
+\setlength{\droptitle}{-2em}
+\pretitle{\begin{center}\Large\bfseries}
+\posttitle{\end{center}\vspace{-1em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\end{center}\vspace{-1em}}
+\predate{\begin{center}\small}
+\postdate{\end{center}\vspace{-1.5em}}
+
+\begin{document}
+
+% ============================================================
+% Title block
+% ============================================================
+\title{Rebar in Concrete: How Process Knowledge Binds\\a Cross-Platform Cognitive Network}
+
+\author{
+  Alexander Towell\thanks{Corresponding author. Email: atowell@siue.edu. ORCID: 0000-0001-6443-9897}
+  \quad
+  John Matta \\
+  \small Department of Computer Science,
+  Southern Illinois University Edwardsville
+}
+
+\date{}
+
+\maketitle
+
+% ============================================================
+\begin{abstract}
+% ============================================================
+When the same person explores knowledge through both conversational AI (ChatGPT) and agentic AI (Claude Code) over two years, do the resulting cognitive traces converge or remain platform-specific?
+We construct a concept-level network from 115 cognitive concepts extracted via LLM abstraction from 1,908 ChatGPT conversations and 3,945 Claude Code sessions belonging to a single user.
+Concepts are embedded in a shared 768-dimensional space and connected by cosine similarity ($\theta = 0.70$), yielding a small-world network ($\sigma = 2.42$, $\omega = 0.03$) with 1,280 edges.
+We find that \emph{community membership carries $48.5\times$ more information about a concept's neighbors than platform identity does} (normalized MI $= 0.162$ vs.\ $0.007$).
+Platform origin is virtually invisible to network structure.
+Percolation analysis reveals an asymmetric architecture: as the similarity threshold rises, agentic process concepts are the last to disconnect ($81.8\%$ of the residual giant component at $\theta = 0.85$), yet the network survives complete agentic removal with $66.1\%$ of its giant component intact.
+Like rebar in concrete, process knowledge forms the strongest internal bonds while domain knowledge provides the structural mass.
+Cross-platform links are the network's most robust feature: zero of nine local bridges and zero of eight true bridges are cross-platform, and cross-platform edge fraction remains stable at $\sim$$40\%$ across all thresholds (CV $= 0.062$).
+Topological features alone predict cross-platform edges at AUC $= 0.956$.
+These findings demonstrate that a single user's cognitive structure, viewed through two AI modalities, forms a unified conceptual space organized by meaning rather than platform.
+\end{abstract}
+
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+% ============================================================
+
+The past three years have seen an explosion in AI-assisted knowledge work.
+Millions of users maintain conversation archives with ChatGPT, Claude, and other large language models, creating externalized records of their cognitive activity~\citep{zhao2023survey}.
+More recently, \emph{agentic} AI tools---Claude Code, GitHub Copilot, Cursor---have extended this interaction beyond conversation: these systems read files, write code, execute tests, and spawn autonomous subagents, leaving behind session logs that document not just what was discussed but what was \emph{done}~\citep{wang2024survey}.
+
+In prior work, we introduced a ``cognitive MRI'' methodology that transforms AI conversation archives into semantic similarity networks~\citep{towell2025cognitive,towell2026temporal}.
+Applied to a single user's ChatGPT history, this revealed 15 knowledge communities, super-linear densification ($\gamma = 1.405$), and stable community structure over 29 months.
+The session-level (``episodic'') networks, however, face a fundamental limitation: they can only compare sessions \emph{within} a single platform.
+A ChatGPT conversation about Bayesian inference and a Claude Code session implementing a Bayesian model live in separate networks with no structural connection.
+
+This paper introduces a \emph{concept layer} that bridges this gap.
+From the episodic communities detected in each platform's similarity network, we extract abstract cognitive concepts via LLM-based abstraction---labels like ``Bayesian inference as model selection'' or ``Iterative Refinement.''
+These concepts are then embedded in a shared semantic space and connected by cosine similarity, producing a single cross-platform network where every concept competes on equal footing regardless of its platform of origin.
+
+The resulting network reveals a striking finding: \textbf{platform identity is virtually invisible to network structure.}
+Knowing which community a concept belongs to provides $48.5\times$ more information about its neighbors than knowing which platform it came from.
+Agentic process concepts (iteration, debugging, refactoring) and ChatGPT knowledge concepts (Bayesian reasoning, statistical modeling, philosophical inquiry) intermix freely, organized by semantic affinity rather than platform provenance.
+
+Yet the two platforms contribute differently.
+As we raise the similarity threshold and the network fragments, \emph{agentic concepts are the last to disconnect}---they form the strongest-bonded core.
+But the network survives the complete removal of all agentic concepts with most of its giant component intact, because ChatGPT knowledge concepts provide the structural mass.
+This asymmetry evokes a material science metaphor: agentic process knowledge is the \emph{rebar} in the \emph{concrete} of domain knowledge---the strongest internal material, binding the structure, but embedded within a bulk that provides the volume and the load-bearing capacity.
+
+Our contributions are:
+\begin{enumerate}
+  \item A methodology for constructing cross-platform concept networks from heterogeneous AI archives.
+  \item Quantitative evidence that a single user's cognitive structure transcends platform boundaries (platform NMI $= 0.007$).
+  \item Characterization of an asymmetric ``rebar in concrete'' architecture where process and domain knowledge play structurally complementary roles.
+  \item Demonstration that cross-platform integration is the network's most robust structural feature, with zero fragile cross-platform links and topologically predictable edges (AUC $= 0.956$).
+\end{enumerate}
+
+
+% ============================================================
+\section{Methods}
+\label{sec:methods}
+% ============================================================
+
+\subsection{Episodic layer construction}
+
+The source data comprise two archives from a single user: 1,908 ChatGPT conversations spanning December 2022 to April 2025 (29 months) and 3,945 Claude Code sessions spanning November 2025 to March 2026 (101 days, of which 1,061 are human-initiated parent sessions and 2,884 are AI-spawned subagents).
+
+Following the methodology of~\citet{towell2025cognitive}, we embed each session using nomic-embed-text~\citep{nussbaum2024nomic} (768 dimensions), compute all-pairs cosine similarity, and threshold to construct episodic similarity networks.
+ChatGPT conversations use user:AI message weighting of 2:1 and threshold $\theta = 0.90$ (validated by ablation study); Claude Code sessions use text-only content mode and threshold $\theta = 0.95$ (adjusted for the higher baseline similarity of coding sessions).
+These episodic networks serve as the substrate from which concepts are extracted.
+
+Community detection via the Louvain algorithm~\citep{blondel2008fast} identifies 15 ChatGPT communities (e.g., ML/AI, Statistics, Philosophy, Web Development) and 12 agentic communities (mapped to coding projects rather than knowledge domains).
+
+\subsection{Concept extraction}
+\label{sec:methods:concepts}
+
+From each episodic community, we extract abstract cognitive concepts using LLM-based abstraction (llama3.2 via Ollama).
+For each community, the top 20 sessions by message count are presented to the LLM with a prompt requesting 2--5 abstract concepts that characterize the community's cognitive content.
+This yields 79 ChatGPT concepts and 36 agentic concepts (115 total).
+
+ChatGPT concepts are predominantly \emph{knowledge-domain} concepts: ``Bayesian Reasoning for Model Selection,'' ``Statistical Modeling and Estimation,'' ``Philosophical Inquiry.''
+Agentic concepts are predominantly \emph{process-workflow} concepts: ``Iterative Refining,'' ``Debugging Iterative Refinement,'' ``Verification-Driven Development.''
+
+Stability validation (five extractions per community, three LLM models) confirms that concept \emph{themes} are robust---Bayesian reasoning always emerges from the statistics community---though exact phrasing varies.
+Semantic deduplication at $\theta \geq 0.85$ recovers 2.7 stable concepts per community.
+
+\subsection{Concept network construction}
+\label{sec:methods:network}
+
+Each concept is represented as ``name: description'' and embedded via nomic-embed-text into the same 768-dimensional space used for episodes.
+All $\binom{115}{2} = 6{,}555$ pairwise cosine similarities are computed.
+Edges are placed between concepts with similarity exceeding a threshold $\theta$.
+
+We select $\theta = 0.70$ as the operating point based on a systematic sweep (Figure~\ref{fig:robustness}):
+at this threshold the network has meaningful modularity ($Q = 0.276$), a large giant component ($96\%$), and substantial cross-platform community mixing ($57\%$ of communities contain both ChatGPT and agentic concepts).
+Lower thresholds produce trivial community structure ($Q < 0.07$); higher thresholds fragment the network excessively.
+
+The resulting concept network has 115 nodes, 1,280 edges, 7 Louvain communities, and density 0.195.
+Table~\ref{tab:network_summary} summarizes key properties.
+
+\begin{table}[t]
+  \centering
+  \caption{Concept network summary ($\theta = 0.70$).}
+  \label{tab:network_summary}
+  \begin{tabular}{lr}
+    \toprule
+    Property & Value \\
+    \midrule
+    Nodes (ChatGPT / Agentic) & 115 (79 / 36) \\
+    Edges & 1,280 \\
+    Density & 0.195 \\
+    Giant component & 95.7\% \\
+    Communities (Louvain) & 7 \\
+    Modularity $Q$ & 0.276 \\
+    Small-world $\sigma$ & 2.42 \\
+    Small-world $\omega$ & 0.03 \\
+    Avg.\ path length & 2.07 \\
+    Clustering coefficient & 0.598 \\
+    Diameter & 7 \\
+    Cross-platform edge fraction & 39.1\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Analysis methods}
+
+We employ the following analytical tools:
+\begin{itemize}
+  \item \textbf{Information theory}: Mutual information between platform/community labels and neighbor labels, normalized by marginal entropy~\citep{danon2005comparing}.
+  \item \textbf{Percolation analysis}: Threshold sweep from $\theta = 0.45$ to $0.95$, tracking giant component fraction and platform composition~\citep{stauffer1994introduction}.
+  \item \textbf{Dimensionality reduction}: PCA and t-SNE~\citep{vandermaaten2008visualizing} on the similarity matrix.
+  \item \textbf{Structural vulnerability}: Local bridge detection (edges with no common neighbors), true bridge detection (edges whose removal disconnects the graph).
+  \item \textbf{Link prediction}: Logistic regression on topological features (Adamic-Adar~\citep{adamic2003friends}, common neighbors, Jaccard index, degree sum)~\citep{lu2011link}.
+  \item \textbf{Core-periphery}: $k$-core decomposition and Borgatti-Everett continuous model~\citep{borgatti2000models}.
+  \item \textbf{Rich-club analysis}: Normalized rich-club coefficient $\rho(k)$ against 100 configuration model realizations~\citep{colizza2006detecting}.
+  \item \textbf{Null models}: Erd\H{o}s-R\'enyi (same density), configuration model (same degree sequence), geometric random graph (same edge count)---100 realizations each.
+  \item \textbf{Communicability}: Matrix-exponential communicability and Estrada index~\citep{estrada2008communicability}.
+\end{itemize}
+
+
+% ============================================================
+\section{Results}
+\label{sec:results}
+% ============================================================
+
+We organize results around three questions: (1) How does the concept network encode platform identity? (2) What structural role do agentic process concepts play? (3) How robust is cross-platform integration?
+
+\subsection{Platform invisibility}
+\label{sec:results:invisible}
+
+The concept network's most striking property is the near-complete absence of platform signal in its structure.
+
+\paragraph{Information content.}
+Mutual information analysis reveals that community membership carries $48.5\times$ more information about a concept's neighbor identity than platform does (Table~\ref{tab:information}).
+The normalized MI for platform is $0.007$---observing a concept's neighborhood tells you essentially nothing about whether it came from ChatGPT or Claude Code.
+In contrast, community NMI ($0.162$) provides meaningful predictive power, confirming that the network is organized by semantic content, not origin.
+
+\begin{table}[t]
+  \centering
+  \caption{Mutual information between node attributes and neighbor attributes.  Community membership is $48.5\times$ more informative than platform.}
+  \label{tab:information}
+  \begin{tabular}{lccc}
+    \toprule
+    Attribute & MI (bits) & $H$ (bits) & Norm.\ MI \\
+    \midrule
+    Platform   & 0.007 & 0.900 & 0.007 \\
+    Community  & 0.316 & 1.949 & 0.162 \\
+    \midrule
+    Ratio (community / platform) & \multicolumn{3}{c}{$\mathbf{48.5\times}$} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Geometric embedding.}
+Dimensionality reduction confirms this finding geometrically.
+In t-SNE projection of the concept similarity matrix, $69.4\%$ of agentic concepts fall \emph{inside} the convex hull of ChatGPT concepts (Figure~\ref{fig:tsne}).
+Communities separate $4.5\times$ more cleanly than platforms (mean intra-class $-$ inter-class similarity: $0.057$ for community vs.\ $0.013$ for platform).
+Agentic concepts are literally embedded within the ChatGPT knowledge cloud, not forming a separate region.
+
+\paragraph{Communicability.}
+The ratio of cross-platform to same-platform communicability (matrix exponential) is $1.005$---information traverses the network with effectively identical efficiency regardless of platform boundaries~\citep{estrada2008communicability}.
+The concept network is a single communicability basin.
+
+\begin{figure}[t]
+  \centering
+  \fbox{\parbox{0.9\linewidth}{\centering\small\textit{Figure placeholder: t-SNE projection of 115 concepts.
+  ChatGPT concepts in {\color{cgblue}blue}, agentic in {\color{agred}red}.
+  Dashed line: ChatGPT convex hull enclosing 69.4\% of agentic points.
+  Communities shown as background shading.}}}
+  \caption{t-SNE embedding of the concept space.  Agentic process concepts (red) are geometrically embedded within the ChatGPT knowledge cloud (blue).  Community structure (shaded regions) provides $4.5\times$ stronger separation than platform identity.}
+  \label{fig:tsne}
+\end{figure}
+
+
+\subsection{The rebar architecture}
+\label{sec:results:rebar}
+
+Although platform is invisible to the \emph{static} network, the two platforms contribute asymmetrically to its structural backbone.
+We characterize this asymmetry through percolation, resilience, and triadic analysis.
+
+\paragraph{Percolation dominance.}
+As the similarity threshold rises above $\theta = 0.70$, the network fragments.
+Figure~\ref{fig:percolation} tracks the giant component fraction and its agentic composition.
+At the critical threshold $\theta_c \approx 0.80$, the giant component drops below $50\%$.
+At $\theta = 0.85$, only 11 concepts remain connected---and $81.8\%$ of them are agentic (9 agentic, 2 ChatGPT), compared to the baseline composition of $31.3\%$.
+The strongest concept-level connections in the entire network are between agentic process concepts: debugging links to testing links to refactoring with similarities above $0.85$.
+
+\paragraph{Resilience asymmetry.}
+Despite forming the strongest core, agentic concepts are not structurally necessary.
+Removing \emph{all 36 agentic concepts} leaves the giant component at $66.1\%$ of the original---the ChatGPT knowledge backbone remains self-sufficient.
+Conversely, it requires removing $70\%$ of ChatGPT concepts to halve the giant component.
+
+This is the rebar-in-concrete asymmetry: agentic process concepts are the strongest-bonded material, binding distant knowledge domains through shared cognitive patterns (iteration, decomposition, abstraction).
+But ChatGPT knowledge concepts provide the structural mass---the volume and interconnection that hold the network together even without the rebar.
+
+\begin{figure}[t]
+  \centering
+  \fbox{\parbox{0.9\linewidth}{\centering\small\textit{Figure placeholder: Percolation cascade.
+  Left axis: GC fraction (solid line) vs.\ threshold.
+  Right axis: agentic \% in GC (dashed line).
+  Dramatic crossover at $\theta = 0.80$: GC drops below 50\% while agentic \% rises to 81.8\% at $\theta = 0.85$.}}}
+  \caption{Percolation analysis of the concept network.  As threshold rises, the giant component fragments---but agentic concepts are the last to disconnect.  At $\theta = 0.85$, the residual GC is $81.8\%$ agentic.}
+  \label{fig:percolation}
+\end{figure}
+
+\paragraph{Triadic structure.}
+Triangle census provides a motif-level view of the rebar function.
+Compared to degree-preserving configuration models, the concept network has $3.0\times$ more triangles than expected ($z = 48.4$).
+Critically, all four platform-composition types (CCC, CCA, CAA, AAA) are equally over-represented ($z = 20$--$28$), confirming that triangle formation is topological, not a platform-segregation artifact.
+
+At the per-node level, agentic concepts participate in cross-platform triangles at a dramatically higher rate: $67\%$ of agentic triangles involve at least one ChatGPT concept, versus $42\%$ for ChatGPT concepts ($p < 0.0001$).
+Agentic concepts rarely close triads with only other agentic concepts; they exist to stitch ChatGPT knowledge into cross-platform structures.
+
+\subsection{Cross-platform mirrors}
+\label{sec:results:mirrors}
+
+We identify cross-platform ``mirror'' pairs: the best 1-to-1 matching between each ChatGPT concept and its most similar agentic counterpart.
+Of 36 possible pairs, 14 are ``strong mirrors'' with similarity $\geq 0.80$ (Table~\ref{tab:mirrors}).
+
+The strongest mirror is ``Bayesian inference as model selection,'' independently extracted from both platforms with near-identical embedding (sim $= 0.943$)---the second-strongest edge in the \emph{entire} network.
+Other strong mirrors include ``Problem Decomposition'' ($0.908$), ``Knowledge Graphs / Knowledge Graphing'' ($0.916$), and ``Pattern of Abstraction / Abstraction and Simplification'' ($0.877$).
+These are genuine cognitive primitives: the same reasoning patterns encoded identically regardless of whether the user encountered them through conversational exploration or engineering practice.
+
+Strong mirror pairs occupy the network's most central positions: $1.9\times$ higher degree, $1.9\times$ higher betweenness, and $1.5\times$ higher $k$-core than unmatched concepts ($p < 10^{-6}$).
+Though they represent only $24\%$ of nodes ($14$ pairs $= 28$ concepts), they form the structural backbone.
+
+\begin{table}[t]
+  \centering
+  \caption{Top cross-platform concept mirrors.  All five strongest mirrors occupy the same Louvain community.}
+  \label{tab:mirrors}
+  \begin{tabular}{p{2.4cm}p{2.4cm}r}
+    \toprule
+    ChatGPT concept & Agentic concept & Sim \\
+    \midrule
+    Bayesian inference as model selection & Bayesian inference as model selection & .943 \\
+    Knowledge Graphs \& Network Analysis & Knowledge Graphing & .916 \\
+    Problem Decomposition & Problem Decomposition & .908 \\
+    Iterative Dev.\ \& Refining & Iterative Problem-Solving & .894 \\
+    Pattern of Abstraction & Abstraction \& Simplification & .877 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+\subsection{Structural robustness}
+\label{sec:results:robust}
+
+Cross-platform integration is not merely present---it is the network's most robust structural feature, by several independent measures.
+
+\paragraph{Zero fragile cross-platform links.}
+Of 9 local bridges (edges sharing no common neighbors) and 8 true bridges (edges whose removal disconnects the graph), \emph{none} are cross-platform.
+All structurally fragile edges are same-platform peripheral connections linking niche concepts within ChatGPT or within the agentic corpus.
+Cross-platform edges are deeply embedded: they share on average $36.8\%$ of their endpoints' neighbors, slightly more than same-platform edges ($35.2\%$, $p = 0.066$).
+
+\paragraph{Threshold invariance.}
+Sweeping $\theta$ from $0.55$ to $0.85$, the cross-platform edge fraction remains remarkably stable: $35$--$44\%$ with coefficient of variation $0.062$ (Figure~\ref{fig:robustness}).
+This is the most robust metric in the entire analysis; by comparison, community count varies with CV $= 1.24$ and modularity with CV $= 0.73$.
+At the extreme tail ($\theta \geq 0.90$), cross-platform pairs reach $50\%$, because the very highest similarities are identical cognitive primitives appearing on both platforms.
+
+\begin{figure}[t]
+  \centering
+  \fbox{\parbox{0.9\linewidth}{\centering\small\textit{Figure placeholder: Cross-platform fraction vs.\ threshold.
+  Horizontal band at $\sim$40\% with CV $= 0.062$.
+  Comparison: modularity Q (CV $= 0.73$) and community count (CV $= 1.24$) overlaid as dashed lines showing high variability.}}}
+  \caption{Threshold robustness of cross-platform edge fraction.  The $\sim$$40\%$ cross-platform fraction is the most stable network metric, barely varying from $\theta = 0.55$ to $0.85$.}
+  \label{fig:robustness}
+\end{figure}
+
+\paragraph{Topological predictability.}
+Logistic regression predicts cross-platform edge existence from topological features alone at AUC $= 0.956$ (Table~\ref{tab:prediction}).
+The dominant predictor is the Adamic-Adar index~\citep{adamic2003friends}---concept pairs sharing many well-connected common neighbors are virtually guaranteed to be linked, regardless of platform.
+A single feature (Adamic-Adar) achieves AUC $= 0.951$, nearly matching the full eight-feature model.
+Cross-platform links are structurally \emph{necessary}: they connect concepts that should be connected based on their neighborhood topology.
+
+\begin{table}[t]
+  \centering
+  \caption{Cross-platform edge prediction from topology.  A single topological feature achieves AUC $= 0.951$.}
+  \label{tab:prediction}
+  \begin{tabular}{lr}
+    \toprule
+    Model & AUC \\
+    \midrule
+    Full model (8 features) & $0.956 \pm 0.015$ \\
+    Adamic-Adar alone & 0.951 \\
+    Common neighbors alone & 0.946 \\
+    Degree sum alone & 0.868 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+\subsection{Core-periphery organization}
+\label{sec:results:core}
+
+The concept network exhibits clear core-periphery structure with a cross-platform gradient.
+
+\paragraph{$k$-core decomposition.}
+The innermost core ($k = 19$, 31 nodes, density $0.82$) contains 19 ChatGPT and 12 agentic concepts---a $61$:$39$ ratio, compared to the full network's $69$:$31$.
+Agentic concepts are disproportionately represented in the core.
+Cross-platform edge fraction increases from $39.1\%$ (full network) to $47.3\%$ (inner cores), confirming that the core is where platforms converge.
+
+\paragraph{Borgatti-Everett coreness.}
+Continuous core-periphery modeling~\citep{borgatti2000models} assigns coreness scores $c_i \in [0, 1]$.
+The top-scoring concepts are ``Iterative Refining'' (agentic, $c = 0.925$) and ``Problem-Solving Frameworks'' (ChatGPT, $c = 0.911$).
+Coreness correlates with cross-platform degree at $\rho = 0.894$ ($p < 10^{-40}$)---being structurally central is nearly synonymous with being cross-platform connected.
+
+\paragraph{Rich-club effect.}
+High-degree concepts interconnect $20$--$34\%$ more densely than expected from their degree sequence (normalized $\rho = 1.2$--$1.3$, $z > 20$; \citealt{colizza2006detecting}).
+Within this rich club, agentic concepts are more cross-platform (8 of 10 connections cross platforms) than ChatGPT concepts (3 of 10), quantifying the rebar role at the elite level.
+
+\paragraph{Flat topology.}
+The concept network contains \emph{zero} hub nodes (all within-module $z$-scores $< 2.5$ in the Guimer\`a-Amaral classification; \citealt{guimera2005functional}).
+Bridging is distributed across 37 satellite connectors rather than concentrated in a few hubs---a leaderless, egalitarian architecture.
+
+
+\subsection{Null model validation}
+\label{sec:results:null}
+
+Three null model batteries confirm the significance of the observed structure.
+
+\begin{itemize}
+  \item \textbf{Clustering}: $3.0\times$ more triangles than the configuration model ($z = 48.4$); $2.8\times$ more than Erd\H{o}s-R\'enyi ($z = 60.1$).  The clustering is genuine, not an artifact of the degree sequence.
+  \item \textbf{Cross-platform mixing}: The observed $39.1\%$ is \emph{lower} than the configuration model null ($43.5\%$, $p < 0.001$), meaning same-platform concepts are slightly more similar than cross-platform concepts.  The null model correction is important: cross-platform integration is real but is not \emph{stronger} than chance---it is structured differently from chance, with cross-platform edges concentrated in the core rather than uniformly distributed.
+  \item \textbf{Network class}: Clustering falls between Erd\H{o}s-R\'enyi ($z = +60$) and geometric random graphs ($z = -9.4$), placing the concept network in the ``small-world semantic space'' regime---more structured than random but less constrained than geometry.
+\end{itemize}
+
+
+% ============================================================
+\section{Discussion}
+\label{sec:discussion}
+% ============================================================
+
+\subsection{A unified cognitive space}
+
+The central finding of this study is that a single user's cognitive concepts, extracted from two different AI platforms over two years, form a \emph{unified} network organized by semantic content rather than platform origin.
+Platform identity carries only $0.7\%$ of the information that community membership carries about network neighborhoods.
+This extends the ``extended mind'' thesis~\citep{clark1998extended}: not only do external AI tools function as cognitive extensions, but the \emph{conceptual structures} they help construct converge across tools.
+The user does not maintain separate ``ChatGPT knowledge'' and ``Claude Code knowledge''---they maintain a single cognitive repertoire that manifests through whatever tool is at hand.
+
+This convergence is not trivially expected.
+ChatGPT concepts are predominantly \emph{epistemic} (``Bayesian inference,'' ``Statistical Modeling''), while agentic concepts are predominantly \emph{practical} (``Iterative Refining,'' ``Debugging'').
+That these semantically different concept types intermix into a single network---with $40\%$ of edges crossing the platform boundary at every threshold---suggests that the underlying cognitive operations (abstraction, decomposition, iteration) transcend the knowledge/practice distinction.
+
+\subsection{The rebar metaphor}
+
+The asymmetric architecture we describe differs from the ``hub-and-spoke'' or ``rich-get-richer'' models common in network science~\citep{barabasi1999emergence}.
+There are no hubs.
+Instead, the two platforms contribute complementary structural materials:
+
+\begin{itemize}
+  \item \textbf{Concrete (ChatGPT knowledge)}: 79 concepts providing the bulk and the load-bearing structure. The network survives complete agentic removal. Knowledge concepts form the mass of the giant component at every threshold.
+  \item \textbf{Rebar (agentic process)}: 36 concepts forming the strongest internal bonds. They dominate the residual core under percolation ($81.8\%$ at $\theta = 0.85$) and participate in cross-platform triangles at $67\%$ vs.\ $42\%$. They bind the concrete together.
+\end{itemize}
+
+This metaphor has a precise structural interpretation.
+In reinforced concrete, the rebar's tensile strength resists cracking while the concrete's compressive strength bears the load.
+In the concept network, process concepts' high mutual similarity ($> 0.85$) resists fragmentation under threshold pressure, while knowledge concepts' broad coverage maintains connectivity.
+Neither material functions alone: unreinforced concrete cracks (a knowledge-only network has no strong cross-domain links); rebar without concrete collapses (the 36 agentic concepts alone form a tiny, disconnected graph).
+
+\subsection{Structural inevitability of cross-platform links}
+
+The AUC of $0.956$ for cross-platform edge prediction from topology alone (Section~\ref{sec:results:robust}) is perhaps the most consequential result for network theory.
+It means that cross-platform edges are not random additions to the network---they are \emph{topologically required}.
+The Adamic-Adar predictor's dominance indicates that cross-platform links arise where two concepts share many well-connected common neighbors.
+In other words, the network generates its own cross-platform integration through local structure.
+
+This has implications for the study of multiplex networks more broadly~\citep{boccaletti2014structure,kivela2014multilayer}.
+When different layers of a system share an underlying semantic space, inter-layer links may be structurally determined rather than requiring a separate generative mechanism.
+The concept layer does not need a ``cross-platform attachment rule''---it needs only cosine similarity in a shared embedding space, and the cross-platform structure emerges from the geometry.
+
+\subsection{Comparison with multiplex network literature}
+
+The ``single communicability basin'' finding (cross/same ratio $= 1.005$) contrasts with multiplex systems where inter-layer communication is substantially weaker than intra-layer.
+In brain networks, structural and functional layers show complementary but not identical organization~\citep{bullmore2009complex}.
+In social games, positive, negative, and economic layers encode largely distinct structure~\citep{szell2010multirelational}.
+Our concept network is more integrated than these systems: once concepts are embedded in a shared space, platform identity genuinely vanishes from the communication dynamics.
+
+However, the null model correction (Section~\ref{sec:results:null}) tempers this conclusion.
+Cross-platform mixing at $39\%$ is \emph{below} the $43.5\%$ configuration model null, meaning same-platform concepts are slightly more similar than cross-platform concepts.
+The integration is real but does not \emph{exceed} what the degree sequence alone would produce; rather, it is \emph{structured differently}, concentrated in the core ($47\%$) rather than uniformly distributed.
+
+\subsection{Limitations}
+
+\textbf{Single subject.}
+This study analyzes one user's AI archives.
+Whether the rebar architecture generalizes to other users---or reflects this individual's particular cognitive style---remains open.
+
+\textbf{LLM-mediated concept extraction.}
+Concepts are extracted by a language model (llama3.2), introducing a layer of interpretation.
+Exact concept names vary across runs (10\% exact-match stability), though semantic themes are robust.
+Different extraction LLMs produce varying concept inventories for technical domains, though philosophical/abstract concepts show near-perfect cross-model agreement ($> 0.95$).
+
+\textbf{Threshold dependence.}
+While the cross-platform fraction is stable (CV $= 0.062$), community structure varies substantially with threshold (CV $= 1.24$).
+The specific community assignments should be interpreted with caution.
+
+\textbf{Asymmetric source corpora.}
+The ChatGPT archive spans 29 months with 1,908 conversations; the Claude Code archive spans 3.4 months with 3,945 sessions.
+The $79$:$36$ concept ratio reflects this asymmetry.
+A longer agentic observation period might alter the balance.
+
+\textbf{No causal claims.}
+The convergence we observe is correlational.
+We cannot determine whether the user's ChatGPT experience \emph{caused} their Claude Code concepts to align, whether both reflect pre-existing cognitive structure, or whether the shared embedding model imposes convergence.
+
+
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% ============================================================
+
+We have shown that cognitive concepts extracted from a single user's two-year engagement with both conversational and agentic AI form a unified semantic network in which platform identity is virtually invisible ($48.5\times$ less informative than community membership).
+The network's architecture is asymmetric: agentic process concepts form the strongest internal bonds (dominating the residual core under percolation) while ChatGPT knowledge concepts provide the structural mass (the network survives complete agentic removal).
+Cross-platform integration is the network's most robust feature: zero fragile cross-platform links, stable $\sim$$40\%$ fraction across all thresholds, and near-perfect topological predictability (AUC $= 0.956$).
+
+The rebar-in-concrete metaphor captures a structural principle that may extend beyond this case study: when a person uses multiple cognitive tools, \emph{process knowledge} (how to think) may bind \emph{domain knowledge} (what to think about) into a coherent whole.
+The concepts that transcend platforms---iteration, decomposition, abstraction, pattern recognition---are not specialized to any domain or tool.
+They are the cognitive rebar: the strongest, most cross-cutting, most structurally central elements of the knowledge network.
+
+Future work should test this architecture across multiple users, longer time horizons, and additional AI platforms.
+If the rebar-in-concrete pattern generalizes, it would suggest that AI-assisted cognition converges on platform-independent conceptual structures---that the tools we use to think become invisible once we extract the thoughts themselves.
+
+
+% ============================================================
+% References
+% ============================================================
+\bibliography{rebar-refs}
+
+\end{document}
