@@ -1,0 +1,212 @@
+{
+  "experiment": "F71: Random Walk Information Flow",
+  "threshold": 0.7,
+  "top_pagerank": [
+    {
+      "name": "Problem-Solving Strategies",
+      "platform": "chatgpt",
+      "pagerank": 0.02296,
+      "degree": 67
+    },
+    {
+      "name": "Iterative Refining",
+      "platform": "agentic",
+      "pagerank": 0.0213,
+      "degree": 62
+    },
+    {
+      "name": "Pattern Recognition",
+      "platform": "agentic",
+      "pagerank": 0.0193,
+      "degree": 57
+    },
+    {
+      "name": "Pattern of Abstraction",
+      "platform": "chatgpt",
+      "pagerank": 0.01849,
+      "degree": 55
+    },
+    {
+      "name": "Iterative Refinement",
+      "platform": "agentic",
+      "pagerank": 0.01781,
+      "degree": 52
+    },
+    {
+      "name": "Rule-Based Reasoning",
+      "platform": "chatgpt",
+      "pagerank": 0.01715,
+      "degree": 52
+    },
+    {
+      "name": "Problem-Solving Frameworks",
+      "platform": "chatgpt",
+      "pagerank": 0.01712,
+      "degree": 51
+    },
+    {
+      "name": "Iterative Inference",
+      "platform": "chatgpt",
+      "pagerank": 0.01615,
+      "degree": 48
+    },
+    {
+      "name": "Knowledge Graphs and Network Analysis",
+      "platform": "chatgpt",
+      "pagerank": 0.01608,
+      "degree": 46
+    },
+    {
+      "name": "Meta-Reflection",
+      "platform": "agentic",
+      "pagerank": 0.01538,
+      "degree": 46
+    },
+    {
+      "name": "Abstract Reasoning",
+      "platform": "chatgpt",
+      "pagerank": 0.01523,
+      "degree": 46
+    },
+    {
+      "name": "Reverse-Process Thinking",
+      "platform": "chatgpt",
+      "pagerank": 0.01522,
+      "degree": 46
+    },
+    {
+      "name": "Cognitive Frameworks",
+      "platform": "chatgpt",
+      "pagerank": 0.01509,
+      "degree": 43
+    },
+    {
+      "name": "Critical Thinking Analysis",
+      "platform": "chatgpt",
+      "pagerank": 0.01488,
+      "degree": 45
+    },
+    {
+      "name": "Debugging Iterative Refinement",
+      "platform": "agentic",
+      "pagerank": 0.01484,
+      "degree": 43
+    }
+  ],
+  "top_betweenness": [
+    {
+      "name": "Iterative Refining",
+      "platform": "agentic",
+      "betweenness": 0.04813,
+      "pagerank": 0.0213
+    },
+    {
+      "name": "Problem-Solving Strategies",
+      "platform": "chatgpt",
+      "betweenness": 0.0444,
+      "pagerank": 0.02296
+    },
+    {
+      "name": "Error Analysis",
+      "platform": "agentic",
+      "betweenness": 0.04068,
+      "pagerank": 0.00813
+    },
+    {
+      "name": "Computability Theory",
+      "platform": "chatgpt",
+      "betweenness": 0.03881,
+      "pagerank": 0.0099
+    },
+    {
+      "name": "Cognitive Architectures and Reasoning",
+      "platform": "chatgpt",
+      "betweenness": 0.03866,
+      "pagerank": 0.01411
+    },
+    {
+      "name": "Iterative Refactoring Loop",
+      "platform": "agentic",
+      "betweenness": 0.03617,
+      "pagerank": 0.01015
+    },
+    {
+      "name": "Pattern Recognition",
+      "platform": "agentic",
+      "betweenness": 0.03369,
+      "pagerank": 0.0193
+    },
+    {
+      "name": "Code Block Management",
+      "platform": "chatgpt",
+      "betweenness": 0.03322,
+      "pagerank": 0.00456
+    },
+    {
+      "name": "Markov Decision Processes",
+      "platform": "chatgpt",
+      "betweenness": 0.02965,
+      "pagerank": 0.00934
+    },
+    {
+      "name": "Data Processing and Analysis",
+      "platform": "chatgpt",
+      "betweenness": 0.0295,
+      "pagerank": 0.01292
+    }
+  ],
+  "platform_pagerank": {
+    "chatgpt": {
+      "total": 0.6721,
+      "mean": 0.00851,
+      "n": 79
+    },
+    "agentic": {
+      "total": 0.3279,
+      "mean": 0.00911,
+      "n": 36
+    }
+  },
+  "centrality_correlations": {
+    "betweenness_vs_pagerank": {
+      "spearman_rho": 0.7496,
+      "p_value": 0.0
+    },
+    "betweenness_vs_closeness": {
+      "spearman_rho": 0.7372,
+      "p_value": 0.0
+    },
+    "betweenness_vs_degree": {
+      "spearman_rho": 0.7181,
+      "p_value": 0.0
+    },
+    "closeness_vs_pagerank": {
+      "spearman_rho": 0.9176,
+      "p_value": 0.0
+    },
+    "closeness_vs_degree": {
+      "spearman_rho": 0.9783,
+      "p_value": 0.0
+    },
+    "degree_vs_pagerank": {
+      "spearman_rho": 0.9442,
+      "p_value": 0.0
+    }
+  },
+  "pagerank_vs_cross_platform": {
+    "spearman_rho": 0.3821,
+    "p_value": 3e-05
+  },
+  "random_walk_chatgpt_to_agentic": {
+    "n_walks": 1000,
+    "reached": 993,
+    "mean_steps": 4.18,
+    "median_steps": 3.0
+  },
+  "random_walk_agentic_to_chatgpt": {
+    "n_walks": 1000,
+    "reached": 896,
+    "mean_steps": 1.96,
+    "median_steps": 1.0
+  }
+}

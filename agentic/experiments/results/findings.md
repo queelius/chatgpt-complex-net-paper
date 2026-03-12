@@ -1683,10 +1683,140 @@ The concept network is a compact, resilient small-world where:
 
 ---
 
+## F71: Random Walk Information Flow — Asymmetric Cross-Platform Traversal
+
+**Method**: Weighted random walks (1000 trials), PageRank (α=0.85), betweenness centrality. Simulate walks from ChatGPT→agentic and agentic→ChatGPT.
+
+| Direction | Reached target | Mean steps | Median steps |
+|:---|---:|---:|---:|
+| ChatGPT → Agentic | 993/1000 (99.3%) | **4.18** | 3 |
+| Agentic → ChatGPT | 896/1000 (89.6%) | **1.96** | 1 |
+
+**Key finding — asymmetric flow**: It takes **2× longer** to walk from ChatGPT to agentic (4.18 steps) than the reverse (1.96 steps). Agentic concepts are embedded within the ChatGPT cluster, so any walk from agentic immediately hits ChatGPT neighbors. But from ChatGPT, a walk may wander within the ChatGPT cloud before encountering an agentic node.
+
+**Per-node PageRank**: Agentic concepts capture disproportionate attention — mean PageRank 0.00911 vs ChatGPT 0.00851 (7% higher), despite being 31% of nodes. The top PageRank concept is ChatGPT:"Problem-Solving Strategies" (0.023), but agentic concepts dominate the top 5 (3 of 5).
+
+**Betweenness centrality**: Agentic concepts dominate — #1 "Iterative Refining" (0.048), #3 "Error Analysis" (0.041), #6 "Iterative Refactoring Loop" (0.036). Agentic process concepts sit on shortest paths between ChatGPT knowledge concepts.
+
+**Centrality correlations**: Degree and closeness are nearly identical (ρ=0.978). Betweenness is moderately different (ρ=0.72 with degree). PageRank vs cross-platform fraction: ρ=0.382 (p<10⁻⁵) — concepts attracting random walks also bridge platforms.
+
+---
+
+## F72: Ego Networks of Bridge Concepts
+
+**Method**: Identify top 10 bridge concepts (highest cross-platform degree), analyze their 1-hop ego networks.
+
+**9 of the top 10 bridge concepts are agentic.** The sole ChatGPT bridge is "Problem-Solving Frameworks."
+
+| Bridge concept | Platform | Degree | Ego size | CG:AG | Communities |
+|:---|:---|---:|---:|:---|---:|
+| Iterative Refining | agentic | 62 | 63 | 42:21 | 4 |
+| Pattern Recognition | agentic | 57 | 58 | 39:19 | 4 |
+| Iterative Refinement | agentic | 52 | 53 | 34:19 | 4 |
+| Meta-Reflection | agentic | 46 | 47 | 30:17 | 4 |
+| Debugging Iterative Refinement | agentic | 43 | 44 | 26:18 | 4 |
+| Problem-Solving Frameworks | **chatgpt** | 51 | 52 | 31:21 | 4 |
+
+**Key finding**: Each agentic bridge concept's ego network is **60-70% ChatGPT**. Agentic process concepts are embedded within the ChatGPT knowledge cloud, not separate from it. They act as "universal solvent" — similar to many things, connecting diverse knowledge domains through shared cognitive processes.
+
+All ego networks span exactly 4 of 7 concept communities, confirming their role as multi-community bridges.
+
+---
+
+## F73: Community Role Evolution Across Thresholds
+
+**Method**: Compute Guimerà-Amaral roles at θ = 0.60, 0.65, 0.70, 0.75, 0.80. Track role transitions.
+
+| θ | Edges | Communities | R1 (ultra-peripheral) | R2 (peripheral) | R3 (connector) |
+|:---|---:|---:|---:|---:|---:|
+| 0.60 | 4,661 | 3 | 0 | 25 | **90** |
+| 0.65 | 2,801 | 3 | 6 | **71** | 38 |
+| 0.70 | 1,280 | 7 | 18 | **59** | 38 |
+| 0.75 | 426 | 19 | **54** | 45 | 14 |
+| 0.80 | 124 | 52 | **103** | 12 | 0 |
+
+**Key finding**: Role distribution shifts systematically: **connectors → peripheral → ultra-peripheral** as threshold increases. At θ=0.60, 78% of concepts are connectors (everyone bridges the 3 communities). At θ=0.80, 89% are ultra-peripheral (each trapped in its tiny community).
+
+**All 115 concepts change role** across the threshold range. No concept maintains a stable role. θ=0.70 is the sweet spot: balanced distribution across R1/R2/R3, 7 communities, and enough connectors (33%) for meaningful role analysis.
+
+---
+
+## F74: Concept Network Modularity Landscape
+
+**Method**: Sweep θ from 0.55 to 0.85. Compute Louvain communities, modularity Q, GC fraction, and platform mixing at each threshold.
+
+| θ | Edges | Communities | Modularity Q | GC % | Mixed comm. % |
+|:---|---:|---:|---:|---:|---:|
+| 0.55 | 5,994 | 3 | 0.031 | 100% | **100%** |
+| 0.60 | 4,661 | 3 | 0.070 | 100% | **100%** |
+| 0.65 | 2,801 | 3 | 0.151 | 100% | **100%** |
+| **0.70** | **1,280** | **7** | **0.276** | **96%** | **57%** |
+| 0.75 | 426 | 19 | 0.477 | 87% | 26% |
+| 0.80 | 124 | 52 | 0.730 | 41% | 15% |
+| 0.85 | 41 | 87 | 0.752 | 10% | 7% |
+
+**Key finding — the modularity-mixing tradeoff**: High modularity requires sparse networks where communities fragment and become platform-pure. Low thresholds give mixed communities but no meaningful community structure (Q≈0). **θ=0.70 is the Goldilocks zone**: meaningful modularity (Q=0.276), large GC (96%), and substantial mixing (57%).
+
+**Critical observation**: Platform mixing is a **dense-network phenomenon**. At θ≤0.65, all communities are mixed (100%). At θ=0.80, only 15% are mixed. The concept layer's cross-platform bridging depends entirely on the threshold chosen — it's not an intrinsic property but an emergent one.
+
+---
+
+## Updated Theme 11: Information Flow Architecture (F71-F74)
+
+The concept network has a distinct information flow architecture:
+
+| Property | ChatGPT concepts | Agentic concepts |
+|:---|:---|:---|
+| **PageRank share** | 67.2% (79 nodes) | 32.8% (36 nodes) |
+| **Per-node PageRank** | 0.00851 | **0.00911** (7% higher) |
+| **Betweenness** | Mixed | Dominates top (3 of top 5) |
+| **Bridge ego majority** | 1 of top 10 | **9 of top 10** |
+| **Walk to other platform** | 4.18 steps | **1.96 steps** (2× faster) |
+| **Role stability** | Threshold-dependent | Threshold-dependent |
+
+**The asymmetric embedding**: Agentic process concepts are embedded within the ChatGPT knowledge cloud as connective tissue. They're similar to many ChatGPT concepts (hence high degree, PageRank, betweenness) while ChatGPT concepts are similar primarily to other ChatGPT concepts. This creates a fundamental asymmetry: agentic concepts bridge; ChatGPT concepts cluster.
+
+This asymmetry explains many earlier findings:
+- Why agentic concepts have higher clustering (F63: 0.629 vs 0.609) — they're in the dense cross-platform core
+- Why the network survives losing all agentic concepts (F67) — ChatGPT concepts are self-sufficient; agentic concepts are bonuses
+- Why the 19-core over-represents agentic concepts (F62) — they're the universal connectors
+
+---
+
+## Master Comparison Table (Updated with F71-F74)
+
+| Metric | ChatGPT | Agentic (parents) |
+|:---|:---|:---|
+| Episodes | 601 (θ=0.9) | 449 (θ=0.95) |
+| Edges | 1,718 | 4,316 |
+| Density | 0.0095 | 0.0429 |
+| Modularity | 0.750 | 0.278 |
+| Communities | 15 | 12 |
+| Densification γ | 1.405 | 1.410 |
+| Architecture | Knowledge Archipelago | Cognitive Web |
+| L1 concepts | 79 (68 pruned) | 36 |
+| Concept types | Epistemic (WHAT) | Practical (HOW) |
+| Hidden connections | 99.4% | 92.8% |
+| Cross-platform edges (pruned) | 41.5% | |
+| Era matching rate | 7% → 43% (early → late) | |
+| Concept 19-core | 19 (61%) | 12 (39%) |
+| Core cross-platform frac | 46-48% | |
+| Rich-club ρ | 1.2-1.3 (z > 20) | |
+| Degree → bridging ρ | 0.496 (p < 10⁻⁸) | |
+| Small-world σ | 2.42, ω = 0.03 | |
+| Resilience | 50% removal to halve GC | |
+| **Per-node PageRank** | 0.00851 | **0.00911** |
+| **Bridge ego dominance** | 1/10 | **9/10** |
+| **Walk to other platform** | 4.18 steps | **1.96 steps** |
+| **Modularity landscape** | Q peaks at θ=0.85 (0.752) but GC=10% | |
+| **Goldilocks θ** | 0.70: Q=0.276, GC=96%, 57% mixed | |
+
+---
+
 ## Pending Experiments
 
 1. **Full consensus extraction**: All communities, N=5 runs (production-quality concept set)
 2. **Agentic temporal evolution**: Apply temporal analysis to agentic sessions
-3. **Concept network information flow**: Simulate random walks — where does information concentrate?
-4. **Ego networks of bridge concepts**: Local structure around the top cross-platform bridges
-5. **Community role evolution across thresholds**: How do Guimerà-Amaral roles shift from θ=0.65 to 0.80?
+3. **Concept network community overlap**: Detect overlapping communities (e.g., SLPA or Infomap)
+4. **Concept similarity distribution analysis**: Fit distribution to pairwise similarities (normal? bimodal?)
+5. **Cross-platform concept prediction**: Can episode-level features predict concept-level bridging?

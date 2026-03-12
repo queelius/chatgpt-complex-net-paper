@@ -1,0 +1,286 @@
+{
+  "experiment": "F72: Ego Networks of Bridge Concepts",
+  "threshold": 0.7,
+  "top_bridges": [
+    {
+      "name": "Iterative Refining",
+      "platform": "agentic",
+      "degree": 62,
+      "cross_platform_degree": 42,
+      "cross_platform_frac": 0.677,
+      "ego_size": 63,
+      "ego_chatgpt": 42,
+      "ego_agentic": 21,
+      "ego_communities": 4,
+      "ego_cross_edges": 336,
+      "ego_internal_edges": 451,
+      "mean_edge_weight": 0.7477,
+      "sample_chatgpt_neighbors": [
+        "Statistical Modeling and Estimation",
+        "Statistical Inference and Model Comparison",
+        "Cognitive Exploration",
+        "Critical Thinking Analysis",
+        "Abstract Reasoning"
+      ],
+      "sample_agentic_neighbors": [
+        "Meta-Reflection",
+        "Pattern Recognition",
+        "Abstraction and Modularity",
+        "Contextual Understanding",
+        "Iterative Refinement"
+      ]
+    },
+    {
+      "name": "Pattern Recognition",
+      "platform": "agentic",
+      "degree": 57,
+      "cross_platform_degree": 39,
+      "cross_platform_frac": 0.684,
+      "ego_size": 58,
+      "ego_chatgpt": 39,
+      "ego_agentic": 19,
+      "ego_communities": 4,
+      "ego_cross_edges": 318,
+      "ego_internal_edges": 399,
+      "mean_edge_weight": 0.7467,
+      "sample_chatgpt_neighbors": [
+        "Critical Thinking Analysis",
+        "Abstract Reasoning",
+        "Problem-Solving Frameworks",
+        "Knowledge Graphs and Schema",
+        "Cognitive Architectures and Reasoning"
+      ],
+      "sample_agentic_neighbors": [
+        "Meta-Reflection",
+        "Abstraction and Modularity",
+        "Iterative Refining",
+        "Contextual Understanding",
+        "Iterative Refinement"
+      ]
+    },
+    {
+      "name": "Iterative Refinement",
+      "platform": "agentic",
+      "degree": 52,
+      "cross_platform_degree": 34,
+      "cross_platform_frac": 0.654,
+      "ego_size": 53,
+      "ego_chatgpt": 34,
+      "ego_agentic": 19,
+      "ego_communities": 4,
+      "ego_cross_edges": 294,
+      "ego_internal_edges": 379,
+      "mean_edge_weight": 0.7491,
+      "sample_chatgpt_neighbors": [
+        "Bayesian Reasoning for Model Selection",
+        "Statistical Inference and Model Comparison",
+        "Cognitive Exploration",
+        "Critical Thinking Analysis",
+        "Abstract Reasoning"
+      ],
+      "sample_agentic_neighbors": [
+        "Meta-Reflection",
+        "Pattern Recognition",
+        "Abstraction and Modularity",
+        "Iterative Refining",
+        "Cognitive Looping"
+      ]
+    },
+    {
+      "name": "Meta-Reflection",
+      "platform": "agentic",
+      "degree": 46,
+      "cross_platform_degree": 30,
+      "cross_platform_frac": 0.652,
+      "ego_size": 47,
+      "ego_chatgpt": 30,
+      "ego_agentic": 17,
+      "ego_communities": 4,
+      "ego_cross_edges": 256,
+      "ego_internal_edges": 322,
+      "mean_edge_weight": 0.7479,
+      "sample_chatgpt_neighbors": [
+        "Markov Decision Processes",
+        "Cognitive Architectures",
+        "Cognitive Exploration",
+        "Critical Thinking Analysis",
+        "Philosophical Inquiry"
+      ],
+      "sample_agentic_neighbors": [
+        "Pattern Recognition",
+        "Abstraction and Modularity",
+        "Iterative Refining",
+        "Iterative Refinement",
+        "Cognitive Looping"
+      ]
+    },
+    {
+      "name": "Debugging Iterative Refinement",
+      "platform": "agentic",
+      "degree": 43,
+      "cross_platform_degree": 26,
+      "cross_platform_frac": 0.605,
+      "ego_size": 44,
+      "ego_chatgpt": 26,
+      "ego_agentic": 18,
+      "ego_communities": 4,
+      "ego_cross_edges": 249,
+      "ego_internal_edges": 272,
+      "mean_edge_weight": 0.7537,
+      "sample_chatgpt_neighbors": [
+        "Cognitive Exploration",
+        "Critical Thinking Analysis",
+        "Abstract Reasoning",
+        "Problem-Solving Frameworks",
+        "Pattern of Abstraction"
+      ],
+      "sample_agentic_neighbors": [
+        "Meta-Reflection",
+        "Pattern Recognition",
+        "Abstraction and Modularity",
+        "Iterative Refining",
+        "Contextual Understanding"
+      ]
+    },
+    {
+      "name": "Iterative Problem-Solving",
+      "platform": "agentic",
+      "degree": 39,
+      "cross_platform_degree": 24,
+      "cross_platform_frac": 0.615,
+      "ego_size": 40,
+      "ego_chatgpt": 24,
+      "ego_agentic": 16,
+      "ego_communities": 4,
+      "ego_cross_edges": 230,
+      "ego_internal_edges": 257,
+      "mean_edge_weight": 0.7553,
+      "sample_chatgpt_neighbors": [
+        "Cognitive Exploration",
+        "Critical Thinking Analysis",
+        "Abstract Reasoning",
+        "Problem-Solving Frameworks",
+        "Pattern of Abstraction"
+      ],
+      "sample_agentic_neighbors": [
+        "Meta-Reflection",
+        "Pattern Recognition",
+        "Iterative Refining",
+        "Iterative Refinement",
+        "Cognitive Looping"
+      ]
+    },
+    {
+      "name": "Abstraction and Simplification",
+      "platform": "agentic",
+      "degree": 36,
+      "cross_platform_degree": 24,
+      "cross_platform_frac": 0.667,
+      "ego_size": 37,
+      "ego_chatgpt": 24,
+      "ego_agentic": 13,
+      "ego_communities": 4,
+      "ego_cross_edges": 185,
+      "ego_internal_edges": 216,
+      "mean_edge_weight": 0.7483,
+      "sample_chatgpt_neighbors": [
+        "Cognitive Exploration",
+        "Critical Thinking Analysis",
+        "Abstract Reasoning",
+        "Problem-Solving Frameworks",
+        "Cognitive Architectures and Reasoning"
+      ],
+      "sample_agentic_neighbors": [
+        "Meta-Reflection",
+        "Pattern Recognition",
+        "Abstraction and Modularity",
+        "Iterative Refining",
+        "Iterative Refinement"
+      ]
+    },
+    {
+      "name": "Problem-Solving Frameworks",
+      "platform": "chatgpt",
+      "degree": 51,
+      "cross_platform_degree": 21,
+      "cross_platform_frac": 0.412,
+      "ego_size": 52,
+      "ego_chatgpt": 31,
+      "ego_agentic": 21,
+      "ego_communities": 4,
+      "ego_cross_edges": 328,
+      "ego_internal_edges": 365,
+      "mean_edge_weight": 0.75,
+      "sample_chatgpt_neighbors": [
+        "Cognitive Exploration",
+        "Critical Thinking Analysis",
+        "Philosophical Inquiry",
+        "Abstract Reasoning",
+        "Cognitive Architectures and Reasoning"
+      ],
+      "sample_agentic_neighbors": [
+        "Meta-Reflection",
+        "Pattern Recognition",
+        "Abstraction and Modularity",
+        "Iterative Refining",
+        "Contextual Understanding"
+      ]
+    },
+    {
+      "name": "Problem Decomposition",
+      "platform": "agentic",
+      "degree": 36,
+      "cross_platform_degree": 20,
+      "cross_platform_frac": 0.556,
+      "ego_size": 37,
+      "ego_chatgpt": 20,
+      "ego_agentic": 17,
+      "ego_communities": 4,
+      "ego_cross_edges": 221,
+      "ego_internal_edges": 212,
+      "mean_edge_weight": 0.7516,
+      "sample_chatgpt_neighbors": [
+        "Cognitive Exploration",
+        "Critical Thinking Analysis",
+        "Abstract Reasoning",
+        "Problem-Solving Frameworks",
+        "Development and Deployment"
+      ],
+      "sample_agentic_neighbors": [
+        "Meta-Reflection",
+        "Pattern Recognition",
+        "Abstraction and Modularity",
+        "Iterative Refining",
+        "Contextual Understanding"
+      ]
+    },
+    {
+      "name": "Analytical Insight Generation",
+      "platform": "agentic",
+      "degree": 28,
+      "cross_platform_degree": 20,
+      "cross_platform_frac": 0.714,
+      "ego_size": 29,
+      "ego_chatgpt": 20,
+      "ego_agentic": 9,
+      "ego_communities": 4,
+      "ego_cross_edges": 112,
+      "ego_internal_edges": 149,
+      "mean_edge_weight": 0.7449,
+      "sample_chatgpt_neighbors": [
+        "Markov Decision Processes",
+        "Cognitive Exploration",
+        "Abstract Reasoning",
+        "Problem-Solving Frameworks",
+        "Cognitive Architectures and Reasoning"
+      ],
+      "sample_agentic_neighbors": [
+        "Meta-Reflection",
+        "Pattern Recognition",
+        "Cognitive Looping",
+        "Problem Decomposition",
+        "Abstraction and Simplification"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,967 @@
+{
+  "experiment": "F73: Role Evolution Across Thresholds",
+  "thresholds_analyzed": [
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8
+  ],
+  "threshold_results": [
+    {
+      "threshold": 0.6,
+      "edges": 4661,
+      "communities": 3,
+      "density": 0.7111,
+      "role_distribution": {
+        "R2-peripheral": 25,
+        "R3-connector": 90
+      },
+      "role_platform": {
+        "R2-peripheral": {
+          "chatgpt": 14,
+          "agentic": 11
+        },
+        "R3-connector": {
+          "chatgpt": 65,
+          "agentic": 25
+        }
+      },
+      "mean_participation": {
+        "chatgpt": 0.6347,
+        "agentic": 0.6094
+      }
+    },
+    {
+      "threshold": 0.65,
+      "edges": 2801,
+      "communities": 3,
+      "density": 0.4273,
+      "role_distribution": {
+        "R1-ultra-peripheral": 6,
+        "R2-peripheral": 71,
+        "R3-connector": 38
+      },
+      "role_platform": {
+        "R1-ultra-peripheral": {
+          "chatgpt": 4,
+          "agentic": 2
+        },
+        "R2-peripheral": {
+          "chatgpt": 44,
+          "agentic": 27
+        },
+        "R3-connector": {
+          "chatgpt": 31,
+          "agentic": 7
+        }
+      },
+      "mean_participation": {
+        "chatgpt": 0.5502,
+        "agentic": 0.5255
+      }
+    },
+    {
+      "threshold": 0.7,
+      "edges": 1280,
+      "communities": 7,
+      "density": 0.1953,
+      "role_distribution": {
+        "R1-ultra-peripheral": 18,
+        "R2-peripheral": 59,
+        "R3-connector": 38
+      },
+      "role_platform": {
+        "R1-ultra-peripheral": {
+          "chatgpt": 11,
+          "agentic": 7
+        },
+        "R2-peripheral": {
+          "chatgpt": 41,
+          "agentic": 18
+        },
+        "R3-connector": {
+          "chatgpt": 27,
+          "agentic": 11
+        }
+      },
+      "mean_participation": {
+        "chatgpt": 0.4514,
+        "agentic": 0.4058
+      }
+    },
+    {
+      "threshold": 0.75,
+      "edges": 426,
+      "communities": 19,
+      "density": 0.065,
+      "role_distribution": {
+        "R1-ultra-peripheral": 54,
+        "R2-peripheral": 45,
+        "R3-connector": 14,
+        "R4-kinless": 2
+      },
+      "role_platform": {
+        "R1-ultra-peripheral": {
+          "chatgpt": 37,
+          "agentic": 17
+        },
+        "R2-peripheral": {
+          "chatgpt": 29,
+          "agentic": 16
+        },
+        "R3-connector": {
+          "chatgpt": 12,
+          "agentic": 2
+        },
+        "R4-kinless": {
+          "chatgpt": 1,
+          "agentic": 1
+        }
+      },
+      "mean_participation": {
+        "chatgpt": 0.2749,
+        "agentic": 0.2527
+      }
+    },
+    {
+      "threshold": 0.8,
+      "edges": 124,
+      "communities": 52,
+      "density": 0.0189,
+      "role_distribution": {
+        "R1-ultra-peripheral": 103,
+        "R2-peripheral": 12
+      },
+      "role_platform": {
+        "R1-ultra-peripheral": {
+          "chatgpt": 72,
+          "agentic": 31
+        },
+        "R2-peripheral": {
+          "chatgpt": 7,
+          "agentic": 5
+        }
+      },
+      "mean_participation": {
+        "chatgpt": 0.0367,
+        "agentic": 0.0393
+      }
+    }
+  ],
+  "n_role_changers": 115,
+  "role_changers": [
+    {
+      "name": "Bayesian Reasoning for Model Selection",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.723,
+          "p": 0.66
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": 0.772,
+          "p": 0.598
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": 1.009,
+          "p": 0.376
+        },
+        {
+          "threshold": 0.75,
+          "role": "R2-peripheral",
+          "z": 0.055,
+          "p": 0.408
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Autoregressive Modeling",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.292,
+          "p": 0.657
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": 0.609,
+          "p": 0.605
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": -0.601,
+          "p": 0.32
+        },
+        {
+          "threshold": 0.75,
+          "role": "R2-peripheral",
+          "z": -1.328,
+          "p": 0.5
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Knowledge Graph Embeddings",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": -0.285,
+          "p": 0.65
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": -1.639,
+          "p": 0.521
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": -0.689,
+          "p": 0.18
+        },
+        {
+          "threshold": 0.75,
+          "role": "R1-ultra-peripheral",
+          "z": -0.404,
+          "p": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": -0.34,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Markov Decision Processes",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.292,
+          "p": 0.648
+        },
+        {
+          "threshold": 0.65,
+          "role": "R3-connector",
+          "z": -0.042,
+          "p": 0.664
+        },
+        {
+          "threshold": 0.7,
+          "role": "R3-connector",
+          "z": -0.243,
+          "p": 0.68
+        },
+        {
+          "threshold": 0.75,
+          "role": "R2-peripheral",
+          "z": -0.251,
+          "p": 0.375
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Cognitive Architectures",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.254,
+          "p": 0.663
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": -0.108,
+          "p": 0.551
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": -0.302,
+          "p": 0.492
+        },
+        {
+          "threshold": 0.75,
+          "role": "R1-ultra-peripheral",
+          "z": -0.404,
+          "p": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": -1.114,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Statistical Modeling and Estimation",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.723,
+          "p": 0.665
+        },
+        {
+          "threshold": 0.65,
+          "role": "R3-connector",
+          "z": 0.935,
+          "p": 0.646
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": 1.009,
+          "p": 0.427
+        },
+        {
+          "threshold": 0.75,
+          "role": "R1-ultra-peripheral",
+          "z": 1.988,
+          "p": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 1.225,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Simulation and Monte Carlo Methods",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R2-peripheral",
+          "z": -0.57,
+          "p": 0.606
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": -0.042,
+          "p": 0.426
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": 0.83,
+          "p": 0.111
+        },
+        {
+          "threshold": 0.75,
+          "role": "R1-ultra-peripheral",
+          "z": 0.828,
+          "p": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Regularization and Model Selection",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R2-peripheral",
+          "z": 0.292,
+          "p": 0.61
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": -0.856,
+          "p": 0.51
+        },
+        {
+          "threshold": 0.7,
+          "role": "R1-ultra-peripheral",
+          "z": -0.243,
+          "p": 0.0
+        },
+        {
+          "threshold": 0.75,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Statistical Inference and Model Comparison",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.292,
+          "p": 0.664
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": 0.935,
+          "p": 0.604
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": 1.009,
+          "p": 0.434
+        },
+        {
+          "threshold": 0.75,
+          "role": "R1-ultra-peripheral",
+          "z": 0.055,
+          "p": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Mathematical Foundations of Statistics",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.723,
+          "p": 0.663
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": 0.772,
+          "p": 0.6
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": 0.472,
+          "p": 0.37
+        },
+        {
+          "threshold": 0.75,
+          "role": "R1-ultra-peripheral",
+          "z": 0.442,
+          "p": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Cognitive Exploration",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.523,
+          "p": 0.651
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": 0.964,
+          "p": 0.583
+        },
+        {
+          "threshold": 0.7,
+          "role": "R3-connector",
+          "z": 0.859,
+          "p": 0.675
+        },
+        {
+          "threshold": 0.75,
+          "role": "R3-connector",
+          "z": -0.253,
+          "p": 0.734
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": -1.061,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Critical Thinking Analysis",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.254,
+          "p": 0.656
+        },
+        {
+          "threshold": 0.65,
+          "role": "R3-connector",
+          "z": 0.505,
+          "p": 0.638
+        },
+        {
+          "threshold": 0.7,
+          "role": "R3-connector",
+          "z": 1.052,
+          "p": 0.704
+        },
+        {
+          "threshold": 0.75,
+          "role": "R3-connector",
+          "z": 0.979,
+          "p": 0.719
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Philosophical Inquiry",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": -0.825,
+          "p": 0.654
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": -0.567,
+          "p": 0.542
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": -1.075,
+          "p": 0.463
+        },
+        {
+          "threshold": 0.75,
+          "role": "R1-ultra-peripheral",
+          "z": -0.79,
+          "p": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Abstract Reasoning",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.793,
+          "p": 0.653
+        },
+        {
+          "threshold": 0.65,
+          "role": "R3-connector",
+          "z": 0.658,
+          "p": 0.639
+        },
+        {
+          "threshold": 0.7,
+          "role": "R3-connector",
+          "z": 1.052,
+          "p": 0.693
+        },
+        {
+          "threshold": 0.75,
+          "role": "R3-connector",
+          "z": 0.0,
+          "p": 0.747
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 1.061,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Problem-Solving Frameworks",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.794,
+          "p": 0.644
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": 0.913,
+          "p": 0.617
+        },
+        {
+          "threshold": 0.7,
+          "role": "R3-connector",
+          "z": 1.015,
+          "p": 0.637
+        },
+        {
+          "threshold": 0.75,
+          "role": "R3-connector",
+          "z": 0.628,
+          "p": 0.701
+        },
+        {
+          "threshold": 0.8,
+          "role": "R2-peripheral",
+          "z": 0.302,
+          "p": 0.594
+        }
+      ]
+    },
+    {
+      "name": "Knowledge Graphs and Schema",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": -0.016,
+          "p": 0.653
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": -1.792,
+          "p": 0.598
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": -1.741,
+          "p": 0.571
+        },
+        {
+          "threshold": 0.75,
+          "role": "R1-ultra-peripheral",
+          "z": -2.02,
+          "p": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Cognitive Architectures and Reasoning",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.723,
+          "p": 0.66
+        },
+        {
+          "threshold": 0.65,
+          "role": "R3-connector",
+          "z": 1.117,
+          "p": 0.65
+        },
+        {
+          "threshold": 0.7,
+          "role": "R3-connector",
+          "z": 0.859,
+          "p": 0.713
+        },
+        {
+          "threshold": 0.75,
+          "role": "R2-peripheral",
+          "z": 0.808,
+          "p": 0.198
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.743,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Development and Deployment",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R2-peripheral",
+          "z": 0.266,
+          "p": 0.561
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": -0.423,
+          "p": 0.538
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": -0.363,
+          "p": 0.459
+        },
+        {
+          "threshold": 0.75,
+          "role": "R2-peripheral",
+          "z": -1.485,
+          "p": 0.5
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 0.0,
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Data Processing and Analysis",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R2-peripheral",
+        "R3-connector"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R3-connector",
+          "z": 0.793,
+          "p": 0.657
+        },
+        {
+          "threshold": 0.65,
+          "role": "R3-connector",
+          "z": 0.964,
+          "p": 0.651
+        },
+        {
+          "threshold": 0.7,
+          "role": "R3-connector",
+          "z": 0.74,
+          "p": 0.696
+        },
+        {
+          "threshold": 0.75,
+          "role": "R3-connector",
+          "z": -0.808,
+          "p": 0.656
+        },
+        {
+          "threshold": 0.8,
+          "role": "R2-peripheral",
+          "z": 0.0,
+          "p": 0.444
+        }
+      ]
+    },
+    {
+      "name": "Bayesian inference as model selection",
+      "platform": "chatgpt",
+      "roles_seen": [
+        "R1-ultra-peripheral",
+        "R2-peripheral"
+      ],
+      "trajectory": [
+        {
+          "threshold": 0.6,
+          "role": "R2-peripheral",
+          "z": 0.723,
+          "p": 0.577
+        },
+        {
+          "threshold": 0.65,
+          "role": "R2-peripheral",
+          "z": 0.609,
+          "p": 0.34
+        },
+        {
+          "threshold": 0.7,
+          "role": "R2-peripheral",
+          "z": 1.187,
+          "p": 0.185
+        },
+        {
+          "threshold": 0.75,
+          "role": "R1-ultra-peripheral",
+          "z": 1.215,
+          "p": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "role": "R1-ultra-peripheral",
+          "z": 1.225,
+          "p": 0.0
+        }
+      ]
+    }
+  ]
+}
