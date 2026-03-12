@@ -1,0 +1,135 @@
+{
+  "method": "Per-node motif census: triangles, wedges, 4-cliques, cross-platform triangles",
+  "platform_comparison": {
+    "triangles": {
+      "chatgpt_mean": 182.36708860759492,
+      "agentic_mean": 203.55555555555554
+    },
+    "wedges": {
+      "chatgpt_mean": 348.32911392405066,
+      "agentic_mean": 372.94444444444446
+    },
+    "four_cliques": {
+      "chatgpt_mean": 844.4556962025316,
+      "agentic_mean": 1009.5555555555555
+    },
+    "cross_triangle_fraction": {
+      "chatgpt_mean": 0.42359658324996513,
+      "agentic_mean": 0.6667561987665748
+    }
+  },
+  "top_triangle_nodes": [
+    {
+      "name": "Problem-Solving Strategies",
+      "platform": "chatgpt",
+      "triangles": 777,
+      "cross_triangles": 361
+    },
+    {
+      "name": "Iterative Refining",
+      "platform": "agentic",
+      "triangles": 725,
+      "cross_triangles": 628
+    },
+    {
+      "name": "Pattern of Abstraction",
+      "platform": "chatgpt",
+      "triangles": 665,
+      "cross_triangles": 394
+    },
+    {
+      "name": "Pattern Recognition",
+      "platform": "agentic",
+      "triangles": 660,
+      "cross_triangles": 576
+    },
+    {
+      "name": "Problem-Solving Frameworks",
+      "platform": "chatgpt",
+      "triangles": 642,
+      "cross_triangles": 428
+    },
+    {
+      "name": "Rule-Based Reasoning",
+      "platform": "chatgpt",
+      "triangles": 624,
+      "cross_triangles": 338
+    },
+    {
+      "name": "Iterative Refinement",
+      "platform": "agentic",
+      "triangles": 621,
+      "cross_triangles": 526
+    },
+    {
+      "name": "Reverse-Process Thinking",
+      "platform": "chatgpt",
+      "triangles": 540,
+      "cross_triangles": 306
+    },
+    {
+      "name": "Abstract Reasoning",
+      "platform": "chatgpt",
+      "triangles": 538,
+      "cross_triangles": 304
+    },
+    {
+      "name": "Iterative Inference",
+      "platform": "chatgpt",
+      "triangles": 533,
+      "cross_triangles": 273
+    }
+  ],
+  "top_4clique_nodes": [
+    {
+      "name": "Problem-Solving Strategies",
+      "platform": "chatgpt",
+      "four_cliques": 4147
+    },
+    {
+      "name": "Iterative Refining",
+      "platform": "agentic",
+      "four_cliques": 4090
+    },
+    {
+      "name": "Problem-Solving Frameworks",
+      "platform": "chatgpt",
+      "four_cliques": 3958
+    },
+    {
+      "name": "Pattern of Abstraction",
+      "platform": "chatgpt",
+      "four_cliques": 3899
+    },
+    {
+      "name": "Iterative Refinement",
+      "platform": "agentic",
+      "four_cliques": 3669
+    },
+    {
+      "name": "Pattern Recognition",
+      "platform": "agentic",
+      "four_cliques": 3601
+    },
+    {
+      "name": "Rule-Based Reasoning",
+      "platform": "chatgpt",
+      "four_cliques": 3513
+    },
+    {
+      "name": "Design Thinking for Problem-Solving",
+      "platform": "chatgpt",
+      "four_cliques": 3284
+    },
+    {
+      "name": "Reverse-Process Thinking",
+      "platform": "chatgpt",
+      "four_cliques": 3138
+    },
+    {
+      "name": "Abstract Reasoning",
+      "platform": "chatgpt",
+      "four_cliques": 3103
+    }
+  ]
+}

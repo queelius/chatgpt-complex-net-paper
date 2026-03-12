@@ -1,0 +1,281 @@
+{
+  "method": "Greedy 1-to-1 cross-platform matching by similarity, then compare matched vs unmatched",
+  "n_mirrors": 36,
+  "n_strong": 14,
+  "n_moderate": 14,
+  "n_weak": 8,
+  "same_community_rate": {
+    "strong": 0.7142857142857143,
+    "moderate": 0.5714285714285714,
+    "weak": 0.25
+  },
+  "top_mirrors": [
+    {
+      "chatgpt": "Bayesian inference as model selection",
+      "chatgpt_idx": 19,
+      "agentic": "Bayesian inference as model selection",
+      "agentic_idx": 88,
+      "similarity": 0.9425457243043158,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Knowledge Graphs and Network Analysis",
+      "chatgpt_idx": 27,
+      "agentic": "Knowledge Graphing",
+      "agentic_idx": 94,
+      "similarity": 0.9163314757660683,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Problem Decomposition",
+      "chatgpt_idx": 29,
+      "agentic": "Problem Decomposition",
+      "agentic_idx": 92,
+      "similarity": 0.9079876916798333,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Knowledge Graphs",
+      "chatgpt_idx": 32,
+      "agentic": "Knowledge Graphing",
+      "agentic_idx": 86,
+      "similarity": 0.9032573822743264,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Iterative Development and Refining",
+      "chatgpt_idx": 28,
+      "agentic": "Iterative Problem-Solving",
+      "agentic_idx": 87,
+      "similarity": 0.8941920343119536,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Pattern of Abstraction",
+      "chatgpt_idx": 24,
+      "agentic": "Abstraction and Simplification",
+      "agentic_idx": 95,
+      "similarity": 0.8770301136635559,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Iterative Inference",
+      "chatgpt_idx": 57,
+      "agentic": "Iterative problem-solving and refinement",
+      "agentic_idx": 91,
+      "similarity": 0.8652269770599326,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Cognitive Frameworks",
+      "chatgpt_idx": 33,
+      "agentic": "Cognitive Frameworking",
+      "agentic_idx": 96,
+      "similarity": 0.8511521981130017,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Design Thinking for Problem-Solving",
+      "chatgpt_idx": 26,
+      "agentic": "Problem-Solving Through Insight",
+      "agentic_idx": 109,
+      "similarity": 0.8450556143471987,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Cognitive Flexibility",
+      "chatgpt_idx": 76,
+      "agentic": "Cognitive flexibility and adaptation",
+      "agentic_idx": 89,
+      "similarity": 0.8422533868505592,
+      "same_community": false
+    },
+    {
+      "chatgpt": "Problem-Solving Frameworks",
+      "chatgpt_idx": 14,
+      "agentic": "Iterative Refining",
+      "agentic_idx": 82,
+      "similarity": 0.8360226005764062,
+      "same_community": false
+    },
+    {
+      "chatgpt": "Rule-Based Reasoning",
+      "chatgpt_idx": 63,
+      "agentic": "Debugging Iterative Refinement",
+      "agentic_idx": 112,
+      "similarity": 0.8189944507741198,
+      "same_community": false
+    },
+    {
+      "chatgpt": "Data Processing and Analysis",
+      "chatgpt_idx": 18,
+      "agentic": "Pattern Recognition",
+      "agentic_idx": 80,
+      "similarity": 0.8033603944149513,
+      "same_community": false
+    },
+    {
+      "chatgpt": "Cognitive Reasoning Patterns",
+      "chatgpt_idx": 73,
+      "agentic": "Meta-Reflection",
+      "agentic_idx": 79,
+      "similarity": 0.8017881585338379,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Cognitive Architectures and Reasoning",
+      "chatgpt_idx": 16,
+      "agentic": "Knowledge Graph Exploration",
+      "agentic_idx": 113,
+      "similarity": 0.7979061747936872,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Iterative Refinement",
+      "chatgpt_idx": 59,
+      "agentic": "Iterative Refinement",
+      "agentic_idx": 84,
+      "similarity": 0.7868876048062571,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Programming Language Development",
+      "chatgpt_idx": 37,
+      "agentic": "Iterative Refining",
+      "agentic_idx": 101,
+      "similarity": 0.7762867080333897,
+      "same_community": false
+    },
+    {
+      "chatgpt": "Knowledge Graph Embeddings",
+      "chatgpt_idx": 2,
+      "agentic": "Knowledge graphing and network analysis",
+      "agentic_idx": 90,
+      "similarity": 0.7752393122694929,
+      "same_community": true
+    },
+    {
+      "chatgpt": "Knowledge Graph Representation",
+      "chatgpt_idx": 77,
+      "agentic": "Phased Approach",
+      "agentic_idx": 103,
+      "similarity": 0.7742834656441341,
+      "same_community": false
+    },
+    {
+      "chatgpt": "Exploratory Problem Solving",
+      "chatgpt_idx": 54,
+      "agentic": "Abstraction and Modularity",
+      "agentic_idx": 81,
+      "similarity": 0.7686795622351195,
+      "same_community": false
+    }
+  ],
+  "matched_vs_unmatched": {
+    "n_matched": 28,
+    "n_unmatched": 87,
+    "degree": {
+      "matched_mean": 35.035714285714285,
+      "unmatched_mean": 18.149425287356323
+    },
+    "betweenness": {
+      "matched_mean": 0.012854293723573376,
+      "unmatched_mean": 0.007355454256837016
+    },
+    "kcore": {
+      "matched_mean": 17.285714285714285,
+      "unmatched_mean": 11.758620689655173
+    }
+  },
+  "unmatched_chatgpt": [
+    "Bayesian Reasoning for Model Selection",
+    "Autoregressive Modeling",
+    "Knowledge Graph Embeddings",
+    "Markov Decision Processes",
+    "Cognitive Architectures",
+    "Statistical Modeling and Estimation",
+    "Simulation and Monte Carlo Methods",
+    "Regularization and Model Selection",
+    "Statistical Inference and Model Comparison",
+    "Mathematical Foundations of Statistics",
+    "Cognitive Exploration",
+    "Critical Thinking Analysis",
+    "Philosophical Inquiry",
+    "Abstract Reasoning",
+    "Knowledge Graphs and Schema",
+    "Cognitive Architectures and Reasoning",
+    "Development and Deployment",
+    "Simulation-based analysis",
+    "Data manipulation and visualization",
+    "Model comparison and selection",
+    "Statistical reasoning and problem-solving",
+    "Cognitive Frameworks for Reasoning",
+    "Numerical Methods",
+    "Optimization Techniques",
+    "Statistical Estimation Frameworks",
+    "Symbolic Computation",
+    "Machine Learning and Natural Language Processing",
+    "Programming Language Development",
+    "Algorithmic Optimization",
+    "Modeling Complexity",
+    "Abductive Reasoning",
+    "Cognitive Limitations",
+    "Problem-Solving Strategies",
+    "Knowledge Representation",
+    "Optimization Techniques",
+    "Information Geometry",
+    "Differential Equations",
+    "Computational Graphs",
+    "Probability Theory",
+    "Computationalism",
+    "Infinite Sets",
+    "Computability Theory",
+    "Model Selection",
+    "Foundational Questions",
+    "Exploratory Problem Solving",
+    "Reverse-Process Thinking",
+    "Derivative-Based Reasoning",
+    "Generative Prompting",
+    "Iterative Refinement",
+    "Cognitive Anchoring",
+    "Descriptive Language",
+    "Pattern Matching",
+    "Symbolic Computation",
+    "Theorem Proving",
+    "Rule-Based Substitution",
+    "Code Block Management",
+    "R Interpreter Configuration",
+    "Referencing and Cross-Referencing",
+    "Rendering Engine Optimization",
+    "Medical Diagnosis Reasoning",
+    "Mathematical Optimization",
+    "Systematic Reasoning",
+    "Instructional Design",
+    "Knowledge Graph Representation",
+    "Task-Oriented Dialogue"
+  ],
+  "unmatched_agentic": [
+    "Abstraction and Modularity",
+    "Contextual Understanding",
+    "Iterative Refinement",
+    "Cognitive Looping",
+    "Knowledge graphing and network analysis",
+    "Iterative Refining",
+    "Error Handling Protocol",
+    "Plugin Management Loop",
+    "Caveat as Boundary Condition",
+    "Systematic Problem-Solving",
+    "Iterative Refining",
+    "Analytical Insight Generation",
+    "Phased Approach",
+    "Error Analysis",
+    "Project Initialization",
+    "Exploratory Reading",
+    "Pattern of Iterative Initiation",
+    "Iterative Refactoring Loop",
+    "Incremental Testing and Validation",
+    "Refactoring as Knowledge Discovery",
+    "Knowledge Graph Exploration",
+    "Verification-Driven Development"
+  ]
+}
