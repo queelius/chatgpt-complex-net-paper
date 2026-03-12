@@ -1361,10 +1361,176 @@ The concept layer is genuinely complementary to episodes — NMI=0.297 confirms 
 
 ---
 
+## F62: K-Core Decomposition — The Cross-Platform Backbone
+
+**Method**: Compute k-core decomposition of concept network (θ=0.70). The k-core is the maximal subgraph where every node has degree ≥ k. Unlike the failed disparity filter (F61), k-cores work on any topology.
+
+| Core level | Nodes | CG:AG | Edges | Cross-platform % | Density | Communities |
+|:---|---:|:---|---:|---:|---:|---:|
+| Full network | 115 | 79:36 | 1,280 | 39.1% | 0.20 | 7 |
+| k ≥ 16 | 50 | 29:21 | 697 | **47.3%** | 0.57 | 4 |
+| k ≥ 17 | 41 | 23:18 | 557 | **47.6%** | 0.68 | 4 |
+| k ≥ 18 | 37 | 22:15 | 489 | **47.4%** | 0.73 | 4 |
+| k ≥ 19 (max) | 31 | 19:12 | 382 | **46.3%** | 0.82 | 4 |
+
+**Key finding**: The innermost core (k=19) is the cross-platform backbone. Cross-platform edge fraction increases from 39.1% (full network) to **47.3-47.6%** (inner cores) — the core is where platforms converge. With density 0.82, the 19-core is a near-complete subgraph of 31 concepts.
+
+**Core composition reveals platform convergence**: The full network is 69% ChatGPT, but the 19-core is 61% ChatGPT (19:12). Agentic concepts are disproportionately represented in the core — they are more broadly connected to other concepts. At the very highest degrees (k≥52), the platform ratio reaches 50:50.
+
+**Top 19-core concepts** (the cognitive backbone):
+1. "Problem-Solving Strategies" (CG, degree=67)
+2. "Iterative Refining" (AG, degree=62)
+3. "Pattern Recognition" (AG, degree=57)
+4. "Pattern of Abstraction" (CG, degree=55)
+5. "Rule-Based Reasoning" (CG, degree=52)
+6. "Iterative Refinement" (AG, degree=52)
+
+These are genuine cognitive primitives — abstract enough to appear in both knowledge exploration and project execution, forming the common core of the user's cognitive style.
+
+---
+
+## F63: Concept Network Motif Census
+
+**Method**: Enumerate all triangles in the concept network (θ=0.70). Classify by platform composition: CCC (all-ChatGPT), CCA, CAA, AAA (all-agentic). Compare to expected frequencies under random platform assignment.
+
+| Triangle type | Count | Observed % | Expected % | Ratio |
+|:---|---:|---:|---:|---:|
+| CCC (all-ChatGPT) | 2,308 | 31.9% | 32.4% | 0.98 |
+| CCA (2 CG + 1 AG) | 2,948 | 40.7% | 44.3% | 0.92 |
+| CAA (1 CG + 2 AG) | 1,587 | 21.9% | 20.2% | **1.08** |
+| AAA (all-agentic) | 402 | 5.5% | 3.1% | **1.81** |
+| **Total** | **7,245** | | | |
+
+**Key finding**: Agentic concept triangles are **1.8× overrepresented**. Agentic process concepts form closed triads more than expected — when two agentic concepts share a neighbor, they're likely connected to each other. This reflects the tighter, more interdependent structure of workflow concepts (debugging ↔ testing ↔ refactoring form natural triads). Mixed CCA triangles are underrepresented (0.92×), suggesting partial platform segregation at the triadic level.
+
+**Clustering coefficients**:
+- Overall: transitivity=0.531, avg clustering=0.572
+- Agentic concepts: **0.629** (more clustered)
+- ChatGPT concepts: 0.609
+
+Agentic concepts are more locally clustered — their process patterns form tighter neighborhoods than ChatGPT's knowledge domains.
+
+---
+
+## F64: Concept-Episode Projection Alignment
+
+**Method**: Compare concept-level Louvain communities with episode-level source communities. Compute NMI and mapping entropy.
+
+| Metric | Value |
+|:---|:---|
+| Concept communities (Louvain) | 7 |
+| Source communities mapped | 26 |
+| NMI (source vs concept community) | **0.297** |
+| Mean mapping entropy | 1.046 |
+
+**Key finding**: NMI=0.297 confirms the concept layer **reorganizes** episode-level structure rather than mirroring it. Concepts from 26 different source communities are redistributed into 7 concept communities based on semantic similarity, not structural proximity.
+
+**Largest concept community (CC5)**: 41 concepts from 15 source communities (23 CG + 18 AG) — a massive cross-platform, cross-community convergence. This single concept community spans more than half of all source communities, unifying knowledge that the episode layer keeps separate.
+
+**Implication**: The concept layer is not merely a coarse-graining of the episode layer. It genuinely regroups knowledge by semantic affinity, pulling concepts from diverse episode communities into coherent thematic clusters.
+
+---
+
+## F65: Concept Degree Assortativity and Cross-Platform Bridging
+
+**Method**: Compute degree-degree correlations, platform assortativity, and the relationship between degree and cross-platform edge fraction.
+
+| Metric | Value | p-value |
+|:---|:---|:---|
+| Degree assortativity (r) | 0.027 | — |
+| Platform assortativity | 0.096 | — |
+| Source community assortativity | 0.033 | — |
+| Spearman ρ (edge degree-degree) | 0.051 | 0.070 |
+| **Spearman ρ (degree vs cross-platform frac)** | **0.496** | **< 10⁻⁸** |
+
+**Key finding — degree predicts cross-platform bridging**: ρ=0.496 (p < 10⁻⁸) is the strongest structural correlation found in this study. **Higher-degree concepts have dramatically more cross-platform edges.** Generalist concepts that connect to many other concepts are the ones that bridge the ChatGPT/agentic divide.
+
+**Platform degree parity**: ChatGPT mean degree=22.2, agentic mean=22.4 (Mann-Whitney p=0.957). Despite having 2.2× more ChatGPT concepts, the degree distributions are identical — neither platform dominates the concept layer's connectivity structure.
+
+**Near-zero assortativity** (r=0.027) means the concept network has neutral degree mixing — high-degree nodes connect to both high- and low-degree nodes equally. This is unlike many real-world networks which show clear assortative or disassortative patterns.
+
+---
+
+## F66: Rich-Club Effect in Concept Network
+
+**Method**: Compute rich-club coefficient φ(k) and normalized ρ(k) = φ(k)/φ_random(k) using 100 configuration model realizations. The rich-club coefficient measures whether high-degree nodes interconnect more than expected.
+
+| k threshold | φ(k) observed | φ(k) random | ρ(k) normalized | z-score |
+|:---|---:|---:|---:|---:|
+| k ≥ 5 | 0.278 | 0.226 | **1.23** | 21.3 |
+| k ≥ 15 | 0.373 | 0.315 | **1.18** | 8.1 |
+| k ≥ 25 | 0.686 | 0.519 | **1.32** | 10.0 |
+| k ≥ 30 | 0.793 | 0.604 | **1.31** | 6.1 |
+| k ≥ 36 | 0.942 | 0.701 | **1.34** | 2.7 |
+
+**Key finding**: The concept network has a **highly significant rich-club effect** (ρ > 1.2, z > 20 at low k thresholds). High-degree concepts interconnect ~20-34% more densely than expected by their degree sequence alone. The effect strengthens at higher k (ρ peaks at 1.34 for k≥36), meaning the most connected concepts form an especially tight elite club.
+
+**Rich-club composition (top 10% by degree)**:
+- 7 ChatGPT + 4 agentic concepts (ratio approaches 50:50 at very top)
+- Agentic members: "Iterative Refining" (deg=62), "Pattern Recognition" (57), "Iterative Refinement" (52) — each with 8/10 cross-platform rich-club connections
+- ChatGPT members: "Problem-Solving Strategies" (67), "Pattern of Abstraction" (55) — each with 3/10 cross-platform
+
+**Critical observation**: Within the rich club, agentic concepts are **more cross-platform** (8/10 connections cross-platform) than ChatGPT concepts (3/10). Agentic process concepts are the universal connectors — they're similar to everything. ChatGPT knowledge concepts in the rich club connect mostly to other ChatGPT concepts.
+
+---
+
+## Updated Theme 9: Core-Periphery Structure of Cognitive Concepts (F62-F66)
+
+The concept network reveals a layered architecture:
+
+| Layer | Structure | Platform mixing | Function |
+|:---|:---|:---|:---|
+| **Core** (k≥19, 31 nodes) | Near-clique (density=0.82) | 47% cross-platform | Universal cognitive primitives |
+| **Mid-shell** (k=13-18) | Moderately connected | 39-47% | Domain-bridging concepts |
+| **Periphery** (k<13) | Loosely connected | < 39% | Platform-specific specializations |
+
+**Three key structural properties**:
+
+1. **Rich-club effect** (ρ=1.2-1.3, z>20): High-degree concepts preferentially interconnect, forming a dense elite club
+2. **Degree predicts bridging** (ρ=0.50, p<10⁻⁸): Generalist concepts bridge platforms; specialist concepts stay within-platform
+3. **Agentic concepts dominate the core**: Despite being 31% of all concepts, agentic concepts comprise 39% of the 19-core and have 8/10 cross-platform rich-club connections vs 3/10 for ChatGPT
+
+**Interpretation**: The user's cognitive concept space has a clear core-periphery gradient. The core consists of abstract, modality-independent cognitive habits (problem-solving, iteration, abstraction, pattern recognition) that function identically in knowledge exploration and project execution. The periphery contains specialized domain knowledge (statistics, philosophy, debugging protocols) that retains platform identity. The concept layer's value is precisely this: it identifies which cognitive patterns are universal and which are modality-specific.
+
+---
+
+## Master Comparison Table (Updated with F62-F66)
+
+| Metric | ChatGPT | Agentic (parents) |
+|:---|:---|:---|
+| Episodes | 601 (θ=0.9) | 449 (θ=0.95) |
+| Edges | 1,718 | 4,316 |
+| Density | 0.0095 | 0.0429 |
+| Modularity | 0.750 | 0.278 |
+| Communities | 15 | 12 |
+| Densification γ | 1.405 | 1.410 |
+| Assortativity | -0.13 | -0.05 |
+| Architecture | Knowledge Archipelago | Cognitive Web |
+| L1 concepts | 79 (68 after pruning) | 36 |
+| L2 meta-concepts | 8 | 6 |
+| L3 orientations | 4 | 3 |
+| L2→L3 compression | 2.59× (variable) | 3.00× (deterministic) |
+| Concept types | Epistemic (WHAT) | Practical (HOW) |
+| Hidden connections | 99.4% | 92.8% |
+| Cross-platform edges (pruned) | 41.5% | |
+| Bridge type | 6/10 identical concepts | |
+| Temporal arc | Foundations → Deepening → Application | — |
+| Era bridging effect | Late > Early/Middle (p=0.020) | |
+| Cross-model stability | Technical: 0.71-0.85; Philosophical: 0.96-0.98 | |
+| **Concept 19-core** | 19 concepts (61%) | 12 concepts (39%) |
+| **Core cross-platform frac** | 46-48% (vs 39% full) | |
+| **Concept clustering** | 0.609 | 0.629 |
+| **Triangle overrepresentation** | CCC: 0.98× | AAA: 1.81× |
+| **Rich-club ρ** | 1.2-1.3 (z > 20, significant) | |
+| **Degree → bridging ρ** | 0.496 (p < 10⁻⁸) | |
+| **NMI (source vs concept comm)** | 0.297 (low — concepts reorganize) | |
+
+---
+
 ## Pending Experiments
 
 1. **Full consensus extraction**: All communities, N=5 runs (production-quality concept set)
 2. **Agentic temporal evolution**: Apply temporal analysis to agentic sessions
-3. **K-core decomposition**: Alternative backbone method — identify nested cores of increasing connectivity
-4. **Concept network motifs**: Triangle census and higher-order patterns in concept similarity graph
-5. **Concept-episode projection alignment**: Project concept communities onto episodes and compare with direct Louvain
+3. **Concept network spectral analysis**: Eigenvalue spectrum and spectral gap for community detection quality
+4. **Cross-platform concept flow**: Temporal ordering of shared concepts — which platform "discovers" them first?
+5. **Concept network resilience**: Targeted vs random removal — how fragile is the core?

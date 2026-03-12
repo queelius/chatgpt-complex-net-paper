@@ -1,0 +1,370 @@
+{
+  "experiment": "F62: K-Core Decomposition",
+  "threshold": 0.7,
+  "network": {
+    "nodes": 115,
+    "edges": 1280
+  },
+  "max_core": 19,
+  "core_distribution": {
+    "0": 2,
+    "1": 9,
+    "2": 2,
+    "3": 3,
+    "4": 2,
+    "5": 2,
+    "7": 4,
+    "8": 1,
+    "9": 5,
+    "10": 1,
+    "11": 1,
+    "12": 1,
+    "13": 14,
+    "14": 8,
+    "15": 10,
+    "16": 9,
+    "17": 4,
+    "18": 6,
+    "19": 31
+  },
+  "core_platform_composition": {
+    "0": {
+      "chatgpt": 1,
+      "agentic": 1
+    },
+    "1": {
+      "chatgpt": 4,
+      "agentic": 5
+    },
+    "2": {
+      "chatgpt": 2,
+      "agentic": 0
+    },
+    "3": {
+      "chatgpt": 2,
+      "agentic": 1
+    },
+    "4": {
+      "chatgpt": 1,
+      "agentic": 1
+    },
+    "5": {
+      "chatgpt": 2,
+      "agentic": 0
+    },
+    "7": {
+      "chatgpt": 4,
+      "agentic": 0
+    },
+    "8": {
+      "chatgpt": 0,
+      "agentic": 1
+    },
+    "9": {
+      "chatgpt": 4,
+      "agentic": 1
+    },
+    "10": {
+      "chatgpt": 1,
+      "agentic": 0
+    },
+    "11": {
+      "chatgpt": 1,
+      "agentic": 0
+    },
+    "12": {
+      "chatgpt": 1,
+      "agentic": 0
+    },
+    "13": {
+      "chatgpt": 12,
+      "agentic": 2
+    },
+    "14": {
+      "chatgpt": 7,
+      "agentic": 1
+    },
+    "15": {
+      "chatgpt": 8,
+      "agentic": 2
+    },
+    "16": {
+      "chatgpt": 6,
+      "agentic": 3
+    },
+    "17": {
+      "chatgpt": 1,
+      "agentic": 3
+    },
+    "18": {
+      "chatgpt": 3,
+      "agentic": 3
+    },
+    "19": {
+      "chatgpt": 19,
+      "agentic": 12
+    }
+  },
+  "inner_cores": [
+    {
+      "k": 19,
+      "n_nodes": 31,
+      "n_edges": 382,
+      "chatgpt": 19,
+      "agentic": 12,
+      "cross_platform_frac": 0.463,
+      "communities_spanned": 4,
+      "density": 0.8215
+    },
+    {
+      "k": 18,
+      "n_nodes": 37,
+      "n_edges": 489,
+      "chatgpt": 22,
+      "agentic": 15,
+      "cross_platform_frac": 0.474,
+      "communities_spanned": 4,
+      "density": 0.7342
+    },
+    {
+      "k": 17,
+      "n_nodes": 41,
+      "n_edges": 557,
+      "chatgpt": 23,
+      "agentic": 18,
+      "cross_platform_frac": 0.476,
+      "communities_spanned": 4,
+      "density": 0.6793
+    },
+    {
+      "k": 16,
+      "n_nodes": 50,
+      "n_edges": 697,
+      "chatgpt": 29,
+      "agentic": 21,
+      "cross_platform_frac": 0.473,
+      "communities_spanned": 4,
+      "density": 0.569
+    }
+  ],
+  "max_core_concepts": [
+    {
+      "name": "Problem-Solving Strategies",
+      "platform": "chatgpt",
+      "source_community": 1,
+      "degree": 67,
+      "core_number": 19
+    },
+    {
+      "name": "Iterative Refining",
+      "platform": "agentic",
+      "source_community": 1,
+      "degree": 62,
+      "core_number": 19
+    },
+    {
+      "name": "Pattern Recognition",
+      "platform": "agentic",
+      "source_community": 1,
+      "degree": 57,
+      "core_number": 19
+    },
+    {
+      "name": "Pattern of Abstraction",
+      "platform": "chatgpt",
+      "source_community": 3,
+      "degree": 55,
+      "core_number": 19
+    },
+    {
+      "name": "Rule-Based Reasoning",
+      "platform": "chatgpt",
+      "source_community": 43,
+      "degree": 52,
+      "core_number": 19
+    },
+    {
+      "name": "Iterative Refinement",
+      "platform": "agentic",
+      "source_community": 2,
+      "degree": 52,
+      "core_number": 19
+    },
+    {
+      "name": "Problem-Solving Frameworks",
+      "platform": "chatgpt",
+      "source_community": 4,
+      "degree": 51,
+      "core_number": 19
+    },
+    {
+      "name": "Iterative Inference",
+      "platform": "chatgpt",
+      "source_community": 22,
+      "degree": 48,
+      "core_number": 19
+    },
+    {
+      "name": "Abstract Reasoning",
+      "platform": "chatgpt",
+      "source_community": 7,
+      "degree": 46,
+      "core_number": 19
+    },
+    {
+      "name": "Knowledge Graphs and Network Analysis",
+      "platform": "chatgpt",
+      "source_community": 3,
+      "degree": 46,
+      "core_number": 19
+    },
+    {
+      "name": "Reverse-Process Thinking",
+      "platform": "chatgpt",
+      "source_community": 22,
+      "degree": 46,
+      "core_number": 19
+    },
+    {
+      "name": "Meta-Reflection",
+      "platform": "agentic",
+      "source_community": 1,
+      "degree": 46,
+      "core_number": 19
+    },
+    {
+      "name": "Critical Thinking Analysis",
+      "platform": "chatgpt",
+      "source_community": 7,
+      "degree": 45,
+      "core_number": 19
+    },
+    {
+      "name": "Cognitive Exploration",
+      "platform": "chatgpt",
+      "source_community": 7,
+      "degree": 44,
+      "core_number": 19
+    },
+    {
+      "name": "Design Thinking for Problem-Solving",
+      "platform": "chatgpt",
+      "source_community": 3,
+      "degree": 43,
+      "core_number": 19
+    },
+    {
+      "name": "Cognitive Frameworks",
+      "platform": "chatgpt",
+      "source_community": 11,
+      "degree": 43,
+      "core_number": 19
+    },
+    {
+      "name": "Debugging Iterative Refinement",
+      "platform": "agentic",
+      "source_community": 11,
+      "degree": 43,
+      "core_number": 19
+    },
+    {
+      "name": "Cognitive Architectures and Reasoning",
+      "platform": "chatgpt",
+      "source_community": 4,
+      "degree": 41,
+      "core_number": 19
+    },
+    {
+      "name": "Iterative Problem-Solving",
+      "platform": "agentic",
+      "source_community": 2,
+      "degree": 39,
+      "core_number": 19
+    },
+    {
+      "name": "Generative Prompting",
+      "platform": "chatgpt",
+      "source_community": 31,
+      "degree": 37,
+      "core_number": 19
+    },
+    {
+      "name": "Problem Decomposition",
+      "platform": "agentic",
+      "source_community": 0,
+      "degree": 36,
+      "core_number": 19
+    },
+    {
+      "name": "Abstraction and Simplification",
+      "platform": "agentic",
+      "source_community": 0,
+      "degree": 36,
+      "core_number": 19
+    },
+    {
+      "name": "Problem Decomposition",
+      "platform": "chatgpt",
+      "source_community": 11,
+      "degree": 35,
+      "core_number": 19
+    },
+    {
+      "name": "Systematic Reasoning",
+      "platform": "chatgpt",
+      "source_community": 63,
+      "degree": 35,
+      "core_number": 19
+    },
+    {
+      "name": "Iterative Refining",
+      "platform": "agentic",
+      "source_community": 3,
+      "degree": 35,
+      "core_number": 19
+    },
+    {
+      "name": "Cognitive Reasoning Patterns",
+      "platform": "chatgpt",
+      "source_community": 28,
+      "degree": 32,
+      "core_number": 19
+    },
+    {
+      "name": "Exploratory Problem Solving",
+      "platform": "chatgpt",
+      "source_community": 22,
+      "degree": 30,
+      "core_number": 19
+    },
+    {
+      "name": "Iterative Development and Refining",
+      "platform": "chatgpt",
+      "source_community": 3,
+      "degree": 29,
+      "core_number": 19
+    },
+    {
+      "name": "Analytical Insight Generation",
+      "platform": "agentic",
+      "source_community": 3,
+      "degree": 28,
+      "core_number": 19
+    },
+    {
+      "name": "Cognitive Looping",
+      "platform": "agentic",
+      "source_community": 2,
+      "degree": 27,
+      "core_number": 19
+    },
+    {
+      "name": "Iterative problem-solving and refinement",
+      "platform": "agentic",
+      "source_community": 4,
+      "degree": 24,
+      "core_number": 19
+    }
+  ],
+  "shell_cross_platform_frac": {}
+}

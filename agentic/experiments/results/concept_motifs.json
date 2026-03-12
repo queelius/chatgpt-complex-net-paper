@@ -1,0 +1,111 @@
+{
+  "experiment": "F63: Concept Network Motifs",
+  "threshold": 0.7,
+  "network": {
+    "nodes": 115,
+    "edges": 1280
+  },
+  "total_triangles": 7245,
+  "triangle_types": {
+    "AAA (all-agentic)": {
+      "count": 402,
+      "fraction": 0.0555
+    },
+    "CAA (1 ChatGPT + 2 agentic)": {
+      "count": 1587,
+      "fraction": 0.219
+    },
+    "CCA (2 ChatGPT + 1 agentic)": {
+      "count": 2948,
+      "fraction": 0.4069
+    },
+    "CCC (all-ChatGPT)": {
+      "count": 2308,
+      "fraction": 0.3186
+    }
+  },
+  "expected_random": {
+    "CCC": 0.3242,
+    "CCA": 0.4432,
+    "CAA": 0.202,
+    "AAA": 0.0307
+  },
+  "transitivity": 0.5308,
+  "average_clustering": 0.5719,
+  "platform_clustering": {
+    "chatgpt": 0.6085,
+    "agentic": 0.6293
+  },
+  "top_triangle_nodes": [
+    {
+      "name": "Problem-Solving Strategies",
+      "platform": "chatgpt",
+      "triangles": 777,
+      "degree": 67,
+      "clustering": 0.3514
+    },
+    {
+      "name": "Iterative Refining",
+      "platform": "agentic",
+      "triangles": 725,
+      "degree": 62,
+      "clustering": 0.3834
+    },
+    {
+      "name": "Pattern of Abstraction",
+      "platform": "chatgpt",
+      "triangles": 665,
+      "degree": 55,
+      "clustering": 0.4478
+    },
+    {
+      "name": "Pattern Recognition",
+      "platform": "agentic",
+      "triangles": 660,
+      "degree": 57,
+      "clustering": 0.4135
+    },
+    {
+      "name": "Problem-Solving Frameworks",
+      "platform": "chatgpt",
+      "triangles": 642,
+      "degree": 51,
+      "clustering": 0.5035
+    },
+    {
+      "name": "Rule-Based Reasoning",
+      "platform": "chatgpt",
+      "triangles": 624,
+      "degree": 52,
+      "clustering": 0.4706
+    },
+    {
+      "name": "Iterative Refinement",
+      "platform": "agentic",
+      "triangles": 621,
+      "degree": 52,
+      "clustering": 0.4683
+    },
+    {
+      "name": "Reverse-Process Thinking",
+      "platform": "chatgpt",
+      "triangles": 540,
+      "degree": 46,
+      "clustering": 0.5217
+    },
+    {
+      "name": "Abstract Reasoning",
+      "platform": "chatgpt",
+      "triangles": 538,
+      "degree": 46,
+      "clustering": 0.5198
+    },
+    {
+      "name": "Iterative Inference",
+      "platform": "chatgpt",
+      "triangles": 533,
+      "degree": 48,
+      "clustering": 0.4725
+    }
+  ]
+}
