@@ -1,0 +1,30 @@
+{
+  "method": "Logistic regression on cross-platform node pairs, 5-fold CV",
+  "n_cross_pairs": 2844,
+  "n_connected": 500,
+  "connected_fraction": 0.17580872011251758,
+  "cv_auc": 0.956486304740036,
+  "cv_auc_std": 0.01507192935682696,
+  "full_auc": 0.9580179180887372,
+  "feature_coefficients": {
+    "degree_diff": 0.5674442807016885,
+    "degree_sum": -0.0450061644752015,
+    "common_neighbors": -2.4149349854358113,
+    "jaccard": 1.7250065291637937,
+    "adamic_adar": 3.6103385437473396,
+    "pagerank_product": -0.23007514412621996,
+    "clustering_product": -0.27765149811258355,
+    "betweenness_diff": -0.0013409994735555605
+  },
+  "single_feature_auc": {
+    "degree_diff": 0.47893104076686166,
+    "degree_sum": 0.8676466978295336,
+    "common_neighbors": 0.946305669454923,
+    "jaccard": 0.9434852295300058,
+    "adamic_adar": 0.9511187651486159,
+    "pagerank_product": 0.8573656625298416,
+    "clustering_product": 0.4359431004319064,
+    "betweenness_diff": 0.6370576103001475
+  },
+  "similarity_baseline_auc": 1.0
+}

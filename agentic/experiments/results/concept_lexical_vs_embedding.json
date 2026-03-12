@@ -1,0 +1,172 @@
+{
+  "method": "Character 3-gram Jaccard vs embedding cosine similarity",
+  "overall_correlation": {
+    "rho": 0.1359369353054547,
+    "p": 2.070896170623291e-28
+  },
+  "cross_platform_correlation": {
+    "rho": 0.11111345812997774,
+    "p": 2.826178212575512e-09
+  },
+  "n_disagreements": 16,
+  "disagreements": [
+    {
+      "type": "lexical_high_embed_low",
+      "concept1": "Regularization and Model Selection",
+      "platform1": "chatgpt",
+      "concept2": "Abstraction and Modularity",
+      "platform2": "agentic",
+      "lexical_sim": 0.35,
+      "embed_sim": 0.6163414130493942
+    },
+    {
+      "type": "lexical_low_embed_high",
+      "concept1": "Statistical Inference and Model Comparison",
+      "platform1": "chatgpt",
+      "concept2": "Model Selection",
+      "platform2": "chatgpt",
+      "lexical_sim": 0.08163265306122448,
+      "embed_sim": 0.852014971901289
+    },
+    {
+      "type": "lexical_low_embed_high",
+      "concept1": "Mathematical Foundations of Statistics",
+      "platform1": "chatgpt",
+      "concept2": "Probability Theory",
+      "platform2": "chatgpt",
+      "lexical_sim": 0.02127659574468085,
+      "embed_sim": 0.8508534901159583
+    },
+    {
+      "type": "lexical_low_embed_high",
+      "concept1": "Critical Thinking Analysis",
+      "platform1": "chatgpt",
+      "concept2": "Abstract Reasoning",
+      "platform2": "chatgpt",
+      "lexical_sim": 0.02564102564102564,
+      "embed_sim": 0.8655653592122278
+    },
+    {
+      "type": "lexical_high_embed_low",
+      "concept1": "Knowledge Graphs and Schema",
+      "platform1": "chatgpt",
+      "concept2": "Knowledge graphing and network analysis",
+      "platform2": "agentic",
+      "lexical_sim": 0.35555555555555557,
+      "embed_sim": 0.6002543104086333
+    },
+    {
+      "type": "lexical_high_embed_low",
+      "concept1": "Knowledge Graphs and Schema",
+      "platform1": "chatgpt",
+      "concept2": "Knowledge Graphing",
+      "platform2": "agentic",
+      "lexical_sim": 0.4642857142857143,
+      "embed_sim": 0.6449458754044748
+    },
+    {
+      "type": "lexical_high_embed_low",
+      "concept1": "Knowledge Graphs and Schema",
+      "platform1": "chatgpt",
+      "concept2": "Knowledge Graph Exploration",
+      "platform2": "agentic",
+      "lexical_sim": 0.35135135135135137,
+      "embed_sim": 0.6355587726144367
+    },
+    {
+      "type": "lexical_high_embed_low",
+      "concept1": "Statistical reasoning and problem-solving",
+      "platform1": "chatgpt",
+      "concept2": "Systematic Problem-Solving",
+      "platform2": "agentic",
+      "lexical_sim": 0.34782608695652173,
+      "embed_sim": 0.6394936519696182
+    },
+    {
+      "type": "lexical_high_embed_low",
+      "concept1": "Pattern of Abstraction",
+      "platform1": "chatgpt",
+      "concept2": "Pattern of Iterative Initiation",
+      "platform2": "agentic",
+      "lexical_sim": 0.3055555555555556,
+      "embed_sim": 0.5773445918736907
+    },
+    {
+      "type": "lexical_low_embed_high",
+      "concept1": "Modeling Complexity",
+      "platform1": "chatgpt",
+      "concept2": "Knowledge Representation",
+      "platform2": "chatgpt",
+      "lexical_sim": 0.0,
+      "embed_sim": 0.8617666206197758
+    },
+    {
+      "type": "lexical_high_embed_low",
+      "concept1": "Abductive Reasoning",
+      "platform1": "chatgpt",
+      "concept2": "Derivative-Based Reasoning",
+      "platform2": "chatgpt",
+      "lexical_sim": 0.3225806451612903,
+      "embed_sim": 0.6229434807314007
+    },
+    {
+      "type": "lexical_high_embed_low",
+      "concept1": "Exploratory Problem Solving",
+      "platform1": "chatgpt",
+      "concept2": "Exploratory Reading",
+      "platform2": "agentic",
+      "lexical_sim": 0.3548387096774194,
+      "embed_sim": 0.5935358017700245
+    },
+    {
+      "type": "lexical_low_embed_high",
+      "concept1": "Pattern Matching",
+      "platform1": "chatgpt",
+      "concept2": "Rule-Based Substitution",
+      "platform2": "chatgpt",
+      "lexical_sim": 0.0,
+      "embed_sim": 0.8668665339360808
+    },
+    {
+      "type": "lexical_high_embed_low",
+      "concept1": "Cognitive Looping",
+      "platform1": "agentic",
+      "concept2": "Cognitive Frameworking",
+      "platform2": "agentic",
+      "lexical_sim": 0.34615384615384615,
+      "embed_sim": 0.6496018698079833
+    },
+    {
+      "type": "lexical_high_embed_low",
+      "concept1": "Systematic Problem-Solving",
+      "platform1": "agentic",
+      "concept2": "Problem-Solving Through Insight",
+      "platform2": "agentic",
+      "lexical_sim": 0.325,
+      "embed_sim": 0.6400713737495308
+    },
+    {
+      "type": "lexical_low_embed_high",
+      "concept1": "Debugging Iterative Refinement",
+      "platform1": "agentic",
+      "concept2": "Verification-Driven Development",
+      "platform2": "agentic",
+      "lexical_sim": 0.07547169811320754,
+      "embed_sim": 0.8856695376387322
+    }
+  ],
+  "identical_name_pairs": [
+    {
+      "name": "bayesian inference as model selection",
+      "embed_sim": 0.9425457243043158
+    },
+    {
+      "name": "problem decomposition",
+      "embed_sim": 0.9079876916798333
+    },
+    {
+      "name": "iterative refinement",
+      "embed_sim": 0.7868876048062571
+    }
+  ]
+}

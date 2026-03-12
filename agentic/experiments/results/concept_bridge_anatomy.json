@@ -1,0 +1,177 @@
+{
+  "method": "Participation coefficient + Guimer\u00e0-Amaral roles + bridge census",
+  "n_bridge_edges": 585,
+  "n_cross_platform_bridges": 245,
+  "cross_platform_bridge_fraction": 0.4188034188034188,
+  "role_distribution": {
+    "R2: Peripheral": {
+      "count": 60,
+      "chatgpt": 42,
+      "agentic": 18
+    },
+    "R3: Satellite connector": {
+      "count": 37,
+      "chatgpt": 26,
+      "agentic": 11
+    },
+    "R1: Ultra-peripheral": {
+      "count": 18,
+      "chatgpt": 11,
+      "agentic": 7
+    }
+  },
+  "community_pair_flow": {
+    "C0-C1": {
+      "total": 73,
+      "cross_platform": 8,
+      "strongest": 0.8356036842360446
+    },
+    "C0-C5": {
+      "total": 74,
+      "cross_platform": 30,
+      "strongest": 0.7950479090297341
+    },
+    "C0-C2": {
+      "total": 24,
+      "cross_platform": 9,
+      "strongest": 0.7849643241970385
+    },
+    "C1-C2": {
+      "total": 117,
+      "cross_platform": 59,
+      "strongest": 0.8279396454974639
+    },
+    "C1-C5": {
+      "total": 128,
+      "cross_platform": 61,
+      "strongest": 0.8422533868505592
+    },
+    "C2-C5": {
+      "total": 169,
+      "cross_platform": 78,
+      "strongest": 0.8568774861511137
+    }
+  },
+  "top_bridges": [
+    {
+      "name": "Modeling Complexity",
+      "platform": "chatgpt",
+      "participation": 0.7407407407407407,
+      "z_score": -0.9585131411045326,
+      "role": "R3: Satellite connector",
+      "community": 0
+    },
+    {
+      "name": "Problem-Solving Strategies",
+      "platform": "chatgpt",
+      "participation": 0.720427712185342,
+      "z_score": 1.3662388802310876,
+      "role": "R3: Satellite connector",
+      "community": 0
+    },
+    {
+      "name": "Contextual Understanding",
+      "platform": "agentic",
+      "participation": 0.7146814404432134,
+      "z_score": -1.0754855002754253,
+      "role": "R3: Satellite connector",
+      "community": 1
+    },
+    {
+      "name": "Cognitive Frameworks",
+      "platform": "chatgpt",
+      "participation": 0.7128177393185506,
+      "z_score": 0.6654082951344357,
+      "role": "R3: Satellite connector",
+      "community": 1
+    },
+    {
+      "name": "Cognitive Architectures and Reasoning",
+      "platform": "chatgpt",
+      "participation": 0.7126710291493159,
+      "z_score": 0.8588409390688647,
+      "role": "R3: Satellite connector",
+      "community": 1
+    },
+    {
+      "name": "Pattern of Abstraction",
+      "platform": "chatgpt",
+      "participation": 0.7054545454545456,
+      "z_score": 1.2910759483380922,
+      "role": "R3: Satellite connector",
+      "community": 2
+    },
+    {
+      "name": "Problem Decomposition",
+      "platform": "chatgpt",
+      "participation": 0.7053061224489796,
+      "z_score": 0.4642070825485275,
+      "role": "R3: Satellite connector",
+      "community": 2
+    },
+    {
+      "name": "Critical Thinking Analysis",
+      "platform": "chatgpt",
+      "participation": 0.7041975308641975,
+      "z_score": 1.0522735830032937,
+      "role": "R3: Satellite connector",
+      "community": 1
+    },
+    {
+      "name": "Data Processing and Analysis",
+      "platform": "chatgpt",
+      "participation": 0.6959876543209876,
+      "z_score": 0.7398300378117157,
+      "role": "R3: Satellite connector",
+      "community": 2
+    },
+    {
+      "name": "Systematic Reasoning",
+      "platform": "chatgpt",
+      "participation": 0.6955102040816327,
+      "z_score": 0.08511036333114867,
+      "role": "R3: Satellite connector",
+      "community": 1
+    },
+    {
+      "name": "Abstract Reasoning",
+      "platform": "chatgpt",
+      "participation": 0.6928166351606805,
+      "z_score": 1.0522735830032937,
+      "role": "R3: Satellite connector",
+      "community": 1
+    },
+    {
+      "name": "Computationalism",
+      "platform": "chatgpt",
+      "participation": 0.6912,
+      "z_score": -0.49518756847213835,
+      "role": "R3: Satellite connector",
+      "community": 1
+    },
+    {
+      "name": "Meta-Reflection",
+      "platform": "agentic",
+      "participation": 0.6871455576559546,
+      "z_score": 1.2910759483380922,
+      "role": "R3: Satellite connector",
+      "community": 2
+    },
+    {
+      "name": "Knowledge Graphs and Network Analysis",
+      "platform": "chatgpt",
+      "participation": 0.6843100189035918,
+      "z_score": 1.6325715148065807,
+      "role": "R3: Satellite connector",
+      "community": 1
+    },
+    {
+      "name": "Abstraction and Simplification",
+      "platform": "agentic",
+      "participation": 0.6805555555555556,
+      "z_score": 0.7398300378117157,
+      "role": "R3: Satellite connector",
+      "community": 2
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "method": "Borgatti-Everett continuous CP (100 iterations)",
+  "correlation": 0.5708385523599513,
+  "core_count": 29,
+  "periphery_count": 86,
+  "core_composition": {
+    "chatgpt": 18,
+    "agentic": 11
+  },
+  "periphery_composition": {
+    "chatgpt": 61,
+    "agentic": 25
+  },
+  "mean_coreness": {
+    "chatgpt": 0.29308520682261613,
+    "agentic": 0.348901326643541,
+    "mann_whitney_p": 0.30068404000692617
+  },
+  "coreness_vs_cross_degree": {
+    "rho": 0.89397832797831,
+    "p": 3.37796124793366e-41
+  },
+  "top_core": [
+    {
+      "name": "Iterative Refining",
+      "platform": "agentic",
+      "coreness": 0.9253731341709066
+    },
+    {
+      "name": "Problem-Solving Frameworks",
+      "platform": "chatgpt",
+      "coreness": 0.9111940297212298
+    },
+    {
+      "name": "Problem-Solving Strategies",
+      "platform": "chatgpt",
+      "coreness": 0.8999999998298507
+    },
+    {
+      "name": "Iterative Refinement",
+      "platform": "agentic",
+      "coreness": 0.8761194028530186
+    },
+    {
+      "name": "Pattern of Abstraction",
+      "platform": "chatgpt",
+      "coreness": 0.870895522248385
+    },
+    {
+      "name": "Pattern Recognition",
+      "platform": "agentic",
+      "coreness": 0.8507462685119627
+    },
+    {
+      "name": "Rule-Based Reasoning",
+      "platform": "chatgpt",
+      "coreness": 0.8261194028530185
+    },
+    {
+      "name": "Design Thinking for Problem-Solving",
+      "platform": "chatgpt",
+      "coreness": 0.7917910446669193
+    },
+    {
+      "name": "Abstract Reasoning",
+      "platform": "chatgpt",
+      "coreness": 0.7865671640622857
+    },
+    {
+      "name": "Reverse-Process Thinking",
+      "platform": "chatgpt",
+      "coreness": 0.7865671640622857
+    },
+    {
+      "name": "Iterative Inference",
+      "platform": "chatgpt",
+      "coreness": 0.7664179103258633
+    },
+    {
+      "name": "Cognitive Exploration",
+      "platform": "chatgpt",
+      "coreness": 0.756716417798708
+    },
+    {
+      "name": "Debugging Iterative Refinement",
+      "platform": "agentic",
+      "coreness": 0.7417910446669193
+    },
+    {
+      "name": "Meta-Reflection",
+      "platform": "agentic",
+      "coreness": 0.7365671640622856
+    },
+    {
+      "name": "Iterative Problem-Solving",
+      "platform": "agentic",
+      "coreness": 0.732089552139764
+    }
+  ],
+  "bottom_periphery": [
+    {
+      "name": "Infinite Sets",
+      "platform": "chatgpt",
+      "coreness": 0.0
+    },
+    {
+      "name": "Foundational Questions",
+      "platform": "chatgpt",
+      "coreness": 0.0
+    },
+    {
+      "name": "Cognitive Anchoring",
+      "platform": "chatgpt",
+      "coreness": 0.0
+    },
+    {
+      "name": "Code Block Management",
+      "platform": "chatgpt",
+      "coreness": 0.0
+    },
+    {
+      "name": "R Interpreter Configuration",
+      "platform": "chatgpt",
+      "coreness": 0.0
+    },
+    {
+      "name": "Referencing and Cross-Referencing",
+      "platform": "chatgpt",
+      "coreness": 0.0
+    },
+    {
+      "name": "Rendering Engine Optimization",
+      "platform": "chatgpt",
+      "coreness": 0.0
+    },
+    {
+      "name": "Mathematical Optimization",
+      "platform": "chatgpt",
+      "coreness": 0.0
+    },
+    {
+      "name": "Cognitive flexibility and adaptation",
+      "platform": "agentic",
+      "coreness": 0.0
+    },
+    {
+      "name": "Error Handling Protocol",
+      "platform": "agentic",
+      "coreness": 0.0
+    },
+    {
+      "name": "Plugin Management Loop",
+      "platform": "agentic",
+      "coreness": 0.0
+    },
+    {
+      "name": "Caveat as Boundary Condition",
+      "platform": "agentic",
+      "coreness": 0.0
+    },
+    {
+      "name": "Project Initialization",
+      "platform": "agentic",
+      "coreness": 0.0
+    },
+    {
+      "name": "Exploratory Reading",
+      "platform": "agentic",
+      "coreness": 0.0
+    },
+    {
+      "name": "Pattern of Iterative Initiation",
+      "platform": "agentic",
+      "coreness": 0.0
+    }
+  ]
+}
