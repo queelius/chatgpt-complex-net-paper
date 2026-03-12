@@ -1,0 +1,157 @@
+{
+  "experiment": "F75: Similarity Distribution Analysis",
+  "distribution_stats": {
+    "all": {
+      "n": 6555,
+      "mean": 0.6413,
+      "std": 0.0704,
+      "median": 0.6374,
+      "skewness": 0.3774,
+      "kurtosis": 0.3707,
+      "min": 0.4257,
+      "max": 0.9442,
+      "q25": 0.5917,
+      "q75": 0.6859
+    },
+    "within_chatgpt": {
+      "n": 3081,
+      "mean": 0.6457,
+      "std": 0.0669,
+      "median": 0.6428,
+      "skewness": 0.2427,
+      "kurtosis": 0.0797,
+      "min": 0.4314,
+      "max": 0.9007,
+      "q25": 0.5996,
+      "q75": 0.6888
+    },
+    "within_agentic": {
+      "n": 630,
+      "mean": 0.6522,
+      "std": 0.0816,
+      "median": 0.6429,
+      "skewness": 0.6233,
+      "kurtosis": 0.47,
+      "min": 0.4698,
+      "max": 0.9442,
+      "q25": 0.5948,
+      "q75": 0.6991
+    },
+    "cross_platform": {
+      "n": 2844,
+      "mean": 0.6341,
+      "std": 0.0707,
+      "median": 0.629,
+      "skewness": 0.4106,
+      "kurtosis": 0.4485,
+      "min": 0.4257,
+      "max": 0.9425,
+      "q25": 0.5835,
+      "q75": 0.6798
+    }
+  },
+  "normality_p_values": {
+    "all": 0.0,
+    "within_chatgpt": 0.0,
+    "within_agentic": 0.0,
+    "cross_platform": 0.0
+  },
+  "ks_tests": {
+    "chatgpt_vs_cross": {
+      "D": 0.0929,
+      "p": 0.0
+    },
+    "agentic_vs_cross": {
+      "D": 0.0881,
+      "p": 0.000623
+    },
+    "chatgpt_vs_agentic": {
+      "D": 0.0649,
+      "p": 0.023069
+    }
+  },
+  "threshold_analysis": [
+    {
+      "threshold": 0.5,
+      "pairs_above": 6467,
+      "cross_platform_above": 2793,
+      "cross_platform_fraction": 0.4319
+    },
+    {
+      "threshold": 0.55,
+      "pairs_above": 5994,
+      "cross_platform_above": 2553,
+      "cross_platform_fraction": 0.4259
+    },
+    {
+      "threshold": 0.6,
+      "pairs_above": 4661,
+      "cross_platform_above": 1893,
+      "cross_platform_fraction": 0.4061
+    },
+    {
+      "threshold": 0.65,
+      "pairs_above": 2801,
+      "cross_platform_above": 1113,
+      "cross_platform_fraction": 0.3974
+    },
+    {
+      "threshold": 0.7,
+      "pairs_above": 1280,
+      "cross_platform_above": 500,
+      "cross_platform_fraction": 0.3906
+    },
+    {
+      "threshold": 0.75,
+      "pairs_above": 426,
+      "cross_platform_above": 151,
+      "cross_platform_fraction": 0.3545
+    },
+    {
+      "threshold": 0.8,
+      "pairs_above": 124,
+      "cross_platform_above": 48,
+      "cross_platform_fraction": 0.3871
+    },
+    {
+      "threshold": 0.85,
+      "pairs_above": 41,
+      "cross_platform_above": 18,
+      "cross_platform_fraction": 0.439
+    },
+    {
+      "threshold": 0.9,
+      "pairs_above": 12,
+      "cross_platform_above": 6,
+      "cross_platform_fraction": 0.5
+    },
+    {
+      "threshold": 0.95,
+      "pairs_above": 0,
+      "cross_platform_above": 0,
+      "cross_platform_fraction": 0
+    }
+  ],
+  "histogram_peaks": [
+    {
+      "center": 0.467,
+      "count": 21
+    },
+    {
+      "center": 0.612,
+      "count": 394
+    },
+    {
+      "center": 0.633,
+      "count": 408
+    },
+    {
+      "center": 0.675,
+      "count": 323
+    },
+    {
+      "center": 0.903,
+      "count": 6
+    }
+  ]
+}

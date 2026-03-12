@@ -1813,10 +1813,122 @@ This asymmetry explains many earlier findings:
 
 ---
 
+## F75: Concept Similarity Distribution — Platform Segregation in the Tail
+
+**Method**: Analyze all 6,555 pairwise concept similarities. Compare within-platform vs cross-platform distributions. KS tests for distributional differences.
+
+| Category | N pairs | Mean | Median | Std | Skewness |
+|:---|---:|---:|---:|---:|---:|
+| All | 6,555 | 0.641 | 0.637 | 0.070 | 0.38 |
+| ChatGPT↔ChatGPT | 3,081 | **0.646** | 0.643 | 0.067 | 0.24 |
+| Agentic↔Agentic | 630 | **0.652** | 0.643 | 0.082 | 0.62 |
+| Cross-platform | 2,844 | **0.634** | 0.629 | 0.071 | 0.41 |
+
+**KS tests**: All three pairwise distribution comparisons are significant:
+- ChatGPT vs cross-platform: D=0.093, p < 10⁻¹¹
+- Agentic vs cross-platform: D=0.088, p = 0.0006
+- ChatGPT vs agentic: D=0.065, p = 0.023
+
+**Cross-platform fraction vs threshold** (U-shaped):
+
+| θ | Pairs above | Cross-platform fraction |
+|:---|---:|---:|
+| 0.50 | 6,467 | **43.2%** |
+| 0.65 | 2,801 | 39.7% |
+| 0.70 | 1,280 | 39.1% |
+| 0.75 | 426 | **35.4%** (minimum) |
+| 0.85 | 41 | **43.9%** |
+| 0.90 | 12 | **50.0%** |
+
+**Key finding**: Cross-platform fraction follows a U-shape across thresholds. It's lowest at θ=0.75 (35.4%) where moderate-similarity same-platform pairs dominate. At the extreme tail (θ≥0.90), cross-platform pairs reach 50% — the very highest similarities are the identical cognitive primitives appearing on both platforms ("Bayesian inference as model selection", sim=0.943).
+
+The distribution is unimodal (peak at sim≈0.63), non-normal (p≈0), and slightly right-skewed (0.38). No evidence of bimodality.
+
+---
+
+## F76: Cross-Platform Concept Prediction
+
+**Method**: Logistic regression predicting above-median cross-platform edge fraction from network features (degree, PageRank, betweenness, closeness, k-core, clustering, platform). 5-fold CV.
+
+**Accuracy: 72.3% ± 12.8%** (vs 50% baseline)
+
+| Feature | Spearman ρ | p-value | LR coefficient |
+|:---|---:|---:|---:|
+| **is_agentic** | **+0.585** | < 10⁻⁶ | **+1.22** |
+| **core_number** | **+0.535** | < 10⁻⁶ | +0.92 |
+| **degree** | **+0.408** | < 10⁻⁵ | +0.60 |
+| closeness | +0.385 | < 10⁻⁴ | -0.13 |
+| pagerank | +0.310 | 0.001 | -0.25 |
+| betweenness | +0.127 | 0.192 (NS) | -0.03 |
+| clustering | +0.029 | 0.765 (NS) | +0.47 |
+
+**Key finding**: The single strongest predictor of cross-platform bridging is **being agentic** (ρ=0.585). Agentic process concepts are inherently more cross-platform than ChatGPT knowledge concepts. After platform identity, **k-core number** (ρ=0.535) and **degree** (ρ=0.408) are the next best predictors — structural centrality predicts bridging.
+
+**Betweenness and clustering are NOT predictive** (p > 0.19). Cross-platform bridging is about broad connectivity (degree, core membership), not about sitting on shortest paths (betweenness) or local cliquishness (clustering).
+
+---
+
+## F77: Community Detection Method Comparison
+
+**Method**: Compare Louvain, Label Propagation, Greedy Modularity, and Spectral Clustering on the concept network (θ=0.70). Compute modularity, NMI, and stability.
+
+| Method | Communities | Modularity Q | Mixed comm. % |
+|:---|---:|---:|---:|
+| **Louvain** | **7** | **0.276** | **57%** |
+| Greedy Modularity | 9 | 0.258 | 33% |
+| Spectral (k=11) | 11 | 0.222 | 36% |
+| Label Propagation | 6 | 0.006 | 17% |
+
+**Pairwise NMI** (agreement between methods):
+- Louvain vs Greedy: **0.598** (highest agreement)
+- Greedy vs Spectral: 0.606
+- Louvain vs Spectral: 0.516
+- Label Propagation vs all others: **0.27-0.38** (outlier — essentially different partition)
+
+**Louvain stability** (10 random seeds): mean NMI = **0.854 ± 0.085**, range [0.716, 1.000].
+
+**Key finding**: Louvain produces the most balanced result (highest Q, most mixed communities) and reasonably agrees with Greedy Modularity (NMI=0.60). Label Propagation fails on this dense network (Q≈0). The "true" community count is 7-9 (Louvain/Greedy agree), consistent with the spectral suggestion of k=9 (F69).
+
+Louvain is moderately stable (NMI=0.85) but not perfectly reproducible — some community assignments shift between seeds. For production use, consensus clustering across seeds would improve reliability.
+
+---
+
+## Master Comparison Table (Updated with F75-F77)
+
+| Metric | ChatGPT | Agentic (parents) |
+|:---|:---|:---|
+| Episodes | 601 (θ=0.9) | 449 (θ=0.95) |
+| Edges | 1,718 | 4,316 |
+| Density | 0.0095 | 0.0429 |
+| Modularity | 0.750 | 0.278 |
+| Communities | 15 | 12 |
+| Densification γ | 1.405 | 1.410 |
+| Architecture | Knowledge Archipelago | Cognitive Web |
+| L1 concepts | 79 (68 pruned) | 36 |
+| Concept types | Epistemic (WHAT) | Practical (HOW) |
+| Hidden connections | 99.4% | 92.8% |
+| Cross-platform edges (pruned) | 41.5% | |
+| Era matching rate | 7% → 43% (early → late) | |
+| Concept 19-core | 19 (61%) | 12 (39%) |
+| Rich-club ρ | 1.2-1.3 (z > 20) | |
+| Degree → bridging ρ | 0.496 (p < 10⁻⁸) | |
+| Small-world σ/ω | 2.42 / 0.03 | |
+| Resilience | 50% removal to halve GC | |
+| Walk to other platform | 4.18 steps | 1.96 steps |
+| Bridge ego dominance | 1/10 | 9/10 |
+| **Sim distribution** | mean=0.646 | mean=0.652 |
+| **Cross-platform sim** | 0.634 (sig. lower, KS p<1e-11) | |
+| **Bridging prediction** | is_agentic: ρ=0.585 (#1 predictor) | |
+| **LR accuracy** | 72.3% (7 features) | |
+| **Community methods** | Louvain=Greedy (NMI=0.60); LP fails | |
+| **Louvain stability** | NMI=0.854 ± 0.085 (10 seeds) | |
+
+---
+
 ## Pending Experiments
 
 1. **Full consensus extraction**: All communities, N=5 runs (production-quality concept set)
 2. **Agentic temporal evolution**: Apply temporal analysis to agentic sessions
-3. **Concept network community overlap**: Detect overlapping communities (e.g., SLPA or Infomap)
-4. **Concept similarity distribution analysis**: Fit distribution to pairwise similarities (normal? bimodal?)
-5. **Cross-platform concept prediction**: Can episode-level features predict concept-level bridging?
+3. **Weighted vs unweighted network comparison**: Do weights change community structure?
+4. **Concept embeddings dimensionality reduction**: t-SNE/UMAP visualization of concept space
+5. **Concept co-occurrence in abstraction hierarchy**: Which concepts collapse together at L2?
