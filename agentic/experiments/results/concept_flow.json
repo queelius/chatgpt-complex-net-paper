@@ -1,0 +1,245 @@
+{
+  "experiment": "F68: Cross-Platform Concept Flow",
+  "threshold": 0.7,
+  "match_threshold": 0.8,
+  "total_cross_pairs": 48,
+  "era_distribution": {
+    "early": 1,
+    "middle": 22,
+    "late": 25
+  },
+  "matching_rates": {
+    "early": {
+      "total_concepts": 14,
+      "concepts_with_agentic_match": 1,
+      "rate": 0.071
+    },
+    "middle": {
+      "total_concepts": 42,
+      "concepts_with_agentic_match": 9,
+      "rate": 0.214
+    },
+    "late": {
+      "total_concepts": 21,
+      "concepts_with_agentic_match": 9,
+      "rate": 0.429
+    }
+  },
+  "era_similarity_stats": {
+    "early": {
+      "n_pairs": 1,
+      "mean_sim": 0.8,
+      "max_sim": 0.8
+    },
+    "middle": {
+      "n_pairs": 22,
+      "mean_sim": 0.8474,
+      "max_sim": 0.9425
+    },
+    "late": {
+      "n_pairs": 25,
+      "mean_sim": 0.8421,
+      "max_sim": 0.913
+    }
+  },
+  "unique_bridges_per_era": {
+    "early": {
+      "chatgpt_concepts": [
+        "Statistical Modeling and Estimation"
+      ],
+      "agentic_concepts": [
+        "Bayesian inference as model selection"
+      ],
+      "n_chatgpt": 1,
+      "n_agentic": 1
+    },
+    "middle": {
+      "chatgpt_concepts": [
+        "Bayesian Reasoning for Model Selection",
+        "Bayesian inference as model selection",
+        "Cognitive Flexibility",
+        "Cognitive Frameworks for Reasoning",
+        "Design Thinking for Problem-Solving",
+        "Iterative Development and Refining",
+        "Knowledge Graph Embeddings",
+        "Knowledge Graphs and Network Analysis",
+        "Pattern of Abstraction"
+      ],
+      "agentic_concepts": [
+        "Abstraction and Modularity",
+        "Abstraction and Simplification",
+        "Bayesian inference as model selection",
+        "Cognitive Frameworking",
+        "Cognitive flexibility and adaptation",
+        "Debugging Iterative Refinement",
+        "Iterative Problem-Solving",
+        "Iterative Refactoring Loop",
+        "Iterative Refinement",
+        "Iterative Refining",
+        "Iterative problem-solving and refinement",
+        "Knowledge Graph Exploration",
+        "Knowledge Graphing",
+        "Knowledge graphing and network analysis",
+        "Pattern Recognition",
+        "Problem-Solving Through Insight",
+        "Verification-Driven Development"
+      ],
+      "n_chatgpt": 9,
+      "n_agentic": 17
+    },
+    "late": {
+      "chatgpt_concepts": [
+        "Cognitive Frameworks",
+        "Cognitive Reasoning Patterns",
+        "Data Processing and Analysis",
+        "Exploratory Problem Solving",
+        "Iterative Inference",
+        "Knowledge Graphs",
+        "Problem Decomposition",
+        "Problem-Solving Frameworks",
+        "Rule-Based Reasoning"
+      ],
+      "agentic_concepts": [
+        "Abstraction and Modularity",
+        "Analytical Insight Generation",
+        "Cognitive Frameworking",
+        "Debugging Iterative Refinement",
+        "Iterative Problem-Solving",
+        "Iterative Refactoring Loop",
+        "Iterative Refinement",
+        "Iterative Refining",
+        "Iterative problem-solving and refinement",
+        "Knowledge Graph Exploration",
+        "Knowledge Graphing",
+        "Knowledge graphing and network analysis",
+        "Meta-Reflection",
+        "Pattern Recognition",
+        "Problem Decomposition"
+      ],
+      "n_chatgpt": 9,
+      "n_agentic": 15
+    }
+  },
+  "top_cross_pairs": [
+    {
+      "chatgpt_concept": "Bayesian inference as model selection",
+      "chatgpt_era": "middle",
+      "agentic_concept": "Bayesian inference as model selection",
+      "similarity": 0.9425
+    },
+    {
+      "chatgpt_concept": "Knowledge Graphs and Network Analysis",
+      "chatgpt_era": "middle",
+      "agentic_concept": "Knowledge Graphing",
+      "similarity": 0.9163
+    },
+    {
+      "chatgpt_concept": "Knowledge Graphs",
+      "chatgpt_era": "late",
+      "agentic_concept": "Knowledge Graphing",
+      "similarity": 0.913
+    },
+    {
+      "chatgpt_concept": "Knowledge Graphs and Network Analysis",
+      "chatgpt_era": "middle",
+      "agentic_concept": "Knowledge Graphing",
+      "similarity": 0.9087
+    },
+    {
+      "chatgpt_concept": "Problem Decomposition",
+      "chatgpt_era": "late",
+      "agentic_concept": "Problem Decomposition",
+      "similarity": 0.908
+    },
+    {
+      "chatgpt_concept": "Knowledge Graphs",
+      "chatgpt_era": "late",
+      "agentic_concept": "Knowledge Graphing",
+      "similarity": 0.9033
+    },
+    {
+      "chatgpt_concept": "Iterative Development and Refining",
+      "chatgpt_era": "middle",
+      "agentic_concept": "Iterative Problem-Solving",
+      "similarity": 0.8942
+    },
+    {
+      "chatgpt_concept": "Knowledge Graphs and Network Analysis",
+      "chatgpt_era": "middle",
+      "agentic_concept": "Knowledge graphing and network analysis",
+      "similarity": 0.881
+    },
+    {
+      "chatgpt_concept": "Iterative Inference",
+      "chatgpt_era": "late",
+      "agentic_concept": "Iterative Problem-Solving",
+      "similarity": 0.8776
+    },
+    {
+      "chatgpt_concept": "Pattern of Abstraction",
+      "chatgpt_era": "middle",
+      "agentic_concept": "Abstraction and Simplification",
+      "similarity": 0.877
+    },
+    {
+      "chatgpt_concept": "Iterative Development and Refining",
+      "chatgpt_era": "middle",
+      "agentic_concept": "Iterative Refinement",
+      "similarity": 0.8682
+    },
+    {
+      "chatgpt_concept": "Iterative Inference",
+      "chatgpt_era": "late",
+      "agentic_concept": "Iterative problem-solving and refinement",
+      "similarity": 0.8652
+    },
+    {
+      "chatgpt_concept": "Problem-Solving Frameworks",
+      "chatgpt_era": "late",
+      "agentic_concept": "Problem Decomposition",
+      "similarity": 0.8626
+    },
+    {
+      "chatgpt_concept": "Knowledge Graphs",
+      "chatgpt_era": "late",
+      "agentic_concept": "Knowledge graphing and network analysis",
+      "similarity": 0.8603
+    },
+    {
+      "chatgpt_concept": "Exploratory Problem Solving",
+      "chatgpt_era": "late",
+      "agentic_concept": "Problem Decomposition",
+      "similarity": 0.8569
+    },
+    {
+      "chatgpt_concept": "Bayesian Reasoning for Model Selection",
+      "chatgpt_era": "middle",
+      "agentic_concept": "Bayesian inference as model selection",
+      "similarity": 0.8529
+    },
+    {
+      "chatgpt_concept": "Iterative Inference",
+      "chatgpt_era": "late",
+      "agentic_concept": "Iterative Refinement",
+      "similarity": 0.8518
+    },
+    {
+      "chatgpt_concept": "Cognitive Frameworks",
+      "chatgpt_era": "late",
+      "agentic_concept": "Cognitive Frameworking",
+      "similarity": 0.8512
+    },
+    {
+      "chatgpt_concept": "Design Thinking for Problem-Solving",
+      "chatgpt_era": "middle",
+      "agentic_concept": "Problem-Solving Through Insight",
+      "similarity": 0.8451
+    },
+    {
+      "chatgpt_concept": "Iterative Inference",
+      "chatgpt_era": "late",
+      "agentic_concept": "Iterative Refining",
+      "similarity": 0.8434
+    }
+  ]
+}

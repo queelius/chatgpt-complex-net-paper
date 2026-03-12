@@ -1527,10 +1527,166 @@ The concept network reveals a layered architecture:
 
 ---
 
+## F67: Concept Network Resilience
+
+**Method**: Compare giant component survival under four attack strategies: (1) targeted by degree, (2) targeted by betweenness, (3) random (50 trials), (4) platform-specific removal.
+
+| Removed % | Targeted (degree) | Targeted (betw.) | Random (mean±std) |
+|:---|---:|---:|:---|
+| 0% | 95.7% | 95.7% | 95.7% |
+| 10% | 86.1% | 80.9% | 85.8 ± 1.1% |
+| 20% | 74.8% | 70.4% | 74.9 ± 1.5% |
+| 30% | 65.2% | 60.9% | 65.1 ± 1.6% |
+| 50% | **24.3%** | **37.4%** | **45.7 ± 1.5%** |
+| 70% | 2.6% | 2.6% | 26.8 ± 1.5% |
+
+**Fraction to halve GC**: Targeted(degree) = 50%, targeted(betweenness) = 50%, random = 50%.
+
+**Key finding**: The concept network is remarkably resilient — it takes removing **50% of nodes** to halve the GC under any strategy. At low removal rates (≤30%), targeted and random are nearly identical. The network's density (0.20) provides enough path redundancy that individual hub removal doesn't create bottlenecks. The divergence appears only at 50%+ removal, where targeted attack collapses the GC to 24% while random only reduces to 46%.
+
+**Platform-specific resilience**:
+- Removing 100% of agentic concepts: GC = **66.1%** (doesn't halve!)
+- Removing 70% of ChatGPT concepts: GC = **43.5%** (just halves)
+
+The network can survive losing ALL agentic concepts without fragmenting. ChatGPT knowledge concepts alone form a connected backbone. Agentic concepts are embedded within this backbone but are not structurally necessary — they add cross-platform bridges but not structural integrity.
+
+---
+
+## F68: Cross-Platform Concept Flow (Temporal Convergence)
+
+**Method**: For cross-platform concept pairs (sim ≥ 0.80), classify the ChatGPT concept by its era (Early/Middle/Late). Compute matching rates: what fraction of each era's concepts have an agentic match?
+
+| Era | Total concepts | With agentic match | Matching rate |
+|:---|---:|---:|---:|
+| Early (GPT-3.5) | 14 | 1 | **7.1%** |
+| Middle (GPT-4) | 42 | 9 | **21.4%** |
+| Late (GPT-4o) | 21 | 9 | **42.9%** |
+
+**Key finding — temporal convergence**: Late-era ChatGPT concepts are **6× more likely** to match an agentic concept than early-era (42.9% vs 7.1%). This is a clear temporal gradient: as the user's ChatGPT conversations matured from foundational exploration to applied work, concepts increasingly overlapped with agentic process patterns.
+
+**Cross-platform pairs**: 48 total at sim ≥ 0.80. Distribution: 52% from late era, 46% from middle, only 2% from early.
+
+**Interpretation**: The user's cognitive style converged across platforms over time. Early ChatGPT use explored abstract domains (philosophy, cognitive science) with no agentic parallel. Late ChatGPT use focused on applied problem-solving — exactly the domain where agentic sessions live. The concept layer captures this convergence quantitatively.
+
+---
+
+## F69: Spectral Analysis
+
+**Method**: Compute Laplacian, normalized Laplacian, and adjacency eigenvalue spectra. Analyze Fiedler value (algebraic connectivity), spectral gaps, and community structure suggestions.
+
+| Metric | Value |
+|:---|:---|
+| Connected components | 4 |
+| Fiedler value (λ₂) | **0.206** |
+| Spectral gap (λ₃/λ₂) | 1.33 |
+| Spectral radius | 25.21 |
+| Louvain communities | 7 |
+| Spectral suggestion (largest gap) | k=9 |
+
+**Spectral gap structure** (largest gaps suggest natural community counts):
+
+| k | Gap (Δλ) | λ_k → λ_{k+1} |
+|:---|---:|:---|
+| 9 | **0.594** | 0.735 → 1.329 |
+| 16 | 0.502 | 2.242 → 2.744 |
+| 11 | 0.453 | 1.457 → 1.910 |
+| 6 | 0.398 | 0.274 → 0.672 |
+
+**Key finding**: The spectral analysis suggests k=9 communities (largest gap), close to Louvain's k=7. The secondary gap at k=6 also aligns with Louvain. The Fiedler value (0.206) indicates moderate algebraic connectivity — the network is neither barely connected nor highly integrated.
+
+The spectral radius (25.21) is close to the mean degree (22.3), consistent with a relatively homogeneous degree distribution. In contrast, networks with strong hubs have spectral radius >> mean degree.
+
+---
+
+## F70: Concept Network Small-World Properties
+
+**Method**: Compute clustering coefficient C, average path length L, and compare to Erdős-Rényi random graphs (same n,m) and ring lattices. Compute Humphries-Gurney σ and Telesford ω.
+
+| Metric | Observed | ER Random | Lattice |
+|:---|---:|---:|---:|
+| Clustering (C) | **0.598** | 0.214 | 0.717 |
+| Avg path length (L) | **2.074** | 1.792 | — |
+| Diameter | **7** | — | — |
+
+| Small-world metric | Value | Interpretation |
+|:---|---:|:---|
+| σ (Humphries-Gurney) | **2.42** | σ > 1 → small-world |
+| C/C_random | **2.80** | 2.8× more clustered than random |
+| L/L_random | **1.16** | Only 16% longer paths than random |
+| ω (Telesford) | **0.03** | ≈ 0 → true small-world |
+
+**Key finding**: The concept network is a **confirmed small-world** (σ=2.42, ω≈0). It has nearly 3× the clustering of a random graph but essentially random path lengths. Any concept can reach any other in ≤7 steps (diameter), with average path length just 2.07.
+
+**Platform-specific path lengths**:
+- ChatGPT↔ChatGPT: 2.04
+- Agentic↔Agentic: **1.89** (shortest)
+- Cross-platform: **2.15** (longest, but only ~5% longer)
+
+Agentic concepts are closer to each other (1.89 hops) than ChatGPT concepts (2.04), consistent with their higher clustering (F63). Cross-platform distances (2.15) are barely longer than within-platform — the concept layer maintains a compact cross-platform distance despite platform identity.
+
+---
+
+## Updated Theme 10: The Concept Network as a Small-World with Resilient Core (F67-F70)
+
+| Property | Value | Significance |
+|:---|:---|:---|
+| Small-world σ | 2.42 | Confirmed small-world |
+| Small-world ω | 0.03 | Neither lattice nor random |
+| Resilience | 50% removal to halve GC | Robust to both targeted and random attack |
+| Agentic removal resilience | 100% removal → 66% GC survives | Network doesn't depend on agentic concepts structurally |
+| Temporal convergence | 7% → 43% matching rate (early → late) | 6× concept convergence over time |
+| Spectral communities | k=9 (vs Louvain k=7) | Reasonable agreement |
+| Cross-platform distance | 2.15 hops (vs 2.04 within-platform) | Near-parity |
+
+The concept network is a compact, resilient small-world where:
+1. **Cross-platform concepts are just one extra hop away** (2.15 vs 2.04)
+2. **The network survives complete agentic concept removal** — ChatGPT knowledge concepts form a self-sufficient backbone
+3. **Temporal convergence accelerates** — the user's concept spaces merged over time as ChatGPT use became more applied
+4. **Spectral structure agrees with community detection** — the 7-9 community range is a genuine structural feature
+
+---
+
+## Master Comparison Table (Updated with F67-F70)
+
+| Metric | ChatGPT | Agentic (parents) |
+|:---|:---|:---|
+| Episodes | 601 (θ=0.9) | 449 (θ=0.95) |
+| Edges | 1,718 | 4,316 |
+| Density | 0.0095 | 0.0429 |
+| Modularity | 0.750 | 0.278 |
+| Communities | 15 | 12 |
+| Densification γ | 1.405 | 1.410 |
+| Assortativity | -0.13 | -0.05 |
+| Architecture | Knowledge Archipelago | Cognitive Web |
+| L1 concepts | 79 (68 after pruning) | 36 |
+| L2 meta-concepts | 8 | 6 |
+| L3 orientations | 4 | 3 |
+| L2→L3 compression | 2.59× (variable) | 3.00× (deterministic) |
+| Concept types | Epistemic (WHAT) | Practical (HOW) |
+| Hidden connections | 99.4% | 92.8% |
+| Cross-platform edges (pruned) | 41.5% | |
+| Bridge type | 6/10 identical concepts | |
+| Temporal arc | Foundations → Deepening → Application | — |
+| Era bridging effect | Late > Early/Middle (p=0.020) | |
+| Era matching rate | 7% → 43% (early → late) | |
+| Cross-model stability | Technical: 0.71-0.85; Philosophical: 0.96-0.98 | |
+| Concept 19-core | 19 concepts (61%) | 12 concepts (39%) |
+| Core cross-platform frac | 46-48% (vs 39% full) | |
+| Concept clustering | 0.609 | 0.629 |
+| Triangle overrepresentation | CCC: 0.98× | AAA: 1.81× |
+| Rich-club ρ | 1.2-1.3 (z > 20, significant) | |
+| Degree → bridging ρ | 0.496 (p < 10⁻⁸) | |
+| Small-world σ | 2.42 (concept network) | |
+| Small-world ω | 0.03 (confirmed) | |
+| Resilience to halve GC | 50% removal (any strategy) | |
+| Spectral communities | k=9 (vs Louvain k=7) | |
+
+---
+
 ## Pending Experiments
 
 1. **Full consensus extraction**: All communities, N=5 runs (production-quality concept set)
 2. **Agentic temporal evolution**: Apply temporal analysis to agentic sessions
-3. **Concept network spectral analysis**: Eigenvalue spectrum and spectral gap for community detection quality
-4. **Cross-platform concept flow**: Temporal ordering of shared concepts — which platform "discovers" them first?
-5. **Concept network resilience**: Targeted vs random removal — how fragile is the core?
+3. **Concept network information flow**: Simulate random walks — where does information concentrate?
+4. **Ego networks of bridge concepts**: Local structure around the top cross-platform bridges
+5. **Community role evolution across thresholds**: How do Guimerà-Amaral roles shift from θ=0.65 to 0.80?
