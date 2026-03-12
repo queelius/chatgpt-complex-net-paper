@@ -1157,9 +1157,80 @@ The concept layer is genuinely complementary to episodes — NMI=0.297 confirms 
 
 ---
 
+## F55: Concept Stability Across LLM Models
+
+**Method**: Extract concepts from same 3 ChatGPT communities using 3 different LLMs (llama3.2, phi4-mini, gemma3n). Embed all concept names via nomic-embed-text. Compute cross-model best-match similarity and semantic consensus.
+
+| Community | llama3.2 vs phi4-mini | llama3.2 vs gemma3n | phi4-mini vs gemma3n | All-model consensus |
+|:---|---:|---:|---:|---:|
+| C0 (ML/AI) | 0.829 | 0.708 | 0.847 | 0 |
+| C5 (Statistics) | — | 0.795 | — | 0 |
+| C7 (Philosophy) | **0.958** | **0.977** | **0.966** | **1 (10 variants)** |
+
+**Key finding**: **Abstract/philosophical concepts are the most model-robust.** Community 7 (philosophy/cognition) achieves near-perfect cross-model agreement (0.958-0.977), with all three LLMs independently converging on "existential inquiry" themes. Technical communities (ML, statistics) show more model variance because LLMs decompose the domain differently.
+
+**Implication**: Philosophical/cognitive themes are the strongest candidates for universal cognitive primitives — they emerge regardless of which LLM performs the extraction.
+
+---
+
+## F56: Episode Centrality Does Not Predict Concept Bridging
+
+**Method**: For each ChatGPT concept, compute its source community's mean episode degree, betweenness, and size. Correlate with concept's mean cross-platform similarity to agentic concepts.
+
+| Correlation | ρ | p-value |
+|:---|---:|---:|
+| Community degree vs cross-platform sim | -0.050 | 0.659 |
+| Community betweenness vs cross-platform sim | 0.073 | 0.520 |
+| Community size vs cross-platform sim | -0.048 | 0.672 |
+| Community degree vs concept C—C degree | 0.114 | 0.317 |
+
+**Key finding**: **All correlations are non-significant.** Episode-level network centrality has zero predictive power for concept-level cross-platform bridging. A community's episodes being central in the E—E network tells you nothing about whether its concepts bridge to the agentic platform. This further confirms the concept layer is genuinely independent of the episode layer.
+
+---
+
+## F57: Structural vs Semantic Concept Networks
+
+**Method**: Compare two concept-concept networks: (1) structural (Jaccard overlap of episode sets — concepts from same community share all episodes), (2) semantic (cosine similarity of concept embeddings).
+
+| Pair type | Mean cosine | N pairs |
+|:---|---:|---:|
+| Same community (Jaccard=1.0) | 0.707 | 204 |
+| Different community, same platform | 0.643 | 3,507 |
+| Cross-platform | 0.634 | 2,844 |
+
+**Correlation (Jaccard vs Cosine)**: ρ=0.151, p<10⁻⁶ — significant but weak. The structural network (based on episode co-membership) weakly predicts semantic similarity, but the semantic network adds substantial cross-community structure that the structural network cannot capture.
+
+**Within-community concept diversity** varies from 0.199 (C43, most redundant) to 0.337 (C24, most diverse). Communities with diversity < 0.25 suggest over-extraction — concepts are too semantically similar to be distinct.
+
+---
+
+## Master Comparison Table (Updated)
+
+| Metric | ChatGPT | Agentic (parents) |
+|:---|:---|:---|
+| Episodes | 601 (θ=0.9) | 449 (θ=0.95) |
+| Edges | 1,718 | 4,316 |
+| Density | 0.0095 | 0.0429 |
+| Modularity | 0.750 | 0.278 |
+| Communities | 15 | 12 |
+| Densification γ | 1.405 | 1.410 |
+| Assortativity | -0.13 | -0.05 |
+| Architecture | Knowledge Archipelago | Cognitive Web |
+| L1 concepts | 79 | 36 |
+| L2 meta-concepts | 8 | 6 |
+| L3 orientations | 4 | 3 |
+| L2→L3 compression | 2.59× (mean, variable) | 3.00× (deterministic) |
+| Concept types | Epistemic (WHAT) | Practical (HOW) |
+| Hidden connections | 99.4% | 92.8% |
+| Cross-platform edges (concept) | 39% (< 43% null) | |
+| Temporal concept arc | Foundations → Deepening → Application | — |
+| Cross-model stability | Technical: 0.71-0.85; Philosophical: 0.96-0.98 | |
+
+---
+
 ## Pending Experiments
 
-1. **Full consensus extraction**: Run consensus pipeline on ALL communities (not just top 3) with N=5 runs
-2. **Agentic temporal evolution**: Apply temporal analysis to agentic sessions (though shorter time span)
-3. **Concept stability across embedding models**: Do concepts extracted with different LLMs (llama3.2 vs phi4-mini vs gemma3n) converge?
-4. **Episode-concept correlation**: Do high-centrality episodes produce more cross-platform concepts?
+1. **Full consensus extraction**: All communities, N=5 runs (production-quality concept set)
+2. **Agentic temporal evolution**: Apply temporal analysis to agentic sessions
+3. **Concept hierarchy pruning**: Remove redundant concepts (diversity < 0.25) and recompute network
+4. **Bridge concept deep dive**: For the top 5 cross-platform bridge concepts, trace back to specific episodes and analyze what makes them bridging
