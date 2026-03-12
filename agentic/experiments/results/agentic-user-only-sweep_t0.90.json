@@ -1,0 +1,22 @@
+{
+  "experiment_id": "agentic-user-only-sweep",
+  "threshold": 0.9,
+  "metrics": {
+    "node_count": 3680,
+    "edge_count": 250817,
+    "density": 0.037051804011014336,
+    "num_components": 2219,
+    "giant_component_size": 946,
+    "giant_component_fraction": 0.25706521739130433,
+    "avg_degree": 136.31358695652173,
+    "max_degree": 646,
+    "avg_clustering": 0.33121212416894835,
+    "transitivity": 0.9993999256392891,
+    "avg_shortest_path": 1.8616418895488662,
+    "modularity": 0.3137266203062764,
+    "num_communities": 2220,
+    "assortativity": 0.9987191990491482
+  },
+  "elapsed_seconds": 425.32,
+  "timestamp": "2026-03-11T20:11:38"
+}

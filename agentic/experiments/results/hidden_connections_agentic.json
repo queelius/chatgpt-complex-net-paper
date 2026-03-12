@@ -1,0 +1,534 @@
+{
+  "method": "hidden_connections",
+  "dataset": "agentic_parent",
+  "episode_similarity_threshold": 0.95,
+  "concept_similarity_threshold": 0.85,
+  "total_concept_linked_pairs": 20937,
+  "also_similarity_linked": 1502,
+  "hidden_connections_count": 19435,
+  "hidden_fraction": 0.928,
+  "top_concept_bridges": [
+    {
+      "concepts": [
+        "Iterative Refining",
+        "Iterative Refinement"
+      ],
+      "episode_pairs": 3668
+    },
+    {
+      "concepts": [
+        "Iterative Refining",
+        "Iterative Problem-Solving"
+      ],
+      "episode_pairs": 3668
+    },
+    {
+      "concepts": [
+        "Iterative Problem-Solving",
+        "Iterative problem-solving and refinement"
+      ],
+      "episode_pairs": 2790
+    },
+    {
+      "concepts": [
+        "Knowledge Graphing",
+        "Knowledge graphing and network analysis"
+      ],
+      "episode_pairs": 2790
+    },
+    {
+      "concepts": [
+        "Knowledge Graphing",
+        "Knowledge Graphing"
+      ],
+      "episode_pairs": 2023
+    },
+    {
+      "concepts": [
+        "Iterative Problem-Solving",
+        "Iterative Refining"
+      ],
+      "episode_pairs": 2023
+    },
+    {
+      "concepts": [
+        "Knowledge graphing and network analysis",
+        "Knowledge Graphing"
+      ],
+      "episode_pairs": 1784
+    },
+    {
+      "concepts": [
+        "Iterative Problem-Solving",
+        "Debugging Iterative Refinement"
+      ],
+      "episode_pairs": 177
+    },
+    {
+      "concepts": [
+        "Iterative Refinement",
+        "Iterative Refactoring Loop"
+      ],
+      "episode_pairs": 175
+    },
+    {
+      "concepts": [
+        "Iterative Refinement",
+        "Iterative Refining"
+      ],
+      "episode_pairs": 175
+    }
+  ],
+  "sample_hidden_connections": [
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "71ac629b-8137-4aeb-8f3e-c63a132f9c19",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "82b27842-10c8-426d-a200-144ce900738f",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "bef9822a-a2cc-4c22-9218-0f374c9fa107",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "78cef570-7367-4b87-b109-0570aa170b29",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "b85ba8d3-9523-4e2c-874c-af240de0786e",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "9fa9b0e1-aafe-4731-be35-c3f413605d4c",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "392a3223-e9eb-42c0-b1b3-638915efc145",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "55b08c61-9261-4897-8883-890d735762be",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "cc81bf1b-e47a-42a7-8db4-d193953067b2",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "4d9f0ee3-eab7-4756-b82a-826169ff736a",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "2da2f93b-e37e-4d75-a873-a9add29011e9",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "e99c7688-df0e-4c65-8606-5daa17578b9b",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "e7059d12-97bf-4290-b9fc-e99f5ffe8942",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "be64c1f1-7c0b-44a1-945e-b5dbfcda5600",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "168428f2-c65d-4022-bb8a-36c140d45b2c",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "2ff95703-49ec-4745-8f04-fa08dbf6cdfc",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "93290fbe-8104-47fc-8397-ebc21e447b9d",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "45311fc3-74b7-4583-bc95-be0158940fbf",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "c9ca62fa-8c1f-41c1-a199-3ed348526be4",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "f06de1e3-8386-456b-bb0a-850ddea2a95f",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "6da080c2-278b-4118-ab92-6a8950424238",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "fde79287-fb3d-4e7d-a6fa-27aa977acfcd",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "657c99f2-1f62-4acd-bfb0-ea3b23a4355f",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "fb17876e-d1a5-4c27-a44a-dcf313e418f4",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "bdc22bfc-c1c2-4346-b12d-981475f34d73",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "04916e2f-3857-4bc3-8fb8-ef655b46221c",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "ba79e62b-1200-46b2-a6cf-8f870199f527",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "e68c9317-3917-4968-bf5a-52060aaff361",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "6df1007b-5d4f-4955-9b59-95cfb8af242d",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "397d3dc1-fec6-4bd2-8927-32b2c6b4b371",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "b76ec317-41fe-4e48-bc27-4b274448178a",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "5e6049d0-0a0f-472b-9619-0735f57a99b3",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "f767dfd1-93f0-469d-addf-d1ee445c3a5b",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "a606e6b0-25d4-49f3-b961-e96c7f508514",
+      "episode2": "f7be373f-51cb-4f6b-aa3e-cba7dad316c2",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "71ac629b-8137-4aeb-8f3e-c63a132f9c19",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "82b27842-10c8-426d-a200-144ce900738f",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "bef9822a-a2cc-4c22-9218-0f374c9fa107",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "78cef570-7367-4b87-b109-0570aa170b29",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "b85ba8d3-9523-4e2c-874c-af240de0786e",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "9fa9b0e1-aafe-4731-be35-c3f413605d4c",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "392a3223-e9eb-42c0-b1b3-638915efc145",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "4d9f0ee3-eab7-4756-b82a-826169ff736a",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "2da2f93b-e37e-4d75-a873-a9add29011e9",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "168428f2-c65d-4022-bb8a-36c140d45b2c",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "2ff95703-49ec-4745-8f04-fa08dbf6cdfc",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "93290fbe-8104-47fc-8397-ebc21e447b9d",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "45311fc3-74b7-4583-bc95-be0158940fbf",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "c9ca62fa-8c1f-41c1-a199-3ed348526be4",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "f06de1e3-8386-456b-bb0a-850ddea2a95f",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    },
+    {
+      "episode1": "1c2e12b6-abac-44bc-8352-293025083be2",
+      "episode2": "6da080c2-278b-4118-ab92-6a8950424238",
+      "concept1": "Knowledge Graphing",
+      "concept2": "Knowledge Graphing",
+      "concept_similarity": 0.944,
+      "community1": 2,
+      "community2": 0
+    }
+  ]
+}

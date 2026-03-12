@@ -1,0 +1,67 @@
+{
+  "experiment": "Three-way content mode parent-parent similarity comparison",
+  "description": "Compare parent-only pairwise similarity distributions across content modes",
+  "modes": {
+    "text-only": {
+      "parents_embedded": 462,
+      "pairs": 106491,
+      "mean": 0.8473,
+      "std": 0.0804,
+      "min": 0.2837,
+      "max": 1.0,
+      "P95": 0.9411,
+      "P99": 0.958,
+      "above_thresholds": {
+        "0.85": 62138,
+        "0.88": 41770,
+        "0.90": 27974,
+        "0.93": 10060,
+        "0.95": 2613,
+        "0.97": 165,
+        "0.99": 4
+      }
+    },
+    "user-only": {
+      "parents_embedded": 259,
+      "pairs": 33411,
+      "mean": 0.6123,
+      "std": 0.0844,
+      "min": 0.3094,
+      "max": 1.0,
+      "P95": 0.7437,
+      "P99": 0.8028,
+      "above_thresholds": {
+        "0.85": 112,
+        "0.88": 53,
+        "0.90": 42,
+        "0.93": 23,
+        "0.95": 9
+      }
+    },
+    "assistant-only": {
+      "parents_embedded": 212,
+      "pairs": 22366,
+      "mean": 0.6731,
+      "std": 0.0637,
+      "min": 0.3092,
+      "max": 0.9727,
+      "P95": 0.7637,
+      "P99": 0.7999,
+      "above_thresholds": {
+        "0.85": 16,
+        "0.88": 3,
+        "0.90": 1,
+        "0.93": 1,
+        "0.95": 1
+      }
+    }
+  },
+  "key_findings": [
+    "Text-only (user+assistant) has highest baseline similarity (\u03bc=0.847) \u2014 AI voice homogenizes embedding space",
+    "User-only has lowest mean (\u03bc=0.612) \u2014 user prompts maximally differentiate sessions",
+    "Assistant-only has intermediate mean (\u03bc=0.673) but lowest max (0.9727) and tightest spread (\u03c3=0.064)",
+    "Assistant-only network is essentially empty for parents: max 1 edge above \u03b8=0.90",
+    "User prompts carry topical fingerprint; AI responses add consistent semantic scaffolding",
+    "Combined text works best because AI scaffolding normalizes space while user specificity creates high-similarity peaks"
+  ]
+}

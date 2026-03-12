@@ -40,6 +40,10 @@ def extract_user_only(messages: List[Message]) -> str:
     return "\n".join(_text_blocks(messages, roles={"user"}))
 
 
+def extract_assistant_only(messages: List[Message]) -> str:
+    return "\n".join(_text_blocks(messages, roles={"assistant"}))
+
+
 def extract_tool_names_only(messages: List[Message]) -> str:
     names = []
     for msg in messages:

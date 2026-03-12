@@ -1,0 +1,34 @@
+{
+  "clustering": {
+    "observed": 0.11926413598920806,
+    "null_mean": 0.01180256964363165,
+    "null_std": 0.0014746314845319004,
+    "z_score": 72.87350600661321,
+    "p_value": 0.0,
+    "n_samples": 100
+  },
+  "transitivity": {
+    "observed": 0.43609052199968457,
+    "null_mean": 0.0543588863184041,
+    "null_std": 0.0034917057201268695,
+    "z_score": 109.32525999568213,
+    "p_value": 0.0,
+    "n_samples": 100
+  },
+  "assortativity": {
+    "observed": 0.16668889322123978,
+    "null_mean": -0.030843453329407255,
+    "null_std": 0.0236151288994957,
+    "z_score": 8.36465248152278,
+    "p_value": 0.0,
+    "n_samples": 100
+  },
+  "modularity": {
+    "observed": 0.775895409414136,
+    "null_mean": 0.3919037225094907,
+    "null_std": 0.00389742742027433,
+    "z_score": 98.52439712081083,
+    "p_value": 0.0,
+    "n_samples": 100
+  }
+}

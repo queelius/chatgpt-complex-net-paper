@@ -1,0 +1,1170 @@
+{
+  "dataset": "agentic",
+  "edges_file": "/home/spinoza/github/papers/cognitive-mri-ai-conversations/agentic/data/edges-all.json",
+  "threshold": 0.95,
+  "llm_model": "llama3.2",
+  "graph": {
+    "nodes": 242,
+    "edges": 2613,
+    "communities": 12,
+    "communities_extracted": 9
+  },
+  "concepts": [
+    {
+      "id": "C1_9fdf81",
+      "name": "Meta-Reflection",
+      "description": "Conversations involve self-awareness and introspection on the conversation itself, such as debugging code, testing hypotheses, or evaluating problem-solving approaches.",
+      "source_community": 1,
+      "example_episodes": [
+        "Iterative Sparking Avalanche",
+        "Parsed Weaving Whisper"
+      ]
+    },
+    {
+      "id": "C1_c1f458",
+      "name": "Pattern Recognition",
+      "description": "Conversations involve identifying and applying patterns to solve problems, such as recognizing data structures, understanding algorithms, or spotting errors in code.",
+      "source_community": 1,
+      "example_episodes": [
+        "Harmonic Seeking Curry",
+        "Fancy Orbiting Sifakis"
+      ]
+    },
+    {
+      "id": "C1_00f66f",
+      "name": "Abstraction and Modularity",
+      "description": "Conversations emphasize breaking down complex systems into smaller, manageable components, such as modularizing code, separating concerns, or identifying independent sub-problems.",
+      "source_community": 1,
+      "example_episodes": [
+        "Swirling Wishing Bengio",
+        "Glittery Coalescing Dahl"
+      ]
+    },
+    {
+      "id": "C1_0b391e",
+      "name": "Iterative Refining",
+      "description": "Conversations involve refining and iterating on solutions through a process of trial and error, testing hypotheses, or adjusting parameters to achieve desired outcomes.",
+      "source_community": 1,
+      "example_episodes": [
+        "Zany Sleeping Eich",
+        "Curried Exploring Sun"
+      ]
+    },
+    {
+      "id": "C1_102702",
+      "name": "Contextual Understanding",
+      "description": "Conversations require understanding the context in which problems are being solved, including domain knowledge, problem constraints, and relevant background information.",
+      "source_community": 1,
+      "example_episodes": [
+        "Merry Marinating Wand",
+        "Cheerful Enchanting Cupcake"
+      ]
+    },
+    {
+      "id": "C2_d592e8",
+      "name": "Iterative Refinement",
+      "description": "Conversations involve refining and iterating on ideas, models, or solutions through incremental updates and testing.",
+      "source_community": 2,
+      "example_episodes": [
+        "Mutable Knitting Dragonfly",
+        "Unified Hopping Widget"
+      ]
+    },
+    {
+      "id": "C2_c0740b",
+      "name": "Cognitive Looping",
+      "description": "Conversations exhibit a self-referential loop of problem identification, analysis, and solution generation, with each iteration building upon previous insights.",
+      "source_community": 2,
+      "example_episodes": [
+        "Snug Imagining Pelican",
+        "Refactored Hugging Boole"
+      ]
+    },
+    {
+      "id": "C2_3ed95e",
+      "name": "Knowledge Graphing",
+      "description": "Conversations construct and navigate knowledge graphs, using relationships between concepts to inform and refine their understanding of a topic.",
+      "source_community": 2,
+      "example_episodes": [
+        "Federated Discovering Alpaca",
+        "Keen Scribbling Robin"
+      ]
+    },
+    {
+      "id": "C2_e20278",
+      "name": "Iterative Problem-Solving",
+      "description": "Conversations employ an iterative approach to problem-solving, refining their solutions through testing, iteration, and refinement.",
+      "source_community": 2,
+      "example_episodes": [
+        "Sleepy Mixing Sky",
+        "Purring Sleeping Garden"
+      ]
+    },
+    {
+      "id": "C4_90a165",
+      "name": "Bayesian inference as model selection",
+      "description": "The use of Bayesian inference to inform model selection, particularly in the context of statistical modeling and hypothesis testing",
+      "source_community": 4,
+      "example_episodes": [
+        "Iterative Meandering Allen",
+        "Eager Churning Treasure"
+      ]
+    },
+    {
+      "id": "C4_a27935",
+      "name": "Cognitive flexibility and adaptation",
+      "description": "The ability to adapt and adjust one's thinking and approach in response to new information, changing circumstances, or unexpected outcomes",
+      "source_community": 4,
+      "example_episodes": [
+        "Declarative Sniffing Glacier",
+        "Fluffy Wandering Charm"
+      ]
+    },
+    {
+      "id": "C4_c5efb6",
+      "name": "Knowledge graphing and network analysis",
+      "description": "The use of knowledge graphs and network analysis techniques to represent and analyze complex relationships between concepts, entities, and ideas",
+      "source_community": 4,
+      "example_episodes": [
+        "Atomic Napping Eagle",
+        "Zippy Humming Ritchie"
+      ]
+    },
+    {
+      "id": "C4_c95044",
+      "name": "Iterative problem-solving and refinement",
+      "description": "A cyclical process of identifying problems, generating solutions, evaluating results, and refining approaches through iterative refinement and iteration",
+      "source_community": 4,
+      "example_episodes": [
+        "Elegant Twirling Turing",
+        "Wiggly Jumping Whisper"
+      ]
+    },
+    {
+      "id": "C0_008963",
+      "name": "Problem Decomposition",
+      "description": "Conversations break down complex problems into manageable sub-problems, identifying key areas for improvement or solution development.",
+      "source_community": 0,
+      "example_episodes": [
+        "Vast Squishing Swing",
+        "Delightful Inventing Mochi"
+      ]
+    },
+    {
+      "id": "C0_0b391e",
+      "name": "Iterative Refining",
+      "description": "Conversations employ iterative refinement techniques to refine and iterate on solutions, ensuring they meet design intent and quality standards.",
+      "source_community": 0,
+      "example_episodes": [
+        "Ancient Floating Orbit",
+        "Crystalline Puzzling Squid"
+      ]
+    },
+    {
+      "id": "C0_3ed95e",
+      "name": "Knowledge Graphing",
+      "description": "Conversations construct knowledge graphs to represent complex relationships between ideas, entities, and concepts, facilitating understanding and connection-making.",
+      "source_community": 0,
+      "example_episodes": [
+        "Unified Purring Crab",
+        "Snappy Booping Haven"
+      ]
+    },
+    {
+      "id": "C0_1f19d1",
+      "name": "Abstraction and Simplification",
+      "description": "Conversations employ abstraction and simplification techniques to distill complex concepts into actionable, bite-sized pieces, making them more accessible and manageable.",
+      "source_community": 0,
+      "example_episodes": [
+        "Vast Squishing Swing",
+        "Idempotent Floating Kitten"
+      ]
+    },
+    {
+      "id": "C0_d6f9e3",
+      "name": "Cognitive Frameworking",
+      "description": "Conversations establish cognitive frameworks to organize and structure knowledge, ensuring a coherent and logical flow of ideas and solutions.",
+      "source_community": 0,
+      "example_episodes": [
+        "Peaceful Jumping Harp",
+        "Robust Scribbling Kurzweil"
+      ]
+    },
+    {
+      "id": "C9_1a972c",
+      "name": "Error Handling Protocol",
+      "description": "A structured approach to handling errors, including caveat statements, local command output, and explicit user requests for response consideration",
+      "source_community": 9,
+      "example_episodes": [
+        "Untitled Session",
+        "Sparkling Tickling Wreath"
+      ]
+    },
+    {
+      "id": "C9_7f5349",
+      "name": "Plugin Management Loop",
+      "description": "A recursive pattern of plugin installation, removal, and caching management, highlighting the complexities of managing external dependencies",
+      "source_community": 9,
+      "example_episodes": [
+        "Untitled Session",
+        "Binary Zooming Sundae"
+      ]
+    },
+    {
+      "id": "C9_23cece",
+      "name": "Caveat as Boundary Condition",
+      "description": "The use of caveat statements to establish boundaries between system responses and user-generated content, emphasizing the importance of context in response generation",
+      "source_community": 9,
+      "example_episodes": [
+        "Untitled Session",
+        "Sparkling Tickling Wreath"
+      ]
+    },
+    {
+      "id": "C3_ee942c",
+      "name": "Systematic Problem-Solving",
+      "description": "The use of structured phases, parallelization, and agent-based approaches to tackle complex problems, as seen in the sequential nature of the conversations.",
+      "source_community": 3,
+      "example_episodes": [
+        "Sequential Waddling Babbage",
+        "Frolicking Questing Fiddle"
+      ]
+    },
+    {
+      "id": "C3_0b391e",
+      "name": "Iterative Refining",
+      "description": "The process of refining and improving code through incremental steps, such as auto-fixing issues and applying consistent formatting, demonstrated in the conversations.",
+      "source_community": 3,
+      "example_episodes": [
+        "Zesty Soaring Shore",
+        "Frolicking Questing Fiddle"
+      ]
+    },
+    {
+      "id": "C3_b5ebeb",
+      "name": "Analytical Insight Generation",
+      "description": "The use of tools like Ruff to generate insights and identify problems, as seen in the '\u2605 Insight' notation and the conversations' focus on fixing specific issues.",
+      "source_community": 3,
+      "example_episodes": [
+        "Sequential Waddling Babbage",
+        "Zesty Soaring Shore"
+      ]
+    },
+    {
+      "id": "C3_f5faa0",
+      "name": "Phased Approach",
+      "description": "The division of complex tasks into manageable phases, allowing for parallelization and efficient progress tracking, evident in the conversations' structure.",
+      "source_community": 3,
+      "example_episodes": [
+        "Frolicking Questing Fiddle",
+        "Sequential Waddling Babbage"
+      ]
+    },
+    {
+      "id": "C3_b76f9a",
+      "name": "Error Analysis",
+      "description": "The process of identifying and understanding errors, such as type mismatches and unused imports, and applying fixes to resolve them, demonstrated in the conversations.",
+      "source_community": 3,
+      "example_episodes": [
+        "Zesty Soaring Shore",
+        "Frolicking Questing Fiddle"
+      ]
+    },
+    {
+      "id": "C6_679406",
+      "name": "Project Initialization",
+      "description": "The user initiates a project by providing an /init command, prompting the assistant to understand the current state and format of the manuscript chapters.",
+      "source_community": 6,
+      "example_episodes": [
+        "Cryptic Riding Rabbit",
+        "Untitled Session"
+      ]
+    },
+    {
+      "id": "C6_1c53f8",
+      "name": "Exploratory Reading",
+      "description": "The assistant responds with an exploratory reading approach, examining existing documents like CLAUDE.md to identify improvements needed in the project structure.",
+      "source_community": 6,
+      "example_episodes": [
+        "Cryptic Riding Rabbit"
+      ]
+    },
+    {
+      "id": "C6_99f7d3",
+      "name": "Pattern of Iterative Initiation",
+      "description": "Two subsequent sessions exhibit a pattern of repetitive /init commands without providing further context, suggesting an iterative process or placeholder for user input.",
+      "source_community": 6,
+      "example_episodes": [
+        "Untitled Session",
+        "Untitled Session"
+      ]
+    },
+    {
+      "id": "C8_f7d0d6",
+      "name": "Iterative Refactoring Loop",
+      "description": "A process of refining code through incremental, iterative improvements to achieve a desired state",
+      "source_community": 8,
+      "example_episodes": [
+        "Iterative Sparking Avalanche",
+        "Magical Wibbling Knuth"
+      ]
+    },
+    {
+      "id": "C8_0d8816",
+      "name": "Problem-Solving Through Insight",
+      "description": "Identifying key design patterns and principles to inform solution development and optimize problem-solving",
+      "source_community": 8,
+      "example_episodes": [
+        "Iterative Sparking Avalanche",
+        "Magical Wibbling Knuth"
+      ]
+    },
+    {
+      "id": "C8_2bd6bf",
+      "name": "Incremental Testing and Validation",
+      "description": "Evaluating changes through incremental testing and validation to ensure desired outcomes and minimize risks",
+      "source_community": 8,
+      "example_episodes": [
+        "Vast Zooming Treasure",
+        "Iterative Sparking Avalanche"
+      ]
+    },
+    {
+      "id": "C8_c6d23d",
+      "name": "Refactoring as Knowledge Discovery",
+      "description": "Using refactoring as a means to uncover new insights and understanding of the codebase, informing future improvements",
+      "source_community": 8,
+      "example_episodes": [
+        "Magical Wibbling Knuth",
+        "Vast Zooming Treasure"
+      ]
+    },
+    {
+      "id": "C11_6b23a7",
+      "name": "Debugging Iterative Refinement",
+      "description": "A problem-solving approach characterized by iterative refinement of existing code or solutions, often involving verification and validation steps.",
+      "source_community": 11,
+      "example_episodes": [
+        "Quizzical Painting Engelbart",
+        "Frolicking Questing Fiddle"
+      ]
+    },
+    {
+      "id": "C11_c2e3c3",
+      "name": "Knowledge Graph Exploration",
+      "description": "A cognitive pattern involving the exploration of complex knowledge structures to identify relationships and connections between entities.",
+      "source_community": 11,
+      "example_episodes": [
+        "Moonlit Tinkering Curry"
+      ]
+    },
+    {
+      "id": "C11_34ffab",
+      "name": "Verification-Driven Development",
+      "description": "A development approach that prioritizes verification and validation of existing code or solutions, often through automated testing and iteration.",
+      "source_community": 11,
+      "example_episodes": [
+        "Quizzical Painting Engelbart",
+        "Frolicking Questing Fiddle"
+      ]
+    }
+  ],
+  "concept_count": 36,
+  "associations": [
+    {
+      "concept1": "C1_9fdf81",
+      "concept2": "C8_f7d0d6",
+      "shared_episodes": [
+        "Iterative Sparking Avalanche"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C1_9fdf81",
+      "concept2": "C8_0d8816",
+      "shared_episodes": [
+        "Iterative Sparking Avalanche"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C1_9fdf81",
+      "concept2": "C8_2bd6bf",
+      "shared_episodes": [
+        "Iterative Sparking Avalanche"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C0_008963",
+      "concept2": "C0_1f19d1",
+      "shared_episodes": [
+        "Vast Squishing Swing"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C9_1a972c",
+      "concept2": "C9_7f5349",
+      "shared_episodes": [
+        "Untitled Session"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C9_1a972c",
+      "concept2": "C9_23cece",
+      "shared_episodes": [
+        "Sparkling Tickling Wreath",
+        "Untitled Session"
+      ],
+      "jaccard": 1.0
+    },
+    {
+      "concept1": "C9_1a972c",
+      "concept2": "C6_679406",
+      "shared_episodes": [
+        "Untitled Session"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C9_1a972c",
+      "concept2": "C6_99f7d3",
+      "shared_episodes": [
+        "Untitled Session"
+      ],
+      "jaccard": 0.5
+    },
+    {
+      "concept1": "C9_7f5349",
+      "concept2": "C9_23cece",
+      "shared_episodes": [
+        "Untitled Session"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C9_7f5349",
+      "concept2": "C6_679406",
+      "shared_episodes": [
+        "Untitled Session"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C9_7f5349",
+      "concept2": "C6_99f7d3",
+      "shared_episodes": [
+        "Untitled Session"
+      ],
+      "jaccard": 0.5
+    },
+    {
+      "concept1": "C9_23cece",
+      "concept2": "C6_679406",
+      "shared_episodes": [
+        "Untitled Session"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C9_23cece",
+      "concept2": "C6_99f7d3",
+      "shared_episodes": [
+        "Untitled Session"
+      ],
+      "jaccard": 0.5
+    },
+    {
+      "concept1": "C3_ee942c",
+      "concept2": "C3_0b391e",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_ee942c",
+      "concept2": "C3_b5ebeb",
+      "shared_episodes": [
+        "Sequential Waddling Babbage"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_ee942c",
+      "concept2": "C3_f5faa0",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle",
+        "Sequential Waddling Babbage"
+      ],
+      "jaccard": 1.0
+    },
+    {
+      "concept1": "C3_ee942c",
+      "concept2": "C3_b76f9a",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_ee942c",
+      "concept2": "C11_6b23a7",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_ee942c",
+      "concept2": "C11_34ffab",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_0b391e",
+      "concept2": "C3_b5ebeb",
+      "shared_episodes": [
+        "Zesty Soaring Shore"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_0b391e",
+      "concept2": "C3_f5faa0",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_0b391e",
+      "concept2": "C3_b76f9a",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle",
+        "Zesty Soaring Shore"
+      ],
+      "jaccard": 1.0
+    },
+    {
+      "concept1": "C3_0b391e",
+      "concept2": "C11_6b23a7",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_0b391e",
+      "concept2": "C11_34ffab",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_b5ebeb",
+      "concept2": "C3_f5faa0",
+      "shared_episodes": [
+        "Sequential Waddling Babbage"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_b5ebeb",
+      "concept2": "C3_b76f9a",
+      "shared_episodes": [
+        "Zesty Soaring Shore"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_f5faa0",
+      "concept2": "C3_b76f9a",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_f5faa0",
+      "concept2": "C11_6b23a7",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_f5faa0",
+      "concept2": "C11_34ffab",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_b76f9a",
+      "concept2": "C11_6b23a7",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C3_b76f9a",
+      "concept2": "C11_34ffab",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C6_679406",
+      "concept2": "C6_1c53f8",
+      "shared_episodes": [
+        "Cryptic Riding Rabbit"
+      ],
+      "jaccard": 0.5
+    },
+    {
+      "concept1": "C6_679406",
+      "concept2": "C6_99f7d3",
+      "shared_episodes": [
+        "Untitled Session"
+      ],
+      "jaccard": 0.5
+    },
+    {
+      "concept1": "C8_f7d0d6",
+      "concept2": "C8_0d8816",
+      "shared_episodes": [
+        "Magical Wibbling Knuth",
+        "Iterative Sparking Avalanche"
+      ],
+      "jaccard": 1.0
+    },
+    {
+      "concept1": "C8_f7d0d6",
+      "concept2": "C8_2bd6bf",
+      "shared_episodes": [
+        "Iterative Sparking Avalanche"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C8_f7d0d6",
+      "concept2": "C8_c6d23d",
+      "shared_episodes": [
+        "Magical Wibbling Knuth"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C8_0d8816",
+      "concept2": "C8_2bd6bf",
+      "shared_episodes": [
+        "Iterative Sparking Avalanche"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C8_0d8816",
+      "concept2": "C8_c6d23d",
+      "shared_episodes": [
+        "Magical Wibbling Knuth"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C8_2bd6bf",
+      "concept2": "C8_c6d23d",
+      "shared_episodes": [
+        "Vast Zooming Treasure"
+      ],
+      "jaccard": 0.333
+    },
+    {
+      "concept1": "C11_6b23a7",
+      "concept2": "C11_34ffab",
+      "shared_episodes": [
+        "Frolicking Questing Fiddle",
+        "Quizzical Painting Engelbart"
+      ],
+      "jaccard": 1.0
+    }
+  ],
+  "communities": {
+    "1": {
+      "size": 20,
+      "concepts": [
+        {
+          "id": "C1_9fdf81",
+          "name": "Meta-Reflection",
+          "description": "Conversations involve self-awareness and introspection on the conversation itself, such as debugging code, testing hypotheses, or evaluating problem-solving approaches.",
+          "source_community": 1,
+          "example_episodes": [
+            "Iterative Sparking Avalanche",
+            "Parsed Weaving Whisper"
+          ]
+        },
+        {
+          "id": "C1_c1f458",
+          "name": "Pattern Recognition",
+          "description": "Conversations involve identifying and applying patterns to solve problems, such as recognizing data structures, understanding algorithms, or spotting errors in code.",
+          "source_community": 1,
+          "example_episodes": [
+            "Harmonic Seeking Curry",
+            "Fancy Orbiting Sifakis"
+          ]
+        },
+        {
+          "id": "C1_00f66f",
+          "name": "Abstraction and Modularity",
+          "description": "Conversations emphasize breaking down complex systems into smaller, manageable components, such as modularizing code, separating concerns, or identifying independent sub-problems.",
+          "source_community": 1,
+          "example_episodes": [
+            "Swirling Wishing Bengio",
+            "Glittery Coalescing Dahl"
+          ]
+        },
+        {
+          "id": "C1_0b391e",
+          "name": "Iterative Refining",
+          "description": "Conversations involve refining and iterating on solutions through a process of trial and error, testing hypotheses, or adjusting parameters to achieve desired outcomes.",
+          "source_community": 1,
+          "example_episodes": [
+            "Zany Sleeping Eich",
+            "Curried Exploring Sun"
+          ]
+        },
+        {
+          "id": "C1_102702",
+          "name": "Contextual Understanding",
+          "description": "Conversations require understanding the context in which problems are being solved, including domain knowledge, problem constraints, and relevant background information.",
+          "source_community": 1,
+          "example_episodes": [
+            "Merry Marinating Wand",
+            "Cheerful Enchanting Cupcake"
+          ]
+        }
+      ],
+      "elapsed_seconds": 119.2
+    },
+    "2": {
+      "size": 20,
+      "concepts": [
+        {
+          "id": "C2_d592e8",
+          "name": "Iterative Refinement",
+          "description": "Conversations involve refining and iterating on ideas, models, or solutions through incremental updates and testing.",
+          "source_community": 2,
+          "example_episodes": [
+            "Mutable Knitting Dragonfly",
+            "Unified Hopping Widget"
+          ]
+        },
+        {
+          "id": "C2_c0740b",
+          "name": "Cognitive Looping",
+          "description": "Conversations exhibit a self-referential loop of problem identification, analysis, and solution generation, with each iteration building upon previous insights.",
+          "source_community": 2,
+          "example_episodes": [
+            "Snug Imagining Pelican",
+            "Refactored Hugging Boole"
+          ]
+        },
+        {
+          "id": "C2_3ed95e",
+          "name": "Knowledge Graphing",
+          "description": "Conversations construct and navigate knowledge graphs, using relationships between concepts to inform and refine their understanding of a topic.",
+          "source_community": 2,
+          "example_episodes": [
+            "Federated Discovering Alpaca",
+            "Keen Scribbling Robin"
+          ]
+        },
+        {
+          "id": "C2_e20278",
+          "name": "Iterative Problem-Solving",
+          "description": "Conversations employ an iterative approach to problem-solving, refining their solutions through testing, iteration, and refinement.",
+          "source_community": 2,
+          "example_episodes": [
+            "Sleepy Mixing Sky",
+            "Purring Sleeping Garden"
+          ]
+        }
+      ],
+      "elapsed_seconds": 147.0
+    },
+    "4": {
+      "size": 20,
+      "concepts": [
+        {
+          "id": "C4_90a165",
+          "name": "Bayesian inference as model selection",
+          "description": "The use of Bayesian inference to inform model selection, particularly in the context of statistical modeling and hypothesis testing",
+          "source_community": 4,
+          "example_episodes": [
+            "Iterative Meandering Allen",
+            "Eager Churning Treasure"
+          ]
+        },
+        {
+          "id": "C4_a27935",
+          "name": "Cognitive flexibility and adaptation",
+          "description": "The ability to adapt and adjust one's thinking and approach in response to new information, changing circumstances, or unexpected outcomes",
+          "source_community": 4,
+          "example_episodes": [
+            "Declarative Sniffing Glacier",
+            "Fluffy Wandering Charm"
+          ]
+        },
+        {
+          "id": "C4_c5efb6",
+          "name": "Knowledge graphing and network analysis",
+          "description": "The use of knowledge graphs and network analysis techniques to represent and analyze complex relationships between concepts, entities, and ideas",
+          "source_community": 4,
+          "example_episodes": [
+            "Atomic Napping Eagle",
+            "Zippy Humming Ritchie"
+          ]
+        },
+        {
+          "id": "C4_c95044",
+          "name": "Iterative problem-solving and refinement",
+          "description": "A cyclical process of identifying problems, generating solutions, evaluating results, and refining approaches through iterative refinement and iteration",
+          "source_community": 4,
+          "example_episodes": [
+            "Elegant Twirling Turing",
+            "Wiggly Jumping Whisper"
+          ]
+        }
+      ],
+      "elapsed_seconds": 114.3
+    },
+    "0": {
+      "size": 20,
+      "concepts": [
+        {
+          "id": "C0_008963",
+          "name": "Problem Decomposition",
+          "description": "Conversations break down complex problems into manageable sub-problems, identifying key areas for improvement or solution development.",
+          "source_community": 0,
+          "example_episodes": [
+            "Vast Squishing Swing",
+            "Delightful Inventing Mochi"
+          ]
+        },
+        {
+          "id": "C0_0b391e",
+          "name": "Iterative Refining",
+          "description": "Conversations employ iterative refinement techniques to refine and iterate on solutions, ensuring they meet design intent and quality standards.",
+          "source_community": 0,
+          "example_episodes": [
+            "Ancient Floating Orbit",
+            "Crystalline Puzzling Squid"
+          ]
+        },
+        {
+          "id": "C0_3ed95e",
+          "name": "Knowledge Graphing",
+          "description": "Conversations construct knowledge graphs to represent complex relationships between ideas, entities, and concepts, facilitating understanding and connection-making.",
+          "source_community": 0,
+          "example_episodes": [
+            "Unified Purring Crab",
+            "Snappy Booping Haven"
+          ]
+        },
+        {
+          "id": "C0_1f19d1",
+          "name": "Abstraction and Simplification",
+          "description": "Conversations employ abstraction and simplification techniques to distill complex concepts into actionable, bite-sized pieces, making them more accessible and manageable.",
+          "source_community": 0,
+          "example_episodes": [
+            "Vast Squishing Swing",
+            "Idempotent Floating Kitten"
+          ]
+        },
+        {
+          "id": "C0_d6f9e3",
+          "name": "Cognitive Frameworking",
+          "description": "Conversations establish cognitive frameworks to organize and structure knowledge, ensuring a coherent and logical flow of ideas and solutions.",
+          "source_community": 0,
+          "example_episodes": [
+            "Peaceful Jumping Harp",
+            "Robust Scribbling Kurzweil"
+          ]
+        }
+      ],
+      "elapsed_seconds": 117.4
+    },
+    "9": {
+      "size": 9,
+      "concepts": [
+        {
+          "id": "C9_1a972c",
+          "name": "Error Handling Protocol",
+          "description": "A structured approach to handling errors, including caveat statements, local command output, and explicit user requests for response consideration",
+          "source_community": 9,
+          "example_episodes": [
+            "Untitled Session",
+            "Sparkling Tickling Wreath"
+          ]
+        },
+        {
+          "id": "C9_7f5349",
+          "name": "Plugin Management Loop",
+          "description": "A recursive pattern of plugin installation, removal, and caching management, highlighting the complexities of managing external dependencies",
+          "source_community": 9,
+          "example_episodes": [
+            "Untitled Session",
+            "Binary Zooming Sundae"
+          ]
+        },
+        {
+          "id": "C9_23cece",
+          "name": "Caveat as Boundary Condition",
+          "description": "The use of caveat statements to establish boundaries between system responses and user-generated content, emphasizing the importance of context in response generation",
+          "source_community": 9,
+          "example_episodes": [
+            "Untitled Session",
+            "Sparkling Tickling Wreath"
+          ]
+        }
+      ],
+      "elapsed_seconds": 47.9
+    },
+    "3": {
+      "size": 3,
+      "concepts": [
+        {
+          "id": "C3_ee942c",
+          "name": "Systematic Problem-Solving",
+          "description": "The use of structured phases, parallelization, and agent-based approaches to tackle complex problems, as seen in the sequential nature of the conversations.",
+          "source_community": 3,
+          "example_episodes": [
+            "Sequential Waddling Babbage",
+            "Frolicking Questing Fiddle"
+          ]
+        },
+        {
+          "id": "C3_0b391e",
+          "name": "Iterative Refining",
+          "description": "The process of refining and improving code through incremental steps, such as auto-fixing issues and applying consistent formatting, demonstrated in the conversations.",
+          "source_community": 3,
+          "example_episodes": [
+            "Zesty Soaring Shore",
+            "Frolicking Questing Fiddle"
+          ]
+        },
+        {
+          "id": "C3_b5ebeb",
+          "name": "Analytical Insight Generation",
+          "description": "The use of tools like Ruff to generate insights and identify problems, as seen in the '\u2605 Insight' notation and the conversations' focus on fixing specific issues.",
+          "source_community": 3,
+          "example_episodes": [
+            "Sequential Waddling Babbage",
+            "Zesty Soaring Shore"
+          ]
+        },
+        {
+          "id": "C3_f5faa0",
+          "name": "Phased Approach",
+          "description": "The division of complex tasks into manageable phases, allowing for parallelization and efficient progress tracking, evident in the conversations' structure.",
+          "source_community": 3,
+          "example_episodes": [
+            "Frolicking Questing Fiddle",
+            "Sequential Waddling Babbage"
+          ]
+        },
+        {
+          "id": "C3_b76f9a",
+          "name": "Error Analysis",
+          "description": "The process of identifying and understanding errors, such as type mismatches and unused imports, and applying fixes to resolve them, demonstrated in the conversations.",
+          "source_community": 3,
+          "example_episodes": [
+            "Zesty Soaring Shore",
+            "Frolicking Questing Fiddle"
+          ]
+        }
+      ],
+      "elapsed_seconds": 39.9
+    },
+    "6": {
+      "size": 3,
+      "concepts": [
+        {
+          "id": "C6_679406",
+          "name": "Project Initialization",
+          "description": "The user initiates a project by providing an /init command, prompting the assistant to understand the current state and format of the manuscript chapters.",
+          "source_community": 6,
+          "example_episodes": [
+            "Cryptic Riding Rabbit",
+            "Untitled Session"
+          ]
+        },
+        {
+          "id": "C6_1c53f8",
+          "name": "Exploratory Reading",
+          "description": "The assistant responds with an exploratory reading approach, examining existing documents like CLAUDE.md to identify improvements needed in the project structure.",
+          "source_community": 6,
+          "example_episodes": [
+            "Cryptic Riding Rabbit"
+          ]
+        },
+        {
+          "id": "C6_99f7d3",
+          "name": "Pattern of Iterative Initiation",
+          "description": "Two subsequent sessions exhibit a pattern of repetitive /init commands without providing further context, suggesting an iterative process or placeholder for user input.",
+          "source_community": 6,
+          "example_episodes": [
+            "Untitled Session",
+            "Untitled Session"
+          ]
+        }
+      ],
+      "elapsed_seconds": 20.1
+    },
+    "8": {
+      "size": 3,
+      "concepts": [
+        {
+          "id": "C8_f7d0d6",
+          "name": "Iterative Refactoring Loop",
+          "description": "A process of refining code through incremental, iterative improvements to achieve a desired state",
+          "source_community": 8,
+          "example_episodes": [
+            "Iterative Sparking Avalanche",
+            "Magical Wibbling Knuth"
+          ]
+        },
+        {
+          "id": "C8_0d8816",
+          "name": "Problem-Solving Through Insight",
+          "description": "Identifying key design patterns and principles to inform solution development and optimize problem-solving",
+          "source_community": 8,
+          "example_episodes": [
+            "Iterative Sparking Avalanche",
+            "Magical Wibbling Knuth"
+          ]
+        },
+        {
+          "id": "C8_2bd6bf",
+          "name": "Incremental Testing and Validation",
+          "description": "Evaluating changes through incremental testing and validation to ensure desired outcomes and minimize risks",
+          "source_community": 8,
+          "example_episodes": [
+            "Vast Zooming Treasure",
+            "Iterative Sparking Avalanche"
+          ]
+        },
+        {
+          "id": "C8_c6d23d",
+          "name": "Refactoring as Knowledge Discovery",
+          "description": "Using refactoring as a means to uncover new insights and understanding of the codebase, informing future improvements",
+          "source_community": 8,
+          "example_episodes": [
+            "Magical Wibbling Knuth",
+            "Vast Zooming Treasure"
+          ]
+        }
+      ],
+      "elapsed_seconds": 30.8
+    },
+    "11": {
+      "size": 3,
+      "concepts": [
+        {
+          "id": "C11_6b23a7",
+          "name": "Debugging Iterative Refinement",
+          "description": "A problem-solving approach characterized by iterative refinement of existing code or solutions, often involving verification and validation steps.",
+          "source_community": 11,
+          "example_episodes": [
+            "Quizzical Painting Engelbart",
+            "Frolicking Questing Fiddle"
+          ]
+        },
+        {
+          "id": "C11_c2e3c3",
+          "name": "Knowledge Graph Exploration",
+          "description": "A cognitive pattern involving the exploration of complex knowledge structures to identify relationships and connections between entities.",
+          "source_community": 11,
+          "example_episodes": [
+            "Moonlit Tinkering Curry"
+          ]
+        },
+        {
+          "id": "C11_34ffab",
+          "name": "Verification-Driven Development",
+          "description": "A development approach that prioritizes verification and validation of existing code or solutions, often through automated testing and iteration.",
+          "source_community": 11,
+          "example_episodes": [
+            "Quizzical Painting Engelbart",
+            "Frolicking Questing Fiddle"
+          ]
+        }
+      ],
+      "elapsed_seconds": 28.0
+    }
+  },
+  "extraction_results": [
+    {
+      "community_id": 1,
+      "community_size": 20,
+      "concept_count": 5,
+      "elapsed_seconds": 119.2
+    },
+    {
+      "community_id": 2,
+      "community_size": 20,
+      "concept_count": 4,
+      "elapsed_seconds": 147.0
+    },
+    {
+      "community_id": 4,
+      "community_size": 20,
+      "concept_count": 4,
+      "elapsed_seconds": 114.3
+    },
+    {
+      "community_id": 0,
+      "community_size": 20,
+      "concept_count": 5,
+      "elapsed_seconds": 117.4
+    },
+    {
+      "community_id": 9,
+      "community_size": 9,
+      "concept_count": 3,
+      "elapsed_seconds": 47.9
+    },
+    {
+      "community_id": 3,
+      "community_size": 3,
+      "concept_count": 5,
+      "elapsed_seconds": 39.9
+    },
+    {
+      "community_id": 6,
+      "community_size": 3,
+      "concept_count": 3,
+      "elapsed_seconds": 20.1
+    },
+    {
+      "community_id": 8,
+      "community_size": 3,
+      "concept_count": 4,
+      "elapsed_seconds": 30.8
+    },
+    {
+      "community_id": 11,
+      "community_size": 3,
+      "concept_count": 3,
+      "elapsed_seconds": 28.0
+    }
+  ]
+}

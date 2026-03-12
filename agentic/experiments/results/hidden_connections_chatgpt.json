@@ -1,0 +1,543 @@
+{
+  "method": "hidden_connections",
+  "dataset": "chatgpt",
+  "episode_similarity_threshold": 0.9,
+  "concept_similarity_threshold": 0.85,
+  "total_concept_linked_pairs": 6626,
+  "also_similarity_linked": 42,
+  "hidden_connections_count": 6584,
+  "hidden_fraction": 0.994,
+  "top_community_pairs": [
+    {
+      "communities": [
+        5,
+        10
+      ],
+      "hidden_count": 3567
+    },
+    {
+      "communities": [
+        3,
+        11
+      ],
+      "hidden_count": 1450
+    },
+    {
+      "communities": [
+        5,
+        24
+      ],
+      "hidden_count": 819
+    },
+    {
+      "communities": [
+        5,
+        9
+      ],
+      "hidden_count": 574
+    },
+    {
+      "communities": [
+        3,
+        22
+      ],
+      "hidden_count": 174
+    }
+  ],
+  "top_concept_bridges": [
+    {
+      "concepts": [
+        "Simulation and Monte Carlo Methods",
+        "Simulation-based analysis"
+      ],
+      "episode_pairs": 3567
+    },
+    {
+      "concepts": [
+        "Mathematical Foundations of Statistics",
+        "Probability Theory"
+      ],
+      "episode_pairs": 819
+    },
+    {
+      "concepts": [
+        "Knowledge Graphs and Network Analysis",
+        "Knowledge Graphs"
+      ],
+      "episode_pairs": 725
+    },
+    {
+      "concepts": [
+        "Cognitive Frameworks for Reasoning",
+        "Cognitive Frameworks"
+      ],
+      "episode_pairs": 725
+    },
+    {
+      "concepts": [
+        "Statistical Inference and Model Comparison",
+        "Model Selection"
+      ],
+      "episode_pairs": 574
+    },
+    {
+      "concepts": [
+        "Iterative Development and Refining",
+        "Iterative Inference"
+      ],
+      "episode_pairs": 174
+    }
+  ],
+  "sample_hidden_connections": [
+    {
+      "episode1": "algotree-misc",
+      "episode2": "numerical-pde-solutions",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "simulating-thermodynamics-with-big-atoms",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "tensor-generalization-of-hooke-s-law",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "spacesim-pressure-in-big-atoms",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "spacesim-real-time-proximity-queries",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "digistar-embed-python-in-c",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "spacesim-cupy-quadtree-for-physics",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "digistar-optimize-c-code-profilers",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "compile-cuda-program-linux",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "circle-simulation-with-repulsion",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "spacesim-n-body-simulation-optimization",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "digistar-efficient-spatial-interaction-handling",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "digistar-particle-mesh-method-overview",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "simple-two-body-star-system",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "modern-c-setup-with-cmake",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "spacesim-n-body-simulator-code-explanation",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "spacesim-lennard-jones-force-calculation",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "spacesim-restorative-orbit-force-design",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "spacesim-space-sandbox-simulation",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "digistar-efficient-bigatom-cuda-sim",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "spacesim-barnes-hut-vs-quadtree-logic",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "digistar-cluster-big-atoms-with-cgal",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "gravitational-constant-accuracy-gains",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "numerical-solution-of-ode",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-misc",
+      "episode2": "fdm-for-heat-equation",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "numerical-pde-solutions",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "simulating-thermodynamics-with-big-atoms",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "tensor-generalization-of-hooke-s-law",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "spacesim-pressure-in-big-atoms",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "spacesim-real-time-proximity-queries",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "digistar-embed-python-in-c",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "spacesim-cupy-quadtree-for-physics",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "digistar-optimize-c-code-profilers",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "compile-cuda-program-linux",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "circle-simulation-with-repulsion",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "spacesim-n-body-simulation-optimization",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "digistar-efficient-spatial-interaction-handling",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "digistar-particle-mesh-method-overview",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "simple-two-body-star-system",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "modern-c-setup-with-cmake",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "spacesim-n-body-simulator-code-explanation",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "spacesim-lennard-jones-force-calculation",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "spacesim-restorative-orbit-force-design",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "spacesim-space-sandbox-simulation",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "digistar-efficient-bigatom-cuda-sim",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "spacesim-barnes-hut-vs-quadtree-logic",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "digistar-cluster-big-atoms-with-cgal",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "gravitational-constant-accuracy-gains",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "numerical-solution-of-ode",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    },
+    {
+      "episode1": "algotree-identity-vs-equality-in-trees",
+      "episode2": "fdm-for-heat-equation",
+      "concept1": "Knowledge Graphs and Network Analysis",
+      "concept2": "Knowledge Graphs",
+      "concept_similarity": 0.901,
+      "community1": 3,
+      "community2": 11
+    }
+  ]
+}

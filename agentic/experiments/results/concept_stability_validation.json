@@ -1,0 +1,163 @@
+{
+  "method": "concept_extraction_stability",
+  "n_runs": 3,
+  "n_communities_tested": 5,
+  "llm_model": "llama3.2",
+  "temperature": 0.3,
+  "per_community": {
+    "0": {
+      "community_size": 102,
+      "n_runs": 3,
+      "all_unique_concepts": [
+        "bayesian inference as model selection",
+        "bayesian reasoning for model selection",
+        "compression equals prediction equals intelligence",
+        "exploration-exploitation tradeoff",
+        "markov decision processes for llm prompting",
+        "markov design process for goal-directed behavior",
+        "representation learning for agi",
+        "working memory constraints for generalization",
+        "working memory constraints on generalization"
+      ],
+      "stable_concepts": [
+        "compression equals prediction equals intelligence",
+        "representation learning for agi"
+      ],
+      "total_unique": 9,
+      "stable_count": 2,
+      "stability_rate": 0.222,
+      "overlap_rate": 0.444,
+      "per_run_counts": [
+        5,
+        5,
+        5
+      ]
+    },
+    "5": {
+      "community_size": 82,
+      "n_runs": 3,
+      "all_unique_concepts": [
+        "cognitive pattern: recursive thinking",
+        "machine learning and optimization",
+        "probability theory",
+        "probability theory and statistics",
+        "regularization techniques",
+        "research and academic discussion",
+        "research and development",
+        "simulation-based inference",
+        "software design and development",
+        "statistical computing and r",
+        "statistical model selection",
+        "statistical modeling"
+      ],
+      "stable_concepts": [
+        "statistical modeling"
+      ],
+      "total_unique": 12,
+      "stable_count": 1,
+      "stability_rate": 0.083,
+      "overlap_rate": 0.167,
+      "per_run_counts": [
+        5,
+        5,
+        5
+      ]
+    },
+    "7": {
+      "community_size": 65,
+      "n_runs": 3,
+      "all_unique_concepts": [
+        "abstract reasoning",
+        "bayesian reasoning frameworks",
+        "cognitive architectures",
+        "cognitive exploration",
+        "cognitive science",
+        "cognitive self-awareness",
+        "complex systems thinking",
+        "critical thinking",
+        "critical thinking and analysis",
+        "decision theory",
+        "emotional intelligence",
+        "existentialism and mortality",
+        "philosophy of ai",
+        "philosophy of science"
+      ],
+      "stable_concepts": [],
+      "total_unique": 14,
+      "stable_count": 0,
+      "stability_rate": 0.0,
+      "overlap_rate": 0.0,
+      "per_run_counts": [
+        5,
+        5,
+        4
+      ]
+    },
+    "4": {
+      "community_size": 46,
+      "n_runs": 3,
+      "all_unique_concepts": [
+        "cognitive patterns",
+        "data processing and analysis",
+        "development methodologies",
+        "knowledge graphs and ontologies",
+        "knowledge integration",
+        "knowledge representation and retrieval",
+        "problem-solving approaches",
+        "schema design principles",
+        "testing and debugging strategies",
+        "testing and validation"
+      ],
+      "stable_concepts": [
+        "problem-solving approaches",
+        "schema design principles"
+      ],
+      "total_unique": 10,
+      "stable_count": 2,
+      "stability_rate": 0.2,
+      "overlap_rate": 0.3,
+      "per_run_counts": [
+        5,
+        5,
+        5
+      ]
+    },
+    "10": {
+      "community_size": 44,
+      "n_runs": 3,
+      "all_unique_concepts": [
+        "bootstrapping for confidence intervals",
+        "data analysis and visualization",
+        "data exploration and interpretation",
+        "data preprocessing and manipulation",
+        "data preprocessing and visualization",
+        "model comparison and selection",
+        "model selection and comparison",
+        "parameter estimation and visualization",
+        "problem-solving strategies",
+        "simulation-based inference",
+        "statistical model selection and comparison",
+        "statistical modeling and analysis",
+        "theoretical foundations"
+      ],
+      "stable_concepts": [
+        "simulation-based inference"
+      ],
+      "total_unique": 13,
+      "stable_count": 1,
+      "stability_rate": 0.077,
+      "overlap_rate": 0.077,
+      "per_run_counts": [
+        5,
+        5,
+        5
+      ]
+    }
+  },
+  "summary": {
+    "mean_stability_rate": 0.103,
+    "total_stable_concepts": 6,
+    "total_unique_concepts": 58,
+    "mean_overlap_rate": 0.198
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "node_count": 3945,
+  "edge_count": 287693,
+  "density": 0.03698072122516241,
+  "num_components": 1070,
+  "giant_component_size": 2465,
+  "giant_component_fraction": 0.6248415716096325,
+  "avg_degree": 145.85196451204055,
+  "max_degree": 843,
+  "avg_clustering": 0.48053703987840135,
+  "transitivity": 0.9568562281158609,
+  "avg_shortest_path": 4.0091050683596325,
+  "modularity": 0.39104289657267677,
+  "num_communities": 1084,
+  "assortativity": 0.9012844159170605
+}

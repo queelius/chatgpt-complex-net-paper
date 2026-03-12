@@ -1,0 +1,84 @@
+{
+  "experiment": "F53: Cross-Platform 4-Layer Multiplex",
+  "layers": {
+    "chatgpt_ee": {
+      "nodes": 601,
+      "edges": 1718,
+      "communities": 73
+    },
+    "agentic_ee": {
+      "nodes": 1516,
+      "edges": 193309,
+      "communities": 122
+    },
+    "concept_cc": {
+      "nodes": 115,
+      "edges": 1280,
+      "communities": 7,
+      "threshold": 0.7
+    },
+    "concept_ce": {
+      "edges": 7688
+    }
+  },
+  "interlayer": {
+    "nmi_concept_vs_episode_projected": 0.297,
+    "cc_vs_ce_spearman": {
+      "rho": 0.2353,
+      "p_value": 0.011365
+    }
+  },
+  "platform_stats": {
+    "chatgpt": {
+      "mean_participation": 0.362,
+      "mean_cc_degree": 22.2,
+      "mean_ce_fanout": 28.6
+    },
+    "agentic": {
+      "mean_participation": 0.2,
+      "mean_cc_degree": 22.4,
+      "mean_ce_fanout": 150.9
+    }
+  },
+  "concept_community_spanning": {
+    "0": {
+      "n_concepts": 25,
+      "platforms": {
+        "chatgpt": 24,
+        "agentic": 1
+      },
+      "n_episode_communities_spanned": 8
+    },
+    "1": {
+      "n_concepts": 25,
+      "platforms": {
+        "chatgpt": 19,
+        "agentic": 6
+      },
+      "n_episode_communities_spanned": 12
+    },
+    "2": {
+      "n_concepts": 19,
+      "platforms": {
+        "chatgpt": 12,
+        "agentic": 7
+      },
+      "n_episode_communities_spanned": 10
+    },
+    "5": {
+      "n_concepts": 41,
+      "platforms": {
+        "chatgpt": 23,
+        "agentic": 18
+      },
+      "n_episode_communities_spanned": 15
+    },
+    "4": {
+      "n_concepts": 3,
+      "platforms": {
+        "agentic": 3
+      },
+      "n_episode_communities_spanned": 1
+    }
+  }
+}

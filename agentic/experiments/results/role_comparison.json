@@ -1,0 +1,30 @@
+{
+  "experiment": "F40: ChatGPT vs Agentic node role comparison",
+  "chatgpt_gc": {
+    "nodes": 453,
+    "edges": 1612,
+    "communities": 14,
+    "modularity": 0.749,
+    "roles": {
+      "ultra-peripheral": 361,
+      "peripheral": 78,
+      "connector": 1,
+      "kinless": 0,
+      "provincial-hub": 12,
+      "connector-hub": 1,
+      "kinless-hub": 0
+    }
+  },
+  "agentic_gc": {
+    "nodes": 233,
+    "edges": 2607,
+    "communities": 7,
+    "modularity": 0.27830042926562704,
+    "roles": {
+      "ultra-peripheral": 83,
+      "connector-hub": 2,
+      "peripheral": 106,
+      "connector": 42
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "experiment": "F49: Recursive Abstraction Convergence",
+  "n_runs": 5,
+  "results": {
+    "chatgpt": [
+      {
+        "run": 1,
+        "l2_count": 8,
+        "l3_count": 2,
+        "compression_ratio": 4.0,
+        "l3_themes": [
+          "Reasoning and Problem-Solving",
+          "Approaches to Development"
+        ]
+      },
+      {
+        "run": 2,
+        "l2_count": 8,
+        "l3_count": 3,
+        "compression_ratio": 2.67,
+        "l3_themes": [
+          "Cognitive Processes",
+          "Problem Solving Approaches",
+          "Knowledge Representation and Management"
+        ]
+      },
+      {
+        "run": 3,
+        "l2_count": 8,
+        "l3_count": 4,
+        "compression_ratio": 2.0,
+        "l3_themes": [
+          "Data Analysis",
+          "Problem Solving",
+          "Development and Iteration",
+          "Computational Approaches"
+        ]
+      },
+      {
+        "run": 4,
+        "l2_count": 8,
+        "l3_count": 5,
+        "compression_ratio": 1.6,
+        "l3_themes": [
+          "Analytical Reasoning",
+          "Problem-Solving Approaches",
+          "Methodological Frameworks",
+          "Data-Driven Reasoning",
+          "Critical Thinking and Analysis"
+        ]
+      },
+      {
+        "run": 5,
+        "l2_count": 8,
+        "l3_count": 3,
+        "compression_ratio": 2.67,
+        "l3_themes": [
+          "Reasoning and Problem-Solving",
+          "Knowledge Representation and Development",
+          "Cognitive Strategies and Processes"
+        ]
+      },
+      {
+        "run": "L3\u2192L4",
+        "l3_count": 2,
+        "l4_count": 1,
+        "compression_ratio": 2.0,
+        "l4_themes": [
+          "Cognitive Processes"
+        ]
+      }
+    ],
+    "agentic": [
+      {
+        "run": 1,
+        "l2_count": 6,
+        "l3_count": 2,
+        "compression_ratio": 3.0,
+        "l3_themes": [
+          "Cognitive Reasoning",
+          "Problem-Solving Strategies"
+        ]
+      },
+      {
+        "run": 2,
+        "l2_count": 6,
+        "l3_count": 2,
+        "compression_ratio": 3.0,
+        "l3_themes": [
+          "Problem Solving Frameworks",
+          "Knowledge Representation and Analysis"
+        ]
+      },
+      {
+        "run": 3,
+        "l2_count": 6,
+        "l3_count": 2,
+        "compression_ratio": 3.0,
+        "l3_themes": [
+          "Learning Cycle",
+          "Problem-Solving Approach"
+        ]
+      },
+      {
+        "run": 4,
+        "l2_count": 6,
+        "l3_count": 2,
+        "compression_ratio": 3.0,
+        "l3_themes": [
+          "Problem-Solving Strategies",
+          "Knowledge Representation"
+        ]
+      },
+      {
+        "run": 5,
+        "l2_count": 6,
+        "l3_count": 2,
+        "compression_ratio": 3.0,
+        "l3_themes": [
+          "Problem-Solving",
+          "Error Management"
+        ]
+      },
+      {
+        "run": "L3\u2192L4",
+        "l3_count": 2,
+        "l4_count": 1,
+        "compression_ratio": 2.0,
+        "l4_themes": [
+          "Thinking Skills"
+        ]
+      }
+    ]
+  }
+}

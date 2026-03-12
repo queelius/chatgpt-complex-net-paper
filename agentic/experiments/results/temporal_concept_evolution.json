@@ -1,0 +1,167 @@
+{
+  "experiment": "F52: Temporal Concept Evolution",
+  "eras": {
+    "early": {
+      "n_episodes": 157,
+      "concepts": [
+        {
+          "name": "Machine Learning",
+          "description": "Topics related to core ML algorithms and models"
+        },
+        {
+          "name": "AI and Cognitive Science",
+          "description": "Intersection of AI and cognitive science theories"
+        },
+        {
+          "name": "R Programming and Statistics",
+          "description": "Statistical computing with R language"
+        },
+        {
+          "name": "Computational Complexity",
+          "description": "Complexity theory and algorithmic analysis"
+        },
+        {
+          "name": "General AI and Philosophy",
+          "description": "Philosophical discussions about AI and consciousness"
+        }
+      ]
+    },
+    "middle": {
+      "n_episodes": 291,
+      "concepts": [
+        {
+          "name": "Machine Learning",
+          "description": "ML algorithms, techniques, and applications"
+        },
+        {
+          "name": "Artificial Intelligence",
+          "description": "AI development, architectures, and technologies"
+        },
+        {
+          "name": "Probability Theory",
+          "description": "Bayesian analysis and statistical inference"
+        },
+        {
+          "name": "Programming and Scripting",
+          "description": "Development and optimization of programming tools"
+        },
+        {
+          "name": "Research and Development",
+          "description": "New methods and techniques for AI research"
+        }
+      ]
+    },
+    "late": {
+      "n_episodes": 153,
+      "concepts": [
+        {
+          "name": "Machine Learning for Science and Engineering",
+          "description": "Applied ML in scientific computing"
+        },
+        {
+          "name": "Web Development and Deployment",
+          "description": "Hugo, GitHub Pages, web infrastructure"
+        },
+        {
+          "name": "Data Analysis and Processing",
+          "description": "Processing ebooks, PDFs, metadata"
+        },
+        {
+          "name": "Cognitive Architectures and Search",
+          "description": "MCTS, policy/value, AGI architectures"
+        },
+        {
+          "name": "Computer Vision and Graphics",
+          "description": "Tensor generalizations, simulations, PDEs"
+        }
+      ]
+    }
+  },
+  "cross_era_similarity": {
+    "early_vs_middle": {
+      "mean": 0.6273,
+      "max": 0.8157
+    },
+    "early_vs_late": {
+      "mean": 0.605,
+      "max": 0.8232
+    },
+    "middle_vs_late": {
+      "mean": 0.6093,
+      "max": 0.7664
+    }
+  },
+  "within_era_similarity": {
+    "early": 0.6221,
+    "middle": 0.6468,
+    "late": 0.6095
+  },
+  "concept_uniqueness": {
+    "early": [
+      {
+        "name": "Machine Learning",
+        "max_sim_to_other_era": 0.7283
+      },
+      {
+        "name": "AI and Cognitive Science",
+        "max_sim_to_other_era": 0.6749
+      },
+      {
+        "name": "R Programming and Statistics",
+        "max_sim_to_other_era": 0.8232
+      },
+      {
+        "name": "Computational Complexity",
+        "max_sim_to_other_era": 0.8157
+      },
+      {
+        "name": "General AI and Philosophy",
+        "max_sim_to_other_era": 0.6093
+      }
+    ],
+    "middle": [
+      {
+        "name": "Machine Learning",
+        "max_sim_to_other_era": 0.8157
+      },
+      {
+        "name": "Artificial Intelligence",
+        "max_sim_to_other_era": 0.7664
+      },
+      {
+        "name": "Probability Theory",
+        "max_sim_to_other_era": 0.7722
+      },
+      {
+        "name": "Programming and Scripting",
+        "max_sim_to_other_era": 0.6933
+      },
+      {
+        "name": "Research and Development",
+        "max_sim_to_other_era": 0.674
+      }
+    ],
+    "late": [
+      {
+        "name": "Machine Learning for Science and Engineering",
+        "max_sim_to_other_era": 0.8232
+      },
+      {
+        "name": "Web Development and Deployment",
+        "max_sim_to_other_era": 0.7053
+      },
+      {
+        "name": "Data Analysis and Processing",
+        "max_sim_to_other_era": 0.6149
+      },
+      {
+        "name": "Cognitive Architectures and Search",
+        "max_sim_to_other_era": 0.7664
+      },
+      {
+        "name": "Computer Vision and Graphics",
+        "max_sim_to_other_era": 0.7302
+      }
+    ]
+  }
+}

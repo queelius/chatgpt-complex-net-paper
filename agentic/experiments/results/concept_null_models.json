@@ -1,0 +1,36 @@
+{
+  "experiment": "F54: Concept Network Null Models",
+  "network": {
+    "nodes": 115,
+    "edges": 1280,
+    "threshold": 0.7
+  },
+  "observed": {
+    "cross_platform_fraction": 0.3906,
+    "connector_cross_fraction": 0.4131,
+    "non_connector_cross_fraction": 0.3573,
+    "connector_gap": 0.0558,
+    "mixed_community_fraction": 0.5714
+  },
+  "null_model_1_platform_shuffle": {
+    "n_trials": 1000,
+    "null_cross_platform_mean": 0.4333,
+    "null_cross_platform_std": 0.0252,
+    "p_value_cross_platform": 0.09,
+    "null_connector_gap_mean": -0.002,
+    "null_connector_gap_std": 0.0516,
+    "p_value_connector_gap": 0.129
+  },
+  "null_model_2_configuration": {
+    "n_trials": 100,
+    "null_cross_platform_mean": 0.4354,
+    "null_cross_platform_std": 0.0106,
+    "p_value": 0.0
+  },
+  "null_model_3_community_shuffle": {
+    "n_trials": 1000,
+    "null_mixed_community_mean": 0.6656,
+    "null_mixed_community_std": 0.0677,
+    "p_value": 1.0
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "configuration_model": {
+    "clustering": {
+      "observed": 0.48053703987840135,
+      "null_mean": 0.2430281178325719,
+      "null_std": 0.0034315678794013676,
+      "z_score": 69.212945916507,
+      "p_value": 0.0,
+      "n_samples": 20
+    },
+    "transitivity": {
+      "observed": 0.9568562281158609,
+      "null_mean": 0.3641797569712366,
+      "null_std": 0.00044299344502097524,
+      "z_score": 1337.889934503572,
+      "p_value": 0.0,
+      "n_samples": 20
+    },
+    "assortativity": {
+      "observed": 0.9012844159170605,
+      "null_mean": -0.03207106252731023,
+      "null_std": 0.0022691062726204053,
+      "z_score": 411.3317607493609,
+      "p_value": 0.0,
+      "n_samples": 20
+    },
+    "modularity": {
+      "observed": 0.39104289657267677,
+      "null_mean": 0.04094743769147292,
+      "null_std": 0.000862760531969087,
+      "z_score": 405.7852044786721,
+      "p_value": 0.0,
+      "n_samples": 20
+    }
+  },
+  "permutation_interlayer": {
+    "observed_rho": 0.1148894025616443,
+    "null_mean": -0.0006967190539202757,
+    "null_std": 0.015996142418716334,
+    "perm_p_value": 0.0,
+    "n_perms": 1000,
+    "n_shared": 3945
+  },
+  "permutation_nmi": {
+    "observed_nmi": 0.5808413714232803,
+    "null_mean": 0.5042947539201859,
+    "null_std": 0.0019583278603151058,
+    "perm_p_value": 0.0,
+    "n_perms": 1000,
+    "n_shared": 3945
+  }
+}

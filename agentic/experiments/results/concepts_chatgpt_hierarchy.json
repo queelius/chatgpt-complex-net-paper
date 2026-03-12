@@ -1,0 +1,135 @@
+{
+  "level_1_concepts": 79,
+  "level_1_communities": 17,
+  "level_2_meta_concepts": [
+    {
+      "name": "Abductive Reasoning",
+      "description": "The process of making an educated guess or inference based on incomplete information.",
+      "communities": [
+        0,
+        5,
+        7,
+        1
+      ]
+    },
+    {
+      "name": "Pattern Recognition",
+      "description": "The ability to identify and describe patterns in data or situations.",
+      "communities": [
+        0,
+        3,
+        43,
+        22
+      ]
+    },
+    {
+      "name": "Knowledge Graphs",
+      "description": "A representation of knowledge as a graph of entities and their relationships.",
+      "communities": [
+        0,
+        3,
+        4,
+        11,
+        63
+      ]
+    },
+    {
+      "name": "Problem-Solving Strategies",
+      "description": "Approaches to solving complex problems, including heuristics and decision-making frameworks.",
+      "communities": [
+        0,
+        1,
+        4,
+        5,
+        11,
+        28
+      ]
+    },
+    {
+      "name": "Statistical Reasoning",
+      "description": "The use of statistical methods to make inferences and decisions.",
+      "communities": [
+        0,
+        5,
+        8,
+        10,
+        28
+      ]
+    },
+    {
+      "name": "Iterative Development",
+      "description": "A process of refining and improving models or solutions through repeated iterations.",
+      "communities": [
+        3,
+        22,
+        31,
+        64
+      ]
+    },
+    {
+      "name": "Critical Thinking",
+      "description": "The process of analyzing and evaluating information to form a judgment or decision.",
+      "communities": [
+        7,
+        28,
+        43
+      ]
+    },
+    {
+      "name": "Computationalism",
+      "description": "The view that the mind can be reduced to computational processes.",
+      "communities": [
+        5,
+        8,
+        9,
+        24
+      ]
+    }
+  ],
+  "level_3_orientations": [
+    {
+      "name": "Analytical Problem-Solving",
+      "description": "A focus on breaking down complex problems into manageable parts and using data-driven approaches to inform decision-making.",
+      "child_meta_concepts": [
+        "Abductive Reasoning",
+        "Pattern Recognition",
+        "Knowledge Graphs",
+        "Problem-Solving Strategies",
+        "Statistical Reasoning"
+      ]
+    },
+    {
+      "name": "Iterative Improvement",
+      "description": "A mindset that values refinement and iteration, recognizing that solutions are often imperfect and can be improved through repeated testing and evaluation.",
+      "child_meta_concepts": [
+        "Iterative Development",
+        "Critical Thinking"
+      ]
+    },
+    {
+      "name": "Data-Driven Decision Making",
+      "description": "A reliance on empirical evidence and data to inform decisions, rather than relying solely on intuition or anecdotal experience.",
+      "child_meta_concepts": [
+        "Pattern Recognition",
+        "Knowledge Graphs",
+        "Statistical Reasoning"
+      ]
+    },
+    {
+      "name": "Computationalist Approach",
+      "description": "A view of the mind as a computational system, with an emphasis on breaking down complex problems into manageable parts and using algorithms to solve them.",
+      "child_meta_concepts": [
+        "Computationalism",
+        "Problem-Solving Strategies"
+      ]
+    }
+  ],
+  "raw_level3_response": "After analyzing the meta-concepts, I've identified four fundamental cognitive orientations that unify these concepts:\n\n[\n  {\n    \"name\": \"Analytical Problem-Solving\",\n    \"description\": \"A focus on breaking down complex problems into manageable parts and using data-driven approaches to inform decision-making.\",\n    \"child_meta_concepts\": [\"Abductive Reasoning\", \"Pattern Recognition\", \"Knowledge Graphs\", \"Problem-Solving Strategies\", \"Statistical Reasoning\"]\n  },\n  {\n    \"name\": \"Iterative Improvement\",\n    \"description\": \"A mindset that values refinement and iteration, recognizing that solutions are often imperfect and can be improved through repeated testing and evaluation.\",\n    \"child_meta_concepts\": [\"Iterative Development\", \"Critical Thinking\"]\n  },\n  {\n    \"name\": \"Data-Driven Decision Making\",\n    \"description\": \"A reliance on empirical evidence and data to inform decisions, rather than relying solely on intuition or anecdotal experience.\",\n    \"child_meta_concepts\": [\"Pattern Recognition\", \"Knowledge Graphs\", \"Statistical Reasoning\"]\n  },\n  {\n    \"name\": \"Computationalist Approach\",\n    \"description\": \"A view of the mind as a computational system, with an emphasis on breaking down complex problems into manageable parts and using algorithms to solve them.\",\n    \"child_meta_concepts\": [\"Computationalism\", \"Problem-Solving Strategies\"]\n  }\n]\n\nThese four orientations capture the core aspects of this person's cognitive style, including their approach to problem-solving, decision-making, and understanding the world.",
+  "convergence": {
+    "level_1": 79,
+    "level_2": 8,
+    "level_3": 4,
+    "compression_ratio_1_to_2": 9.9,
+    "compression_ratio_2_to_3": 2.0
+  }
+}

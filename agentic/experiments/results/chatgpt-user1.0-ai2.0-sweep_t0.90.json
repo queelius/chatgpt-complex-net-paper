@@ -1,0 +1,22 @@
+{
+  "experiment_id": "chatgpt-user1.0-ai2.0-sweep",
+  "threshold": 0.9,
+  "metrics": {
+    "node_count": 1908,
+    "edge_count": 1367,
+    "density": 0.0007513969827590946,
+    "num_components": 1398,
+    "giant_component_size": 304,
+    "giant_component_fraction": 0.15932914046121593,
+    "avg_degree": 1.4329140461215932,
+    "max_degree": 49,
+    "avg_clustering": 0.10591506035547057,
+    "transitivity": 0.41617946110828674,
+    "avg_shortest_path": 4.5003039777661975,
+    "modularity": 0.8011259256445363,
+    "num_communities": 1405,
+    "assortativity": 0.22495253664825768
+  },
+  "elapsed_seconds": 0.7,
+  "timestamp": "2026-03-11T18:29:09"
+}
