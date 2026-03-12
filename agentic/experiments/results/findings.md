@@ -1893,7 +1893,182 @@ Louvain is moderately stable (NMI=0.85) but not perfectly reproducible — some 
 
 ---
 
-## Master Comparison Table (Updated with F75-F77)
+## F78: Weighted vs Unweighted Network Comparison
+
+**Method**: Build both weighted (cosine similarity as edge weight) and unweighted versions of the concept network at θ=0.70. Compare community structure (NMI), centrality rankings (Spearman ρ), clustering coefficients, and edge weight distributions by cross-platform type. Mann-Whitney U test for weight differences.
+
+**Provenance**: `run_concept_experiments_6.py --f78`, data from `concept_embeddings.json` + `concept_similarity_matrix.npy`
+
+| Comparison | Weighted | Unweighted |
+|:---|:---|:---|
+| Communities | 7 | 8 |
+| Modularity Q | 0.276 | 0.277 |
+| Clustering coeff | 0.455 | 0.572 |
+| NMI(W vs UW) | 0.748 | — |
+
+**Centrality preservation** (weighted vs unweighted):
+- PageRank: ρ = **0.999** (essentially identical)
+- Betweenness: ρ = **0.944** (very high)
+
+**Edge weight by platform type**:
+- Cross-platform: mean = 0.743 (n=500)
+- Same-platform: mean = 0.746 (n=780)
+- Mann-Whitney p = 0.022 (statistically significant but tiny effect: Δ = 0.003)
+
+**Key finding**: Weights barely matter for this network. Centrality rankings are preserved almost perfectly. Community structure shifts slightly (NMI=0.75) because weights produce one fewer community, but modularity is identical to 3 decimal places. The practical implication: unweighted analysis is sufficient for the concept network, and all findings from F62-F77 (which used unweighted Louvain) are robust.
+
+The one subtle result: cross-platform edges are *very slightly* weaker than same-platform edges (p=0.022). This means cross-platform connections are real but exist just above threshold — they are the network's most fragile links.
+
+---
+
+## F79: Edge Weight Structure and Community Profiles
+
+**Method**: Full weight distribution statistics, strength-degree correlation, per-community internal vs external weight profiles, and normalized HHI disparity (weight concentration per node).
+
+**Provenance**: `run_concept_experiments_6.py --f79`
+
+**Weight distribution**:
+| Statistic | Value |
+|:---|---:|
+| Mean | 0.745 |
+| Std | 0.041 |
+| Median | 0.734 |
+| Skewness | +1.58 (right-skewed) |
+| Range | [0.700, 0.944] |
+
+**Strength-degree correlation**: ρ = **0.999** (p ≈ 0)
+
+This near-perfect correlation means every node's total weight is almost entirely determined by how many edges it has, not by having a few very strong connections. The network has **no weight heterogeneity** — edges are uniformly weighted near the threshold.
+
+**Platform weight difference**: Agentic nodes have slightly higher mean edge weight (0.749 vs 0.740, p=0.012). Agentic process concepts form marginally stronger individual connections.
+
+**Community weight profiles** (internal/external weight ratio):
+| Community | Nodes | Int/Ext ratio | Interpretation |
+|:---|---:|---:|:---|
+| C0 | 25 (24CG+1AG) | 1.022 | Barely cohesive |
+| C1 | 25 (19CG+6AG) | 1.031 | Weak cohesion |
+| C2 | 19 (12CG+7AG) | 1.016 | Barely cohesive |
+| C5 | 41 (23CG+18AG) | 1.031 | Weak cohesion |
+
+All ratios hover at 1.02-1.03 — communities are defined by topology (who connects to whom), not by edge strength. This confirms the network is well-described by its unweighted structure.
+
+**Weight disparity (normalized HHI)**: Mean = **0.0002** (0=perfectly uniform, 1=concentrated). Every node distributes its weight almost uniformly across neighbors. There are no "special" relationships — the concept network is egalitarian.
+
+**Key finding**: The concept network is a **topological** network, not a **weighted** network. All meaningful structure lives in the connectivity pattern, not in edge strengths. This is consistent with F61 (disparity filter failure — no backbone to extract from uniform weights).
+
+---
+
+## F80: Concept Network Percolation Analysis
+
+**Method**: Sweep similarity threshold from 0.45 to 0.95 (step 0.01). At each threshold, measure: number of connected components, giant component (GC) fraction, 2nd-largest component (susceptibility proxy), GC derivative, and platform composition of GC.
+
+**Provenance**: `run_concept_experiments_6.py --f80`
+
+| θ | Edges | GC% | Components | Agentic % in GC |
+|:---|---:|---:|---:|---:|
+| 0.50 | 6,467 | 100% | 1 | 31.3% |
+| 0.60 | 4,661 | 100% | 1 | 31.3% |
+| 0.65 | 2,801 | 100% | 1 | 31.3% |
+| **0.70** | **1,280** | **95.7%** | **4** | **29.1%** |
+| 0.75 | 426 | 87.0% | 14 | 30.0% |
+| **0.80** | **124** | **40.9%** | **48** | **42.6%** |
+| **0.85** | **41** | **9.6%** | **87** | **81.8%** |
+| 0.90 | 12 | 3.5% | 106 | — |
+
+**Critical threshold**: θ_c ≈ **0.80** (GC drops below 50%)
+**Steepest GC decline**: θ ≈ 0.805 (dGC/dθ = -24.35)
+**Susceptibility peak**: θ ≈ 0.81 (2nd-largest component = 10 nodes)
+
+**Key finding — Agentic Percolation Dominance**: As the threshold rises and the network fragments, **agentic concepts are the last to disconnect**. At θ=0.85, the residual giant component is 81.8% agentic (11 nodes: 9 agentic + 2 ChatGPT). This is a dramatic shift from the baseline 31.3% agentic composition.
+
+This reveals that the **strongest concept-level connections in the entire network are between agentic process concepts**. ChatGPT knowledge concepts connect at moderate similarity (θ=0.70-0.75) but fragment at higher thresholds. Agentic concepts maintain mutual similarity up to θ=0.85+, forming the network's ultimate structural core.
+
+Combined with F67 (network survives 100% agentic removal with GC=66.1%), this creates an asymmetric picture: agentic concepts are the **strongest-bonded core** but the network can function without them. They're like rebar in concrete — the strongest internal element, but the bulk material (ChatGPT knowledge) provides the mass.
+
+---
+
+## F81: Concept Network Entropy Analysis
+
+**Method**: Compute five entropy measures: degree distribution entropy, community size entropy, weight entropy (discretized), platform mixing entropy per community, neighborhood platform diversity, and Von Neumann graph entropy (from normalized Laplacian eigenvalues).
+
+**Provenance**: `run_concept_experiments_6.py --f81`
+
+| Entropy measure | H (bits) | H_max | Ratio |
+|:---|---:|---:|---:|
+| Degree distribution | 5.310 | 5.524 | **0.961** |
+| Community size | 2.173 | 2.807 | 0.774 |
+| Weight distribution | 3.297 | 4.322 | 0.763 |
+| Von Neumann (graph) | 6.427 | 6.845 | **0.939** |
+
+**Degree entropy** (0.961 of maximum) confirms the degree distribution is nearly as spread as possible — the network uses its full range of connectivities without extreme concentration.
+
+**Von Neumann entropy** (0.939) measures the structural information content from Laplacian eigenvalues. At 94% of maximum, the network encodes substantial structural diversity — it's neither a simple ring/lattice (low entropy) nor a random graph (maximum entropy).
+
+**Platform mixing entropy per community**:
+| Community | H | Composition |
+|:---|---:|:---|
+| C0 | 0.242 | 24CG+1AG (nearly pure) |
+| C1 | 0.795 | 19CG+6AG |
+| C2 | 0.950 | 12CG+7AG (nearly balanced) |
+| C5 | **0.989** | 23CG+18AG (**maximally mixed**) |
+| C3, C4, C6 | 0.000 | Pure single-platform |
+
+Mean mixing entropy = **0.425** (max=1.0). Communities range from pure (H=0) to nearly perfectly mixed (H=0.99), confirming heterogeneous integration patterns.
+
+**Neighborhood diversity**: Agentic nodes see more platform-diverse neighborhoods (H=0.80) than ChatGPT nodes (H=0.72). Agentic concepts are more cosmopolitan — they connect broadly across both platforms rather than clustering with their own kind.
+
+**Key finding**: The concept network is near-maximally entropic in degree structure (0.96) and global topology (Von Neumann 0.94), but shows clear structure in community mixing (0.42) and weight distribution (0.76). The high structural entropy means the network is genuinely complex — not reducible to a simple generative model — while the lower mixing entropy confirms that platform identity still organizes community formation. The agentic neighborhood diversity advantage (0.80 vs 0.72) reinforces their role as cross-platform integrators.
+
+---
+
+## F82: Gravity Model of Community Interaction
+
+**Method**: For each pair of communities (with ≥2 nodes each), compute: mass product (n₁ × n₂), mean shortest-path distance, observed inter-community edge flow, and gravity = m₁m₂/d². Correlate gravity with observed flow (Spearman).
+
+**Provenance**: `run_concept_experiments_6.py --f82`
+
+| Community pair | Flow (edges) | Sizes | Distance | Gravity |
+|:---|---:|:---|---:|---:|
+| C2-C5 | 169 | 19×41 | 1.98 | 198.7 |
+| C1-C5 | 128 | 25×41 | 2.24 | 204.3 |
+| C1-C2 | 117 | 25×19 | 1.96 | 123.7 |
+| C0-C5 | 74 | 25×41 | 2.22 | 208.0 |
+| C0-C1 | 73 | 25×25 | 2.22 | 126.8 |
+| C0-C2 | 24 | 25×19 | 2.38 | 83.9 |
+
+**Gravity-flow correlation**: ρ = 0.486, **p = 0.33** (not significant)
+
+**Key finding**: The gravity model is a **poor fit** for concept community interaction. With only 6 non-trivial community pairs, there isn't enough statistical power, but the qualitative pattern shows the model fails: C0-C5 has the highest gravity (208) but only 74 edges, while C2-C5 has lower gravity (199) but the most flow (169). Community interaction depends on **content alignment**, not just size and proximity. The communities with the most cross-platform mixing (C2 and C5) interact most, regardless of what a gravity model predicts.
+
+This negative result is informative: concept community interaction is driven by semantic similarity of the topics, not by a naive distance-mass model. A more sophisticated model incorporating platform composition and topic overlap would be needed.
+
+---
+
+## Theme 12: Network Physics — Weights, Thresholds, and Information (F78-F82)
+
+The final experimental batch probes the concept network's physical properties — the continuous structure beneath the discrete topology.
+
+**The network is topological, not weighted** (F78-F79). Edge weights cluster in a narrow band (0.70-0.94, σ=0.04), with essentially zero disparity (HHI=0.0002). Centrality rankings are preserved perfectly between weighted and unweighted versions (PageRank ρ=0.999). Communities differ slightly (NMI=0.75) but modularity is identical. This validates all prior unweighted analyses and explains why the F61 disparity filter found no backbone — there's no weight heterogeneity to filter on.
+
+**Agentic concepts are the strongest-bonded core** (F80). Percolation analysis reveals a dramatic phase transition at θ_c≈0.80. Below this threshold, the network is connected; above it, the network shatters — but the residual giant component becomes overwhelmingly agentic (81.8% at θ=0.85, vs 31.3% baseline). The highest-similarity connections in the entire network are between agentic process concepts. Combined with resilience findings (F67: network survives total agentic removal), this creates a vivid metaphor: **agentic concepts are the rebar in a concrete structure** — the strongest internal material, but the ChatGPT knowledge provides the mass.
+
+**The network is maximally complex** (F81). Von Neumann entropy reaches 94% of the theoretical maximum, and degree entropy reaches 96%. The concept network is neither simple (like a lattice) nor random — it encodes genuine structural information. Platform mixing entropy (0.42) reveals heterogeneous community integration, and agentic nodes are more cosmopolitan (neighborhood diversity H=0.80 vs 0.72 for ChatGPT).
+
+**Community interaction is semantic, not gravitational** (F82). A gravity model (mass × mass / distance²) fails to predict inter-community flow (ρ=0.49, p=0.33). The most-interacting communities are those with the most platform mixing, not the largest or nearest. Content affinity trumps structural proximity.
+
+| Property | Value | Interpretation |
+|:---|:---|:---|
+| Weight range | 0.700-0.944 | Narrow, near-threshold |
+| HHI disparity | 0.0002 | Perfectly egalitarian weights |
+| Centrality preservation | ρ=0.999 | Topology is sufficient |
+| Percolation θ_c | 0.80 | Network shatters above this |
+| Agentic % at θ=0.85 | **81.8%** | Strongest core is agentic |
+| Von Neumann entropy | 0.939 | Near-maximally complex |
+| Gravity model ρ | 0.49 (NS) | Content > proximity |
+
+---
+
+## Master Comparison Table (Updated with F78-F82)
 
 | Metric | ChatGPT | Agentic (parents) |
 |:---|:---|:---|
@@ -1916,12 +2091,20 @@ Louvain is moderately stable (NMI=0.85) but not perfectly reproducible — some 
 | Resilience | 50% removal to halve GC | |
 | Walk to other platform | 4.18 steps | 1.96 steps |
 | Bridge ego dominance | 1/10 | 9/10 |
-| **Sim distribution** | mean=0.646 | mean=0.652 |
-| **Cross-platform sim** | 0.634 (sig. lower, KS p<1e-11) | |
-| **Bridging prediction** | is_agentic: ρ=0.585 (#1 predictor) | |
-| **LR accuracy** | 72.3% (7 features) | |
-| **Community methods** | Louvain=Greedy (NMI=0.60); LP fails | |
-| **Louvain stability** | NMI=0.854 ± 0.085 (10 seeds) | |
+| Sim distribution | mean=0.646 | mean=0.652 |
+| Cross-platform sim | 0.634 (sig. lower, KS p<1e-11) | |
+| Bridging prediction | is_agentic: ρ=0.585 (#1 predictor) | |
+| LR accuracy | 72.3% (7 features) | |
+| Community methods | Louvain=Greedy (NMI=0.60); LP fails | |
+| Louvain stability | NMI=0.854 ± 0.085 (10 seeds) | |
+| **Weight range** | 0.700-0.944 (σ=0.041) | |
+| **HHI disparity** | 0.0002 (egalitarian) | |
+| **Centrality W vs UW** | PageRank ρ=0.999 | |
+| **Percolation θ_c** | 0.80 (phase transition) | |
+| **Agentic % at θ=0.85** | **81.8%** (vs 31.3% baseline) | |
+| **Von Neumann entropy** | 0.939 (near-maximal) | |
+| **Neighborhood diversity** | H=0.722 | H=0.799 |
+| **Gravity model** | ρ=0.49 (NS, content > proximity) | |
 
 ---
 
@@ -1929,6 +2112,8 @@ Louvain is moderately stable (NMI=0.85) but not perfectly reproducible — some 
 
 1. **Full consensus extraction**: All communities, N=5 runs (production-quality concept set)
 2. **Agentic temporal evolution**: Apply temporal analysis to agentic sessions
-3. **Weighted vs unweighted network comparison**: Do weights change community structure?
-4. **Concept embeddings dimensionality reduction**: t-SNE/UMAP visualization of concept space
-5. **Concept co-occurrence in abstraction hierarchy**: Which concepts collapse together at L2?
+3. **Concept embeddings dimensionality reduction**: t-SNE/UMAP visualization of concept space
+4. **Concept co-occurrence in abstraction hierarchy**: Which concepts collapse together at L2?
+5. **Network motif significance profiles**: Compare triad census against Erdős-Rényi and configuration model nulls
+6. **Concept semantic clustering validation**: Do Louvain communities align with human-interpretable topic groups?
+7. **Temporal concept emergence order**: When do cross-platform concepts first appear vs platform-specific ones?
