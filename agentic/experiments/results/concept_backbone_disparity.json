@@ -1,0 +1,29 @@
+{
+  "experiment": "F61: Disparity Filter Backbone",
+  "full_network": {
+    "nodes": 115,
+    "edges": 1280
+  },
+  "backbone_alpha_sweep": {
+    "0.05": {
+      "edges": 6,
+      "retention": 0.0047,
+      "cross_platform_frac": 0.0
+    },
+    "0.1": {
+      "edges": 6,
+      "retention": 0.0047,
+      "cross_platform_frac": 0.0
+    },
+    "0.2": {
+      "edges": 6,
+      "retention": 0.0047,
+      "cross_platform_frac": 0.0
+    },
+    "0.5": {
+      "edges": 1280,
+      "retention": 1.0,
+      "cross_platform_frac": 0.3906
+    }
+  }
+}

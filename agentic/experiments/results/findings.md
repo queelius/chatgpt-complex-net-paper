@@ -1292,9 +1292,79 @@ The concept layer is genuinely complementary to episodes — NMI=0.297 confirms 
 
 ---
 
+## F60: Model Era Effects on Concept Bridging
+
+**Method**: Assign each ChatGPT concept to the era (Early/Middle/Late) of its source community's median episode date. Compute each concept's mean cross-platform similarity to all agentic concepts. Test era effect via Kruskal-Wallis.
+
+| Era | N concepts | Mean cross-platform sim | Std |
+|:---|---:|---:|---:|
+| Early (GPT-3.5) | 14 | 0.627 | 0.035 |
+| Middle (GPT-4) | 43 | 0.627 | 0.041 |
+| Late (GPT-4o) | 22 | **0.654** | 0.031 |
+
+**Kruskal-Wallis H=7.826, p=0.020** — significant era effect.
+
+**Key finding**: Late-era (GPT-4o) concepts bridge significantly more to agentic concepts than early/middle-era concepts. The 4.3% gap (0.654 vs 0.627) is small but consistent. Early and middle eras are indistinguishable (both 0.627).
+
+**Interpretation**: As the user's ChatGPT conversations shifted from foundational exploration to applied work (F52: Foundations → Application arc), the concepts became more similar to agentic process concepts. The late era's applied, production-oriented concepts ("Problem-Solving Frameworks", "Data Processing and Analysis") naturally align with agentic workflow patterns.
+
+**Top bridging concepts by era**:
+- Late: "Problem-Solving Frameworks" (0.717), "Iterative Inference" (0.707), "Reverse-Process Thinking" (0.689)
+- Middle: "Iterative Development and Refining" (0.705), "Pattern of Abstraction" (0.700)
+- Early: "Problem-Solving Strategies" (0.694), "Iterative Refinement" (0.683)
+
+---
+
+## F61: Disparity Filter Backbone (Negative Result)
+
+**Method**: Apply Serrano et al. (2009) disparity filter to concept network (θ=0.70, 115 nodes, 1280 edges). The filter retains edges whose weight is statistically incompatible with a null model of uniform weight distribution: p_ij = (1 - w_ij/s_i)^(k_i - 1), keep if p < α.
+
+| α threshold | Edges retained | Retention % | Cross-platform % |
+|:---|---:|---:|---:|
+| 0.05 | 6 | 0.5% | 0% |
+| 0.10 | 6 | 0.5% | 0% |
+| 0.20 | 6 | 0.5% | 0% |
+| 0.50 | 1,280 | 100% | 39.1% |
+
+**Key finding (negative result)**: The disparity filter fails on this network. At any meaningful α (≤0.20), only 6 edges survive — all same-platform, all from a single high-weight cluster. At α=0.50, all edges pass.
+
+**Why it fails**: The concept network has insufficient weight heterogeneity. Most nodes have relatively uniform edge weight distributions (cosine similarities clustered in a narrow band above θ=0.70). The disparity filter is designed for networks with heavy-tailed weight distributions (e.g., trade networks, airport networks), not for thresholded similarity networks where the threshold already removes weak edges.
+
+**Alternative approaches for backbone extraction**: k-core decomposition, minimum spanning tree, or edge betweenness could work better for this network topology.
+
+---
+
+## Master Comparison Table (Updated with F60-F61)
+
+| Metric | ChatGPT | Agentic (parents) |
+|:---|:---|:---|
+| Episodes | 601 (θ=0.9) | 449 (θ=0.95) |
+| Edges | 1,718 | 4,316 |
+| Density | 0.0095 | 0.0429 |
+| Modularity | 0.750 | 0.278 |
+| Communities | 15 | 12 |
+| Densification γ | 1.405 | 1.410 |
+| Assortativity | -0.13 | -0.05 |
+| Architecture | Knowledge Archipelago | Cognitive Web |
+| L1 concepts | 79 (68 after pruning) | 36 |
+| L2 meta-concepts | 8 | 6 |
+| L3 orientations | 4 | 3 |
+| L2→L3 compression | 2.59× (variable) | 3.00× (deterministic) |
+| Concept types | Epistemic (WHAT) | Practical (HOW) |
+| Hidden connections | 99.4% | 92.8% |
+| Cross-platform edges (pruned) | 41.5% | |
+| Bridge type | 6/10 identical concepts | |
+| Temporal arc | Foundations → Deepening → Application | — |
+| Era bridging effect | Late > Early/Middle (p=0.020) | |
+| Cross-model stability | Technical: 0.71-0.85; Philosophical: 0.96-0.98 | |
+| Disparity filter backbone | Fails (insufficient weight heterogeneity) | |
+
+---
+
 ## Pending Experiments
 
 1. **Full consensus extraction**: All communities, N=5 runs (production-quality concept set)
 2. **Agentic temporal evolution**: Apply temporal analysis to agentic sessions
-3. **Concept network backbone extraction**: Apply disparity filter to identify statistically significant edges
-4. **Model era effects on concept bridging**: Do concepts from GPT-4o era bridge more than GPT-3.5 era?
+3. **K-core decomposition**: Alternative backbone method — identify nested cores of increasing connectivity
+4. **Concept network motifs**: Triangle census and higher-order patterns in concept similarity graph
+5. **Concept-episode projection alignment**: Project concept communities onto episodes and compare with direct Louvain
