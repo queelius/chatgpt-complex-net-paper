@@ -1,0 +1,32 @@
+{
+  "method": "Triad census + config model null (100 realizations), \u03b8=0.7",
+  "n_triangles": 7245,
+  "n_open_triads": 33699,
+  "global_clustering": 0.3920878882995995,
+  "type_census": {
+    "CCC": 2308,
+    "CCA": 2948,
+    "CAA": 1587,
+    "AAA": 402
+  },
+  "er_expected_triangles": 1838.4071721549535,
+  "er_ratio": 3.9409115182614953,
+  "config_model": {
+    "n_realizations": 100,
+    "mean_triangles": 2419.9,
+    "std_triangles": 99.6505393863977,
+    "z_score": 48.420209561440934
+  },
+  "type_z_scores": {
+    "CCC": 28.215877426035306,
+    "CCA": 26.67275361330135,
+    "CAA": 26.697045527215963,
+    "AAA": 20.14112624885378
+  },
+  "significance_profile": {
+    "CCC": 0.5506159464124134,
+    "CCA": 0.5205028095515326,
+    "CAA": 0.520976851700508,
+    "AAA": 0.39304201403609573
+  }
+}

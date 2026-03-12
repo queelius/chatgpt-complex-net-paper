@@ -1,0 +1,212 @@
+{
+  "method": "Maximum spanning tree + graduated backbone addition",
+  "mst": {
+    "n_edges": 114,
+    "weight_range": [
+      0.670101421826304,
+      0.9442118236574893
+    ],
+    "mean_weight": 0.8137726560735755,
+    "cross_platform_edges": 29,
+    "cross_platform_fraction": 0.2543859649122807,
+    "n_communities": 10,
+    "nmi_vs_full": 0.4548658464602556
+  },
+  "graduated_backbone": {
+    "first_cross_platform_edge": {
+      "edge_rank": 2,
+      "weight": 0.9425457243043158,
+      "nodes": [
+        19,
+        88
+      ],
+      "names": [
+        "Bayesian inference as model selection",
+        "Bayesian inference as model selection"
+      ]
+    },
+    "first_gc50": {
+      "edge_rank": 145,
+      "weight": 0.7945485214153938,
+      "gc_size": 58
+    },
+    "milestones": [
+      {
+        "edges": 1,
+        "min_weight": 0.9442118236574893,
+        "gc_fraction": 0.017391304347826087,
+        "n_components": 114,
+        "cross_platform_edges": 0,
+        "cross_platform_fraction": 0.0
+      },
+      {
+        "edges": 5,
+        "min_weight": 0.9130042029983081,
+        "gc_fraction": 0.034782608695652174,
+        "n_components": 110,
+        "cross_platform_edges": 3,
+        "cross_platform_fraction": 0.6
+      },
+      {
+        "edges": 10,
+        "min_weight": 0.9032573822743264,
+        "gc_fraction": 0.034782608695652174,
+        "n_components": 107,
+        "cross_platform_edges": 6,
+        "cross_platform_fraction": 0.6
+      },
+      {
+        "edges": 25,
+        "min_weight": 0.8665681482781338,
+        "gc_fraction": 0.09565217391304348,
+        "n_components": 97,
+        "cross_platform_edges": 11,
+        "cross_platform_fraction": 0.44
+      },
+      {
+        "edges": 50,
+        "min_weight": 0.8410898008143282,
+        "gc_fraction": 0.09565217391304348,
+        "n_components": 82,
+        "cross_platform_edges": 21,
+        "cross_platform_fraction": 0.42
+      },
+      {
+        "edges": 100,
+        "min_weight": 0.8143206725949566,
+        "gc_fraction": 0.16521739130434782,
+        "n_components": 61,
+        "cross_platform_edges": 37,
+        "cross_platform_fraction": 0.37
+      },
+      {
+        "edges": 200,
+        "min_weight": 0.782178090039213,
+        "gc_fraction": 0.7391304347826086,
+        "n_components": 29,
+        "cross_platform_edges": 69,
+        "cross_platform_fraction": 0.345
+      },
+      {
+        "edges": 500,
+        "min_weight": 0.743827821875824,
+        "gc_fraction": 0.8695652173913043,
+        "n_components": 12,
+        "cross_platform_edges": 183,
+        "cross_platform_fraction": 0.366
+      },
+      {
+        "edges": 1000,
+        "min_weight": 0.7114528405106947,
+        "gc_fraction": 0.9478260869565217,
+        "n_components": 5,
+        "cross_platform_edges": 374,
+        "cross_platform_fraction": 0.374
+      },
+      {
+        "edges": 1280,
+        "min_weight": 0.7000022918506346,
+        "gc_fraction": 0.9565217391304348,
+        "n_components": 4,
+        "cross_platform_edges": 500,
+        "cross_platform_fraction": 0.390625
+      },
+      {
+        "edges": 2000,
+        "min_weight": 0.6743086005897662,
+        "gc_fraction": 0.991304347826087,
+        "n_components": 2,
+        "cross_platform_edges": 792,
+        "cross_platform_fraction": 0.396
+      },
+      {
+        "edges": 3000,
+        "min_weight": 0.6445469472977811,
+        "gc_fraction": 1.0,
+        "n_components": 1,
+        "cross_platform_edges": 1188,
+        "cross_platform_fraction": 0.396
+      },
+      {
+        "edges": 6555,
+        "min_weight": 0.42567712039386396,
+        "gc_fraction": 1.0,
+        "n_components": 1,
+        "cross_platform_edges": 2844,
+        "cross_platform_fraction": 0.43386727688787186
+      }
+    ]
+  },
+  "top_cross_platform_edges": [
+    {
+      "weight": 0.9425457243043158,
+      "node1": "Bayesian inference as model selection",
+      "platform1": "chatgpt",
+      "node2": "Bayesian inference as model selection",
+      "platform2": "agentic"
+    },
+    {
+      "weight": 0.9163314757660683,
+      "node1": "Knowledge Graphs and Network Analysis",
+      "platform1": "chatgpt",
+      "node2": "Knowledge Graphing",
+      "platform2": "agentic"
+    },
+    {
+      "weight": 0.9130042029983081,
+      "node1": "Knowledge Graphs",
+      "platform1": "chatgpt",
+      "node2": "Knowledge Graphing",
+      "platform2": "agentic"
+    },
+    {
+      "weight": 0.9086936723672929,
+      "node1": "Knowledge Graphs and Network Analysis",
+      "platform1": "chatgpt",
+      "node2": "Knowledge Graphing",
+      "platform2": "agentic"
+    },
+    {
+      "weight": 0.9079876916798333,
+      "node1": "Problem Decomposition",
+      "platform1": "chatgpt",
+      "node2": "Problem Decomposition",
+      "platform2": "agentic"
+    },
+    {
+      "weight": 0.9032573822743264,
+      "node1": "Knowledge Graphs",
+      "platform1": "chatgpt",
+      "node2": "Knowledge Graphing",
+      "platform2": "agentic"
+    },
+    {
+      "weight": 0.8941920343119536,
+      "node1": "Iterative Development and Refining",
+      "platform1": "chatgpt",
+      "node2": "Iterative Problem-Solving",
+      "platform2": "agentic"
+    },
+    {
+      "weight": 0.8810155015008246,
+      "node1": "Knowledge Graphs and Network Analysis",
+      "platform1": "chatgpt",
+      "node2": "Knowledge graphing and network analysis",
+      "platform2": "agentic"
+    },
+    {
+      "weight": 0.8776324762463743,
+      "node1": "Iterative Inference",
+      "platform1": "chatgpt",
+      "node2": "Iterative Problem-Solving",
+      "platform2": "agentic"
+    },
+    {
+      "weight": 0.8770301136635559,
+      "node1": "Pattern of Abstraction",
+      "platform1": "chatgpt",
+      "node2": "Abstraction and Simplification",
+      "platform2": "agentic"
+    }
+  ]
+}

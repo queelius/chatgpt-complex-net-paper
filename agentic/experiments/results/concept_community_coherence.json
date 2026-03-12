@@ -1,0 +1,90 @@
+{
+  "method": "Intra/inter community similarity analysis at \u03b8=0.70",
+  "n_communities": 5,
+  "communities": [
+    {
+      "community": 0,
+      "size": 25,
+      "n_chatgpt": 24,
+      "n_agentic": 1,
+      "mean_intra_sim": 0.6871953865073631,
+      "mean_inter_sim": 0.6173763164554308,
+      "coherence": 1.11308997153112,
+      "topic_label": "Problem-Solving Strategies",
+      "top3_concepts": [
+        "Problem-Solving Strategies",
+        "Statistical reasoning and problem-solving",
+        "Knowledge Representation"
+      ]
+    },
+    {
+      "community": 1,
+      "size": 25,
+      "n_chatgpt": 19,
+      "n_agentic": 6,
+      "mean_intra_sim": 0.7051252031453544,
+      "mean_inter_sim": 0.6349358519595096,
+      "coherence": 1.1105455786899254,
+      "topic_label": "Rule-Based Reasoning",
+      "top3_concepts": [
+        "Rule-Based Reasoning",
+        "Knowledge Graphs and Network Analysis",
+        "Abstract Reasoning"
+      ]
+    },
+    {
+      "community": 2,
+      "size": 19,
+      "n_chatgpt": 12,
+      "n_agentic": 7,
+      "mean_intra_sim": 0.7068233928504728,
+      "mean_inter_sim": 0.6446235273083878,
+      "coherence": 1.0964902193405806,
+      "topic_label": "Pattern of Abstraction",
+      "top3_concepts": [
+        "Pattern of Abstraction",
+        "Problem-Solving Frameworks",
+        "Meta-Reflection"
+      ]
+    },
+    {
+      "community": 4,
+      "size": 3,
+      "n_chatgpt": 0,
+      "n_agentic": 3,
+      "mean_intra_sim": 0.6805119224579915,
+      "mean_inter_sim": 0.5791930209502152,
+      "coherence": 1.1749311504851252,
+      "topic_label": "Project Initialization",
+      "top3_concepts": [
+        "Project Initialization",
+        "Pattern of Iterative Initiation",
+        "Exploratory Reading"
+      ]
+    },
+    {
+      "community": 5,
+      "size": 41,
+      "n_chatgpt": 23,
+      "n_agentic": 18,
+      "mean_intra_sim": 0.6719248639668316,
+      "mean_inter_sim": 0.6307453070239935,
+      "coherence": 1.065287139649335,
+      "topic_label": "Iterative Refining",
+      "top3_concepts": [
+        "Iterative Refining",
+        "Pattern Recognition",
+        "Iterative Refinement"
+      ]
+    }
+  ],
+  "overall_coherence": {
+    "mean": 1.1120688119392175,
+    "min": 1.065287139649335,
+    "max": 1.1749311504851252
+  },
+  "coherence_vs_mixing": {
+    "spearman_rho": -0.9999999999999999,
+    "p_value": 1.4042654220543672e-24
+  }
+}
