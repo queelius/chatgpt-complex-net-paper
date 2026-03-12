@@ -1,0 +1,102 @@
+{
+  "method": "Matrix exponential communicability and Estrada index",
+  "estrada_index": 88499115744.59282,
+  "subgraph_centrality": {
+    "top10": [
+      {
+        "name": "Problem-Solving Strategies",
+        "platform": "chatgpt",
+        "centrality": 3510522219.33814
+      },
+      {
+        "name": "Iterative Refining",
+        "platform": "agentic",
+        "centrality": 3484869316.540232
+      },
+      {
+        "name": "Pattern of Abstraction",
+        "platform": "chatgpt",
+        "centrality": 3154423611.306229
+      },
+      {
+        "name": "Problem-Solving Frameworks",
+        "platform": "chatgpt",
+        "centrality": 3122306444.4373856
+      },
+      {
+        "name": "Iterative Refinement",
+        "platform": "agentic",
+        "centrality": 3068691795.2115874
+      },
+      {
+        "name": "Pattern Recognition",
+        "platform": "agentic",
+        "centrality": 3066568502.552336
+      },
+      {
+        "name": "Rule-Based Reasoning",
+        "platform": "chatgpt",
+        "centrality": 2920482292.499803
+      },
+      {
+        "name": "Iterative Inference",
+        "platform": "chatgpt",
+        "centrality": 2524060823.6139464
+      },
+      {
+        "name": "Reverse-Process Thinking",
+        "platform": "chatgpt",
+        "centrality": 2521867762.700335
+      },
+      {
+        "name": "Abstract Reasoning",
+        "platform": "chatgpt",
+        "centrality": 2456523758.279245
+      }
+    ],
+    "chatgpt_mean": 721273841.9559239,
+    "agentic_mean": 875513395.2798561,
+    "mann_whitney_p": 0.47294054634625404
+  },
+  "mean_communicability": {
+    "cg_cg": 445634106.41337144,
+    "ag_ag": 559993523.8296788,
+    "cross": 505412904.2023553,
+    "cross_same_ratio": 1.0051690884432085
+  },
+  "community_communicability": {
+    "C0-C0": 152350506.21130514,
+    "C0-C1": 320419769.1284211,
+    "C0-C2": 362026335.4989667,
+    "C0-C3": 0.0,
+    "C0-C4": 0.0,
+    "C0-C5": 317460886.023365,
+    "C0-C6": 0.0,
+    "C1-C1": 638441440.7215809,
+    "C1-C2": 733039653.0426105,
+    "C1-C3": 0.0,
+    "C1-C4": 0.0,
+    "C1-C5": 642802139.674307,
+    "C1-C6": 0.0,
+    "C2-C2": 814714235.1420056,
+    "C2-C3": 0.0,
+    "C2-C4": 0.0,
+    "C2-C5": 726273013.7684425,
+    "C2-C6": 0.0,
+    "C3-C3": 0.0,
+    "C3-C4": 0.0,
+    "C3-C5": 0.0,
+    "C3-C6": 0.0,
+    "C4-C4": 0.682877804464678,
+    "C4-C5": 0.0,
+    "C4-C6": 0.0,
+    "C5-C5": 629488053.4199433,
+    "C5-C6": 0.0,
+    "C6-C6": 0.0
+  },
+  "communicability_distance": {
+    "cross_platform_mean": 19567.3066088274,
+    "same_platform_mean": 19031.636131503765,
+    "mann_whitney_p": 0.085103409800561
+  }
+}
