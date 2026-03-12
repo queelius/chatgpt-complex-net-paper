@@ -99,7 +99,7 @@ These findings demonstrate that a single user's cognitive structure, viewed thro
 % ============================================================
 
 The past three years have seen an explosion in AI-assisted knowledge work.
-Millions of users maintain conversation archives with ChatGPT, Claude, and other large language models, creating externalized records of their cognitive activity~\citep{zhao2023survey}.
+Millions of users maintain conversation archives with ChatGPT, Claude, and other large language models~\citep{zhao2024wildchat}, creating externalized records of their cognitive activity~\citep{zhao2023survey}.
 More recently, \emph{agentic} AI tools---Claude Code, GitHub Copilot, Cursor---have extended this interaction beyond conversation: these systems read files, write code, execute tests, and spawn autonomous subagents, leaving behind session logs that document not just what was discussed but what was \emph{done}~\citep{wang2024survey}.
 
 In prior work, we introduced a ``cognitive MRI'' methodology that transforms AI conversation archives into semantic similarity networks~\citep{towell2025cognitive,towell2026temporal}.
@@ -109,6 +109,7 @@ A ChatGPT conversation about Bayesian inference and a Claude Code session implem
 
 This paper introduces a \emph{concept layer} that bridges this gap.
 From the episodic communities detected in each platform's similarity network, we extract abstract cognitive concepts via LLM-based abstraction---labels like ``Bayesian inference as model selection'' or ``Iterative Refinement.''
+This approach is methodologically related to text network analysis tools like InfraNodus~\citep{paranyushkin2019infranodus}, which maps discourse structure via word co-occurrence networks, and to the community-level LLM summarization pipeline of GraphRAG~\citep{edge2024graphrag}.
 These concepts are then embedded in a shared semantic space and connected by cosine similarity, producing a single cross-platform network where every concept competes on equal footing regardless of its platform of origin.
 
 The resulting network reveals a striking finding: \textbf{platform identity is virtually invisible to network structure.}
@@ -138,17 +139,17 @@ Our contributions are:
 
 The source data comprise two archives from a single user: 1,908 ChatGPT conversations spanning December 2022 to April 2025 (29 months) and 3,945 Claude Code sessions spanning November 2025 to March 2026 (101 days, of which 1,061 are human-initiated parent sessions and 2,884 are AI-spawned subagents).
 
-Following the methodology of~\citet{towell2025cognitive}, we embed each session using nomic-embed-text~\citep{nussbaum2024nomic} (768 dimensions), compute all-pairs cosine similarity, and threshold to construct episodic similarity networks.
+Following the methodology of~\citet{towell2025cognitive}, we embed each session using nomic-embed-text~\citep{nussbaum2024nomic,reimers2019sentence} (768 dimensions), compute all-pairs cosine similarity, and threshold to construct episodic similarity networks.
 ChatGPT conversations use user:AI message weighting of 2:1 and threshold $\theta = 0.90$ (validated by ablation study); Claude Code sessions use text-only content mode and threshold $\theta = 0.95$ (adjusted for the higher baseline similarity of coding sessions).
 These episodic networks serve as the substrate from which concepts are extracted.
 
-Community detection via the Louvain algorithm~\citep{blondel2008fast} identifies 15 ChatGPT communities (e.g., ML/AI, Statistics, Philosophy, Web Development) and 12 agentic communities (mapped to coding projects rather than knowledge domains).
+Community detection via the Louvain algorithm~\citep{blondel2008fast,newman2006modularity,fortunato2010community} identifies 15 ChatGPT communities (e.g., ML/AI, Statistics, Philosophy, Web Development) and 12 agentic communities (mapped to coding projects rather than knowledge domains).
 
 \subsection{Concept extraction}
 \label{sec:methods:concepts}
 
 From each episodic community, we extract abstract cognitive concepts using LLM-based abstraction (llama3.2 via Ollama).
-For each community, the top 20 sessions by message count are presented to the LLM with a prompt requesting 2--5 abstract concepts that characterize the community's cognitive content.
+For each community, the top 20 sessions by message count are presented to the LLM with a prompt requesting 2--5 abstract concepts that characterize the community's cognitive content---an approach analogous to topic modeling via latent Dirichlet allocation~\citep{blei2003latent}, but leveraging LLM comprehension rather than bag-of-words statistics.
 This yields 79 ChatGPT concepts and 36 agentic concepts (115 total).
 
 ChatGPT concepts are predominantly \emph{knowledge-domain} concepts: ``Bayesian Reasoning for Model Selection,'' ``Statistical Modeling and Estimation,'' ``Philosophical Inquiry.''
@@ -160,7 +161,7 @@ Semantic deduplication at $\theta \geq 0.85$ recovers 2.7 stable concepts per co
 \subsection{Concept network construction}
 \label{sec:methods:network}
 
-Each concept is represented as ``name: description'' and embedded via nomic-embed-text into the same 768-dimensional space used for episodes.
+Each concept is represented as ``name: description'' and embedded via nomic-embed-text into the same 768-dimensional space used for episodes~\citep{veremyev2019graph}.
 All $\binom{115}{2} = 6{,}555$ pairwise cosine similarities are computed.
 Edges are placed between concepts with similarity exceeding a threshold $\theta$.
 
@@ -200,13 +201,13 @@ Table~\ref{tab:network_summary} summarizes key properties.
 We employ the following analytical tools:
 \begin{itemize}
   \item \textbf{Information theory}: Mutual information between platform/community labels and neighbor labels, normalized by marginal entropy~\citep{danon2005comparing}.
-  \item \textbf{Percolation analysis}: Threshold sweep from $\theta = 0.45$ to $0.95$, tracking giant component fraction and platform composition~\citep{stauffer1994introduction}.
+  \item \textbf{Percolation analysis}: Threshold sweep from $\theta = 0.45$ to $0.95$, tracking giant component fraction and platform composition~\citep{stauffer1994introduction,albert2000error}.
   \item \textbf{Dimensionality reduction}: PCA and t-SNE~\citep{vandermaaten2008visualizing} on the similarity matrix.
   \item \textbf{Structural vulnerability}: Local bridge detection (edges with no common neighbors), true bridge detection (edges whose removal disconnects the graph).
-  \item \textbf{Link prediction}: Logistic regression on topological features (Adamic-Adar~\citep{adamic2003friends}, common neighbors, Jaccard index, degree sum)~\citep{lu2011link}.
+  \item \textbf{Link prediction}: Logistic regression on topological features (Adamic-Adar~\citep{adamic2003friends,libennowell2003link}, common neighbors, Jaccard index, degree sum)~\citep{lu2011link}.
   \item \textbf{Core-periphery}: $k$-core decomposition and Borgatti-Everett continuous model~\citep{borgatti2000models}.
   \item \textbf{Rich-club analysis}: Normalized rich-club coefficient $\rho(k)$ against 100 configuration model realizations~\citep{colizza2006detecting}.
-  \item \textbf{Null models}: Erd\H{o}s-R\'enyi (same density), configuration model (same degree sequence), geometric random graph (same edge count)---100 realizations each.
+  \item \textbf{Null models}: Erd\H{o}s-R\'enyi~\citep{erdos1960evolution} (same density), configuration model (same degree sequence), geometric random graph~\citep{penrose2003random} (same edge count)---100 realizations each.
   \item \textbf{Communicability}: Matrix-exponential communicability and Estrada index~\citep{estrada2008communicability}.
 \end{itemize}
 
@@ -297,7 +298,7 @@ But ChatGPT knowledge concepts provide the structural mass---the volume and inte
 \end{figure}
 
 \paragraph{Triadic structure.}
-Triangle census provides a motif-level view of the rebar function.
+Triangle census~\citep{milo2002network} provides a motif-level view of the rebar function.
 Compared to degree-preserving configuration models, the concept network has $3.0\times$ more triangles than expected ($z = 48.4$).
 Critically, all four platform-composition types (CCC, CCA, CAA, AAA) are equally over-represented ($z = 20$--$28$), confirming that triangle formation is topological, not a platform-segregation artifact.
 
@@ -388,7 +389,7 @@ Cross-platform links are structurally \emph{necessary}: they connect concepts th
 The concept network exhibits clear core-periphery structure with a cross-platform gradient.
 
 \paragraph{$k$-core decomposition.}
-The innermost core ($k = 19$, 31 nodes, density $0.82$) contains 19 ChatGPT and 12 agentic concepts---a $61$:$39$ ratio, compared to the full network's $69$:$31$.
+Using $k$-core decomposition as a measure of structural importance~\citep{kitsak2010identification}, we find the innermost core ($k = 19$, 31 nodes, density $0.82$) contains 19 ChatGPT and 12 agentic concepts---a $61$:$39$ ratio, compared to the full network's $69$:$31$.
 Agentic concepts are disproportionately represented in the core.
 Cross-platform edge fraction increases from $39.1\%$ (full network) to $47.3\%$ (inner cores), confirming that the core is where platforms converge.
 
@@ -403,7 +404,7 @@ Within this rich club, agentic concepts are more cross-platform (8 of 10 connect
 
 \paragraph{Flat topology.}
 The concept network contains \emph{zero} hub nodes (all within-module $z$-scores $< 2.5$ in the Guimer\`a-Amaral classification; \citealt{guimera2005functional}).
-Bridging is distributed across 37 satellite connectors rather than concentrated in a few hubs---a leaderless, egalitarian architecture.
+Bridging is distributed across 37 satellite connectors---filling structural holes~\citep{burt1992structural}---rather than concentrated in a few hubs, yielding a leaderless, egalitarian architecture.
 
 
 \subsection{Null model validation}
@@ -414,7 +415,7 @@ Three null model batteries confirm the significance of the observed structure.
 \begin{itemize}
   \item \textbf{Clustering}: $3.0\times$ more triangles than the configuration model ($z = 48.4$); $2.8\times$ more than Erd\H{o}s-R\'enyi ($z = 60.1$).  The clustering is genuine, not an artifact of the degree sequence.
   \item \textbf{Cross-platform mixing}: The observed $39.1\%$ is \emph{lower} than the configuration model null ($43.5\%$, $p < 0.001$), meaning same-platform concepts are slightly more similar than cross-platform concepts.  The null model correction is important: cross-platform integration is real but is not \emph{stronger} than chance---it is structured differently from chance, with cross-platform edges concentrated in the core rather than uniformly distributed.
-  \item \textbf{Network class}: Clustering falls between Erd\H{o}s-R\'enyi ($z = +60$) and geometric random graphs ($z = -9.4$), placing the concept network in the ``small-world semantic space'' regime---more structured than random but less constrained than geometry.
+  \item \textbf{Network class}: Clustering falls between Erd\H{o}s-R\'enyi ($z = +60$) and geometric random graphs ($z = -9.4$), placing the concept network in the ``small-world semantic space'' regime characteristic of cognitive and semantic networks~\citep{steyvers2005large,dedeyne2019small}---more structured than random but less constrained than geometry.
 \end{itemize}
 
 
@@ -427,7 +428,13 @@ Three null model batteries confirm the significance of the observed structure.
 
 The central finding of this study is that a single user's cognitive concepts, extracted from two different AI platforms over two years, form a \emph{unified} network organized by semantic content rather than platform origin.
 Platform identity carries only $0.7\%$ of the information that community membership carries about network neighborhoods.
-This extends the ``extended mind'' thesis~\citep{clark1998extended}: not only do external AI tools function as cognitive extensions, but the \emph{conceptual structures} they help construct converge across tools.
+
+This finding connects to a rich tradition of cognitive network science~\citep{siew2019cognitive}.
+\citet{steyvers2005large} showed that semantic networks derived from population-level data (WordNet, free associations) exhibit small-world structure with power-law degree distributions; \citet{kenett2014investigating} demonstrated that individual differences in semantic network topology correlate with creative ability.
+Our concept network extends this program to a novel domain: concepts extracted not from controlled experiments but from naturalistic AI-assisted knowledge work.
+The small-world signature we observe ($\sigma = 2.42$) is consistent with the semantic network class identified by Steyvers and Tenenbaum, suggesting that AI-mediated concept formation follows the same organizational principles as human semantic memory.
+
+This extends the ``extended mind'' thesis~\citep{clark1998extended,hutchins1995cognition}: not only do external AI tools function as cognitive extensions, but the \emph{conceptual structures} they help construct converge across tools.
 The user does not maintain separate ``ChatGPT knowledge'' and ``Claude Code knowledge''---they maintain a single cognitive repertoire that manifests through whatever tool is at hand.
 
 This convergence is not trivially expected.
@@ -457,7 +464,7 @@ It means that cross-platform edges are not random additions to the network---the
 The Adamic-Adar predictor's dominance indicates that cross-platform links arise where two concepts share many well-connected common neighbors.
 In other words, the network generates its own cross-platform integration through local structure.
 
-This has implications for the study of multiplex networks more broadly~\citep{boccaletti2014structure,kivela2014multilayer}.
+This has implications for the study of multiplex networks more broadly~\citep{boccaletti2014structure,kivela2014multilayer,battiston2014structural}.
 When different layers of a system share an underlying semantic space, inter-layer links may be structurally determined rather than requiring a separate generative mechanism.
 The concept layer does not need a ``cross-platform attachment rule''---it needs only cosine similarity in a shared embedding space, and the cross-platform structure emerges from the geometry.
 
