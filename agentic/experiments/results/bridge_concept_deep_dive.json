@@ -1,0 +1,230 @@
+{
+  "experiment": "F58: Bridge Concept Deep Dive",
+  "top_bridges": [
+    {
+      "similarity": 0.9425,
+      "chatgpt": {
+        "name": "Bayesian inference as model selection",
+        "description": "Conversations involve Bayesian inference, model selection, and hypothesis testing to analyze MLE performance and estimate parameters.",
+        "source_community": 10,
+        "example_episodes": [
+          "MLE Bias Analysis",
+          "MLE Performance Analysis."
+        ]
+      },
+      "agentic": {
+        "name": "Bayesian inference as model selection",
+        "description": "The use of Bayesian inference to inform model selection, particularly in the context of statistical modeling and hypothesis testing",
+        "source_community": 4,
+        "example_episodes": [
+          "Iterative Meandering Allen",
+          "Eager Churning Treasure"
+        ]
+      },
+      "bridge_type": "identical-concept"
+    },
+    {
+      "similarity": 0.9163,
+      "chatgpt": {
+        "name": "Knowledge Graphs and Network Analysis",
+        "description": "Conversations involve analyzing and representing knowledge as graphs or networks, facilitating connections between concepts and ideas.",
+        "source_community": 3,
+        "example_episodes": [
+          "AlgoTree - Misc",
+          "MCTS for LLM Evaluation"
+        ]
+      },
+      "agentic": {
+        "name": "Knowledge Graphing",
+        "description": "Conversations construct knowledge graphs to represent complex relationships between ideas, entities, and concepts, facilitating understanding and connection-making.",
+        "source_community": 0,
+        "example_episodes": [
+          "Unified Purring Crab",
+          "Snappy Booping Haven"
+        ]
+      },
+      "bridge_type": "identical-concept"
+    },
+    {
+      "similarity": 0.913,
+      "chatgpt": {
+        "name": "Knowledge Graphs",
+        "description": "Representing complex knowledge and relationships between concepts using graph structures, facilitating connections between seemingly unrelated topics.",
+        "source_community": 11,
+        "example_episodes": [
+          "Digistar - Cluster Big Atoms with CGAL",
+          "SpaceSim - N-body Simulator Code Explanation"
+        ]
+      },
+      "agentic": {
+        "name": "Knowledge Graphing",
+        "description": "Conversations construct knowledge graphs to represent complex relationships between ideas, entities, and concepts, facilitating understanding and connection-making.",
+        "source_community": 0,
+        "example_episodes": [
+          "Unified Purring Crab",
+          "Snappy Booping Haven"
+        ]
+      },
+      "bridge_type": "identical-concept"
+    },
+    {
+      "similarity": 0.9087,
+      "chatgpt": {
+        "name": "Knowledge Graphs and Network Analysis",
+        "description": "Conversations involve analyzing and representing knowledge as graphs or networks, facilitating connections between concepts and ideas.",
+        "source_community": 3,
+        "example_episodes": [
+          "AlgoTree - Misc",
+          "MCTS for LLM Evaluation"
+        ]
+      },
+      "agentic": {
+        "name": "Knowledge Graphing",
+        "description": "Conversations construct and navigate knowledge graphs, using relationships between concepts to inform and refine their understanding of a topic.",
+        "source_community": 2,
+        "example_episodes": [
+          "Federated Discovering Alpaca",
+          "Keen Scribbling Robin"
+        ]
+      },
+      "bridge_type": "identical-concept"
+    },
+    {
+      "similarity": 0.908,
+      "chatgpt": {
+        "name": "Problem Decomposition",
+        "description": "Breaking down complex problems into manageable sub-problems, identifying key components, and analyzing their interactions.",
+        "source_community": 11,
+        "example_episodes": [
+          "Digistar - Efficient Spatial Interaction Handling",
+          "SpaceSim - Barnes-Hut vs QuadTree Logic"
+        ]
+      },
+      "agentic": {
+        "name": "Problem Decomposition",
+        "description": "Conversations break down complex problems into manageable sub-problems, identifying key areas for improvement or solution development.",
+        "source_community": 0,
+        "example_episodes": [
+          "Vast Squishing Swing",
+          "Delightful Inventing Mochi"
+        ]
+      },
+      "bridge_type": "identical-concept"
+    },
+    {
+      "similarity": 0.9033,
+      "chatgpt": {
+        "name": "Knowledge Graphs",
+        "description": "Representing complex knowledge and relationships between concepts using graph structures, facilitating connections between seemingly unrelated topics.",
+        "source_community": 11,
+        "example_episodes": [
+          "Digistar - Cluster Big Atoms with CGAL",
+          "SpaceSim - N-body Simulator Code Explanation"
+        ]
+      },
+      "agentic": {
+        "name": "Knowledge Graphing",
+        "description": "Conversations construct and navigate knowledge graphs, using relationships between concepts to inform and refine their understanding of a topic.",
+        "source_community": 2,
+        "example_episodes": [
+          "Federated Discovering Alpaca",
+          "Keen Scribbling Robin"
+        ]
+      },
+      "bridge_type": "identical-concept"
+    },
+    {
+      "similarity": 0.8942,
+      "chatgpt": {
+        "name": "Iterative Development and Refining",
+        "description": "Conversations reflect an iterative development process, where initial ideas are refined through feedback, testing, and iteration to produce more effective solutions.",
+        "source_community": 3,
+        "example_episodes": [
+          "JsonLang - JSON AST Autograd Implementation",
+          "Publishing Python Package"
+        ]
+      },
+      "agentic": {
+        "name": "Iterative Problem-Solving",
+        "description": "Conversations employ an iterative approach to problem-solving, refining their solutions through testing, iteration, and refinement.",
+        "source_community": 2,
+        "example_episodes": [
+          "Sleepy Mixing Sky",
+          "Purring Sleeping Garden"
+        ]
+      },
+      "bridge_type": "shared-keyword"
+    },
+    {
+      "similarity": 0.881,
+      "chatgpt": {
+        "name": "Knowledge Graphs and Network Analysis",
+        "description": "Conversations involve analyzing and representing knowledge as graphs or networks, facilitating connections between concepts and ideas.",
+        "source_community": 3,
+        "example_episodes": [
+          "AlgoTree - Misc",
+          "MCTS for LLM Evaluation"
+        ]
+      },
+      "agentic": {
+        "name": "Knowledge graphing and network analysis",
+        "description": "The use of knowledge graphs and network analysis techniques to represent and analyze complex relationships between concepts, entities, and ideas",
+        "source_community": 4,
+        "example_episodes": [
+          "Atomic Napping Eagle",
+          "Zippy Humming Ritchie"
+        ]
+      },
+      "bridge_type": "shared-keyword"
+    },
+    {
+      "similarity": 0.8776,
+      "chatgpt": {
+        "name": "Iterative Inference",
+        "description": "Using iterative processes to refine understanding, generate data, or solve complex problems through a series of informed guesses and refinements",
+        "source_community": 22,
+        "example_episodes": [
+          "RPDG - Theorems: Apply and Match",
+          "RPDG - Reverse Process Data Generation"
+        ]
+      },
+      "agentic": {
+        "name": "Iterative Problem-Solving",
+        "description": "Conversations employ an iterative approach to problem-solving, refining their solutions through testing, iteration, and refinement.",
+        "source_community": 2,
+        "example_episodes": [
+          "Sleepy Mixing Sky",
+          "Purring Sleeping Garden"
+        ]
+      },
+      "bridge_type": "shared-keyword"
+    },
+    {
+      "similarity": 0.877,
+      "chatgpt": {
+        "name": "Pattern of Abstraction",
+        "description": "Conversations involve abstracting complex concepts into simpler, more manageable representations to facilitate understanding and problem-solving.",
+        "source_community": 3,
+        "example_episodes": [
+          "AlgoTree - Generate Unit Tests: FlatTree",
+          "Basic Types in Scheme"
+        ]
+      },
+      "agentic": {
+        "name": "Abstraction and Simplification",
+        "description": "Conversations employ abstraction and simplification techniques to distill complex concepts into actionable, bite-sized pieces, making them more accessible and manageable.",
+        "source_community": 0,
+        "example_episodes": [
+          "Vast Squishing Swing",
+          "Idempotent Floating Kitten"
+        ]
+      },
+      "bridge_type": "semantic-bridge"
+    }
+  ],
+  "bridge_type_counts": {
+    "identical-concept": 6,
+    "shared-keyword": 3,
+    "semantic-bridge": 1
+  }
+}

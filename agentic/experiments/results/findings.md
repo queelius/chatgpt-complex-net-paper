@@ -1228,9 +1228,73 @@ The concept layer is genuinely complementary to episodes — NMI=0.297 confirms 
 
 ---
 
+## F58: Bridge Concept Deep Dive
+
+**Method**: Identify top 10 cross-platform concept pairs by embedding similarity. Trace each to source episodes and descriptions. Classify bridge types.
+
+**Top bridges** (sim ≥ 0.87):
+
+| ChatGPT concept | Agentic concept | Sim | Type |
+|:---|:---|---:|:---|
+| Bayesian inference as model selection | Bayesian inference as model selection | 0.943 | identical |
+| Knowledge Graphs and Network Analysis | Knowledge Graphing | 0.916 | identical |
+| Knowledge Graphs | Knowledge Graphing | 0.913 | identical |
+| Problem Decomposition | Problem Decomposition | 0.908 | identical |
+| Iterative Development and Refining | Iterative Problem-Solving | 0.894 | shared-keyword |
+| Pattern of Abstraction | Abstraction and Simplification | 0.877 | semantic |
+
+**Bridge type distribution**: 6 identical-concept, 3 shared-keyword, 1 semantic-bridge (out of top 10).
+
+**Key finding**: The strongest bridges are **genuine cognitive primitives** — independently extracted from both platforms with near-identical names. "Bayesian inference as model selection" emerges from MLE analysis conversations (ChatGPT) and statistical analysis sessions (agentic). These are the user's actual cognitive habits visible in both modalities.
+
+---
+
+## F59: Concept Redundancy Pruning
+
+**Method**: Identify communities with within-concept diversity < 0.25 (over-extracted). Remove all but the most connected concept per redundant community. Recompute network metrics.
+
+| Metric | Original | Pruned | Change |
+|:---|---:|---:|:---|
+| Concepts | 115 | 104 | -11 (3 communities) |
+| ChatGPT concepts | 79 | 68 | -11 |
+| Agentic concepts | 36 | 36 | unchanged |
+| Edges (θ=0.70) | 1,280 | 1,047 | -18% |
+| Communities | 8 | 8 | unchanged |
+| Cross-platform edge % | 39.1% | **41.5%** | **+2.4%** |
+| Density | 0.1953 | 0.1955 | unchanged |
+
+**Key finding**: Pruning redundant concepts **increases** cross-platform fraction from 39.1% to 41.5%. Redundant concepts were same-platform duplicates that inflated within-platform edges. All 36 agentic concepts survived (only ChatGPT had over-extraction). The pruned network better represents the true cross-platform structure.
+
+---
+
+## Master Comparison Table (Updated with F58-F59)
+
+| Metric | ChatGPT | Agentic (parents) |
+|:---|:---|:---|
+| Episodes | 601 (θ=0.9) | 449 (θ=0.95) |
+| Edges | 1,718 | 4,316 |
+| Density | 0.0095 | 0.0429 |
+| Modularity | 0.750 | 0.278 |
+| Communities | 15 | 12 |
+| Densification γ | 1.405 | 1.410 |
+| Assortativity | -0.13 | -0.05 |
+| Architecture | Knowledge Archipelago | Cognitive Web |
+| L1 concepts | 79 (68 after pruning) | 36 |
+| L2 meta-concepts | 8 | 6 |
+| L3 orientations | 4 | 3 |
+| L2→L3 compression | 2.59× (variable) | 3.00× (deterministic) |
+| Concept types | Epistemic (WHAT) | Practical (HOW) |
+| Hidden connections | 99.4% | 92.8% |
+| Cross-platform edges (pruned) | 41.5% | |
+| Bridge type | 6/10 identical concepts | |
+| Temporal arc | Foundations → Deepening → Application | — |
+| Cross-model stability | Technical: 0.71-0.85; Philosophical: 0.96-0.98 | |
+
+---
+
 ## Pending Experiments
 
 1. **Full consensus extraction**: All communities, N=5 runs (production-quality concept set)
 2. **Agentic temporal evolution**: Apply temporal analysis to agentic sessions
-3. **Concept hierarchy pruning**: Remove redundant concepts (diversity < 0.25) and recompute network
-4. **Bridge concept deep dive**: For the top 5 cross-platform bridge concepts, trace back to specific episodes and analyze what makes them bridging
+3. **Concept network backbone extraction**: Apply disparity filter to identify statistically significant edges
+4. **Model era effects on concept bridging**: Do concepts from GPT-4o era bridge more than GPT-3.5 era?

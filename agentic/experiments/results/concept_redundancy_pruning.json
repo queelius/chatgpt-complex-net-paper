@@ -1,0 +1,51 @@
+{
+  "experiment": "F59: Concept Redundancy Pruning",
+  "original": {
+    "nodes": 115,
+    "edges": 1280,
+    "chatgpt": 79,
+    "agentic": 36,
+    "cross_platform_frac": 0.3906
+  },
+  "pruned": {
+    "nodes": 104,
+    "edges": 1047,
+    "chatgpt": 68,
+    "agentic": 36,
+    "cross_platform_frac": 0.4155,
+    "concepts_removed": 11
+  },
+  "community_diversity": {
+    "chatgpt_C0": 0.302,
+    "chatgpt_C1": 0.247,
+    "chatgpt_C64": 0.311,
+    "chatgpt_C3": 0.28,
+    "chatgpt_C4": 0.276,
+    "chatgpt_C5": 0.255,
+    "chatgpt_C7": 0.229,
+    "chatgpt_C8": 0.326,
+    "chatgpt_C9": 0.314,
+    "chatgpt_C10": 0.317,
+    "chatgpt_C11": 0.323,
+    "chatgpt_C43": 0.199,
+    "chatgpt_C22": 0.256,
+    "chatgpt_C24": 0.337,
+    "chatgpt_C28": 0.302,
+    "chatgpt_C63": 0.298,
+    "chatgpt_C31": 0.291,
+    "agentic_C0": 0.316,
+    "agentic_C1": 0.27,
+    "agentic_C2": 0.265,
+    "agentic_C3": 0.277,
+    "agentic_C4": 0.403,
+    "agentic_C6": 0.319,
+    "agentic_C8": 0.357,
+    "agentic_C9": 0.351,
+    "agentic_C11": 0.308
+  },
+  "redundant_communities": [
+    "chatgpt_C1",
+    "chatgpt_C7",
+    "chatgpt_C43"
+  ]
+}
