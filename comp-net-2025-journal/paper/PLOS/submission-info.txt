@@ -47,11 +47,14 @@ The authors have declared that no competing interests exist.
 ------------------------------------------------------------
 DATA AVAILABILITY STATEMENT
 ------------------------------------------------------------
-The conversation embedding dataset and analysis code are available at
-https://github.com/queelius/chatgpt-complex-net (DOI: 10.5281/zenodo.15314235).
-Raw conversation content is not shared to protect the privacy of the human
-participant, but all derived data (embeddings, edges, temporal metrics) needed
-to reproduce the analyses are included.
+All data, code, and a reproduction script are available in the research
+compendium at https://github.com/queelius/cognitive-mri-conversations
+(DOI: 10.5281/zenodo.18778376). The network construction pipeline is
+independently archived at https://github.com/queelius/chatgpt-complex-net
+(DOI: 10.5281/zenodo.15314235). Raw conversation content is not shared to
+protect the privacy of the human participant, but all derived data (embeddings,
+edge lists, temporal metrics) needed to reproduce every figure and table are
+included in the compendium.
 
 ------------------------------------------------------------
 RELATED MANUSCRIPTS

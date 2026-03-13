@@ -1,0 +1,55 @@
+Subject: PLOS paper resubmitted (v0.3.3)
+
+John,
+
+Just resubmitted the PLOS Complex Systems paper. Here's what changed since your Round 2 review.
+
+Figures:
+- Dropped the density panel from Fig 1 (per your feedback, it was misleading)
+- Dropped the model era comparison figure; section is now 1 paragraph + 1 table
+- Added a static network visualization (Fig 2) so the paper stands alone
+  without the Springer proceedings
+- Replaced the stacked bar community timeline (Fig 4) with a line plot showing
+  individual community lifecycles. Much easier to read.
+- Regenerated all 7 temporal figures from current data
+
+Text:
+- Added cognitive theory subsection in Related Work (Hutchins, Clark & Chalmers)
+- Added missing citations in Discussion (Bartlett, March, Hills et al.)
+- Defined bridge taxonomy inline so readers don't need the conference paper
+- Expanded multi-user motivation in the Conclusion
+- Softened model era claims to lead with what's meaningful
+- Added modularity caveat explaining the mechanical step-change
+- Rewrote Author Summary to emphasize implications (PLOS wants it distinct
+  from abstract)
+
+Corrections from automated review:
+- Fixed modularity timeline: was "by mid-2023," actually exceeds 0.6 by late
+  2023 and reaches ~0.75 by the final snapshot
+- Fixed community death count: 23 to 25, so 15 survivors (not 17)
+- Replaced Newman (2001) misattribution with Jeong et al. (2003) for
+  sub-linear preferential attachment
+- Added confidence intervals: gamma = 1.405 +/- 0.022, beta = 0.763 +/- 0.074
+- Softened conclusion language ("demonstrate" to "suggest," "scale-invariant"
+  to "scale-bridging")
+
+Data availability (new):
+- Created a research compendium repo with all derived data needed to reproduce
+  every figure and table: embeddings, edge lists, temporal metrics, and a
+  reproduce.sh script
+- Zenodo DOI: 10.5281/zenodo.18778376
+- Updated the Data Availability Statement in the paper, the cover letter, and
+  the Editorial Manager form to reference both repos
+- Raw conversations not included (privacy), but everything derived is there
+
+One thing I wanted your thoughts on: I'm considering sanitizing the raw
+conversation logs and making them publicly available. I'd mask out personal
+information, anything about other people, etc. It would make the dataset
+fully reproducible from scratch, not just from the derived data. The tradeoff
+is it'll take some time to do carefully, since 1,908 conversations over two
+years inevitably contain things I'd want to redact. Do you think it's worth
+pursuing, or is the derived data sufficient?
+
+The CHANGELOG.md in the repo has full details if you want them.
+
+Alex

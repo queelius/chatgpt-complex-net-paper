@@ -1,7 +1,0 @@
-{
-  "gexf_path": "/home/spinoza/github/papers/cognitive-mri-ai-conversations/agentic/experiments/results/concept_network.gexf",
-  "graphml_path": "/home/spinoza/github/papers/cognitive-mri-ai-conversations/agentic/experiments/results/concept_network.graphml",
-  "n_nodes": 115,
-  "n_edges": 1280,
-  "threshold": 0.7
-}

@@ -165,36 +165,40 @@ def generate_node_embeddings_chunking(
             print(f"Error loading JSON from {file_path}: {e}")
             continue
 
-        msgs = json_doc['messages']
-        transcript = messages_to_transcript(msgs, valid_roles=valid_roles)
-        chunks = chunk_text(transcript, chunk_size=chunk_size, overlap=overlap)
-        
-        # see if
-        chunk_embs = [embedding_fn(chunk) for chunk in chunks if chunk.strip()]
-        if chunk_embs:
-            if aggregation == "mean":
-                emb = np.mean(chunk_embs, axis=0)
-            elif aggregation == "sum":
-                emb = np.sum(chunk_embs, axis=0)
-            else:
-                raise ValueError(f"Unknown aggregation: {aggregation}")
-        else:
-            emb = None
-        if embedding_root not in json_doc:
-            json_doc[embedding_root] = {}
-        json_doc[embedding_root]['chunked'] = {
-            "vector": emb.tolist() if emb is not None else None,
-            "metadata": {
-                "algorithm": embedding_fn.__name__,
-                "chunk_size": chunk_size,
-                "overlap": overlap,
-                "aggregation": aggregation,
-                "valid_roles": valid_roles,
-                "created_at": datetime.datetime.utcnow().isoformat() + "Z"
-            }
-        }
+        # Skip files that already have embeddings
+        existing = json_doc.get(embedding_root, {}).get("chunked", {})
+        if existing.get("vector") is not None:
+            continue
+
         try:
+            msgs = json_doc['messages']
+            transcript = messages_to_transcript(msgs, valid_roles=valid_roles)
+            chunks = chunk_text(transcript, chunk_size=chunk_size, overlap=overlap)
+
+            chunk_embs = [embedding_fn(chunk) for chunk in chunks if chunk.strip()]
+            if chunk_embs:
+                if aggregation == "mean":
+                    emb = np.mean(chunk_embs, axis=0)
+                elif aggregation == "sum":
+                    emb = np.sum(chunk_embs, axis=0)
+                else:
+                    raise ValueError(f"Unknown aggregation: {aggregation}")
+            else:
+                emb = None
+            if embedding_root not in json_doc:
+                json_doc[embedding_root] = {}
+            json_doc[embedding_root]['chunked'] = {
+                "vector": emb.tolist() if emb is not None else None,
+                "metadata": {
+                    "algorithm": embedding_fn.__name__,
+                    "chunk_size": chunk_size,
+                    "overlap": overlap,
+                    "aggregation": aggregation,
+                    "valid_roles": valid_roles,
+                    "created_at": datetime.datetime.utcnow().isoformat() + "Z"
+                }
+            }
             with open(file_path, 'w', encoding='utf-8') as f:
                 json.dump(json_doc, f, ensure_ascii=False, indent=2)
         except Exception as e:
-            print(f"Error writing JSON to {file_path}: {e}")
+            logger.error(f"Failed to embed {os.path.basename(file_path)}: {e}")
