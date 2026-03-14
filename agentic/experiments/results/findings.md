@@ -833,5 +833,240 @@ Two universal constants: **densification γ ≈ 1.41** and **L2→L3 compression
 ---
 
 > **Note**: Findings F43-F102 (cross-platform concept network analysis) were archived on 2026-03-13.
-> They remain accessible in git history. The research program is pivoting to hierarchical memory
+> They remain accessible in git history. The research program pivoted to hierarchical memory
 > analysis of ChatGPT conversations only.
+
+---
+
+## Hierarchical Memory Network — Experiment 1 (Geometric)
+
+### F43: Ward linkage produces balanced hierarchies; average linkage chains
+
+**Average linkage** on the 1905×1905 cosine similarity matrix produces extreme chaining: at k=15, one cluster contains 1879/1905 episodes (98.6%) with 14 singleton/tiny outlier clusters. This is because the similarity distribution is smooth (mean=0.633, std=0.105) and average linkage peels off low-similarity outliers sequentially.
+
+**Ward linkage** produces balanced clusters at all levels: k=15 gives sizes [35..296], k=5 gives [284..561], k=2 gives [355..1550]. Ward minimizes within-cluster variance, which favors balanced splits. For L2-normalized embeddings, ward's Euclidean metric is monotonically related to cosine distance (d²=2(1-cos)), so the results are cosine-meaningful.
+
+**Implication**: Linkage method is a critical methodological choice. Average linkage is inappropriate for smooth embedding spaces; ward should be the default.
+
+### F44: 4-level geometric hierarchy with ~3× branching at each level
+
+The dendrogram of 1,905 ChatGPT conversation embeddings (768-dim, nomic-embed-text, 2:1 user:AI weighting) supports a clean 4-level hierarchy under ward linkage:
+
+| Level | Name | k | Silhouette | Cluster sizes |
+|:---|:---|:---|:---|:---|
+| L1 | Fine-concepts | 50 | -0.006 | [17..108] |
+| L2 | Concepts | 15 | 0.038 | [35..296] |
+| L3 | Meta-concepts | 5 | 0.044 | [284..561] |
+| L4 | Domains | 2 | 0.108 | [355, 1550] |
+
+**Branching factors** between levels are remarkably consistent:
+- L1→L2: 3.33×
+- L2→L3: 3.0×
+- L3→L4: 2.5×
+
+This ~3× branching mirrors **Rosch's basic-level categorization** (superordinate/basic/subordinate ≈ 3 levels) and **Miller's chunking** (3-5 items per group). The hierarchy depth (4 levels) aligns with schema theory's observation that human knowledge organizes into ~3-4 abstraction levels.
+
+### F45: Low silhouette scores confirm continuous semantic space
+
+Silhouette scores are consistently low across all k values and linkage methods (best: 0.108 at k=2 with ward). The silhouette scan shows monotonically decreasing scores as k increases — there are no "natural" cluster counts where silhouette spikes.
+
+This is not a failure of clustering; it reflects the **continuous nature of the embedding space**. Conversation topics blend into each other (statistics shades into machine learning shades into optimization). The hierarchy imposes discrete boundaries on a continuous landscape — exactly as human categorical memory does (Rosch 1975: categories have fuzzy boundaries with graded membership).
+
+### F46: Geometric hierarchy strongly agrees with Louvain communities (NMI=0.705)
+
+Comparing the geometric hierarchy (ward, k=15) with Louvain community detection on the thresholded graph (θ=0.9, 601 connected nodes):
+
+| Hierarchy level | k | NMI vs Louvain | ARI vs Louvain |
+|:---|:---|:---|:---|
+| L1 Fine-concepts | 50 | **0.752** | 0.391 |
+| L2 Concepts | 15 | **0.705** | 0.544 |
+| L3 Meta-concepts | 5 | 0.552 | 0.368 |
+| L4 Domains | 2 | 0.194 | 0.043 |
+
+**Key finding**: The hierarchical clustering (using full pairwise similarities) and Louvain (using thresholded graph topology) converge on similar groupings despite using fundamentally different information. L1 (k=50) actually has *higher* NMI than L2 (k=15) because finer geometric cuts better match Louvain's resolution.
+
+This validates that the community structure is real and robust — it emerges from both continuous geometry and discrete graph topology.
+
+### F47: Semantic interpretation of the hierarchy
+
+The 4-level hierarchy has clear semantic interpretation:
+
+**L4 Domains (k=2):**
+- Domain 0 (355): **Tooling & Publishing** — software infrastructure, packaging, LaTeX
+- Domain 1 (1550): **Research & Ideas** — ML, statistics, philosophy, simulations
+
+**L3 Meta-concepts (k=5):**
+1. Software Infrastructure (355): DevOps, packaging, publishing
+2. Machine Learning (296): LLMs, transformers, fine-tuning
+3. Ideas & Exploration (409): AI philosophy, security research, creative work
+4. Statistical Theory (284): Likelihood, reliability, bootstrap
+5. Algorithms & Computation (561): Optimization, simulations, data structures
+
+**L2 Concepts (k=15):** Semantically coherent clusters including:
+- MLE & bootstrap methods (105 episodes)
+- AlgoTree package development (106 episodes)
+- Physics simulations (65 episodes)
+- R visualization (35 episodes)
+- AI philosophy & alignment (144 episodes)
+
+The L4 domain split (355 tooling vs 1550 research, ratio 1:4.4) reveals the user's conversation distribution: overwhelmingly research-oriented, with tooling as instrumental support.
+
+### F48: Similarity distribution baseline
+
+The full 1905×1905 pairwise cosine similarity matrix statistics:
+
+| Statistic | Value |
+|:---|:---|
+| Mean | 0.633 |
+| Std | 0.105 |
+| Median | 0.632 |
+| Min | 0.145 |
+| Max | 1.000 |
+| Pairs ≥ 0.9 | 1,718 |
+| Pairs ≥ 0.8 | 31,952 |
+| Pairs ≥ 0.7 | 344,009 |
+
+The 1,718 pairs above θ=0.9 exactly matches the episodic network edge count from Papers 1-2, confirming consistency. The distribution is approximately Gaussian (mean≈0.63, σ≈0.10), consistent with random vectors in high-dimensional space with a semantic offset.
+
+---
+
+## Experiment 2: Semantic Concept Hierarchy
+
+LLM-extracted noun-phrase concepts from 1,813 ChatGPT conversations. Concepts extracted by Claude Code (Sonnet) running as 19 parallel agents, each processing ~100 conversations. Concepts embedded via nomic-embed-text, hierarchically clustered using Ward linkage.
+
+### F49: Concept extraction yields 5,944 raw concepts with extreme singleton rate
+
+From all 1,908 episodes, Claude Code extracted 6,773 raw concept mentions (3.5 per episode, range 1-5) mapping to 6,275 unique concepts (case-insensitive). **95.3% of concepts are singletons** — appearing in exactly 1 episode. This is an artifact of parallel extraction without shared vocabulary: the 19 agents independently generated near-synonymous phrases (e.g., "bootstrap confidence intervals" vs "BCa bootstrap confidence intervals").
+
+| Metric | Value |
+|:---|:---|
+| Episodes extracted | 1,908 / 1,908 (100%) |
+| Raw concept mentions | 6,773 |
+| Unique concepts | 6,275 |
+| Concepts per episode | 3.5 (mean), 4 (median), 1-5 (range) |
+| Singletons | 5,977 (95.3%) |
+| Max frequency | 14 ("maximum likelihood estimation") |
+| Gini coefficient | 0.073 (nearly uniform) |
+
+Note: Pipeline analysis results below use 1,813 episodes (95% coverage at time of pipeline execution). The remaining 5% were extracted subsequently and are included in `extraction_state.json` for re-runs.
+
+### F50: Meta-concept clustering eliminates singletons and creates dense bipartite structure
+
+The 500-cluster meta-concept level acts as the geometric deduplication layer, grouping semantically similar concepts. This transforms the sparse raw-concept bipartite graph into a dense, well-connected structure.
+
+| Level | Metric | Raw concepts | Meta-concepts (k=500) |
+|:---|:---|:---|:---|
+| Singletons | % | 95.1% | 0.2% |
+| Mean frequency | eps/concept | 1.08 | 11.2 |
+| Episode pairs sharing | count | 875 | 39,002 |
+| Episode pairs sharing | % of all | 0.05% | 2.4% |
+
+Top meta-concepts by episode frequency: MLE parameter estimation (56), R boot package (53), LLM capabilities (47), R statistical graphics (43), AI research (42), Bootstrap CIs (42).
+
+### F51: Eight interpretable knowledge domains emerge from concept clustering
+
+Ward linkage at k=8 produces semantically coherent domains:
+
+| Domain | Concepts | Episodes | Representative concepts |
+|:---|---:|---:|:---|
+| Algorithms & Computation | 2,395 | 1,195 | simulation design, data structures, optimization |
+| Statistical Methods | 932 | 562 | MLE, bootstrap, confidence intervals, series systems |
+| Software Engineering | 839 | 487 | CLI tools, packaging, web dev, code review |
+| Philosophy & AI Theory | 714 | 421 | alignment, AGI, philosophy of mind, reasoning |
+| Visualization & Formatting | 461 | 306 | plotting, image generation, documents |
+| R Programming | 222 | 183 | R packages, stats, data structures |
+| LLM Engineering | 206 | 176 | prompt engineering, agent systems, tool use |
+| AI Safety & Research | 175 | 134 | containment, consciousness, evaluation |
+
+The largest domain (Algorithms & Computation) contains 40% of all concepts — a catch-all for computational topics. The remaining 7 domains are cleanly separated and map to recognizable knowledge areas.
+
+### F52: 69% of episodes span multiple knowledge domains
+
+The many-to-many bipartite structure naturally captures cross-domain knowledge integration that partition-based methods (Louvain, Exp 1) cannot represent.
+
+| Domains spanned | Episodes | % |
+|:---|---:|---:|
+| 1 | 565 | 31.2% |
+| 2 | 882 | 48.6% |
+| 3 | 329 | 18.1% |
+| 4 | 37 | 2.0% |
+
+Mean participation coefficient: 0.338 (moderate domain diversity per episode). 20% of episodes are "highly diverse" (P > 0.5), functioning as cross-domain bridges.
+
+Strongest domain co-occurrences: Statistics↔Algorithms (177 episodes), Software Eng.↔Algorithms (133), Philosophy↔Algorithms (101), R Programming↔Algorithms (52), R↔Statistics (43).
+
+### F53: Semantic and geometric hierarchies are complementary (NMI = 0.26)
+
+Comparing semantic domain assignments (from LLM-extracted concepts + clustering) with geometric cluster assignments (from episode embedding clustering):
+
+| Comparison | NMI | ARI |
+|:---|:---|:---|
+| Semantic domains (k=8) vs Geometric L2 (k=15) | 0.261 | 0.111 |
+| Semantic domains (k=8) vs Geometric L3 (k=5) | 0.259 | 0.190 |
+
+The low NMI indicates the two hierarchies capture **different structural dimensions**. The geometric hierarchy groups episodes with similar overall embedding vectors; the semantic hierarchy groups episodes through shared extracted concepts. This orthogonality suggests LLM concept extraction adds genuine information beyond what's captured by embedding geometry alone.
+
+### F54: Semantic concept space is genuinely continuous (silhouette monotonically increases)
+
+Silhouette score increases monotonically with cluster count k:
+
+| k | Silhouette | Level |
+|:---|:---|:---|
+| 2 | 0.015 | — |
+| 8 | 0.013 | Domains |
+| 50 | 0.025 | Themes |
+| 100 | 0.045 | — |
+| 200 | 0.067 | — |
+| 500 | 0.107 | Meta-concepts |
+
+No natural cluster boundaries exist — the hierarchy is a useful simplification of a continuous semantic space. This parallels F45 from Experiment 1 and is consistent with CLS theory: knowledge exists on a continuous spectrum from episodic to semantic, not in discrete categories.
+
+### F55: Heaps' law governs concept vocabulary growth (β = 0.286)
+
+Meta-concept vocabulary grows sublinearly with episode count: V(n) = 64.6 × n^0.286. The Heaps exponent β=0.286 is lower than natural language (β ≈ 0.4-0.6), indicating faster saturation of the concept space. This is the CLS consolidation signature: new episodes increasingly map to existing semantic concepts rather than creating novel ones.
+
+### F56: Meta-concept frequency follows a heavy-tailed distribution
+
+The meta-concept frequency distribution (episodes per meta-concept) has a heavy tail: α=2.82 with xmin=8. Lognormal provides a better fit than a pure power law (R=-24.2, p<0.001). The distribution is: mean=11.2, median=10, IQR=[7,14], max=56.
+
+### F57: The 4-level hierarchy has explicit branching ratios
+
+| Level | Label | k | Mean size | Silhouette |
+|:---|:---|---:|---:|:---|
+| 0 | Episodes | 1,813 | — | — |
+| 1 | Meta-concepts | 500 | 11.9 concepts each | 0.107 |
+| 2 | Themes | 50 | 118.9 concepts each | 0.025 |
+| 3 | Domains | 8 | 743.0 concepts each | 0.013 |
+
+Branching ratios: 3.6× (episodes→meta-concepts), 10× (meta-concepts→themes), 6.25× (themes→domains). The DAG has 8,315 nodes and 12,924 edges, confirmed acyclic.
+
+### F58: Concept co-occurrence network is strongly small-world (σ ≈ 5)
+
+The meta-concept co-occurrence network (two meta-concepts linked if they appear in the same episode) exhibits small-world topology, directly validating Steyvers & Tenenbaum (2005).
+
+| Property | Value |
+|:---|:---|
+| Nodes | 500 meta-concepts |
+| Edges | 4,992 |
+| Density | 0.040 |
+| Giant component | 499 (99.8%) |
+| Mean degree | 20.0 |
+| Max degree | 78 |
+| Clustering C | 0.233 |
+| C / C_random | 5.80 |
+| Path length L | 2.51 |
+| L / L_random | 1.21 |
+| **Small-world σ** | **4.80 (theoretical), 5.48 (empirical)** |
+| Assortativity | 0.036 (neutral) |
+| Transitivity | 0.179 |
+
+Comparison with Steyvers & Tenenbaum (2005) semantic memory networks:
+
+| Network | σ |
+|:---|:---|
+| Roget's Thesaurus | 13.0 |
+| WordNet | 15.3 |
+| Word associations | 5.6 |
+| **Our concept network** | **4.8-5.5** |
+
+Our σ ≈ 5 is closest to the human word association network (σ = 5.6), suggesting LLM-extracted concepts from AI conversations organize into the same semantic memory topology as human free associations. The degree distribution fits α=2.97 (near-classic scale-free exponent), though exponential provides a statistically better fit given the limited tail range (max degree 78).
