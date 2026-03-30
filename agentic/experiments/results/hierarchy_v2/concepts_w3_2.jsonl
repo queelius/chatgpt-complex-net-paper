@@ -1,0 +1,35 @@
+{"id": "conversation-metadata-display", "concepts": ["python code refactoring", "terminal output formatting", "conversation tree data structure", "python string formatting"]}
+{"id": "conversation-tree-network", "concepts": ["conversation tree data structure"]}
+{"id": "convert-algorithm-to-latex", "concepts": ["latex to markdown conversion", "rate-distorted perfect hash filter", "document format conversion"]}
+{"id": "convert-glossary-entries-to-markdown", "concepts": ["latex to markdown conversion", "document format conversion", "rate-distorted perfect hash filter"]}
+{"id": "convert-latex-to-rmarkdown", "concepts": ["latex to markdown conversion", "rmarkdown document layout", "document format conversion", "r markdown to latex conversion"]}
+{"id": "cosine-similarity-explanation", "concepts": ["tf-idf document retrieval", "cosine similarity metric", "llm embeddings comparison", "information retrieval fundamentals"]}
+{"id": "cosmic-confusion-in-room", "concepts": ["creative storytelling", "dall-e image generation", "ai image generation"]}
+{"id": "cosmic-horror-by-lovecraft", "concepts": ["creative storytelling", "cosmic horror literature"]}
+{"id": "count-combinations-by-k", "concepts": ["r statistical programming", "r data structure operations", "conditional empirical distribution", "r list manipulation"]}
+{"id": "counting-cells-in-evolution", "concepts": ["evolutionary biology estimation", "recreational mathematics", "fermi estimation problem"]}
+{"id": "covariance-matrix-calculation", "concepts": ["r matrix operations", "bootstrap confidence intervals", "bca bootstrap method", "confidence interval visualization", "r statistical programming", "r boot package"]}
+{"id": "covariance-matrix-in-r", "concepts": ["r matrix operations", "maximum likelihood estimation", "fisher information matrix", "covariance matrix estimation"]}
+{"id": "covariance-matrix-issue", "concepts": ["r matrix operations", "statistical distribution objects", "r package api design", "multivariate normal distribution"]}
+{"id": "cp-plot-shape-scale", "concepts": ["coverage probability estimation", "confidence interval visualization", "data visualization design", "weibull distribution mle", "matplotlib subplot layout", "series system reliability"]}
+{"id": "create-ci-box-plot", "concepts": ["confidence interval visualization", "coverage probability estimation", "data visualization design", "bootstrap confidence intervals", "matplotlib subplot layout"]}
+{"id": "create-cname-for-lab-metafunctor-com", "concepts": ["dns configuration management", "github pages hosting", "static site generation", "web server configuration"]}
+{"id": "create-meaning-reject-hierarchy", "concepts": ["philosophical ai reflection", "existential reflection on illness", "creative storytelling", "blog post writing"]}
+{"id": "create-symlinks-for-accessibility", "concepts": ["linux filesystem management", "ubuntu desktop configuration"]}
+{"id": "creating-new-programming-language", "concepts": ["programming language design", "garbage collection algorithms", "memory management systems", "constraint satisfaction problem"]}
+{"id": "creating-r-distribution-class", "concepts": ["r package api design", "statistical distribution objects", "series system reliability", "object-oriented r programming", "maximum likelihood estimation", "r generic method dispatch"]}
+{"id": "creating-vignettes-with-devtools", "concepts": ["r package development", "r package documentation", "roxygen2 documentation"]}
+{"id": "creating-visual-story", "concepts": ["creative storytelling", "generative ai image prompts", "cosmic horror literature"]}
+{"id": "creative-problem-solving", "concepts": ["constraint satisfaction problem", "minimax search tree", "alpha-beta pruning algorithm", "graduate ai coursework", "ai assignment problem solving"]}
+{"id": "creature-generation-environments-selection", "concepts": ["dall-e image generation", "creative storytelling", "generative ai image prompts"]}
+{"id": "credit-attribution-in-rl", "concepts": ["reinforcement learning value", "ai alignment challenges", "ai safety research", "chain-of-thought prompting"]}
+{"id": "critiquing-hazard-function-explanation", "concepts": ["series system reliability", "competing risks survival analysis", "right-censored survival data", "reliability estimation methods"]}
+{"id": "cross-entropy-vs-negative-log-likelihood", "concepts": ["autoregressive language model", "maximum likelihood estimation", "next-token prediction theory", "probabilistic sequence modeling"]}
+{"id": "cross-referencing-figures-in-rmarkdown", "concepts": ["rmarkdown document layout", "latex to markdown conversion", "r markdown to latex conversion"]}
+{"id": "cross-referencing-in-bookdown", "concepts": ["rmarkdown document layout", "r markdown to latex conversion", "latex to markdown conversion", "document format conversion"]}
+{"id": "cs-phd-opportunities-siu", "concepts": ["phd research motivation essay", "ai research career pitch", "academic self-presentation", "ai research with limited resources"]}
+{"id": "dist-object-functions", "concepts": ["r package api design", "roxygen2 documentation", "statistical distribution objects", "object-oriented r programming", "r generic method dispatch"]}
+{"id": "distances-sun-earth-mars", "concepts": ["planetary distance calculation", "recreational mathematics"]}
+{"id": "distribution-of-y-analysis", "concepts": ["multivariate normal distribution", "probability distribution derivation", "r statistical programming"]}
+{"id": "distribution-synonyms", "concepts": ["statistical distribution objects", "r package api design", "r package development"]}
+{"id": "documenting-r-functions", "concepts": ["roxygen2 documentation", "r package documentation", "r generic method dispatch", "r package development"]}

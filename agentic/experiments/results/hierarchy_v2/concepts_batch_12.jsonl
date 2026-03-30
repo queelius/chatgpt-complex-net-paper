@@ -1,0 +1,49 @@
+{"id": "new-youtube-channel", "concepts": ["youtube channel creation", "content creator strategy", "video platform setup"]}
+{"id": "newton-method-error-handling", "concepts": ["newton method implementation", "R tryCatch error handling", "maximum likelihood estimation", "numerical optimization debugging"]}
+{"id": "newton-raphson-convergence-check", "concepts": ["newton-raphson method", "relative error convergence", "numerical root finding", "iterative convergence criteria"]}
+{"id": "next-talk-r-libraries", "concepts": ["R package ecosystem", "linux user group talk", "statistical computing libraries"]}
+{"id": "nginx-fastapi-gpt-experiment", "concepts": ["nginx reverse proxy", "FastAPI web framework", "ChatGPT plugin development", "API gateway configuration"]}
+{"id": "nginx-for-web-ssh", "concepts": ["SSH remote access", "port forwarding configuration", "linux server administration"]}
+{"id": "ngrok-ssh-access", "concepts": ["ngrok TCP tunneling", "SSH tunnel configuration", "multi-tunnel setup", "remote access tooling"]}
+{"id": "no-unauthorized-representation", "concepts": ["unauthorized property representation", "legal complaint drafting", "tenant rights advocacy"]}
+{"id": "no-web-searches-available", "concepts": ["ChatGPT capability limitations", "web search availability"]}
+{"id": "node-degree-and-average-degree", "concepts": ["graph node degree", "average degree calculation", "network theory fundamentals"]}
+{"id": "normalize-values-to-a", "concepts": ["value normalization technique", "R data transformation", "scaling numeric vectors"]}
+{"id": "notebooklm-faq-creation", "concepts": ["Google NotebookLM features", "FAQ content generation", "notebook sharing workflow"]}
+{"id": "notpositivedefinitematrix", "concepts": ["positive definite matrix", "Cholesky decomposition", "matrix square root computation", "R matrix operations"]}
+{"id": "np-problems-overview", "concepts": ["NP complexity class", "RLHF for NP problems", "computational search space", "branching factor analysis"]}
+{"id": "ntm-and-dnc-difference", "concepts": ["neural Turing machine", "differentiable neural computer", "external memory architecture", "memory-augmented neural networks"]}
+{"id": "nuclear-reactor-tekkit", "concepts": ["nuclear pulse propulsion", "Bussard ramjet concept", "magnetic scoop design", "interstellar propulsion physics"]}
+{"id": "numba-state-expansion", "concepts": ["Numba JIT compilation", "Python performance optimization", "state space expansion"]}
+{"id": "numderiv-grad-functionality", "concepts": ["R numDeriv package", "numerical gradient computation", "finite difference approximation"]}
+{"id": "numerical-pde-solutions", "concepts": ["PDE numerical methods", "thermal radiation modeling", "Stefan-Boltzmann law", "temperature-energy relationship"]}
+{"id": "numerical-solution-of-ode", "concepts": ["nonlinear ODE boundary value", "shooting method implementation", "finite difference method", "Python numerical solver"]}
+{"id": "nursing-nclex-study-plan", "concepts": ["NCLEX-RN exam preparation", "nursing study schedule", "clinical knowledge review"]}
+{"id": "objective-truth-paradox", "concepts": ["self-referential paradox", "objective truth existence", "Russell paradox analogy", "philosophical logic"]}
+{"id": "obsidian-aligns-with-unix", "concepts": ["Unix design philosophy", "Obsidian note-taking evaluation", "modular software principles"]}
+{"id": "obtuse-angle-correcting-points", "concepts": ["obtuse angle geometry", "dot product verification", "coordinate point correction"]}
+{"id": "obtuse-angle-points", "concepts": ["obtuse angle generation", "geometric point plotting", "angle measurement computation"]}
+{"id": "oddness-for-number-like-objects", "concepts": ["abstract algebraic oddness", "number-like object properties", "algebraic structure generalization"]}
+{"id": "odt-cache-manager-improvements", "concepts": ["Python diskcache library", "cache manager class design", "persistent caching strategy"]}
+{"id": "odt-clean-document-code", "concepts": ["OllamaDataTool architecture", "document processing pipeline", "Python code organization"]}
+{"id": "odt-moondream-model-components", "concepts": ["Moondream vision model", "multimodal model architecture", "vision-language components"]}
+{"id": "odt-old-generalize-function-for-relative-time", "concepts": ["relative time parsing", "Python datetime generalization", "natural language time expressions"]}
+{"id": "odt-old-private-utility-functions-design", "concepts": ["Python module design patterns", "private function conventions", "static class versus module"]}
+{"id": "odt-ollamadatatool-project", "concepts": ["OllamaData class design", "singleton pattern implementation", "JMESPath query integration"]}
+{"id": "odt-upload-package-to-pypi", "concepts": ["PyPI package publishing", "twine upload workflow", "Python package distribution"]}
+{"id": "old-laptop-linux-options", "concepts": ["headless Linux server", "old hardware repurposing", "lightweight linux distribution"]}
+{"id": "oligarchs-political-connections", "concepts": ["political oligarch networks", "wealth-power relationship", "elite political influence"]}
+{"id": "ollama-api-contribution-guide", "concepts": ["LiteLLM Ollama integration", "open-source code contribution", "API provider implementation"]}
+{"id": "ollama-api-customization", "concepts": ["Ollama API logits access", "PyTorch layer freezing", "GGUF model fine-tuning", "local LLM customization"]}
+{"id": "ollama-function-calling-example", "concepts": ["Ollama function calling", "LLM tool integration", "OpenAI-compatible API"]}
+{"id": "ollama-model-linking-script", "concepts": ["Ollama model symlinks", "shell script automation", "model file management"]}
+{"id": "on-moral-responsibility", "concepts": ["moral agency philosophy", "determinism and free will", "moral responsibility attribution", "compatibilist ethics"]}
+{"id": "open-source-integration-challenges", "concepts": ["Wolfram Language open-sourcing", "proprietary software limitations", "open-source advocacy", "LLM tool ecosystem"]}
+{"id": "openai-language-models", "concepts": ["OpenAI API model listing", "GPT engine enumeration", "language model versions"]}
+{"id": "openai-text-embeddings", "concepts": ["OpenAI text embeddings", "transformer layer representations", "logits versus probability", "embedding vector spaces"]}
+{"id": "openapi-for-rest-api", "concepts": ["OpenAPI specification generation", "REST API documentation", "cURL to OpenAPI conversion"]}
+{"id": "opencog-overview-and-features", "concepts": ["OpenCog AGI framework", "AtomSpace knowledge graph", "probabilistic logic networks"]}
+{"id": "opencog-prime-agi-progress", "concepts": ["OpenCog Prime architecture", "LLM versus symbolic AGI", "artificial general intelligence approaches"]}
+{"id": "optim-function-control-parameters", "concepts": ["R optim function", "control parameter filtering", "optimization algorithm configuration"]}
+{"id": "optimal-control-for-rl", "concepts": ["optimal control theory", "reinforcement learning connection", "control-RL relationship"]}
+{"id": "optimization-function-error", "concepts": ["R optim closure error", "function coercion debugging", "optimization function signature"]}

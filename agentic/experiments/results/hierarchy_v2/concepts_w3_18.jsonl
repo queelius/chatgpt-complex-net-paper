@@ -1,0 +1,35 @@
+{"id": "waiting-for-progress-and-friends", "concepts": ["internet meme culture", "progress bar humor", "creative quote writing"]}
+{"id": "warning-incomplete-documentation", "concepts": ["roxygen2 documentation", "r package development", "r6 class documentation", "likelihood model r package", "r package api design"]}
+{"id": "we-re-good", "concepts": ["ai self-awareness in training", "reinforcement learning value", "autoregressive language model", "philosophical ai reflection", "evolutionary pretraining", "in-context learning"]}
+{"id": "web-search-capability-yes", "concepts": ["llm capabilities and limits", "ai capability evaluation"]}
+{"id": "web-service-playlistd-video-playlist", "concepts": ["fastapi web service", "youtube api integration", "redis caching", "docker containerization", "rest api documentation"]}
+{"id": "web-service-taskd-long-running-task-dispatcher", "concepts": ["fastapi web service", "async task execution", "redis queue worker", "rest api documentation", "workspace management"]}
+{"id": "webgpt-plugin-enhancement", "concepts": ["chatgpt plugin architecture", "kl divergence", "web browsing ai agent"]}
+{"id": "weibull-bias-in-series", "concepts": ["weibull distribution mle", "series system reliability", "mle bias analysis", "r package development", "r package api design", "r generic method dispatch", "object-oriented r programming"]}
+{"id": "weibull-distribution-derivatives-calculation", "concepts": ["weibull distribution mle", "log-likelihood gradient", "hessian matrix computation", "r statistical programming"]}
+{"id": "weibull-distribution-fat-tailed", "concepts": ["weibull distribution mle", "tail behavior analysis", "statistical distribution properties"]}
+{"id": "weibull-distribution-log-likelihood", "concepts": ["weibull distribution mle", "log-likelihood gradient", "hessian matrix computation", "r statistical programming", "fisher information matrix"]}
+{"id": "weibull-distribution-parameters", "concepts": ["weibull distribution mle", "statistical distribution properties", "parameter notation conventions"]}
+{"id": "weibull-fisher-information-matrix", "concepts": ["fisher information matrix", "weibull distribution mle", "hessian matrix computation", "log-likelihood gradient"]}
+{"id": "weibull-introductory-paragraph", "concepts": ["academic paper publishing", "weibull series system", "series system reliability", "right-censored survival data", "masked failure data"]}
+{"id": "weibull-min-of-two", "concepts": ["weibull series system", "series system reliability", "minimum order statistic", "reliability function derivation"]}
+{"id": "weibull-minimum-distribution-explanation", "concepts": ["weibull series system", "minimum order statistic", "likelihood ratio test", "nested model comparison", "mle parameter estimation"]}
+{"id": "weibull-mle-and-censoring", "concepts": ["weibull distribution mle", "right-censored survival data", "mle bias analysis", "reliability estimation methods"]}
+{"id": "weibull-mle-sensitivity", "concepts": ["weibull distribution mle", "mle parameter estimation", "mle bias analysis", "right-censored survival data"]}
+{"id": "weibull-score-function-in-r", "concepts": ["weibull series system", "log-likelihood gradient", "r statistical programming", "series system reliability", "masked failure data"]}
+{"id": "weibull-series-system-generation", "concepts": ["weibull series system", "series system reliability", "hazard function modeling", "series system simulation"]}
+{"id": "weighted-average-of-mles", "concepts": ["maximum likelihood estimation", "fisher information matrix", "multivariate normal distribution", "mle parameter estimation", "r package development", "bootstrap variance estimation"]}
+{"id": "wi-fi-6-router-troubleshooting", "concepts": ["home network troubleshooting", "ethernet connectivity", "router configuration"]}
+{"id": "wild-12-year-old-chats", "concepts": ["creative storytelling", "collaborative fiction writing", "character development", "fantasy worldbuilding"]}
+{"id": "wildcard-path-traversal", "concepts": ["python code refactoring", "json path traversal", "wildcard pattern matching", "expression tree data structure", "python dict subclassing"]}
+{"id": "windows-server-dev-setup", "concepts": ["windows server administration", "python virtual environment", "offline package installation", "development environment setup"]}
+{"id": "wizard-acceptance-at-witches", "concepts": ["word usage clarification", "conversational humor"]}
+{"id": "word2vec-semantic-vector-arithmetic", "concepts": ["word2vec embedding arithmetic", "reinforcement learning value", "embedding fine-tuning", "abstract representation learning", "autoregressive language model"]}
+{"id": "working-with-r-expressions", "concepts": ["r formula interface", "r statistical programming", "object-oriented r programming", "likelihood model r package"]}
+{"id": "world-models-in-llms", "concepts": ["autoregressive language model", "in-context learning", "world model representation", "llm capabilities and limits"]}
+{"id": "write-simulation-data-in-r", "concepts": ["simulation study design", "data visualization design", "python pandas data analysis"]}
+{"id": "write-simulation-results-to-file", "concepts": ["simulation study design", "bootstrap confidence intervals", "r statistical programming", "mle simulation study design", "bootstrap bias correction"]}
+{"id": "writing-vectors-to-csv", "concepts": ["r statistical programming", "simulation study design", "r data structure operations"]}
+{"id": "wsl-ubuntu-setup-guide", "concepts": ["wsl linux setup", "windows server administration", "development environment setup"]}
+{"id": "xtoolkit-expression-toolkit-refinement", "concepts": ["expression tree data structure", "symbolic computation", "python code refactoring", "tree data structure api", "pattern matching rules"]}
+{"id": "xtoolkit-lecture-4a-summary-sicp", "concepts": ["pattern matching rules", "symbolic computation", "expression tree data structure", "tree data structure api", "python code refactoring"]}

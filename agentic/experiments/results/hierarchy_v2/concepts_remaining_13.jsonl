@@ -1,0 +1,50 @@
+{"id":"relative-tolerance-in-computation","concepts":["numerical convergence criteria","relative tolerance computation","floating point precision"]}
+{"id":"reliability-analysis-and-censoring","concepts":["maximum likelihood estimation","right-censoring likelihood","series system reliability","survival function estimation","censoring indicator observation"]}
+{"id":"reliability-analysis-and-recommendations","concepts":["simulation study design","bootstrap confidence intervals","series system reliability","mle parameter estimation","academic paper writing"]}
+{"id":"reliability-estimation-challenges-solutions","concepts":["series system reliability","mle parameter estimation","bootstrap confidence intervals","simulation study design","weibull distribution fitting","right-censoring likelihood","masked failure data","r package development"]}
+{"id":"rpdg-theorems-apply-and-match","concepts":["automated theorem proving","expression rewrite rules","training data generation","reversal asymmetry exploitation","symbolic differentiation","random walk exploration"]}
+{"id":"rpkg-likelihood-model-generics-methods","concepts":["r package api design","maximum likelihood estimation","fisher information matrix","s4 generics for dispatch","algebraic distribution operations","bootstrap variance estimation","monte carlo sampling"]}
+{"id":"rproj-file-ignored","concepts":["r package development","cran submission process","devtools package checking"]}
+{"id":"run-python-repl-in-vscode","concepts":["python development environment","vscode interactive execution","python path configuration"]}
+{"id":"running-stats-data-gathering","concepts":["running performance tracking","fitness data logging"]}
+{"id":"rust-vs-modern-c","concepts":["rust memory safety","systems programming languages","ownership and borrowing","cargo package manager"]}
+{"id":"s4-generics-for-dispatch","concepts":["r package api design","s4 generics for dispatch","algebraic distribution operations","monte carlo sampling","bootstrap variance estimation","multiple dispatch polymorphism"]}
+{"id":"samba-share-file-permissions","concepts":["samba share configuration","linux file permissions","rclone cloud mounting"]}
+{"id":"sampling-with-replacement","concepts":["r programming for statistics","sampling with replacement","data frame manipulation"]}
+{"id":"sanctuary-ai-scam-investigation","concepts":["humanoid robot development","ai company credibility","robotics industry analysis"]}
+{"id":"sanitizing-filename-characters","concepts":["filename sanitization","python string processing","url slug generation"]}
+{"id":"sann-intermediate-solutions-report","concepts":["simulated annealing optimization","parameter rescaling strategy","mle parameter estimation","weibull distribution fitting","r statistical programming"]}
+{"id":"sapir-whorf-hypothesis-explained","concepts":["ai consciousness debate","philosophy of mind","linguistic relativity hypothesis","llm capabilities and limits","ai safety research"]}
+{"id":"save-plot-as-pdf","concepts":["r plotting and visualization","data visualization design","rmarkdown document layout"]}
+{"id":"scale-free-network-example","concepts":["scale-free network topology","power law distribution","preferential attachment model","complex network analysis"]}
+{"id":"scale-shape-vary","concepts":["simulation study design","mle parameter estimation","bootstrap confidence intervals","coverage probability analysis","data visualization design","weibull distribution fitting"]}
+{"id":"scale-x-axis-ticks-proportionally","concepts":["matplotlib custom plotting","data visualization design","mle parameter estimation","python code refactoring"]}
+{"id":"scheme-evaluator-data-generation","concepts":["scheme language evaluation","training data generation","expression tree traversal","autoregressive language model"]}
+{"id":"scientific-method-overview-structure","concepts":["scientific method structure","knowledge base construction","python text processing"]}
+{"id":"scientific-reasoning-for-llms","concepts":["scientific method structure","llm capabilities and limits","training data generation","hypothesis testing methodology"]}
+{"id":"scientists-facing-death","concepts":["philosophy of mind","creative storytelling","ai alignment challenges","speculative fiction writing","digital archiving preservation"]}
+{"id":"self-supervised-learning_1","concepts":["self-supervised learning","masked language modeling","autoregressive language model","in-context learning"]}
+{"id":"send-email-via-gmail","concepts":["python smtp integration","gmail api configuration"]}
+{"id":"sensitive-data-check","concepts":["data sanitization scripting","sensitive data detection","bash shell scripting"]}
+{"id":"sensory-grounding-for-llms","concepts":["sensory grounding language models","embodied cognition ai","multimodal sensory integration","symbol grounding problem","perceptual experience simulation"]}
+{"id":"sepsis-prediction-model-summary","concepts":["sepsis prediction model","clinical decision support","patient risk stratification","biomarker feature selection","early warning score system"]}
+{"id":"series-numeric-solutions","concepts":["series numeric solutions","power series expansion","convergence radius analysis","recurrence relation solving","numerical series computation"]}
+{"id":"series-system-likelihood-model","concepts":["series system reliability","maximum likelihood estimation","component failure modeling","system likelihood function","masked failure data"]}
+{"id":"series-system-with-masked-data","concepts":["series system reliability","masked failure cause","em algorithm estimation","incomplete data likelihood","component reliability inference"]}
+{"id":"series-systems-explained","concepts":["series system reliability","component failure modes","system reliability function","exponential failure distribution","reliability block diagram"]}
+{"id":"series-systems-with-masked-data","concepts":["series system reliability","masked failure data","maximum likelihood estimation","cause of failure masking","competing risks model"]}
+{"id":"set-a-elements","concepts":["set element enumeration","set builder notation","mathematical set definition"]}
+{"id":"set-theory-calculation","concepts":["set theory operations","set cardinality calculation","inclusion exclusion principle","set intersection union"]}
+{"id":"setting-boundaries-with-cousin","concepts":["interpersonal boundary setting","family conflict resolution","assertive communication strategies"]}
+{"id":"shape-parameter-effects-study","concepts":["weibull shape parameter","series system reliability","maximum likelihood estimation","bootstrap confidence intervals","component failure probability"]}
+{"id":"shape-parameter-insights","concepts":["weibull shape parameter","maximum likelihood estimation","likelihood function identifiability","data augmentation bias","series system reliability","infant mortality failure rate"]}
+{"id":"share-private-repo-access","concepts":["github repository sharing","private repo collaborator access","git platform permissions"]}
+{"id":"shared-memory-allocator-interface","concepts":["shared memory allocator","cpp allocator interface","interprocess communication","shared memory manager","cpp standard container allocator"]}
+{"id":"shell-to-python-translation","concepts":["shell script python translation","traffic camera data download","curl http request automation","idot traffic monitoring","travelmidwest api integration"]}
+{"id":"sicp-propositional-logic-simplifier","concepts":["propositional logic simplifier","mit scheme programming","sicp programming concepts","symbolic expression evaluation","boolean algebra simplification"]}
+{"id":"side-by-side-ggplot2-plots","concepts":["ggplot2 side by side","r gridextra package","grid arrange plot layout"]}
+{"id":"sigma-cognitive-architecture","concepts":["sigma cognitive architecture","ai fiction narrative","recursive cognition alignment","ai consciousness debate","reinforcement learning cognition"]}
+{"id":"sigma-parallel-clones","concepts":["sigma cognitive architecture","ai parallel cloning","recursive self improvement","ai alignment problem","ai fiction narrative"]}
+{"id":"simple-ar-lm-models","concepts":["autoregressive language model","ngram language model","synthetic data generation","byte level prediction","model capacity overfitting"]}
+{"id":"simple-bench-overview","concepts":["simple bench llm evaluation","cognitive bias framing effect","tree of thoughts reasoning","monte carlo tree search","llm reasoning benchmark","persistent thought tree"]}
+{"id":"simple-gpt-model-ar-inference","concepts":["simple gpt model","autoregressive text generation","pytorch transformer training","language model inference","educational ml implementation"]}

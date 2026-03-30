@@ -1,0 +1,40 @@
+{"id":"web-search-capability-yes","concepts":["llm capabilities and limits","web search integration"]}
+{"id":"web-service-playlistd-video-playlist","concepts":["youtube api integration","fastapi web service","redis database storage","video playlist management","docker containerization","python web development"]}
+{"id":"web-service-taskd-long-running-task-dispatcher","concepts":["fastapi web service","task queue management","redis queue processing","workspace file management","asynchronous job execution","cli command design"]}
+{"id":"webgpt-plugin-enhancement","concepts":["chatgpt plugin architecture","kl divergence measure","web browsing integration"]}
+{"id":"weibull-bias-in-series","concepts":["series system reliability","mle parameter estimation","r package api design","r package development","weibull distribution modeling","masked failure data"]}
+{"id":"weibull-distribution-derivatives-calculation","concepts":["weibull distribution modeling","maximum likelihood estimation","fisher information matrix","r programming for statistics"]}
+{"id":"weibull-distribution-fat-tailed","concepts":["weibull distribution modeling","tail behavior analysis","hazard function properties"]}
+{"id":"weibull-distribution-log-likelihood","concepts":["weibull distribution modeling","maximum likelihood estimation","fisher information matrix","r programming for statistics"]}
+{"id":"weibull-distribution-parameters","concepts":["weibull distribution modeling","shape scale parameterization"]}
+{"id":"weibull-fisher-information-matrix","concepts":["fisher information matrix","weibull distribution modeling","maximum likelihood estimation","mle parameter estimation","euler mascheroni constant"]}
+{"id":"weibull-introductory-paragraph","concepts":["academic paper publishing","weibull distribution modeling","series system reliability","masked failure data","simulation study design"]}
+{"id":"weibull-min-of-two","concepts":["weibull distribution modeling","order statistics theory","series system reliability","exponential distribution properties"]}
+{"id":"weibull-minimum-distribution-explanation","concepts":["weibull distribution modeling","order statistics theory","hypothesis testing design","series system reliability"]}
+{"id":"weibull-mle-and-censoring","concepts":["maximum likelihood estimation","weibull distribution modeling","right censoring bias","mle parameter estimation"]}
+{"id":"weibull-mle-sensitivity","concepts":["maximum likelihood estimation","weibull distribution modeling","mle parameter estimation","hazard function properties"]}
+{"id":"weibull-score-function-in-r","concepts":["weibull distribution modeling","series system reliability","r programming for statistics","masked failure data","score function derivation"]}
+{"id":"weibull-series-system-generation","concepts":["weibull distribution modeling","series system reliability","hazard function properties","mixture distribution modeling"]}
+{"id":"weighted-average-of-mles","concepts":["maximum likelihood estimation","fisher information matrix","r package development","multivariate normal distribution","bootstrap confidence intervals","mle parameter estimation"]}
+{"id":"wi-fi-6-router-troubleshooting","concepts":["network hardware troubleshooting","ethernet switch diagnostics"]}
+{"id":"wild-12-year-old-chats","concepts":["creative storytelling","fantasy world building","character development writing","plot structure design"]}
+{"id":"wildcard-path-traversal","concepts":["glob pattern matching","file path traversal","python file operations","cli command design"]}
+{"id":"windows-server-dev-setup","concepts":["windows server administration","python virtual environment","offline package installation","fastapi web service","cross platform development"]}
+{"id":"wizard-acceptance-at-witches","concepts":["creative storytelling","idiomatic expression usage"]}
+{"id":"word2vec-semantic-vector-arithmetic","concepts":["word embedding semantics","autoregressive language model","in-context learning","ai alignment challenges","kolmogorov complexity","mixture of experts architecture"]}
+{"id":"working-with-r-expressions","concepts":["r programming for statistics","metaprogramming techniques","symbolic expression manipulation","r package development"]}
+{"id":"world-models-in-llms","concepts":["autoregressive language model","in-context learning","world model representation","llm capabilities and limits"]}
+{"id":"write-simulation-data-in-r","concepts":["simulation study design","data serialization formats","python file operations"]}
+{"id":"write-simulation-results-to-file","concepts":["simulation study design","r programming for statistics","bootstrap confidence intervals","weibull distribution modeling","series system reliability"]}
+{"id":"writing-vectors-to-csv","concepts":["r programming for statistics","simulation study design","data serialization formats"]}
+{"id":"wsl-ubuntu-setup-guide","concepts":["linux system administration","windows subsystem linux"]}
+{"id":"xtoolkit-expression-toolkit-refinement","concepts":["symbolic computation engine","pattern matching rules","expression rewriting system","python package development"]}
+{"id":"xtoolkit-lecture-4a-summary-sicp","concepts":["symbolic computation engine","pattern matching rules","expression rewriting system","scheme programming language"]}
+{"id":"xtoolkit-sicp-rule-solver-code","concepts":["symbolic computation engine","pattern matching rules","expression rewriting system","scheme programming language","python code refactoring"]}
+{"id":"y-axis-range-comparison","concepts":["data visualization design","r programming for statistics"]}
+{"id":"yaml-front-matter-error","concepts":["static site generation","yaml configuration syntax","hugo build debugging"]}
+{"id":"yaml-issue-r-markdown","concepts":["r programming for statistics","yaml configuration syntax","academic paper publishing"]}
+{"id":"youtube-link-timestamp","concepts":["youtube video sharing"]}
+{"id":"zero-shot-learning-in-llms","concepts":["in-context learning","autoregressive language model","llm capabilities and limits"]}
+{"id":"zfs-pool-does-not-exist","concepts":["zfs filesystem management","linux system administration","ubuntu installation setup"]}
+{"id":"zoom-with-ml-ai-researcher","concepts":["ai alignment challenges","autoregressive language model","chain of thought prompting","language agent frameworks","academic research collaboration"]}

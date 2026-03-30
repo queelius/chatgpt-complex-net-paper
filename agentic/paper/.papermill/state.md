@@ -6,7 +6,7 @@
 
 | Field | Value |
 |-------|-------|
-| Title | From Episodes to Abstractions: Emergent Hierarchical Memory in 1,908 AI Conversations |
+| Title | From Episodes to Abstractions: Latent Hierarchical Memory in 1,908 AI Conversations |
 | Stage | **revising** — reviewed 2026-03-13 (major-revision) and 2026-03-14 (minor-revision); null models and sensitivity analysis added; CLS narrative needs reconciliation |
 | Format | LaTeX (Springer `svproc.cls`) |
 | Venue | Under consideration — originally targeted ISCS 2026 (8pp short paper), now expanded to 13pp; venue TBD |
@@ -21,14 +21,14 @@
 
 ## Thesis
 
-**Claim**: AI conversation archives exhibit emergent hierarchical memory structure analogous to human cognitive architecture. LLM-extracted semantic concepts from 1,908 ChatGPT episodes organize into a four-level hierarchy (episodes → 500 meta-concepts → 50 themes → 8 domains) that satisfies key predictions of Complementary Learning Systems theory and reproduces the small-world topology of human semantic memory networks.
+**Claim**: When AI conversation archives are analyzed through LLM-extracted semantic concepts rather than conversation-level embeddings, a bipartite episode--concept structure reveals latent hierarchical organization with three distinctive properties: small-world topology consistent with human semantic memory benchmarks, many-to-many episode--domain associations invisible to partition-based methods, and asymmetric cross-domain concept sharing confirming genuine semantic boundaries. The semantic clustering creates meaningful categorical distinctions (validated against a random-clustering null model), though semantic categories resist rather than facilitate consolidation — maintaining discriminable knowledge representations rather than following the consolidation-efficiency prediction of CLS theory.
 
 **Novelty beyond conference paper**:
-1. Concept extraction → bipartite graph (many-to-many) vs. partition-based Louvain communities
-2. Hierarchical agglomerative clustering on concept embeddings (4-level emergent hierarchy)
-3. Heaps' law consolidation signature (β=0.320 at meta-concept level)
-4. Small-world topology matching human benchmarks (σ=5.69 vs Steyvers & Tenenbaum's σ=5.6)
-5. **Asymmetric concept flow** — directed knowledge dependency structure between domains, invisible to undirected co-occurrence analysis
+1. Bipartite episode--concept graph (many-to-many) vs. partition-based Louvain communities — 77% of episodes span multiple domains
+2. Size-normalized asymmetric flow analysis revealing genuine semantic boundaries (mean obs/exp = 0.61) with targeted cross-domain dependencies
+3. Null model showing semantic clustering creates meaningful categorical distinctions (β_real = 0.320 vs β_null = 0.268, p < 0.001) — the CLS direction-inversion is itself an interesting finding
+4. Small-world topology (σ ≈ 6.6 against 100 ER graphs) consistent with human semantic memory benchmarks (Steyvers & Tenenbaum σ = 5.6–15.3)
+5. Clustering sensitivity analysis (k = 50–1000) demonstrating qualitative robustness of all key findings
 
 ## Key Numbers
 

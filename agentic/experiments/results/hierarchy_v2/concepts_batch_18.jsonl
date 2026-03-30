@@ -1,0 +1,20 @@
+{"id": "survival-analysis-series-systems", "concepts": ["series system reliability", "hazard function estimation", "maximum likelihood estimation", "weibull series system", "masked failure data"]}
+{"id": "survival-analysis-with-competing-risks", "concepts": ["masked failure data", "competing risks analysis", "series system reliability", "cause-specific hazard models", "expectation maximization algorithm"]}
+{"id": "survival-function-derivative-properties", "concepts": ["survival function gradient", "exponential family distributions", "proportional hazards model", "fisher information matrix", "cox regression model"]}
+{"id": "svg-cringe-brag-rejected", "concepts": ["creative storytelling", "svg code generation", "collaborative fiction writing"]}
+{"id": "symbol-grounding-for-llms", "concepts": ["autoregressive language model", "ai alignment challenges", "symbol grounding problem", "reinforcement learning value", "in-context learning"]}
+{"id": "symbolic-antidifferentiation-complexity-classification", "concepts": ["symbolic antidifferentiation complexity", "computational complexity classification", "graph rewriting systems", "term rewriting search"]}
+{"id": "sympy-python-derivative-solver", "concepts": ["sympy symbolic computation", "python code refactoring", "linux file synchronization", "git repository management", "dall-e image generation"]}
+{"id": "sync-linux-folders-with-google-drive", "concepts": ["linux file synchronization", "rclone cloud storage", "bash script optimization", "python code refactoring"]}
+{"id": "synthetic-data-for-llms", "concepts": ["synthetic training data generation", "domain specific language reasoning", "autoregressive language model", "self-improving language models", "curriculum difficulty scaling"]}
+{"id": "table-referencing-in-rmarkdown", "concepts": ["r statistical programming", "r package development", "rmarkdown table referencing", "bookdown cross references"]}
+{"id": "tabular-data-analysis", "concepts": ["r statistical programming", "data visualization design", "tabular data processing", "r statistical graphics"]}
+{"id": "tarot-card-reading-request", "concepts": ["creative storytelling"]}
+{"id": "task-prioritization-and-planning", "concepts": ["cli command design", "llm capabilities and limits", "elasticsearch query generation", "prolog knowledge base", "autogen agent framework"]}
+{"id": "teaching-llms-to-train", "concepts": ["recursive self-improvement", "meta-learning architecture", "reinforcement learning value", "automatic architecture search"]}
+{"id": "tech-help-offered", "concepts": ["tree search optimization", "latent code generation", "reinforcement learning value", "kl divergence model selection", "mixture of experts"]}
+{"id": "temperature-control-in-llms", "concepts": ["autoregressive language model", "softmax temperature parameter", "next-token prediction theory"]}
+{"id": "temperature-modulates-softmax-probabilities", "concepts": ["softmax temperature parameter", "knowledge distillation technique", "next-token prediction theory"]}
+{"id": "temporarily-ignore-github-token", "concepts": ["git repository management", "github authentication tokens", "large file storage"]}
+{"id": "tensor-constructor-operator", "concepts": ["c++ template metaprogramming", "tensor data structure", "compile-time type checking"]}
+{"id": "tensor-generalization-of-hooke-s-law", "concepts": ["tensor stiffness matrix", "hooke law generalization", "positive definite matrices", "anisotropic elasticity simulation"]}

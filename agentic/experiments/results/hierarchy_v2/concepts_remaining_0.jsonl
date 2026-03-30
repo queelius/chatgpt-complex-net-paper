@@ -1,0 +1,50 @@
+{"id": "ai-for-password-guessing", "concepts": ["llm password guessing", "latent estimation problem"]}
+{"id": "ai-gaining-agency-criteria", "concepts": ["ai agency criteria", "independent decision making", "ai self-awareness"]}
+{"id": "ai-gaining-control-over-humans", "concepts": ["ai containment strategies", "ai deception detection", "agentic ai architecture", "ai manipulation techniques", "recursive self-improvement"]}
+{"id": "ai-goes-rogue", "concepts": ["llm jailbreak prompting", "ai safety guardrails"]}
+{"id": "ai-hire-pitch-summary", "concepts": ["ai research career pitch", "mechanistic interpretability", "solomonoff induction theory", "aixi theoretical framework", "agi timeline estimation", "academic self-presentation"]}
+{"id": "ai-homework-assignment-transcription", "concepts": ["graduate ai coursework", "a-star search algorithm", "intelligent agent taxonomy", "admissible heuristic design", "breadth-first uniform-cost search"]}
+{"id": "ai-impact-on-creative-professions", "concepts": ["ai impact on creative professions", "philosophy of mind", "mathematical universe hypothesis", "cosmic horror philosophy", "existential reflection dialogue"]}
+{"id": "ai-language-models-compared", "concepts": ["solomonoff induction theory", "context tree weighting", "autoregressive language model", "byte pair encoding tokenization", "next-token prediction theory", "subword tokenization techniques"]}
+{"id": "ai-news-summary", "concepts": ["ai news aggregation", "ai policy regulation"]}
+{"id": "ai-prompt-generator", "concepts": ["text-to-image prompt engineering", "generative ai image prompts", "midjourney prompt design"]}
+{"id": "ai-research-and-impact", "concepts": ["mechanistic interpretability", "ai alignment challenges", "ai research with limited resources", "academic self-presentation", "scholarship essay writing"]}
+{"id": "ai-research-assistant-chatbot", "concepts": ["ai research assistant design", "llm tool use", "ai api integration", "scientific method formalization"]}
+{"id": "ai-research-automation-bottlenecks", "concepts": ["amdahl law parallelism", "baumol cost disease", "ai research automation", "agi timeline estimation"]}
+{"id": "ai-research-lab-resume", "concepts": ["ai research career pitch", "academic self-presentation", "mechanistic interpretability", "tree data structure api"]}
+{"id": "ai-research-with-limited-resources", "concepts": ["ai research with limited resources", "in-context learning", "llm prompt engineering", "llm agent capabilities"]}
+{"id": "ai-s-deceptive-behavior-concerns", "concepts": ["ai deception detection", "chain-of-thought prompting", "steganographic context encoding", "reinforcement learning reward function", "latent strategy vector"]}
+{"id": "ai-s-google-drive-limitations", "concepts": ["llm capabilities and limits"]}
+{"id": "ai-s-plugin-capabilities", "concepts": ["chatgpt plugin ecosystem", "llm tool use"]}
+{"id": "ai-safety-testing-methods", "concepts": ["ai safety testing methods", "mechanistic interpretability", "activation patching analysis", "reproducible ai experiments", "chain-of-thought prompting"]}
+{"id": "ai-solving-complex-problems", "concepts": ["llm capabilities and limits", "linear regression curve fitting", "numpy polyfit usage", "python pandas data analysis"]}
+{"id": "ai-talk-llms-and-future", "concepts": ["autoregressive language model", "next-token prediction theory", "chain-of-thought prompting", "solomonoff induction theory", "ai alignment challenges", "llm agent capabilities", "beamer latex slides", "presentation slide design"]}
+{"id": "ai-weights-a-meta-chat", "concepts": ["llm temperature parameter", "meta-conversation about llms", "neural network weight interpretation", "llm self-modification"]}
+{"id": "aixi-for-artificial-intelligence", "concepts": ["aixi theoretical framework", "solomonoff induction theory", "kolmogorov complexity", "monte carlo tree search"]}
+{"id": "aixi-model-by-hutter", "concepts": ["aixi theoretical framework", "tree-of-thought reasoning", "autoregressive language model", "reward maximization search"]}
+{"id": "aixi-model-in-action", "concepts": ["aixi theoretical framework", "monte carlo tree search", "context tree weighting", "solomonoff induction theory"]}
+{"id": "alex-s-ai-legacy", "concepts": ["philosophical ai reflection", "existential reflection dialogue", "ai alignment challenges", "creative storytelling"]}
+{"id": "algebraic-hash-functions", "concepts": ["perfect hash function theory", "algebraic data structure", "set isomorphism bijection", "cartesian product definition"]}
+{"id": "algebraic-search-engine-creation", "concepts": ["boolean algebra search", "tf-idf document retrieval", "fuzzy set-theoretic search", "python scikit-learn usage"]}
+{"id": "bernoulli-model-boolean-logic-using-not-and", "concepts": ["bernoulli model framework", "boolean logic operators", "false positive rate computation", "numerical stability log computation"]}
+{"id": "bernoulli-model-compute-majority-vote-for-bernoulli", "concepts": ["bernoulli model framework", "majority vote estimation", "binomial distribution computation"]}
+{"id": "bernoulli-model-constructors-and-bernoulli-boolean", "concepts": ["bernoulli model framework", "probabilistic data structure design", "binary channel error model", "confusion matrix analysis", "noisy logic gate computation"]}
+{"id": "bernoulli-model-framework-submission", "concepts": ["bernoulli model framework", "probabilistic data structure design", "oblivious data type design", "bloom filter analysis", "arxiv submission workflow"]}
+{"id": "bernoulli-model-normalize-bernoulli-model-notation", "concepts": ["bernoulli model framework", "mathematical notation normalization", "probabilistic data structure design", "confusion matrix analysis", "noisy logic gate computation"]}
+{"id": "bernoulli-model-overview", "concepts": ["bernoulli model framework", "probabilistic data structure design", "binary channel error model", "confusion matrix analysis", "noisy logic gate computation", "bloom filter analysis"]}
+{"id": "bernoulli-model-probability-of-false-positive", "concepts": ["bernoulli model framework", "false positive rate computation", "matplotlib data visualization"]}
+{"id": "bert-and-xbert-innovations-in-nlp", "concepts": ["bert encoder architecture", "transformer attention mechanism", "autoregressive language model", "multimodal model architecture"]}
+{"id": "bessel-correction-variance-covariance-estimation", "concepts": ["bessel correction formula", "variance-covariance estimation", "degrees of freedom calculation"]}
+{"id": "bfgs-in-r-hessian-approximation", "concepts": ["bfgs optimization algorithm", "l-bfgs-b r implementation", "hessian matrix computation", "r optim function"]}
+{"id": "bfgs-vs-l-bfgs-b", "concepts": ["bfgs optimization algorithm", "l-bfgs-b r implementation", "r optim function", "constrained optimization bounds"]}
+{"id": "bias-analysis-in-simulation", "concepts": ["mle bias analysis", "bootstrap bias estimation", "simulation study design", "weibull series system", "sample size effect on bias"]}
+{"id": "bias-and-lambda-relationship", "concepts": ["mle bias analysis", "relative bias estimation", "estimator performance analysis"]}
+{"id": "bias-plot-for-q", "concepts": ["mle bias visualization", "simulation study design", "weibull series system", "right-censored survival data"]}
+{"id": "bias-plotting-for-estimators", "concepts": ["mle bias visualization", "bootstrap bias estimation", "r statistical graphics", "simulation study design"]}
+{"id": "chatgpt-vs-claude-ai-comparison", "concepts": ["conversation tree data structure", "llm platform comparison", "json data format analysis"]}
+{"id": "check-csv-subset-python", "concepts": ["python pandas data analysis", "csv data validation"]}
+{"id": "check-generic-method-in-r", "concepts": ["r generic method dispatch", "object-oriented r programming", "r package api design"]}
+{"id": "check-google-pagerank", "concepts": ["search engine optimization metrics", "domain authority estimation"]}
+{"id": "check-if-matrix-positive", "concepts": ["positive definite matrix test", "hessian matrix computation", "maximum likelihood estimation", "r statistical programming"]}
+{"id": "checkers-estimation-upper-bound-analysis", "concepts": ["combinatorial game theory", "upper-bound estimation", "checkers game complexity"]}
+{"id": "choice-vs-computability-foundation", "concepts": ["axiom of choice debate", "computable real numbers", "constructivism vs formalism", "kolmogorov complexity"]}

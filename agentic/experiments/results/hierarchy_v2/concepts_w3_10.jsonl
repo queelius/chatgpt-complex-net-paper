@@ -1,0 +1,35 @@
+{"id": "network-cluster-definition", "concepts": ["network science fundamentals", "social network clustering", "community detection", "degree centrality", "facebook social network"]}
+{"id": "network-examples-brainstorming", "concepts": ["complex network analysis", "network science fundamentals", "bookmark network design", "neural network interpretability", "mechanistic interpretability", "social network clustering"]}
+{"id": "network-growth-analysis", "concepts": ["network science fundamentals", "preferential attachment", "scale-free network", "barabasi-albert model", "power law degree distribution"]}
+{"id": "network-science-summary", "concepts": ["network science fundamentals", "clustering coefficient derivation", "betweenness centrality", "small-world network", "degree distribution", "random graph model"]}
+{"id": "neural-ar-model-approximation", "concepts": ["autoregressive language model", "feedforward neural network", "numerical gradient approximation", "next-token prediction theory", "probabilistic sequence modeling", "python code review", "softmax activation function"]}
+{"id": "paper-evaluation-summary", "concepts": ["series system reliability", "maximum likelihood estimation", "masked failure data", "right-censored survival data", "bootstrap confidence intervals", "academic paper publishing", "weibull distribution mle"]}
+{"id": "parameter-scaling-in-r", "concepts": ["r optim function", "mle parameter estimation", "weibull series system", "gradient descent initialization", "r statistical programming", "log-likelihood gradient"]}
+{"id": "parametrize-activation-functions-in-nn", "concepts": ["autoregressive language model", "neural network activation functions", "reinforcement learning from feedback", "model distillation techniques", "solomonoff induction theory", "aixi theoretical framework", "next-token prediction theory"]}
+{"id": "parse-chrome-window-content", "concepts": ["javascript dom parsing", "chrome devtools usage", "web scraping techniques", "html content extraction"]}
+{"id": "partial-derivative-calculation", "concepts": ["weibull distribution mle", "partial derivative computation", "log-likelihood gradient", "survival function calculus"]}
+{"id": "partial-derivative-of-expression", "concepts": ["log-likelihood gradient", "partial derivative computation", "competing risks survival analysis", "weibull distribution mle", "series system reliability"]}
+{"id": "partial-derivative-of-function", "concepts": ["partial derivative computation", "weibull distribution mle", "right-censored survival data", "mle bias analysis"]}
+{"id": "partial-derivative-of-r-wrt-k", "concepts": ["partial derivative computation", "weibull distribution mle", "survival function calculus"]}
+{"id": "partial-derivative-of-survival-function", "concepts": ["partial derivative computation", "competing risks survival analysis", "weibull distribution mle", "series system reliability", "hazard function analysis", "survival function calculus"]}
+{"id": "partial-derivative-request-clarification", "concepts": ["partial derivative computation", "multivariate calculus", "mathematical problem clarification"]}
+{"id": "partial-derivative-with-respect-to-x", "concepts": ["partial derivative computation", "hessian matrix computation", "gradient vector computation", "third-order tensor calculus", "multivariate calculus"]}
+{"id": "particular-solution-found", "concepts": ["ordinary differential equation solving", "characteristic equation roots", "particular solution method", "initial value problem"]}
+{"id": "passing-args-to-streamlit", "concepts": ["streamlit web application", "argparse cli design", "python web framework", "command line argument passing"]}
+{"id": "passing-list-in-r", "concepts": ["r list manipulation", "keyword argument handling", "r package api design", "r generic method dispatch", "roxygen2 documentation", "numerical integration in r", "reliability estimation methods"]}
+{"id": "passing-options-for-integration", "concepts": ["r function parameterization", "keyword argument handling", "r package api design", "numerical integration in r"]}
+{"id": "path-notation-for-arrays", "concepts": ["json path notation", "python code refactoring", "wildcard pattern matching", "recursive data traversal"]}
+{"id": "path-param-default-redirect", "concepts": ["fastapi web framework", "rest api documentation", "python web framework"]}
+{"id": "pdf-annotation-tools", "concepts": ["linux software tools", "pdf annotation tools", "document review workflow"]}
+{"id": "python-binary-sequence-code", "concepts": ["markov chain modeling", "python string formatting", "binary sequence generation", "probabilistic sequence modeling"]}
+{"id": "python-chrome-bookmark-import", "concepts": ["netscape bookmark html format", "python code review", "html parsing library", "bookmark data extraction", "argparse cli design"]}
+{"id": "python-code-extraction", "concepts": ["python code refactoring", "dynamic code execution", "function extraction from text"]}
+{"id": "python-code-formatting-request", "concepts": ["python code refactoring", "python string formatting", "academic paper publishing"]}
+{"id": "python-defaultdict-explanation", "concepts": ["python dict subclassing", "python data structure operations", "python standard library"]}
+{"id": "python-gamma-function", "concepts": ["python gamma function", "mathematical function library", "python standard library"]}
+{"id": "r-distribution-operations-architecture", "concepts": ["r package api design", "statistical distribution objects", "r generic method dispatch", "object-oriented r programming", "multiple dispatch architecture"]}
+{"id": "r-file-locking", "concepts": ["r statistical programming", "file-based concurrency lock", "race condition handling"]}
+{"id": "r-function-for-weibull-distribution", "concepts": ["weibull distribution mle", "r package api design", "roxygen2 documentation", "r statistical programming", "log-likelihood gradient", "maximum likelihood estimation"]}
+{"id": "r-function-parameterization-practices", "concepts": ["r function parameterization", "r package api design", "keyword argument handling", "object-oriented r programming", "mutable state management"]}
+{"id": "r-ide-alternatives", "concepts": ["r statistical programming", "jupyter notebook conversion", "development environment setup"]}
+{"id": "r-improvements-and-legends", "concepts": ["r statistical graphics", "data visualization design", "weibull distribution mle", "rmarkdown document layout", "confidence interval visualization"]}

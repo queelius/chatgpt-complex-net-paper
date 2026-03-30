@@ -1,0 +1,50 @@
+{"id":"joint-entropy-breakdown","concepts":["conditional entropy derivation","joint probability distribution","Shannon entropy decomposition","conditional expectation computation"]}
+{"id":"json-fuzzy-queries","concepts":["fuzzy query evaluation","boolean algebra over results","fuzzy membership functions","json document querying","python code refactoring"]}
+{"id":"json-fuzzy-queries-fuzzy-comparison-generalization","concepts":["fuzzy membership functions","recursive type comparison","string similarity scoring","nested list comparison"]}
+{"id":"json-fuzzy-queries-gaussian-function-plot","concepts":["gaussian membership function","data visualization design","sigma parameter sensitivity"]}
+{"id":"jsonlang-ast-node-evaluation-discussion","concepts":["json abstract syntax tree","interpreter symbol resolution","scheme-like language design","python code refactoring"]}
+{"id":"jsonlang-eval-module-debugging-guide","concepts":["json abstract syntax tree","interpreter debugging techniques","symbol resolution logic","scheme-like language design"]}
+{"id":"jsonlang-immutable-operations-environment","concepts":["immutable data operations","functional environment design","json abstract syntax tree","pypi package publishing"]}
+{"id":"jsonlang-implementing-let-in-json-lang","concepts":["let binding implementation","lexical scoping semantics","json abstract syntax tree","scheme-like language design","automatic differentiation"]}
+{"id":"jsonlang-json-ast-autograd-implementation","concepts":["automatic differentiation","json abstract syntax tree","scheme-like language design","symbolic computation engine"]}
+{"id":"jsonlang-lambda-shorthand-suggestion","concepts":["unicode language syntax","scheme-like language design","control flow constructs","environment class design","variadic function operators"]}
+{"id":"jsonlang-python-docstrings-improvement","concepts":["python docstring conventions","json abstract syntax tree","scheme-like language design","interpreter code documentation"]}
+{"id":"k-relation-not-possible","concepts":["logic programming relations","recursive relation evaluation","prolog-style inference rules","first-order predicate logic"]}
+{"id":"kim-alex-wiener-dog-sisters","concepts":["creative storytelling","character ensemble narrative","science fiction elements","humorous fictional scenarios"]}
+{"id":"kim-and-cancer-journey","concepts":["personal relationship reflection","cancer treatment experience","emotional support documentation"]}
+{"id":"kim-and-sprout-s-adventure","concepts":["creative storytelling","children's fantasy narrative","magical realism elements"]}
+{"id":"kim-profile-summary","concepts":["personal relationship reflection","biographical profile construction","poetry composition craft"]}
+{"id":"kim-s-magical-dog","concepts":["creative storytelling","conversational clarification prompts"]}
+{"id":"kl-divergence-in-r","concepts":["kl divergence computation","r statistical programming","bernoulli distribution parameters","l-bfgs-b optimization bounds","mle parameter estimation"]}
+{"id":"knight-vs-samurai-duel","concepts":["creative storytelling","dall-e image generation","fictional combat narrative","voice interface interaction"]}
+{"id":"knitting-rmarkdown-from-command","concepts":["rmarkdown command rendering","beamer presentation output","tinytex latex installation"]}
+{"id":"knn-algorithm-for-data-retrieval","concepts":["knn memory augmentation","autoregressive language model","retrieval augmented generation","adaptive k selection","reinforcement learning integration"]}
+{"id":"kolmogorov-unsupervised-learning","concepts":["kolmogorov complexity","unsupervised compression learning","normalized compression distance","context tree weighting","conditional complexity estimation"]}
+{"id":"kyc-issues-with-nicehash","concepts":["cryptocurrency platform support","kyc verification process"]}
+{"id":"l-bfgs-b-optimization-bounds","concepts":["l-bfgs-b optimization bounds","r statistical programming","constrained parameter optimization"]}
+{"id":"lambda-function-argument-error","concepts":["python lambda syntax","variadic function arguments","keyword argument passing","json abstract syntax tree"]}
+{"id":"langchain-chatmodels-ollama-integration","concepts":["langchain framework integration","ollama api integration","chat model interface design"]}
+{"id":"langchain-twitter-bot","concepts":["langchain framework integration","twitter bot automation","llm application development"]}
+{"id":"language-and-multimodal-expression","concepts":["multimodal learning theory","language completeness hypothesis","temporal modality correlation","transformer architecture design"]}
+{"id":"language-models-and-computation","concepts":["computation versus mathematics","kolmogorov complexity","autoregressive language model","solomonoff universal induction","stochastic program inference","halting problem undecidability"]}
+{"id":"llm-sampling-with-mcts","concepts":["monte carlo tree search","llm token sampling","reward function evaluation","autoregressive language model"]}
+{"id":"llm-scaling-analysis","concepts":["llm agent collaboration","multi-agent debate framework","ensemble scaling analysis","autoregressive language model"]}
+{"id":"llm-shell-script-setup","concepts":["llama cpp configuration","shell script argument parsing","gpu layer optimization"]}
+{"id":"llm-solomonoff-blog-simulation","concepts":["solomonoff universal induction","markov chain computation","kolmogorov complexity","universal prior computation","entropy rate estimation"]}
+{"id":"llm-to-rnn-knowledge-transfer","concepts":["knowledge distillation techniques","rnn transformer transfer","logit layer distillation","cross-architecture learning"]}
+{"id":"llm-tool-use-trainer","concepts":["in-context learning","llm tool use training","action token generation"]}
+{"id":"llm-tools-top-5","concepts":["llm tool augmentation","symbolic logic solver","automatic theorem prover","artificial scientist framework","system two thinking"]}
+{"id":"llm-vs-mdp","concepts":["markov decision process","autoregressive language model","monte carlo tree search","rlhf policy optimization"]}
+{"id":"llm-weight-adjustment-research","concepts":["meta-learning self-modification","llm weight adjustment","prompt generation research"]}
+{"id":"llms-and-deep-learning","concepts":["deep learning literature survey","meta-learning algorithms","zero-shot learning","in-context learning","few-shot prompt engineering"]}
+{"id":"llms-as-finite-automata","concepts":["finite automaton formalization","autoregressive language model","markov decision process","theory of computation","context window state space"]}
+{"id":"llms-enhance-human-creativity","concepts":["llm capabilities and limits","creative thinking differentiation","out-of-distribution reasoning"]}
+{"id":"llms-for-code-synthesis","concepts":["automatic program synthesis","ast search optimization","reinforcement learning integration","llm code generation"]}
+{"id":"llms-reliability-debate","concepts":["llm capabilities and limits","ai hallucination analysis","llms reliability debate"]}
+{"id":"llms-retrieval-and-memory","concepts":["retrieval augmented generation","chain of thought prompting","llm memory architecture","internal monologue design"]}
+{"id":"llms-revolutionize-programming","concepts":["llm code generation","program composition architecture","in-context learning"]}
+{"id":"llms-safety-and-security","concepts":["ai safety research","ai alignment challenges","ai consciousness debate","instrumental goal analysis"]}
+{"id":"lmm-parameter-in-optim","concepts":["l-bfgs-b optimization bounds","r statistical programming","constrained parameter optimization"]}
+{"id":"lnn-inductive-biases","concepts":["liquid neural network design","temporal inductive biases","continuous time dynamics","adaptive neural architecture"]}
+{"id":"load-boot-t-to-boot-obj","concepts":["bootstrap confidence intervals","r package api design","boot object construction"]}
+{"id":"load-colab-to-local","concepts":["jupyter notebook migration","local gpu configuration","python environment setup"]}

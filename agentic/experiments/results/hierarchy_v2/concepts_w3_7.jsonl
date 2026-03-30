@@ -1,0 +1,35 @@
+{"id": "knn-algorithm-for-data-retrieval", "concepts": ["knn retrieval memory", "autoregressive language model", "next-token prediction theory", "llm context extension", "reinforcement learning value"]}
+{"id": "kolmogorov-unsupervised-learning", "concepts": ["kolmogorov complexity", "solomonoff induction theory", "compression-based prediction", "context tree weighting", "maximum likelihood estimation", "right-censored survival data", "cox proportional hazards", "weibull distribution mle"]}
+{"id": "kyc-issues-with-nicehash", "concepts": ["cryptocurrency platform support", "kyc identity verification"]}
+{"id": "l-bfgs-b-optimization-bounds", "concepts": ["l-bfgs-b r implementation", "r optim function", "bfgs optimization algorithm", "parameter constraints"]}
+{"id": "lambda-function-argument-error", "concepts": ["python code refactoring", "keyword argument handling", "tree data structure api", "python tree node initialization"]}
+{"id": "langchain-chatmodels-ollama-integration", "concepts": ["ollama api integration", "llm agent capabilities", "ai api integration"]}
+{"id": "langchain-twitter-bot", "concepts": ["llm agent capabilities", "ai api integration", "python code refactoring"]}
+{"id": "language-and-multimodal-expression", "concepts": ["multimodal transformer architecture", "autoregressive language model", "abstract representation learning", "llm capabilities and limits", "ai consciousness debate", "in-context learning"]}
+{"id": "language-models-and-computation", "concepts": ["solomonoff induction theory", "autoregressive language model", "kolmogorov complexity", "next-token prediction theory", "probabilistic sequence modeling", "philosophy of mind", "llm capabilities and limits"]}
+{"id": "llm-sampling-with-mcts", "concepts": ["llm inference sampling methods", "autoregressive language model", "reinforcement learning value"]}
+{"id": "llm-scaling-analysis", "concepts": ["llm capabilities and limits", "llm agent capabilities", "autoregressive language model", "llm scaling laws"]}
+{"id": "llm-shell-script-setup", "concepts": ["cli command design", "llm inference sampling methods", "local llm deployment"]}
+{"id": "llm-solomonoff-blog-simulation", "concepts": ["solomonoff induction theory", "markov chain modeling", "kolmogorov complexity", "next-token prediction theory", "probabilistic sequence modeling", "blog post writing"]}
+{"id": "llm-to-rnn-knowledge-transfer", "concepts": ["knowledge distillation methods", "autoregressive language model", "llm capabilities and limits"]}
+{"id": "llm-tool-use-trainer", "concepts": ["llm tool use", "in-context learning", "llm prompt engineering"]}
+{"id": "llm-tools-top-5", "concepts": ["llm tool use", "llm agent capabilities", "automated theorem proving", "ai for scientific discovery", "llm prompt engineering"]}
+{"id": "llm-vs-mdp", "concepts": ["autoregressive language model", "markov chain modeling", "reinforcement learning value", "llm inference sampling methods", "llm capabilities and limits"]}
+{"id": "llm-weight-adjustment-research", "concepts": ["llm capabilities and limits", "llm prompt engineering", "meta-learning research"]}
+{"id": "llms-and-deep-learning", "concepts": ["autoregressive language model", "llm capabilities and limits", "in-context learning", "meta-learning research", "chain-of-thought prompting", "knowledge distillation methods"]}
+{"id": "llms-as-finite-automata", "concepts": ["autoregressive language model", "llm capabilities and limits", "markov chain modeling", "finite automata theory", "reinforcement learning value"]}
+{"id": "llms-enhance-human-creativity", "concepts": ["llm capabilities and limits", "autoregressive language model"]}
+{"id": "llms-for-code-synthesis", "concepts": ["llm capabilities and limits", "autoregressive language model", "automated program synthesis", "reinforcement learning value", "llm tool use"]}
+{"id": "llms-reliability-debate", "concepts": ["llm capabilities and limits", "ai safety research"]}
+{"id": "llms-retrieval-and-memory", "concepts": ["llm capabilities and limits", "llm prompt engineering", "chain-of-thought prompting", "llm tool use"]}
+{"id": "llms-revolutionize-programming", "concepts": ["llm capabilities and limits", "autoregressive language model", "llm tool use", "in-context learning"]}
+{"id": "llms-safety-and-security", "concepts": ["ai safety research", "ai containment strategies", "llm capabilities and limits", "ai consciousness debate", "philosophical ai reflection"]}
+{"id": "lmm-parameter-in-optim", "concepts": ["l-bfgs-b r implementation", "r optim function", "bfgs optimization algorithm"]}
+{"id": "lnn-inductive-biases", "concepts": ["autoregressive model inductive bias", "liquid neural network design", "abstract representation learning"]}
+{"id": "load-boot-t-to-boot-obj", "concepts": ["r boot package", "bootstrap variance estimation", "r data structure operations"]}
+{"id": "load-colab-to-local", "concepts": ["jupyter notebook conversion", "python virtual environment", "gpu computing setup"]}
+{"id": "load-json-and-map-id", "concepts": ["python pandas data analysis", "geojson data processing", "python code refactoring"]}
+{"id": "load-rds-file-in-r", "concepts": ["r data structure operations", "r list manipulation", "mle parameter estimation"]}
+{"id": "loading-corpus-in-python", "concepts": ["tf-idf document retrieval", "python pandas data analysis", "python code refactoring"]}
+{"id": "loading-functions-dynamically", "concepts": ["python code refactoring", "python dict subclassing", "tree data structure api"]}
+{"id": "local-llm-api-setup", "concepts": ["ollama api integration", "ai api integration", "local llm deployment"]}

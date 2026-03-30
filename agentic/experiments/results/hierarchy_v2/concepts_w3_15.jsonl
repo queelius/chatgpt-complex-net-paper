@@ -1,0 +1,35 @@
+{"id": "statistical-estimation-notation-guide", "concepts": ["maximum likelihood estimation", "right-censored survival data", "statistical estimation notation", "hazard function modeling", "series system reliability"]}
+{"id": "statistical-system-lifetime-analysis", "concepts": ["series system reliability", "masked failure data", "competing risks survival analysis", "maximum likelihood estimation", "weibull distribution mle", "right-censored survival data"]}
+{"id": "stemming-for-llms", "concepts": ["autoregressive language model", "abstract representation learning", "text compression for llms", "tokenization alternatives", "decoder model architecture"]}
+{"id": "stemming-in-llms-semantics-lost", "concepts": ["autoregressive language model", "abstract representation learning", "word embedding semantics", "tokenization alternatives", "natural language processing"]}
+{"id": "stiff-behavior-in-ode", "concepts": ["ordinary differential equation solving", "numerical ode singularity analysis", "stiff differential equations", "scipy numerical integration"]}
+{"id": "stochastic-embedding-for-transformers", "concepts": ["autoregressive language model", "stochastic embedding regularization", "abstract representation learning", "gradient descent initialization", "in-context learning"]}
+{"id": "storing-non-working-code", "concepts": ["git branch management", "c++ library development", "experimental code organization", "software project structure"]}
+{"id": "story-development-assistance", "concepts": ["creative storytelling", "fantasy world building", "magic system design", "character development"]}
+{"id": "strengthening-trump-russia-claims", "concepts": ["political analysis research", "investigative journalism claims", "argument strengthening", "evidence evaluation"]}
+{"id": "string-replacement-logic-solve", "concepts": ["string rewriting rules", "formal language computation", "constraint satisfaction problem", "symbolic manipulation puzzles"]}
+{"id": "string-replacement-logical-puzzle", "concepts": ["string rewriting rules", "formal language computation", "constraint satisfaction problem", "symbolic manipulation puzzles"]}
+{"id": "string-substitution-in-commands", "concepts": ["bash shell scripting", "command line string substitution", "shell variable expansion", "terminal output formatting"]}
+{"id": "stripe-api-spec-creation", "concepts": ["rest api documentation", "openapi specification design", "stripe payment api", "api authentication methods"]}
+{"id": "structures-of-increasing-complexity", "concepts": ["chain-of-thought prompting", "graph of thoughts reasoning", "autoregressive language model", "llm agent capabilities", "tree data structure"]}
+{"id": "structuring-readme-rmd-in-pkgdown", "concepts": ["r package documentation", "rmarkdown document layout", "r package development", "static site generation"]}
+{"id": "study-aid-request", "concepts": ["network science fundamentals", "small world networks", "graph clustering coefficient", "degree assortativity"]}
+{"id": "study-guide-chapter-7", "concepts": ["network science fundamentals", "information diffusion models", "epidemic spreading models", "threshold cascade models"]}
+{"id": "submit-pypi-package", "concepts": ["pypi package publishing", "python package code review", "python virtual environment", "cli command design"]}
+{"id": "suffering-and-consciousness-reflection", "concepts": ["ai consciousness debate", "philosophy of mind", "existential reflection on illness", "suffering ethics framework", "email drafting assistance"]}
+{"id": "suffix-arrays-explained", "concepts": ["suffix array data structure", "string pattern matching", "algorithm time complexity", "text search algorithms"]}
+{"id": "summarize-conversation-in-title", "concepts": ["meta-conversation about llms", "conversation summarization"]}
+{"id": "summarize-the-conversation", "concepts": ["creative storytelling", "fantasy adventure narrative", "conversation summarization"]}
+{"id": "summarize-user-request", "concepts": ["latex to markdown conversion", "document format conversion", "rate-distorted perfect hash filter", "probabilistic data structures"]}
+{"id": "summarizing-cis-for-analysis", "concepts": ["bootstrap confidence intervals", "coverage probability estimation", "confidence interval visualization", "bootstrap variance estimation"]}
+{"id": "summary-arxiv-summarization-request", "concepts": ["arxiv paper summarization", "academic paper publishing", "research paper methodology"]}
+{"id": "summary-r-summary-generic-method-title-r-summgen-method", "concepts": ["r generic method dispatch", "r statistical programming", "object-oriented r programming", "r package api design"]}
+{"id": "sun-s-force-on-earth", "concepts": ["gravitational force calculation", "newtonian mechanics", "celestial body physics", "physics problem solving"]}
+{"id": "supervised-learning-synthesis", "concepts": ["supervised machine learning", "genetic programming synthesis", "expression tree data structure", "program synthesis methods"]}
+{"id": "survival-analysis-notation-clarification", "concepts": ["maximum likelihood estimation", "right-censored survival data", "competing risks survival analysis", "masked failure data", "series system reliability", "statistical estimation notation"]}
+{"id": "survival-analysis-right-censoring", "concepts": ["right-censored survival data", "maximum likelihood estimation", "log-likelihood gradient", "fisher information matrix", "hessian matrix computation"]}
+{"id": "tensor-shape-and-operations", "concepts": ["c++ template metaprogramming", "tensor data structure", "expression tree data structure", "lazy evaluation design"]}
+{"id": "tensorflow-gpu-configuration-issues", "concepts": ["tensorflow gpu configuration", "cuda driver compatibility", "deep learning environment setup", "python virtual environment"]}
+{"id": "term-rewriting-system-with-sympy", "concepts": ["automated theorem proving", "term rewriting system", "symbolic computation library", "random theorem generation"]}
+{"id": "test-request", "concepts": ["llm interaction test"]}
+{"id": "testing-128k-context-model", "concepts": ["llm capabilities and limits", "long context evaluation", "llm agent capabilities", "in-context learning"]}

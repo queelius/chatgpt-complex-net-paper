@@ -1,0 +1,50 @@
+{"id":"soft-lse-vs-max","concepts":["log-sum-exp function","softmax approximation","numerical stability","differentiable optimization","temperature parameter scaling","convex optimization","attention mechanism weights"]}
+{"id":"soft-prompts-for-llms","concepts":["soft prompt tuning","prompt retrieval system","k-nearest neighbor selection","embedding space mapping","task identification classifier","associative memory retrieval","LLM fine-tuning efficiency"]}
+{"id":"soft-prompts-in-ai","concepts":["soft prompt embeddings","prompt tuning technique","trainable prompt parameters","model adaptation methods","text-to-image generation","transfer learning efficiency","continuous prompt optimization"]}
+{"id":"soft-token-ar-model","concepts":["soft token embeddings","autoregressive latent reasoning","continuous embedding space","grounding latent representations","language model inference"]}
+{"id":"softcircuit-differentiable-approximate-functions","concepts":["differentiable programming","soft logic gates","Gumbel-Softmax relaxation","neural circuit learning","soft decision trees","differentiable sorting algorithms","discrete-to-continuous relaxation"]}
+{"id":"softcircuit-differentiable-function-replacements","concepts":["differentiable programming","soft logic gates","NAND gate universality","learnable circuit parameters","gradient-based optimization","truth table modeling","inductive bias regularization"]}
+{"id":"softcircuit-xor-operation-for-booleans","concepts":["soft XOR operation","differentiable boolean logic","log-sum-exp soft operators","soft NAND gate","soft implication operator","element-wise logical operations"]}
+{"id":"software-design-for-flexibility-review","concepts":["software design flexibility","SICP continuation","generic programming patterns","domain-specific languages","combinatory programming","Scheme language design"]}
+{"id":"solid-green-line-plot","concepts":["matplotlib line plotting","Python visualization formatting","plot style configuration"]}
+{"id":"solomonoff-induction-and-llms","concepts":["Solomonoff induction","Kolmogorov complexity","universal prior distribution","Markov chain models","next-token prediction","Bayesian model updating","autoregressive language models"]}
+{"id":"spacesim-spring-stability","concepts":["particle physics simulation","spring stability analysis","Verlet integration method","GPU-accelerated physics","composite body representation","pygame GUI alternatives"]}
+{"id":"spacesim-subsumption-architecture-design-agent","concepts":["subsumption architecture","autonomous agent design","behavior-based robotics","sensor-action coupling","hierarchical behavior control","particle simulation agents"]}
+{"id":"spacesim-using-lambdas-for-events","concepts":["Python lambda expressions","event bus pattern","observer design pattern","Python setattr workaround"]}
+{"id":"spacesim-verlet-integration-design-review","concepts":["Verlet integration method","struct-of-arrays layout","GPU memory coalescing","CuPy GPU acceleration","physics simulation abstraction","body-integrator separation"]}
+{"id":"spacesim-verlet-integration-property-issue","concepts":["Python property semantics","in-place operator behavior","Verlet integration state","position-velocity abstraction"]}
+{"id":"spacesim-verlet-integration-update-code","concepts":["Verlet integration formula","numerical integration accuracy","simulation time step decoupling"]}
+{"id":"spacesim-volume-and-pan-calculation","concepts":["spatial audio rendering","stereo panning algorithm","inverse square law attenuation","equal power panning","viewport-based sound model","threaded audio playback"]}
+{"id":"specialized-markovian-models","concepts":["semi-Markov process","partial Markov property","variable-order Markov models","quantum-inspired probability","context-specific independence","renewal process theory","hidden semi-Markov models"]}
+{"id":"specify-r-interpreter-path","concepts":["VS Code R configuration","radian terminal setup","R interpreter path settings"]}
+{"id":"speed-up-bootstrap-mle","concepts":["bootstrap resampling method","maximum likelihood estimation","R parallel computing","computational optimization strategies"]}
+{"id":"speedlab-network-highlights","concepts":["federated learning research","network security analysis","SPEED Lab research group"]}
+{"id":"spongebob-car-search-problem","concepts":["state space search","branching factor analysis","breadth-first graph search","covering path problem","AI search algorithms"]}
+{"id":"spongebob-pacman-search-analysis","concepts":["state space search","search algorithm completeness","grid coverage planning"]}
+{"id":"spongebob-pacman-search-analysis_1","concepts":["state space complexity","graph search guarantees","joint action branching factor","visited set representation","BFS optimality analysis"]}
+{"id":"square-root-of-3","concepts":["basic algebra computation","parametric solution sets","linear system solving"]}
+{"id":"ssh-file-transfer-methods","concepts":["SCP file transfer","rsync remote synchronization","SSH remote operations"]}
+{"id":"ssh-host-key-update","concepts":["SSH known hosts management","host key verification","remote machine authentication"]}
+{"id":"ssh-with-vs-code","concepts":["VS Code remote SSH","FastAPI path parameters","REST API endpoint design","remote development workflow"]}
+{"id":"st-louis-traffic-forecasting","concepts":["traffic flow forecasting","time series analysis","CCTV camera data","transportation network modeling","real-time traffic monitoring"]}
+{"id":"stack-data-structure-python","concepts":["stack data structure","Python collections deque","queue data structure","priority queue implementation","abstract data type interface"]}
+{"id":"statistical-analysis-task-list","concepts":["bootstrap bias estimation","maximum likelihood estimation","goodness-of-fit testing","Kolmogorov-Smirnov test","series system reliability","Weibull distribution fitting","cross-validation methodology"]}
+{"id":"statistical-concept-assessment","concepts":["central limit theorem","hypothesis testing errors","Type I and II errors","statistical knowledge assessment"]}
+{"id":"statistical-estimation-notation-guide","concepts":["statistical estimation notation","survival function analysis","hazard function modeling","right-censored observations","likelihood function formulation","series system reliability"]}
+{"id":"statistical-system-lifetime-analysis","concepts":["series system reliability","bootstrap bias estimation","maximum likelihood estimation","goodness-of-fit testing","Weibull distribution fitting","censored component lifetimes","hazard function analysis"]}
+{"id":"stemming-for-llms","concepts":["stemming text compression","LLM tokenization alternatives","Soundex phonetic encoding","compressed representation reasoning","encoder-decoder architecture"]}
+{"id":"stemming-in-llms-semantics-lost","concepts":["stemming semantic information loss","LLM embedding quality","text preprocessing tradeoffs","abstract concept generalization","out-of-distribution reasoning"]}
+{"id":"stiff-behavior-in-ode","concepts":["stiff ODE numerical solving","nonlinear differential equations","singularity analysis methods","BDF solver method","Verlet integration comparison"]}
+{"id":"stochastic-embedding-for-transformers","concepts":["stochastic embedding perturbation","transformer regularization technique","embedding space exploration","noise injection robustness"]}
+{"id":"storing-non-working-code","concepts":["version control branching","experimental code management","C++ conditional compilation"]}
+{"id":"story-development-assistance","concepts":["creative writing assistance","story development process","narrative structure design"]}
+{"id":"strengthening-trump-russia-claims","concepts":["investigative journalism analysis","political argument evaluation","evidence-based claim assessment"]}
+{"id":"string-replacement-logic-solve","concepts":["string rewriting systems","formal language computation","symbolic rule application"]}
+{"id":"string-replacement-logical-puzzle","concepts":["string rewriting systems","formal language computation","symbolic rule application"]}
+{"id":"string-substitution-in-commands","concepts":["shell variable substitution","command line string expansion","bash scripting basics"]}
+{"id":"stripe-api-spec-creation","concepts":["OpenAPI specification design","REST API documentation","Stripe API integration"]}
+{"id":"structures-of-increasing-complexity","concepts":["graph-of-thoughts reasoning","hypergraph knowledge representation","LLM output composition","automatic relationship labeling","meta-programming code generation","reinforcement learning scheduling"]}
+{"id":"structuring-readme-rmd-in-pkgdown","concepts":["R package documentation","pkgdown site generation","README.Rmd structure"]}
+{"id":"study-aid-request","concepts":["network science concepts","small-world phenomenon","clustering coefficient computation","graph assortativity analysis","breadth-first search algorithm","connected component analysis"]}
+{"id":"study-guide-chapter-7","concepts":["epidemic spreading models","SIS and SIR dynamics","network diffusion cascades","linear threshold model","independent cascade model","immunization strategy analysis","basic reproduction number"]}
+{"id":"submit-pypi-package","concepts":["PyPI package publishing","twine upload process","Python package distribution"]}

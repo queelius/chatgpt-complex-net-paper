@@ -1,0 +1,66 @@
+{"id": "implement-params-and-nparams", "concepts": ["r package api design", "r package development", "mle parameter estimation", "s3 generic methods", "multivariate normal distribution"]}
+{"id": "implementing-s3-arithmetic", "concepts": ["r package api design", "s3 operator overloading", "mle parameter estimation", "matrix multiplication dispatch"]}
+{"id": "implicit-policies-and-planning", "concepts": ["reinforcement learning value", "explicit vs implicit policies", "markov chain computation", "sample efficient representations", "tree search planning"]}
+{"id": "importerror-with-redisearch-schema", "concepts": ["full text search engines", "fastapi web framework", "elasticsearch integration", "docker container deployment", "redis search indexing"]}
+{"id": "improve-blog-yaml-config", "concepts": ["hugo static site generator", "blog post writing", "blogdown r package", "netlify site deployment", "yaml configuration management"]}
+{"id": "improve-contour-plot-readability", "concepts": ["data visualization design", "matplotlib contour plotting", "colormap selection techniques", "statistical significance visualization"]}
+{"id": "improve-example-real-world-relevance", "concepts": ["masked failure data", "series system reliability", "candidate set probability", "academic paper publishing"]}
+{"id": "improve-hugo-section-design", "concepts": ["hugo static site generator", "css layout styling", "responsive grid design", "html template development"]}
+{"id": "improve-math-text", "concepts": ["maximum likelihood estimation", "mle parameter estimation", "mathematical notation conventions", "score function gradient", "academic paper publishing"]}
+{"id": "improve-r-gradient-descent", "concepts": ["gradient descent optimization", "adaptive learning rate", "armijo line search", "r programming for statistics"]}
+{"id": "improved-evaluation-function", "concepts": ["pacman ai game agents", "minimax search algorithm", "alpha-beta pruning", "evaluation function design"]}
+{"id": "improved-kl-divergence", "concepts": ["kl divergence computation", "bernoulli model framework", "masked failure data", "gradient descent optimization", "r statistical graphics", "data visualization design"]}
+{"id": "improving-agi-fast-takeoff-scenario", "concepts": ["creative storytelling", "ai safety research", "latent chain-of-thought", "representation learning architecture", "ai alignment challenges"]}
+{"id": "improving-boolean-document-searcher", "concepts": ["fuzzy boolean search engine", "tfidf vectorization", "boolean algebra operations"]}
+{"id": "improving-debugging-function", "concepts": ["r programming for statistics", "debugging output utilities", "mle parameter estimation"]}
+{"id": "improving-r-code-efficiency", "concepts": ["r programming for statistics", "simulation study design", "mle parameter estimation", "bootstrap confidence intervals", "fisher information matrix", "confidence interval visualization"]}
+{"id": "improving-r-code-efficiency_1", "concepts": ["weibull series system", "mle parameter estimation", "r programming for statistics", "masked failure data"]}
+{"id": "improving-r-code-efficiency_2", "concepts": ["r programming for statistics", "mle parameter estimation", "generalized loglikelihood generator", "r package api design"]}
+{"id": "improving-r-documentation", "concepts": ["r package api design", "r package development", "mle parameter estimation", "roxygen2 documentation"]}
+{"id": "improving-r-types-or-compiler", "concepts": ["r programming for statistics", "rcpp c++ integration", "jvm language interoperability", "static type systems", "prolog logic programming"]}
+{"id": "improving-readme-for-r-package", "concepts": ["r package development", "r package api design", "github badges configuration", "open source licensing"]}
+{"id": "improving-right-censored-data", "concepts": ["masked failure data", "series system reliability", "right-censored survival data", "maximum likelihood estimation"]}
+{"id": "improving-scientific-inquiry-models", "concepts": ["solomonoff induction theory", "bayesian epistemology", "scientific inquiry models", "kolmogorov complexity", "philosophy of mind"]}
+{"id": "improving-slide-accuracy", "concepts": ["beamer latex slides", "simulation study design", "bootstrap confidence intervals", "academic paper publishing"]}
+{"id": "in-context-vs-model-weights", "concepts": ["in-context learning", "autoregressive language model", "mixture of experts architecture", "reinforcement learning value", "llm capabilities and limits", "multimodal representation learning"]}
+{"id": "in-place-updates-in-vi", "concepts": ["reinforcement learning value", "markov chain computation", "value iteration algorithm"]}
+{"id": "include-non-python-files", "concepts": ["pypi package publishing", "python package data inclusion", "cli command design", "lark grammar parsing"]}
+{"id": "indep-vs-mutual-indep", "concepts": ["statistical independence concepts", "mutual independence definition"]}
+{"id": "index-targeting-in-elasticsearch", "concepts": ["elasticsearch integration", "fastapi web framework", "pydantic model validation", "index mapping configuration"]}
+{"id": "indexing-gutenberg-to-elasticsearch", "concepts": ["elasticsearch integration", "project gutenberg corpus", "full text search engines", "fastapi web framework"]}
+{"id": "induction-for-inferring-causality", "concepts": ["solomonoff induction theory", "next-token prediction theory", "causal inference from data", "ai alignment challenges", "kolmogorov complexity"]}
+{"id": "induction-rl-accurate", "concepts": ["reinforcement learning value", "autoregressive language model", "next-token prediction theory"]}
+{"id": "inductive-bias-enhancements", "concepts": ["inductive biases in learning", "n-gram language model", "next-token prediction theory", "smoothing and backoff methods"]}
+{"id": "inductive-biases-in-gpts", "concepts": ["autoregressive language model", "inductive biases in learning", "transformer attention mechanism"]}
+{"id": "inductive-biases-in-n-grams", "concepts": ["n-gram language model", "inductive biases in learning", "next-token prediction theory", "edit distance similarity", "suffix array data structure"]}
+{"id": "industrial-masking-real-world-insights", "concepts": ["masked failure data", "series system reliability", "academic paper publishing", "industrial diagnostic tools"]}
+{"id": "inequality-analysis", "concepts": ["reinforcement learning value", "bellman equation analysis", "markov chain computation", "discount factor optimization"]}
+{"id": "infection-probability-calculation", "concepts": ["independent cascade model", "network epidemic spreading", "complex network analysis", "infection probability calculation"]}
+{"id": "inheritance-in-r-classes", "concepts": ["r package api design", "empirical distribution modeling", "s3 class inheritance", "multivariate distribution estimation"]}
+{"id": "initial-greeting-exchange", "concepts": ["maximum likelihood estimation", "weibull series system", "generalized linear models", "series system reliability", "r programming for statistics"]}
+{"id": "initial-greeting-exchange_1", "concepts": ["r package development", "roxygen2 documentation", "r programming for statistics"]}
+{"id": "initial-test-interaction", "concepts": ["sparse rate reduction", "transformer attention mechanism", "solomonoff induction theory", "representation learning architecture"]}
+{"id": "innovative-llm-plugins-ideas", "concepts": ["llm capabilities and limits", "expert system integration", "plugin architecture design", "probabilistic graphical models"]}
+{"id": "installing-frontend-package-issues", "concepts": ["pypi package publishing", "python package management", "pdf text extraction"]}
+{"id": "instruction-clarification-save-it", "concepts": ["autoregressive language model", "custom instruction design"]}
+{"id": "instruction-vs-fine-tuning", "concepts": ["synthetic training data generation", "instruction fine-tuning strategy", "kl divergence computation"]}
+{"id": "integrate-example-for-conditions", "concepts": ["masked failure data", "series system reliability", "weibull component lifetimes", "simulation study design", "likelihood ratio test", "academic paper publishing"]}
+{"id": "integrating-multiple-conclusions", "concepts": ["series system reliability", "weibull component lifetimes", "maximum likelihood estimation", "simulation study design", "bootstrap confidence intervals", "academic paper publishing"]}
+{"id": "integrating-product-of-functions", "concepts": ["expected value computation", "probability density function", "integration by parts"]}
+{"id": "intelligence-and-agent-definition", "concepts": ["rational agent framework", "utility maximization theory", "search algorithm comparison", "admissible heuristic design", "solomonoff induction theory"]}
+{"id": "intermediate-probabilistic-models", "concepts": ["markov chain computation", "latent variable models", "regime switching dynamics", "probabilistic model hierarchy", "annealed global context"]}
+{"id": "internal-pdf-viewer", "concepts": ["streamlit web application", "pdf inline rendering", "python package management", "session state management"]}
+{"id": "interpretability-research-opportunity", "concepts": ["ai interpretability methods", "mixture of experts architecture", "solomonoff induction theory", "kolmogorov complexity", "neural circuit analysis"]}
+{"id": "interpreting-simulation-csv-data", "concepts": ["simulation study design", "mle parameter estimation", "bootstrap confidence intervals", "r statistical graphics", "coverage probability analysis", "data visualization design"]}
+{"id": "intuition-vs-ai", "concepts": ["philosophy of mind", "chinese room argument", "epistemic humility concept", "computational theory of mind", "emergent properties debate"]}
+{"id": "irreducibility-across-various-domains", "concepts": ["computational irreducibility", "reductionism vs holism", "kolmogorov complexity", "halting problem undecidability", "emergent properties debate"]}
+{"id": "isp-dropout-diagnosis", "concepts": ["network diagnostic tools", "cable modem troubleshooting", "linux command line usage", "packet loss detection"]}
+{"id": "issue-with-vcov-mle-function", "concepts": ["r package api design", "s3 generic methods", "mle parameter estimation", "r package development"]}
+{"id": "jaf-json-array-filter", "concepts": ["json query filtering", "abstract syntax tree design", "domain specific language"]}
+{"id": "jaf-json-file-filter", "concepts": ["pypi package publishing", "cli command design", "python package management", "json query filtering"]}
+{"id": "java-is-still-relevant", "concepts": ["creative storytelling", "programming language comparison"]}
+{"id": "javascript-gas-simulation", "concepts": ["javascript canvas rendering", "particle physics simulation", "euler integration method"]}
+{"id": "jmespath-query-examples", "concepts": ["jmespath json querying", "json query filtering", "conversation data extraction"]}
+{"id": "jmespath-query-examples_1", "concepts": ["jmespath json querying", "pypi package publishing", "bookmark management tool", "cli command design"]}
+{"id": "jmespath-query-examples_2", "concepts": ["jmespath json querying", "ollama model management", "json query filtering", "python file metadata"]}
+{"id": "jmespath-searches-json-queries", "concepts": ["jmespath json querying", "ollama model management", "json query filtering", "python file metadata"]}

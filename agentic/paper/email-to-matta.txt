@@ -1,0 +1,15 @@
+Subject: ISCS 2026 paper submission - heads up
+
+Hi John,
+
+You may have gotten an email from the ISCS 2026 submission system since I listed you as coauthor. Wanted to give you context.
+
+I put together the follow-up paper we discussed during the Complex Networks class. Instead of Louvain communities on the similarity network, this one extracts explicit semantic concepts from each conversation using an LLM, builds a bipartite episode-concept graph, and clusters into a four-level hierarchy. The concept co-occurrence network is small-world (comparable to Steyvers and Tenenbaum's human semantic memory benchmarks), and 77% of episodes span multiple knowledge domains through the bipartite structure. It's more or less done, currently 14 pages, needs to come down to about 12.
+
+Honestly, it may not even be worth publishing. It has some cool visuals though. I figured I'd take a stab at submitting it rather than letting it sit on my hard drive.
+
+The conference is in Paris. I can't go, but I thought you might want to. If not, or if it doesn't work out for whatever reason, totally understood. We'll just pass on this venue and find somewhere else for it.
+
+Also: I'm nearly done auditing the full ChatGPT conversation corpus and will make it public with a DOI once that's finished.
+
+Alex

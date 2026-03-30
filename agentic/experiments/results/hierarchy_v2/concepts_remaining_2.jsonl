@@ -1,0 +1,50 @@
+{"id": "cs-thesis-repo", "concepts": ["git large file storage", "github repository management", "encrypted search research", "academic thesis archival"]}
+{"id": "cs490-project-guidelines", "concepts": ["complex network analysis", "community structure detection", "network resilience analysis", "scale-free network models", "epidemic spreading models"]}
+{"id": "cs590-complex-networks-analysis", "concepts": ["complex network analysis", "semantic similarity network", "community structure detection", "data visualization design", "traffic network construction"]}
+{"id": "csp-search-techniques", "concepts": ["constraint satisfaction problems", "arc consistency algorithm", "backtracking search", "cycle cutset method", "game theory strategies"]}
+{"id": "csv-analysis-with-csvkit", "concepts": ["cli command design", "csv data cleaning", "simulation study design", "mle parameter estimation", "data validation scripting"]}
+{"id": "digistar-efficient-spatial-interaction-handling", "concepts": ["gpu spatial partitioning", "n-body force computation", "cuda parallel programming", "barnes-hut gravity approximation", "particle simulation optimization"]}
+{"id": "digistar-embed-python-in-c", "concepts": ["python c++ embedding", "pybind11 integration", "simulation scripting interface", "concurrent script execution", "cuda simulation architecture"]}
+{"id": "digistar-handling-complex-point-clouds", "concepts": ["point cloud classification", "spatial clustering algorithms", "n-body simulation design", "gpu accelerated computation"]}
+{"id": "digistar-large-scale-simulations", "concepts": ["distributed simulation architecture", "redis state management", "barnes-hut gravity approximation", "gpu spatial partitioning", "mpi boundary exchange"]}
+{"id": "digistar-optimize-c-code-profilers", "concepts": ["cuda kernel profiling", "performance optimization tools", "nvidia nsight profiling", "gpu compute optimization"]}
+{"id": "digistar-particle-mesh-method-overview", "concepts": ["particle mesh method", "n-body force computation", "cuda parallel programming", "multiplayer simulation architecture", "fft-based field solving"]}
+{"id": "digistar-reactive-c-subsumption-architecture", "concepts": ["subsumption architecture design", "ai agent behavior control", "physics simulation energy model", "c++ game architecture"]}
+{"id": "digistar-relativistic-elements-in-multiplayer", "concepts": ["relativistic physics simulation", "multiplayer game consistency", "time dilation mechanics", "newtonian game physics"]}
+{"id": "diophantine-equations-and-computability", "concepts": ["diophantine equation encoding", "turing machine computability", "hilbert tenth problem", "kolmogorov complexity"]}
+{"id": "dist-object-functions", "concepts": ["r package api design", "roxygen2 documentation", "probability distribution objects", "s3 method dispatch", "maximum likelihood estimation"]}
+{"id": "distances-sun-earth-mars", "concepts": ["planetary distance calculation", "scientific notation conversion", "astronomical unit measurement"]}
+{"id": "distribution-of-y-analysis", "concepts": ["probability distribution derivation", "random variable transformation", "moment generating functions", "pdf cdf computation"]}
+{"id": "distribution-synonyms", "concepts": ["r package naming conventions", "probability distribution terminology", "software api naming"]}
+{"id": "documenting-r-functions", "concepts": ["roxygen2 documentation", "r generic method design", "mle bias correction", "s3 method documentation"]}
+{"id": "documenting-r-methods-roxygen2", "concepts": ["roxygen2 method documentation", "r s3 method dispatch", "r package development"]}
+{"id": "documenting-r-package-data", "concepts": ["r package data documentation", "series system reliability", "roxygen2 dataset documentation"]}
+{"id": "documenting-r-s3method", "concepts": ["roxygen2 s3 method documentation", "r generic function design", "parameter inheritance patterns"]}
+{"id": "doomer-ai-experts-motivations", "concepts": ["ai safety research motivations", "existential risk philosophy", "ai alignment debate", "consciousness philosophy"]}
+{"id": "dot-file-visualization-methods", "concepts": ["graphviz dot language", "graph visualization tools", "interactive graph viewing", "xdot graph rendering"]}
+{"id": "download-github-repos-script", "concepts": ["github api scripting", "repository batch download", "shell script automation", "git clone management"]}
+{"id": "downsampling-traffic-log-entries", "concepts": ["time series downsampling", "traffic data processing", "log entry aggregation", "data reduction techniques"]}
+{"id": "downsides-of-positive-only-learning", "concepts": ["positive unlabeled learning", "svm classification boundaries", "machine learning bias", "training data imbalance"]}
+{"id": "doxygen-github-markdown-math", "concepts": ["doxygen documentation generation", "latex math rendering", "github pages integration", "markdown math formatting"]}
+{"id": "doxygen-integration-for-github-pages", "concepts": ["doxygen github pages deployment", "automated documentation pipeline", "github actions workflow", "api documentation generation"]}
+{"id": "dragon-sword-image-creation", "concepts": ["dall-e image generation", "text to image prompting", "fantasy art composition"]}
+{"id": "dragon-tail-wraps-moon", "concepts": ["dall-e image generation", "philosophical consciousness exploration", "creative visual prompting"]}
+{"id": "dual-laptop-stand-options", "concepts": ["laptop hardware accessories", "ergonomic workspace setup", "dual monitor configuration"]}
+{"id": "dual-laptop-workflow-r-d", "concepts": ["dual laptop workflow design", "remote desktop configuration", "linux development tools", "synergy input sharing"]}
+{"id": "dual-search-function", "concepts": ["search function theory", "set theoretic retrieval", "relevance scoring models", "information retrieval design"]}
+{"id": "duplicated-math-equations-issue", "concepts": ["pkgdown site generation", "latex math rendering", "r package documentation", "mathjax equation display"]}
+{"id": "dynamic-markdown-with-f-strings", "concepts": ["python string templating", "markdown template substitution", "jinja2 template engine", "rich table formatting", "subprocess error handling"]}
+{"id": "dynamic-qlora-rank-optimization", "concepts": ["qlora rank approximation", "low rank matrix factorization", "mixture of experts architecture", "inference speed optimization", "singular value decomposition"]}
+{"id": "e-y-x-y-e-x", "concepts": ["law of iterated expectations", "conditional probability theory", "marginalization principle", "random variable expectation"]}
+{"id": "earth-radius-in-aus", "concepts": ["astronomical unit system", "gravitational constant derivation", "planetary distance calculation", "simulation unit framework", "keplers third law"]}
+{"id": "ebook-metadata-enumeration-cleanup", "concepts": ["python function documentation", "rich console formatting", "ebook metadata management", "clickable file uri links"]}
+{"id": "economic-systems-and-theory", "concepts": ["economic system classification", "supply demand equilibrium", "price elasticity analysis", "market infrastructure theory", "technology driven economic planning"]}
+{"id": "effective-x-y-debate-strategy", "concepts": ["conditional reasoning debate", "bayesian belief updating", "cognitive bias identification", "logical implication analysis", "ai governance policy"]}
+{"id": "efficient-likelihood-model-optimization", "concepts": ["likelihood contribution model", "mle parameter estimation", "r6 class design", "fisher information matrix", "sufficient statistics computation"]}
+{"id": "efficient-vectorized-r-function", "concepts": ["r vectorization optimization", "tapply aggregation function", "loop elimination techniques"]}
+{"id": "efficient-weibull-score-computation", "concepts": ["weibull distribution scoring", "series system reliability", "r vectorization optimization", "masked data likelihood"]}
+{"id": "efforts-not-misdirected", "concepts": ["high dimensional optimization", "local minima landscape", "energy based models", "gradient descent convergence", "compressed latent representations"]}
+{"id": "einstein-s-sailing-skills", "concepts": ["humor refinement techniques", "simulation hypothesis philosophy", "consciousness exploration", "computational irreducibility", "platonic forms philosophy"]}
+{"id": "elassticsearch-improving-elasticsearch-query-generation", "concepts": ["elasticsearch dsl generation", "llm fine tuning strategy", "synthetic data generation", "retrieval augmented generation"]}
+{"id": "elasticsearch-api-endpoint-root", "concepts": ["elasticsearch rest api", "query dsl usage", "index management operations", "curl api interaction"]}
+{"id": "elasticsearch-installation-on-ubuntu", "concepts": ["elasticsearch server setup", "linux package installation", "systemd service management"]}

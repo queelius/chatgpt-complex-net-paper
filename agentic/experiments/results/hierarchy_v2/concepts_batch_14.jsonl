@@ -1,0 +1,29 @@
+{"id": "python-generic-types-guide", "concepts": ["python generic type hints", "type parameterization patterns", "custom generic classes", "mypy static type checking"]}
+{"id": "python-http-server", "concepts": ["python built-in http server", "static file serving"]}
+{"id": "python-implementation-of-react", "concepts": ["react pattern for LLMs", "tool-augmented language models", "in-context learning", "llm action integration"]}
+{"id": "python-libraries-for-nlp", "concepts": ["fuzzy string matching", "string distance algorithms", "rapidfuzz library usage", "similarity threshold heuristics"]}
+{"id": "python-llm-algorithmic-fine-tuning", "concepts": ["autoregressive language model", "synthetic training data generation", "abstract syntax tree evaluation", "latent state scratchpad", "reinforcement learning value", "llm capabilities and limits", "next-token prediction theory"]}
+{"id": "python-logging-configuration", "concepts": ["python logging configuration", "multi-module logger hierarchy", "rich console logging"]}
+{"id": "python-query-generator", "concepts": ["elasticsearch query generation", "natural language query template"]}
+{"id": "python-script-remove-duplicates", "concepts": ["pandas dataframe deduplication", "csv data processing"]}
+{"id": "python-search-html-files", "concepts": ["flask web application", "whoosh text indexing", "html file search interface", "collapsible tree browser", "search history persistence"]}
+{"id": "python-static-web-server", "concepts": ["python process supervisor", "conda environment management", "cli command design", "interactive server monitoring"]}
+{"id": "python-web-chatbot-access", "concepts": ["flask web application", "subprocess interprocess communication", "named pipe linux IPC", "chatbot web interface"]}
+{"id": "pytorch-broadcasting-explained", "concepts": ["pytorch tensor broadcasting", "multidimensional array operations"]}
+{"id": "pytorch-for-mle", "concepts": ["maximum likelihood estimation", "pytorch gradient optimization", "masked failure data", "fisher information matrix", "mle parameter estimation"]}
+{"id": "pytorch-hessian-matrix", "concepts": ["automatic differentiation", "fisher information matrix", "pytorch hessian computation", "mle parameter estimation", "series system reliability"]}
+{"id": "q-hypothesis-ai-s-future", "concepts": ["reinforcement learning value", "tree-of-thoughts reasoning", "process reward models", "synthetic training data generation", "autoregressive language model"]}
+{"id": "q-learning-in-reinforcement-learning", "concepts": ["reinforcement learning value", "q-learning algorithm", "deep q-network architecture", "function approximation methods", "convolutional feature decomposition", "markov chain computation"]}
+{"id": "q-learning-in-reinforcement-learning_1", "concepts": ["reinforcement learning value", "q-learning algorithm", "markov decision process"]}
+{"id": "quadtrees-for-data-processing", "concepts": ["tree data structure", "quadtree image compression", "spatial data indexing", "lossy compression optimization"]}
+{"id": "qualifying-exam-preparation-plan", "concepts": ["qualifying exam preparation", "academic advisor meeting notes"]}
+{"id": "quantile-computation-in-r", "concepts": ["multivariate normal quantiles", "r statistical programming", "confidence interval visualization", "bootstrap confidence intervals"]}
+{"id": "quantile-function-in-r-sorting", "concepts": ["r statistical programming", "quantile function computation"]}
+{"id": "quantum-computing-implications", "concepts": ["quantum computing speedups", "quantum machine learning algorithms", "many-worlds interpretation", "stochastic gradient descent"]}
+{"id": "r-boot-convergence-tracker", "concepts": ["bootstrap variance estimation", "r package boot arguments", "convergence tracking mechanism"]}
+{"id": "r-boot-package-intermediates", "concepts": ["bootstrap variance estimation", "r package boot arguments"]}
+{"id": "r-code-execution-error", "concepts": ["r programming for statistics", "simulation study design", "mle parameter estimation", "bootstrap confidence intervals"]}
+{"id": "r-code-for-ad", "concepts": ["automatic differentiation", "r6 class constructor customization", "computation graph backpropagation", "operator overloading design"]}
+{"id": "r-code-improvement", "concepts": ["r package api design", "maximum likelihood estimation", "backtracking line search", "roxygen2 documentation"]}
+{"id": "r-code-improvement-suggestions", "concepts": ["r package api design", "masked failure data", "series system reliability", "weibull series system", "mle parameter estimation", "fisher information matrix"]}
+{"id": "r-code-tidyverse-model-training", "concepts": ["r package development", "tidyverse style guide", "python unit testing"]}

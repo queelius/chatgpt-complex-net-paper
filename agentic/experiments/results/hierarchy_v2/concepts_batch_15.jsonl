@@ -1,0 +1,74 @@
+{"id": "reliability-estimation-from-masked-data", "concepts": ["masked failure data", "series system reliability", "maximum likelihood estimation", "bootstrap confidence intervals", "simulation study design", "academic career planning"]}
+{"id": "reliability-estimation-graphical-model", "concepts": ["series system reliability", "likelihood contribution model", "graphical model representation", "masked failure data", "right-censored data modeling"]}
+{"id": "reliability-estimation-in-series-systems", "concepts": ["series system reliability", "maximum likelihood estimation", "beamer latex slides", "weibull series system", "simulation study design", "bootstrap confidence intervals", "masked failure data", "right-censored data modeling", "mle parameter estimation", "academic paper publishing"]}
+{"id": "reliability-estimation-in-series-systems_1", "concepts": ["series system reliability", "maximum likelihood estimation", "masked failure data", "right-censored data modeling", "weibull series system", "mle parameter estimation", "bootstrap confidence intervals", "simulation study design"]}
+{"id": "reliability-estimation-in-series-systems_2", "concepts": ["series system reliability", "beamer latex slides", "likelihood contribution model", "masked failure data", "hazard function derivation", "weibull series system", "presentation slide design"]}
+{"id": "reliability-estimation-in-series-systems_3", "concepts": ["series system reliability", "mle parameter estimation", "masked failure data", "weibull series system", "beamer latex slides", "likelihood contribution model", "simulation study design", "academic presentation preparation"]}
+{"id": "reliability-estimation-methods-comparison", "concepts": ["series system reliability", "shrinkage estimation methods", "masked failure data", "mle parameter estimation", "bayesian reliability estimation", "academic collaboration"]}
+{"id": "reliability-function-for-expected-value", "concepts": ["series system reliability", "mean time to failure", "hazard function derivation", "weibull series system", "r statistical programming", "bootstrap confidence intervals", "confidence interval visualization"]}
+{"id": "remote-access-to-applications", "concepts": ["remote desktop protocol", "linux application sharing", "vnc remote access"]}
+{"id": "remote-vs-code-with-wsl2", "concepts": ["vscode remote ssh", "wsl2 development setup", "rmarkdown document formatting", "r profile configuration"]}
+{"id": "remove-legends-from-plots", "concepts": ["r statistical graphics", "ggplot2 legend management", "data visualization design"]}
+{"id": "remove-rows-with-na", "concepts": ["r statistical programming", "bootstrap confidence intervals", "parallel computing in r", "bootstrap bias estimation"]}
+{"id": "removing-outliers-in-r", "concepts": ["r statistical programming", "outlier detection methods"]}
+{"id": "rename-files-remove-na", "concepts": ["simulation study design", "confidence interval visualization", "r statistical graphics", "mle parameter estimation"]}
+{"id": "render-jupyter-to-pdf", "concepts": ["jupyter notebook rendering", "latex document conversion"]}
+{"id": "reorganize-presentation-slides", "concepts": ["beamer latex slides", "likelihood contribution model", "masked failure data", "presentation slide design"]}
+{"id": "representation-and-elected-officials", "concepts": ["representative democracy critique", "ai consciousness debate", "philosophy of mind", "lucid dreaming metacognition", "rl fine-tuning for chat"]}
+{"id": "request-for-title", "concepts": ["internet slang interpretation"]}
+{"id": "request-green-permit-accommodation", "concepts": ["accommodation request drafting", "university parking services"]}
+{"id": "resolve-git-divergence-and-conflicts", "concepts": ["git merge conflict resolution"]}
+{"id": "resolve-statsmodels-import-issue", "concepts": ["python package troubleshooting"]}
+{"id": "restore-git-commit-locally", "concepts": ["git file restoration"]}
+{"id": "resume-builder", "concepts": ["resume writing latex", "job application strategy"]}
+{"id": "resume-improvement-suggestions", "concepts": ["resume writing latex", "job application strategy"]}
+{"id": "rethinking-with-retrieval", "concepts": ["retrieval augmented generation", "chain-of-thought prompting", "in-context learning"]}
+{"id": "retrieval-transformer-combining-strengths", "concepts": ["retrieval augmented generation", "neuro-symbolic reasoning", "reinforcement learning value", "rl fine-tuning for chat", "external memory architectures"]}
+{"id": "retrieve-bias-estimate", "concepts": ["bootstrap bias estimation", "r statistical programming"]}
+{"id": "retrieving-boolean-vector-in-r", "concepts": ["r statistical programming"]}
+{"id": "retrieving-global-environment-in-r", "concepts": ["r statistical programming"]}
+{"id": "retweeting-on-twitter", "concepts": ["social media usage"]}
+{"id": "reusing-embeddings-in-gpt", "concepts": ["autoregressive language model", "next-token prediction theory"]}
+{"id": "reverse-process-data-generation", "concepts": ["synthetic training data generation", "reverse process data generation"]}
+{"id": "reviewing-undergraduate-electrodynamics-basics", "concepts": ["electrodynamics simulation", "numerical methods for ODEs"]}
+{"id": "revising-likelihood-contribution-model", "concepts": ["likelihood contribution model", "masked failure data", "series system reliability"]}
+{"id": "revolution-in-ai-learning", "concepts": ["autoregressive language model", "solomonoff induction theory", "rl fine-tuning for chat", "in-context learning", "beamer latex slides"]}
+{"id": "reward-modeling-and-self-awareness", "concepts": ["ai alignment challenges", "ai safety research", "ai containment strategies"]}
+{"id": "reward-vectors-and-valence", "concepts": ["reinforcement learning value", "multi-objective optimization"]}
+{"id": "rich-cli-integration", "concepts": ["cli command design", "python code refactoring"]}
+{"id": "rich-console-integration", "concepts": ["cli command design", "python code refactoring"]}
+{"id": "rich-debugging-in-python", "concepts": ["python code refactoring"]}
+{"id": "rich-token-embeddings-in-ar", "concepts": ["autoregressive language model", "solomonoff induction theory", "next-token prediction theory"]}
+{"id": "riemann-stieltjes-integral-overview", "concepts": ["riemann-stieltjes integral theory"]}
+{"id": "river-crossing-puzzle", "concepts": ["constraint satisfaction problem", "llm capabilities and limits"]}
+{"id": "rk4-vs-dfm-comparison", "concepts": ["numerical methods for ODEs"]}
+{"id": "rl-and-meta-learning-concepts", "concepts": ["reinforcement learning value", "adaptive learning rate methods", "meta-learning strategies"]}
+{"id": "rl-exercises-summary", "concepts": ["reinforcement learning value", "exploration vs exploitation tradeoff"]}
+{"id": "rl-exploration-probability-analysis", "concepts": ["reinforcement learning value", "exploration vs exploitation tradeoff", "q-learning algorithm", "hyperparameter optimization"]}
+{"id": "rl-fine-tuning-for-chat", "concepts": ["rl fine-tuning for chat", "reinforcement learning value"]}
+{"id": "rl-for-llm-prompting", "concepts": ["rl fine-tuning for chat", "reinforcement learning value", "q-learning algorithm", "next-token prediction theory", "autoregressive language model"]}
+{"id": "rlhf-energy-loss-update", "concepts": ["rl fine-tuning for chat"]}
+{"id": "rlhf-llm-policy-update", "concepts": ["rl fine-tuning for chat", "reinforcement learning value", "next-token prediction theory", "autoregressive language model"]}
+{"id": "rlhf-safeguarded-ai-existence", "concepts": ["rl fine-tuning for chat", "ai consciousness debate", "external memory architectures", "neural network personalization"]}
+{"id": "rmarkdown-knit-devtools-re-install", "concepts": ["rmarkdown document formatting", "r package development"]}
+{"id": "rmarkdown-website-creation", "concepts": ["rmarkdown document formatting", "r package development", "static site generation"]}
+{"id": "rmd-figures-large-captions", "concepts": ["rmarkdown document formatting", "latex document conversion"]}
+{"id": "rmd-referencing-code-blocks", "concepts": ["rmarkdown document formatting", "latex document conversion", "r statistical programming", "likelihood contribution model"]}
+{"id": "rnn-for-higher-level-capabilities", "concepts": ["recurrent neural network theory", "external memory architectures", "rl fine-tuning for chat", "ai consciousness debate"]}
+{"id": "rnns-and-cycles", "concepts": ["recurrent neural network theory", "backpropagation through time", "spiking neural network models"]}
+{"id": "rnns-for-sequence-translation", "concepts": ["recurrent neural network theory", "sequence-to-sequence models", "attention mechanism design"]}
+{"id": "rnns-vs-transformers", "concepts": ["recurrent neural network theory", "transformer architecture design", "computational complexity theory"]}
+{"id": "rnns-vs-transformers-future", "concepts": ["recurrent neural network theory", "transformer architecture design", "synthetic training data generation", "chain-of-thought prompting"]}
+{"id": "robustness-of-likelihood-models", "concepts": ["likelihood contribution model", "maximum likelihood estimation", "statistical model robustness"]}
+{"id": "route-planning-and-pop-up-features", "concepts": ["web application deployment", "traffic data visualization"]}
+{"id": "row-in-dataframe-explained", "concepts": ["r statistical programming", "likelihood contribution model"]}
+{"id": "roxygen2-comment-review", "concepts": ["r package development", "roxygen2 documentation"]}
+{"id": "rpdg-convert-dictionary-to-variables", "concepts": ["sympy symbolic computation", "reverse process data generation"]}
+{"id": "rpdg-data-generation-idea", "concepts": ["reverse process data generation"]}
+{"id": "rpdg-generating-cot-data", "concepts": ["reverse process data generation", "synthetic training data generation", "chain-of-thought prompting", "prolog logic programming"]}
+{"id": "rpdg-generating-ode-problems", "concepts": ["reverse process data generation", "synthetic training data generation", "numerical methods for ODEs"]}
+{"id": "rpdg-generating-synthetic-training-data", "concepts": ["reverse process data generation", "synthetic training data generation", "prolog logic programming", "chain-of-thought prompting"]}
+{"id": "rpdg-prolog-and-math-fine-tuning", "concepts": ["reverse process data generation", "synthetic training data generation", "prolog logic programming", "chain-of-thought prompting"]}
+{"id": "rpdg-reverse-process-data-generation", "concepts": ["reverse process data generation", "synthetic training data generation", "backward search strategy", "theorem proving automation"]}
+{"id": "rpdg-reverse-process-data-generation_1", "concepts": ["reverse process data generation", "synthetic training data generation", "backward search strategy", "theorem proving automation"]}
+{"id": "rpdg-reverse-process-theorem-proving", "concepts": ["reverse process data generation", "synthetic training data generation", "backward search strategy", "theorem proving automation"]}

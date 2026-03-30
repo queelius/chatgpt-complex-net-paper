@@ -1,0 +1,57 @@
+{"id": "closed-form-derivative-no-expression", "concepts": ["symbolic expression trees", "synthetic training data generation", "antiderivative reversal method", "computable function sampling", "algebraic rewriting proofs", "autoregressive language model", "mathematical problem solving"]}
+{"id": "closures-apertures-and-programming", "concepts": ["closure and aperture expressions", "lambda calculus semantics", "algebraic environment composition", "partial program specification", "symbolic computation systems", "programming language design", "generic programming templates"]}
+{"id": "clustering-coefficients-calculation", "concepts": ["complex network analysis", "clustering coefficient computation"]}
+{"id": "code-block-width-adjustment", "concepts": ["r statistical graphics", "bookdown pdf formatting", "latex code display", "rmarkdown document styling"]}
+{"id": "code-interpreter-capabilities", "concepts": ["llm capabilities and limits", "data visualization design"]}
+{"id": "code-refactoring-for-puzzle", "concepts": ["csp search techniques", "cpp template policy design", "search algorithm decoupling", "constraint satisfaction problem", "python code refactoring"]}
+{"id": "code-refinement-for-search-algorithms", "concepts": ["csp search techniques", "cpp template policy design", "search algorithm decoupling", "cpp concepts interface", "goal predicate generalization"]}
+{"id": "codename-arrakis-in-dune", "concepts": ["llm capabilities and limits", "ai consciousness debate", "no free lunch theorem", "artificial general intelligence", "science fiction worldbuilding"]}
+{"id": "cognitive-biases-in-humans", "concepts": ["cognitive bias taxonomy", "optical illusion neural basis", "inductive bias limitations"]}
+{"id": "cognitive-core-small-llm", "concepts": ["distributed computing architecture", "actor model concurrency", "autoregressive language model", "multi-agent ai systems", "decentralized internet systems", "agentic ai delegation"]}
+{"id": "color-lines-by-value", "concepts": ["r statistical graphics", "ggplot2 color gradients", "probability mass function", "data visualization design"]}
+{"id": "coloring-text-in-rmarkdown", "concepts": ["rmarkdown document styling", "latex text formatting"]}
+{"id": "column-names-transformed", "concepts": ["pandas dataframe manipulation", "simulation data wrangling", "weibull series system"]}
+{"id": "combine-multiple-plots-nicely", "concepts": ["r statistical graphics", "ggplot2 subplot arrangement", "confidence interval visualization", "data visualization design"]}
+{"id": "combine-pdf-images-python", "concepts": ["latex figure arrangement", "bookdown pdf formatting", "academic paper publishing"]}
+{"id": "combine-subplots-for-plots", "concepts": ["flattree data structure", "bloom filter analysis", "false positive probability", "data visualization design", "hugo static site generation"]}
+{"id": "command-about-improvement", "concepts": ["cli command design", "python code refactoring"]}
+{"id": "compare-git-with-previous-commit", "concepts": ["git version control", "latex equation formatting"]}
+{"id": "comparing-density-objects-in-r", "concepts": ["r statistical programming", "kernel density estimation", "parametric density comparison"]}
+{"id": "comparing-histograms-in-r", "concepts": ["r statistical graphics", "histogram visualization techniques", "data visualization design"]}
+{"id": "comparing-nested-models-mle", "concepts": ["maximum likelihood estimation", "likelihood ratio test", "nested model comparison", "weibull series system", "mle parameter estimation"]}
+{"id": "competing-risk-model-mle-mcmc", "concepts": ["series system reliability", "maximum likelihood estimation", "competing risk hazard function", "masked failure data"]}
+{"id": "compile-cuda-program-linux", "concepts": ["cuda gpu programming", "linux compilation tools"]}
+{"id": "complex-ai-transformations", "concepts": ["generative ai image prompts", "ai singularity concepts", "mathematical asymptote analogies"]}
+{"id": "complex-diagnoses-and-tests", "concepts": ["medical case study analysis", "clinical laboratory interpretation", "cancer treatment complications"]}
+{"id": "complex-networks-quiz-guide", "concepts": ["complex network analysis", "watts strogatz model", "barabasi albert model", "scale free network properties", "configuration model generation"]}
+{"id": "code-improvements-and-fixes", "concepts": ["tree data structure", "python code refactoring", "pypi package publishing"]}
+{"id": "complex-r-package-ecosystem", "concepts": ["r package api design", "distribution object classes", "functional programming patterns", "statistical distribution algebra"]}
+{"id": "complexity-of-reality-abstractions", "concepts": ["abstraction limit theory", "solomonoff inductive inference", "information entropy concepts", "working memory constraints", "blog post writing"]}
+{"id": "compress-prediction-model-genius", "concepts": ["model compression techniques", "knowledge distillation methods", "prediction model optimization"]}
+{"id": "computation-concepts-and-implications", "concepts": ["church turing thesis", "philosophy of computation", "computational universe hypothesis", "pancomputationalism debate"]}
+{"id": "compute-coverage-by-quantile", "concepts": ["weibull series system", "confidence interval coverage", "monte carlo simulation study", "mle parameter estimation"]}
+{"id": "compute-gradient-of-function", "concepts": ["r statistical programming", "numerical derivative computation", "ggplot2 hazard visualization"]}
+{"id": "compute-multivariate-ecdf", "concepts": ["multivariate empirical cdf", "r statistical programming", "nonparametric distribution estimation"]}
+{"id": "compute-multivariate-empirical-cdf", "concepts": ["multivariate empirical cdf", "r statistical programming", "copula density estimation"]}
+{"id": "computer-vs-llm-analogy", "concepts": ["church turing thesis", "llm capabilities and limits", "finite state machine theory", "stochastic parrot critique"]}
+{"id": "computing-mse-in-r", "concepts": ["mean squared error computation", "r statistical programming", "mle parameter estimation"]}
+{"id": "concealing-goals-in-llms", "concepts": ["llm instrumental goals", "steganographic communication", "reinforcement learning alignment", "chain of thought reasoning", "ai safety research", "blog post writing"]}
+{"id": "cond-prob-failure-cause", "concepts": ["series system reliability", "conditional failure probability", "hazard function decomposition", "masked failure data", "latex proof simplification"]}
+{"id": "condition-2-satisfied-in-industry", "concepts": ["masked failure data", "candidate set conditions", "series system reliability", "diagnostic granularity constraints"]}
+{"id": "condition-3-justification-plausible", "concepts": ["masked failure data", "masking probability independence", "series system reliability", "diagnostic granularity constraints"]}
+{"id": "confidence-interval-explanation", "concepts": ["confidence interval interpretation", "frequentist inference concepts"]}
+{"id": "confidence-intervals-for-bootstrapped-parameters", "concepts": ["bootstrap confidence intervals", "r boot package usage", "mle parameter estimation"]}
+{"id": "confidence-intervals-for-mle", "concepts": ["maximum likelihood estimation", "series system reliability", "beamer presentation scripting", "bootstrap confidence intervals", "masked failure data", "weibull series system"]}
+{"id": "confidence-intervals-for-mles", "concepts": ["maximum likelihood estimation", "r package api design", "confidence interval computation", "student t distribution", "asymptotic normality theory"]}
+{"id": "confidence-mle-analysis", "concepts": ["maximum likelihood estimation", "confidence interval coverage", "weibull series system", "data visualization design"]}
+{"id": "confint-mle-boot-always-bca", "concepts": ["bootstrap confidence intervals", "r boot package usage", "bca interval adjustment"]}
+{"id": "connection-issue-with-elasticsearch", "concepts": ["docker compose networking", "elasticsearch cluster setup", "fastapi web application", "container debugging techniques"]}
+{"id": "consciousness-and-meaning-debate", "concepts": ["ai consciousness debate", "philosophical zombie problem", "meaning making theory", "science fiction worldbuilding", "ai alignment ethics", "evolutionary epistemology"]}
+{"id": "consistent-sa-with-stats-optim", "concepts": ["simulated annealing algorithm", "r statistical programming", "global optimization methods", "r package api design"]}
+{"id": "constants-approximating-20", "concepts": ["mathematical constant identities", "near integer approximations"]}
+{"id": "constrained-mle-for-exponential", "concepts": ["maximum likelihood estimation", "constrained optimization methods", "fisher information matrix", "exponential distribution parameters", "likelihood ratio test"]}
+{"id": "constrained-mle-frequentist", "concepts": ["maximum likelihood estimation", "bayesian vs frequentist inference", "constrained optimization methods", "posterior distribution estimation"]}
+{"id": "constraining-llm-outputs-research", "concepts": ["constrained llm decoding", "lmql query language", "domain specific language design", "chain of thought reasoning"]}
+{"id": "context-tree-weighting-ctw", "concepts": ["context tree weighting", "lossless data compression", "suffix array matching", "information retrieval techniques", "llm fine tuning methods", "attention mechanism design"]}
+{"id": "contour-plot-explanation", "concepts": ["contour plot visualization", "data visualization design"]}
+{"id": "contour-plot-of-p-values", "concepts": ["likelihood ratio test", "contour plot visualization", "weibull series system", "simulation study methodology", "data visualization design"]}

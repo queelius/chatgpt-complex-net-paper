@@ -1,0 +1,50 @@
+{"id":"load-json-and-map-id","concepts":["GeoJSON data loading","in-memory database mapping","traffic data visualization","Python JSON parsing"]}
+{"id":"load-rds-file-in-r","concepts":["R data serialization","RDS file loading","lapply sapply functions","maximum likelihood estimation","matrix operations in R"]}
+{"id":"loading-corpus-in-python","concepts":["Python information retrieval","Reuters corpus loading","text corpus preprocessing"]}
+{"id":"loading-functions-dynamically","concepts":["Python dynamic function loading","plugin system architecture","JSON configuration parsing","exec eval metaprogramming"]}
+{"id":"local-llm-api-setup","concepts":["local LLM deployment","OpenAI API compatibility","base URL configuration"]}
+{"id":"local-web-server-setup","concepts":["VS Code remote tunnels","web-based development environment","local server configuration"]}
+{"id":"log-data-to-geojson","concepts":["GeoJSON data conversion","traffic data visualization","Google Maps integration","time series visualization"]}
+{"id":"log-likelihood-function-for-exponential-series","concepts":["log-likelihood function","exponential series system","masked failure data","R statistical programming","maximum likelihood estimation"]}
+{"id":"log-odds-and-probabilities-relation","concepts":["logits and log-odds","softmax function","logistic regression","compression prediction equivalence","bit sequence prediction"]}
+{"id":"logic-circuit-sqrt-approximation","concepts":["digital logic circuits","square root approximation","Newton-Raphson hardware implementation","combinational logic design"]}
+{"id":"logic-prop-to-fol","concepts":["propositional logic translation","first-order logic","graph search for inference","A-star search heuristics","Monte Carlo tree search"]}
+{"id":"logits-and-softmax","concepts":["neural network logits","softmax probability conversion","fine-tuning penultimate layer","deep learning classification"]}
+{"id":"loglik-model-dynamic-handling","concepts":["R likelihood model library","censored data support","maximum likelihood estimation","dynamic model handling"]}
+{"id":"long-multiplication-large-numbers","concepts":["LLM numerical competency","step-by-step multiplication","arithmetic algorithm verification"]}
+{"id":"loss-in-llm-training","concepts":["cross-entropy loss function","RLHF for reasoning","automated verification systems","theorem prover integration"]}
+{"id":"mcp-conversation-services-design","concepts":["Model Context Protocol","adversarial search algorithms","multi-agent game trees","safe DSL design","MCP service architecture"]}
+{"id":"mcts-code-analysis-suggestions","concepts":["Monte Carlo tree search","LLM reasoning enhancement","Open WebUI integration","code analysis pipeline"]}
+{"id":"mcts-for-llm-evaluation","concepts":["Monte Carlo tree search","tree-of-thoughts reasoning","meta-scorer evaluation","self-consistency voting","LLM evaluation framework"]}
+{"id":"mcts-jax","concepts":["JAX MCTS implementation","MuZero policy network","temperature-controlled sampling","functional array programming"]}
+{"id":"mcts-monte-carlo-mdp-conceptualization","concepts":["Markov decision process design","Monte Carlo tree search","LLM reasoning framework","MDP state space formulation"]}
+{"id":"mcts-rl-mcts-and-mdps","concepts":["reinforcement learning","Monte Carlo tree search","AlphaZero architecture","self-improving agentic AI","MDP policy optimization"]}
+{"id":"mdp-terminology-overview","concepts":["Markov decision process terminology","state action transition model","reward function design","terminal state definition"]}
+{"id":"measure-website-activity","concepts":["website analytics tools","search engine optimization","Google Analytics setup"]}
+{"id":"mentor-apprentice","concepts":["diffusion model notation","knowledge distillation","neural network compression","teacher-student learning"]}
+{"id":"merge-api-for-random","concepts":["C++ concepts-based API","random variable abstraction","probability distribution interface","generic programming design"]}
+{"id":"merge-component-failures-reliability","concepts":["series system reliability","hazard function analysis","Beamer presentation design","component failure probability","mean time to failure"]}
+{"id":"merge-csv-files-clean","concepts":["Python CSV merging","data compatibility checking","argparse CLI design","pandas DataFrame operations"]}
+{"id":"merge-csv-files-discrepancy-fix","concepts":["CSV column name cleaning","whitespace discrepancy resolution","pandas data merging"]}
+{"id":"merge-discrepant-csv-files","concepts":["CSV schema reconciliation","column naming conventions","data merging strategy"]}
+{"id":"merge-functionality-enhancement","concepts":["ebook library management","merge functionality design","Calibre metadata extraction","OPF file parsing","unique entry identification"]}
+{"id":"merging-calibre-metadata","concepts":["Calibre metadata extraction","OPF Dublin Core parsing","ebook library management","PyPI package publishing"]}
+{"id":"meta-learning-advanced-ai-development","concepts":["meta-learning algorithms","System 2 thinking","cross-domain transfer learning","few-shot learning"]}
+{"id":"meta-models-enhancing-system-2","concepts":["memory-augmented neural networks","meta-network architectures","CNAPs model adaptation","System 2 cognitive capabilities"]}
+{"id":"meta-nets-for-system-2","concepts":["meta-learning techniques","layer augmentation strategy","Siamese network architecture","few-shot classification"]}
+{"id":"meta-prompt-for-model-behavior","concepts":["meta-prompt engineering","LLM behavior control","simulation study integration","statistical writing assistance"]}
+{"id":"metafunctor-add-skills-section-hugo","concepts":["Hugo static site generator","Wowchemy theme configuration","skills widget setup","YAML front matter"]}
+{"id":"metafunctor-content-folder-not-appearing","concepts":["Hugo content organization","section rendering configuration","Hugo template customization","landing page layout"]}
+{"id":"metafunctor-display-multiple-sections-hugo","concepts":["Hugo multiple sections display","Ananke theme customization","Hugo shortcode creation","landing page configuration"]}
+{"id":"metafunctor-host-hugo-on-github","concepts":["GitHub Pages deployment","Hugo static site hosting","GitHub Actions workflow","CI/CD pipeline configuration"]}
+{"id":"metafunctor-hugo-latex-math-integration","concepts":["Hugo LaTeX rendering","KaTeX math integration","Goldmark markdown configuration","static site math typesetting"]}
+{"id":"metafunctor-skills-markdown-hugo","concepts":["Hugo skills page design","markdown badge generation","portfolio website content"]}
+{"id":"metafunctor-switching-from-blogdown-to-hugo","concepts":["blogdown to Hugo migration","static site generator selection","Wowchemy theme transition","Hugo theme evaluation"]}
+{"id":"metafunctor-test-hugo-locally","concepts":["Hugo local development server","static site testing","Hugo configuration debugging"]}
+{"id":"metafunctor-text-flow-around-image","concepts":["Hugo template customization","CSS text flow layout","thumbnail image styling","Lunr.js client-side search","Hugo custom page layouts"]}
+{"id":"method-not-recognized-for-mle-emp","concepts":["R S3 method dispatch","generic function export","NAMESPACE configuration","maximum likelihood estimation","R package development"]}
+{"id":"micrograd-for-backpropagation","concepts":["automatic differentiation","backpropagation algorithm","micrograd library","neural network training","attention mechanism architecture"]}
+{"id":"midterm-exam-analysis","concepts":["network analysis exam","betweenness centrality computation","clustering coefficient calculation","small world phenomenon","network assortativity"]}
+{"id":"midterm-exam-summary","concepts":["network analysis exam","closeness centrality","scale-free network properties","network metrics computation","social network structure"]}
+{"id":"min-conflicts-algorithm-in-csp","concepts":["constraint satisfaction problems","min-conflicts algorithm","local search heuristic","N-queens problem"]}
+{"id":"mindmap-of-language-model","concepts":["large language model architecture","concept mindmap visualization","knowledge structure diagram"]}
