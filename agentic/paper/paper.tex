@@ -37,8 +37,9 @@ four-level hierarchy: 500 \emph{meta-concepts} $\to$ 50 \emph{themes} $\to$ 8
 small-world ($\sigma \approx 6.6$, validated against 100
 Erd\H{o}s-R\'{e}nyi random graphs), matching the topology reported for
 human semantic memory networks. Meta-concept vocabulary follows Heaps' law
-($\beta = 0.320$), with growth dynamics distinguishable from random
-clustering ($p < 0.001$), indicating genuine categorical structure.
+($\beta = 0.320$), with growth dynamics distinguishable from both random
+clustering and a bipartite configuration null preserving degree sequences
+($p < 0.001$ for both), indicating genuine categorical structure.
 The bipartite graph further reveals that 77\% of episodes span multiple
 knowledge domains through shared concepts, and that cross-domain concept
 sharing is concentrated in specific domain pairs rather than distributed
@@ -177,10 +178,14 @@ represent.
 \subsection{Dataset}
 
 The dataset comprises 1,908 ChatGPT conversations from a single user's archive,
-spanning December 2022 through April 2025 (29 months). Conversations cover
-statistical methodology, software engineering, AI research, R programming,
-philosophy, and creative projects. The archive represents a naturalistic record
-of sustained AI-assisted knowledge exploration.
+spanning December 2022 through April 2025 (29 months), containing 35,411
+messages (16,503 user, 18,908 assistant). Conversations range from 2 to 416
+messages (median 10, mean 18.6), covering statistical methodology, software
+engineering, AI research, R programming, physics, philosophy, and creative
+projects across multiple model generations (GPT-3.5 through GPT-4o and o1/o3).
+The archive represents a naturalistic record of sustained AI-assisted knowledge
+exploration by a single researcher; it is not crowd-sourced or curated for
+particular topics.
 
 \subsection{Concept Extraction}
 
@@ -203,10 +208,11 @@ post-hoc deduplication is performed geometrically via hierarchical clustering
 \subsection{Concept Embedding}
 
 Each unique concept is embedded using the
-\texttt{nomic-embed-text} model~\cite{nussbaum2024nomic}, producing
-768-dimensional vectors via contrastive learning on a BERT-derived
-architecture. Embeddings are L2-normalized to enable
-cosine similarity comparisons.
+\texttt{nomic-embed-text} model~\cite{nussbaum2024nomic}, which produces
+768-dimensional vectors (the native output dimension of its BERT-derived
+architecture; this is not a hyperparameter choice). The model was trained
+via contrastive learning on diverse text and supports 8,192-token context.
+Embeddings are L2-normalized to enable cosine similarity comparisons.
 
 \subsection{Hierarchical Clustering}
 \label{sec:clustering}
@@ -222,9 +228,15 @@ matrix and cut the dendrogram at three heights, producing four levels:
     \item \textbf{Level 3}: 8 domains (top-level knowledge areas)
 \end{itemize}
 
-\noindent The meta-concept level groups semantically equivalent concepts from
-parallel extraction agents (e.g., ``bootstrap confidence intervals'' and ``BCa
-bootstrap confidence intervals'').
+\noindent The meta-concept level ($k = 500$) groups semantically equivalent
+concepts from parallel extraction agents (e.g., ``bootstrap confidence
+intervals'' and ``BCa bootstrap confidence intervals''). Cut points are chosen
+for interpretability rather than optimality: silhouette analysis shows
+monotonically increasing scores for $k \geq 20$ with no distinct peak,
+indicating the absence of natural cluster boundaries in the embedding space.
+The sensitivity analysis in Table~\ref{tab:sensitivity} confirms that
+qualitative findings (sublinear growth, small-world topology) are robust
+across $k = 200$--$1{,}000$.
 
 \subsection{Bipartite Graph and Co-occurrence Network}
 
@@ -309,7 +321,7 @@ LLM Engineering & 86 & prompts, agents, tools \\
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=0.65\textwidth]{domain_cooccurrence.pdf}
+\includegraphics[width=0.85\textwidth]{domain_cooccurrence.pdf}
 \caption{Domain co-occurrence heatmap showing how many episodes span
 each pair of domains. Software Engineering co-occurs broadly; specialized
 pairs (Statistics--Math) show focused affinity.}
@@ -332,15 +344,31 @@ clustering step, not the extraction process.
 Since clustering at $k = 500$ imposes a vocabulary ceiling that
 guarantees sublinear growth regardless of semantic content, we test whether
 the observed $\beta$ reflects genuine semantic structure or is purely a
-ceiling artifact. Using the same alphabetical episode ordering, we construct
-a null model by randomly permuting concept-to-cluster assignments (preserving
-cluster sizes) and computing $\beta$ for 1,000 permutations. The null distribution has
-$\beta_\text{null} = 0.268 \pm 0.006$, and the observed $\beta = 0.320$
-lies above the entire null distribution ($p < 0.001$). Semantic clustering
-produces a \emph{higher} $\beta$ (less sublinear, closer to linear) than
-random assignment: the semantically coherent clusters create meaningful
-distinctions, so encountering a genuinely new meta-concept requires exploring
-novel intellectual territory rather than merely encountering new vocabulary.
+ceiling artifact using two null models of increasing stringency.
+
+\textbf{Null model 1} (cluster permutation): Using the same alphabetical
+episode ordering, we randomly permute concept-to-cluster assignments
+(preserving cluster sizes) and compute $\beta$ for 1,000 permutations. The
+null distribution has $\beta_\text{null} = 0.268 \pm 0.006$, and the
+observed $\beta = 0.320$ lies above the entire null distribution
+($p < 0.001$).
+
+\textbf{Null model 2} (bipartite configuration): A stricter baseline
+randomizes which meta-concepts appear in which episodes while preserving
+both marginals (the number of meta-concepts per episode and the number of
+episodes per meta-concept) using the Curveball algorithm for uniform
+sampling of binary matrices with fixed row and column sums. This null
+disentangles temporal exploration dynamics from the bipartite degree
+sequence. The result: $\beta_\text{null} = 0.254 \pm 0.007$,
+with $p < 0.001$.
+
+Both nulls confirm that the observed growth dynamics
+are not artifacts of ceiling effects or degree-sequence constraints.
+Semantic clustering produces a \emph{higher} $\beta$ (less sublinear,
+closer to linear) than either null: the semantically coherent clusters
+create meaningful distinctions, so encountering a genuinely new meta-concept
+requires exploring novel intellectual territory rather than merely
+encountering new vocabulary.
 
 Clustering sensitivity analysis confirms robustness: $\beta$ increases
 monotonically from 0.061 ($k=50$) to 0.467 ($k=1{,}000$), but the
@@ -352,11 +380,11 @@ qualitative finding of sublinear growth is stable across $k = 200$--$1{,}000$
 \includegraphics[width=\textwidth]{heaps_law.pdf}
 \caption{Vocabulary growth and null model validation.
 \textbf{Left}: Cumulative vocabulary following Heaps' law ($\beta = 0.931$ for
-raw concepts, $\beta = 0.320$ at the meta-concept level). The shaded band
-shows the 95\% null model range under random cluster assignment.
-\textbf{Right}: Null model distribution---the observed $\beta = 0.320$ lies
-entirely above the null ($\beta_\text{null} = 0.268$, $p < 0.001$),
-confirming that semantic structure shapes the growth dynamics.}
+raw concepts, $\beta = 0.320$ at the meta-concept level).
+\textbf{Right}: Two null model distributions. Gray: cluster-permutation null
+($\beta_\text{null} = 0.268$, $p < 0.001$). Blue: bipartite configuration
+null preserving both marginals ($\beta_\text{null} = 0.254$, $p < 0.001$).
+The observed $\beta = 0.320$ lies entirely above both null distributions.}
 \label{fig:heaps}
 \end{figure}
 
@@ -522,13 +550,15 @@ vs.\ philosophy of mind and LLM capabilities (Philosophy/LLM Engineering).}
 The meta-concept vocabulary grows sublinearly ($\beta = 0.320$), but since
 clustering at fixed $k = 500$ guarantees sublinear growth regardless of
 content, the absolute $\beta$ value is not itself evidence of consolidation.
-The null model comparison reveals a more nuanced finding: semantic clustering
-produces \emph{higher} $\beta$ (less sublinear) than random cluster assignment
-($\beta_\text{null} = 0.268$, $p < 0.001$). This means the semantically
-coherent clusters create meaningful categorical distinctions---encountering a
-genuinely new meta-concept requires exploring novel intellectual territory,
-whereas random clusters generate ``accidental'' consolidation through arbitrary
-groupings. Under random assignment, conceptually unrelated items share clusters
+Two null model comparisons reveal a more nuanced finding: semantic clustering
+produces \emph{higher} $\beta$ (less sublinear) than both random cluster
+assignment ($\beta_\text{null} = 0.268$, $p < 0.001$) and a stricter
+bipartite configuration null that preserves both episode and meta-concept
+degree sequences ($\beta_\text{null} = 0.254$, $p < 0.001$). The second
+null, which randomizes meta-concept co-occurrence across episodes while
+preserving marginals, confirms that the observed growth dynamics reflect
+genuine temporal exploration structure, not merely the bipartite degree
+sequence. Under either null, conceptually unrelated items share clusters
 by chance, so any new episode is likely to fall into an existing cluster
 through accidental overlap; under semantic clustering, clusters are internally
 coherent and only genuinely related episodes share a meta-concept.
@@ -540,10 +570,15 @@ representations---a property consistent with the role of semantic memory in
 preserving distinctions, even if it does not follow the consolidation-efficiency
 prediction of CLS.
 
-\paragraph{Small-World Topology.}
+\paragraph{Small-World Topology and Comparison with Human Memory Networks.}
 The small-world coefficient $\sigma \approx 6.6$, validated against 100
-Erd\H{o}s-R\'{e}nyi random graphs~\cite{humphries2008network}, matches human
-semantic memory benchmarks~\cite{steyvers2005large}. While we do not claim
+Erd\H{o}s-R\'{e}nyi random graphs~\cite{humphries2008network}, falls within the
+range reported for human semantic memory networks
+($\sigma \approx 5$--$15$)~\cite{steyvers2005large}. This convergence
+provides a direct quantitative comparison: the AI conversation archive
+exhibits the same balance of local coherence and global accessibility
+observed in human word association and category fluency networks.
+While we do not claim
 conversation archives \emph{are} semantic memory, this structural similarity
 suggests they function as an externalized analog: concepts connected through
 co-occurrence in knowledge episodes, exhibiting the same balance of local
@@ -568,18 +603,25 @@ hierarchy could enable concept-level indexing and retrieval.
 
 \paragraph{Limitations.}
 This is a single-user case study; different users would produce different
-hierarchies. Validating structural universality---whether sublinear growth
-and small-world topology are preserved across users---requires multi-user
-datasets. Hierarchy cut points ($k = 500, 50, 8$) are chosen, not
-discovered; the silhouette analysis shows generally increasing scores
+concept sets and different hierarchies. We frame this work as a
+\emph{proof-of-concept} that motivates, rather than establishes,
+generalization. Validating whether sublinear growth and small-world topology
+are preserved across users requires replication on multi-user corpora such
+as WildChat~\cite{zhao2024wildchat} or LMSYS-Chat-1M~\cite{zheng2024lmsys}.
+Hierarchy cut points ($k = 500, 50, 8$) are chosen for interpretability,
+not discovered; the silhouette analysis shows generally increasing scores
 with $k$ (monotonic for $k \geq 20$, with no distinct peak),
-indicating no natural cluster boundaries. Concept extraction
-depends on the specific LLM and prompt used; alternative models or prompts
-would produce different concept sets. Despite these limitations, the
-convergence with human semantic memory benchmarks across multiple metrics
-suggests that the structural properties may reflect general features of
-categorical knowledge systems rather than idiosyncrasies of this particular
-archive.
+indicating no natural cluster boundaries. Automated thresholding methods
+(e.g., gap statistic, stability-based selection) could reduce this
+subjectivity. Concept extraction depends on the specific LLM and prompt used;
+alternative models or prompts would produce different concept sets, though
+the downstream structural properties (small-world, Heaps' law) may be more
+robust than the specific concept vocabulary. Despite these limitations, the
+convergence with human semantic memory benchmarks across multiple
+independent metrics (small-world topology, vocabulary growth dynamics,
+cross-domain integration patterns) suggests that the structural properties
+may reflect general features of categorical knowledge systems rather than
+idiosyncrasies of this particular archive.
 
 \FloatBarrier
 % ============================================================================
@@ -587,8 +629,9 @@ archive.
 
 We have shown that 1,908 AI conversations contain latent hierarchical structure.
 LLM-extracted concepts organize into a four-level hierarchy with
-interpretable domains, sublinear vocabulary growth validated against a
-random-clustering null model ($p < 0.001$),
+interpretable domains, sublinear vocabulary growth validated against two null
+models of increasing stringency (cluster permutation and bipartite
+configuration, both $p < 0.001$),
 and small-world topology ($\sigma \approx 6.6$, against 100 random graphs)
 matching human semantic memory benchmarks. The bipartite
 structure captures cross-domain integration that partition-based methods

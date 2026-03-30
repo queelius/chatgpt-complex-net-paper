@@ -5,6 +5,7 @@
     "n_permutations": 1000,
     "mean_beta": 0.2676,
     "std_beta": 0.0062,
+    "p_value": 0.0,
     "min_beta": 0.2472,
     "max_beta": 0.2874,
     "percentiles": {
@@ -13,8 +14,7 @@
       "50": 0.2676,
       "95": 0.2777,
       "97.5": 0.28
-    },
-    "p_value": 0.0
+    }
   },
   "bootstrap_ci": {
     "mean": 0.2461,
@@ -31,6 +31,22 @@
       0.2252,
       0.2588
     ]
+  },
+  "bipartite_null_model": {
+    "description": "Bipartite configuration model: randomizes which meta-concepts appear in which episodes, preserving both row and column degree sequences. Stricter than cluster-permutation null.",
+    "n_permutations": 1000,
+    "mean_beta": 0.2539,
+    "std_beta": 0.0068,
+    "p_value": 0.0,
+    "min_beta": 0.227,
+    "max_beta": 0.2723,
+    "percentiles": {
+      "2.5": 0.241,
+      "5": 0.2428,
+      "50": 0.2539,
+      "95": 0.2649,
+      "97.5": 0.2662
+    }
   },
   "metaconcept_network": {
     "nodes": 499,

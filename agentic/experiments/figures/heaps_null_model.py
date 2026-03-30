@@ -170,6 +170,91 @@ def null_model_permutation(episodes, concept_to_mc, n_permutations=1000, seed=42
     return np.array(null_betas)
 
 
+def null_model_bipartite(episodes, concept_to_mc, n_permutations=1000, seed=42):
+    """
+    Stricter null model (R3): randomize meta-concept co-occurrence across episodes
+    while preserving both marginals (meta-concepts per episode AND episodes per
+    meta-concept). This is a bipartite configuration model.
+
+    Uses the Curveball algorithm for efficient uniform sampling from the space
+    of binary matrices with fixed row and column sums.
+    """
+    rng = np.random.default_rng(seed)
+
+    # Build the episode x meta-concept binary matrix
+    all_mcs = sorted(set(concept_to_mc.values()))
+    mc_to_idx = {mc: i for i, mc in enumerate(all_mcs)}
+    n_episodes = len(episodes)
+    n_mcs = len(all_mcs)
+
+    matrix = np.zeros((n_episodes, n_mcs), dtype=np.int8)
+    for i, ep in enumerate(episodes):
+        seen = set()
+        for c in ep["concepts"]:
+            mc = concept_to_mc.get(c.lower())
+            if mc is not None and mc not in seen:
+                seen.add(mc)
+                matrix[i, mc_to_idx[mc]] = 1
+
+    # Curveball: repeatedly pick two random rows, trade their column sets
+    # while preserving row degrees. After enough trades, column degrees
+    # are preserved in expectation and the matrix converges to a uniform
+    # sample. Use n_episodes * 5 trades per sample as burn-in.
+    n_trades = n_episodes * 5
+
+    def compute_beta_from_matrix(mat):
+        """Compute Heaps' beta from the episode x meta-concept matrix."""
+        vocab = set()
+        counts = []
+        for i in range(mat.shape[0]):
+            row_mcs = np.where(mat[i] > 0)[0]
+            for j in row_mcs:
+                vocab.add(j)
+            counts.append(len(vocab))
+        x = np.arange(1, len(counts) + 1, dtype=float)
+        y = np.array(counts, dtype=float)
+        try:
+            popt, _ = curve_fit(heaps_law, x, y, p0=[1.0, 0.5], maxfev=10000)
+            return popt[1]
+        except RuntimeError:
+            return np.nan
+
+    def curveball_trade(mat, rng):
+        """One Curveball trade: pick two random rows, swap exclusive columns."""
+        r1, r2 = rng.choice(mat.shape[0], size=2, replace=False)
+        cols1 = set(np.where(mat[r1] > 0)[0])
+        cols2 = set(np.where(mat[r2] > 0)[0])
+        exclusive1 = cols1 - cols2  # in r1 but not r2
+        exclusive2 = cols2 - cols1  # in r2 but not r1
+        if not exclusive1 or not exclusive2:
+            return  # nothing to trade
+        # Choose a random subset to swap
+        tradeable = min(len(exclusive1), len(exclusive2))
+        n_swap = rng.integers(1, tradeable + 1)
+        swap_from_1 = rng.choice(list(exclusive1), size=n_swap, replace=False)
+        swap_from_2 = rng.choice(list(exclusive2), size=n_swap, replace=False)
+        for c in swap_from_1:
+            mat[r1, c] = 0
+            mat[r2, c] = 1
+        for c in swap_from_2:
+            mat[r2, c] = 0
+            mat[r1, c] = 1
+
+    null_betas = []
+    for i in range(n_permutations):
+        # Start from the original matrix each time and apply trades
+        shuffled = matrix.copy()
+        for _ in range(n_trades):
+            curveball_trade(shuffled, rng)
+        beta = compute_beta_from_matrix(shuffled)
+        if not np.isnan(beta):
+            null_betas.append(beta)
+        if (i + 1) % 100 == 0:
+            print(f"  Bipartite null permutation {i + 1}/{n_permutations}")
+
+    return np.array(null_betas)
+
+
 def beta_vs_k(episodes, hierarchy, ks=(50, 100, 200, 300, 400, 500, 600, 700, 1000)):
     """
     Compute Heaps' β as a function of the number of clusters k.
@@ -324,6 +409,20 @@ def main():
     else:
         print("  ~ Real β is within null range → no significant difference from random clustering")
 
+    # ── R3: Bipartite configuration null (stricter) ────────────────
+    print("\n=== Bipartite null model (1000 permutations) ===")
+    print("  (Randomizes episode-metaconcept assignments preserving both marginals)")
+    bip_null_betas = null_model_bipartite(episodes, concept_to_mc, n_permutations=1000)
+    bip_null_mean = float(np.mean(bip_null_betas))
+    bip_null_std = float(np.std(bip_null_betas))
+    bip_p_value = float(np.mean(bip_null_betas >= beta_real))
+    print(f"  Bipartite null β: mean={bip_null_mean:.4f}, std={bip_null_std:.4f}")
+    print(f"  Real β={beta_real:.4f}, p-value (null ≥ real) = {bip_p_value:.4f}")
+    if bip_p_value < 0.05:
+        print("  ✓ Real β significantly HIGHER than bipartite null → temporal exploration dynamics matter")
+    else:
+        print("  ~ Real β within bipartite null range → structure explainable by degree sequence alone")
+
     # ── M3: Bootstrap CI for β ───────────────────────────────────────
     print("\n=== Bootstrap CI for β ===")
     bootstrap = bootstrap_beta(episodes, concept_to_mc, n_bootstrap=1000)
@@ -389,6 +488,24 @@ def main():
                 round(float(np.max(random_order_betas)), 4),
             ],
         },
+        "bipartite_null_model": {
+            "description": "Bipartite configuration model: randomizes which meta-concepts "
+                           "appear in which episodes, preserving both row and column degree "
+                           "sequences. Stricter than cluster-permutation null.",
+            "n_permutations": 1000,
+            "mean_beta": round(bip_null_mean, 4),
+            "std_beta": round(bip_null_std, 4),
+            "p_value": round(bip_p_value, 4),
+            "min_beta": round(float(np.min(bip_null_betas)), 4),
+            "max_beta": round(float(np.max(bip_null_betas)), 4),
+            "percentiles": {
+                "2.5": round(float(np.percentile(bip_null_betas, 2.5)), 4),
+                "5": round(float(np.percentile(bip_null_betas, 5)), 4),
+                "50": round(float(np.percentile(bip_null_betas, 50)), 4),
+                "95": round(float(np.percentile(bip_null_betas, 95)), 4),
+                "97.5": round(float(np.percentile(bip_null_betas, 97.5)), 4),
+            },
+        },
         "metaconcept_network": {
             **sw,
             "degree_stats": degree_stats,
@@ -453,28 +570,27 @@ def main():
     ax.set_xlim(0, len(episodes) + 20)
     ax.set_ylim(0, None)
 
-    # Panel 2: Null model distribution
+    # Panel 2: Both null model distributions
     ax2 = axes[1]
-    ax2.hist(null_betas, bins=40, density=True, color='#95a5a6', alpha=0.7,
-             edgecolor='white', label='Null distribution')
+    ax2.hist(null_betas, bins=40, density=True, color='#95a5a6', alpha=0.6,
+             edgecolor='white', label=f'Cluster-permutation null ($\\mu$={null_mean:.3f})')
+    ax2.hist(bip_null_betas, bins=40, density=True, color='#3498db', alpha=0.5,
+             edgecolor='white', label=f'Bipartite config. null ($\\mu$={bip_null_mean:.3f})')
     ax2.axvline(beta_real, color='#e74c3c', linewidth=2, linestyle='-',
                 label=f'Observed $\\beta$ = {beta_real:.3f}')
-    ax2.axvline(null_mean, color='#2c3e50', linewidth=1.5, linestyle='--',
-                label=f'Null mean = {null_mean:.3f}')
 
-    # p-value annotation
-    if p_value < 0.001:
-        p_str = "p < 0.001"
-    else:
-        p_str = f"p = {p_value:.3f}"
-    ax2.text(0.95, 0.95, p_str, transform=ax2.transAxes,
-             fontsize=11, fontweight='bold', va='top', ha='right',
+    # p-value annotations
+    p_strs = []
+    for name, pv in [("cluster", p_value), ("bipartite", bip_p_value)]:
+        p_strs.append(f"{name}: {'p < 0.001' if pv < 0.001 else f'p = {pv:.3f}'}")
+    ax2.text(0.95, 0.95, "\n".join(p_strs), transform=ax2.transAxes,
+             fontsize=9, fontweight='bold', va='top', ha='right',
              bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
 
     ax2.set_xlabel("Heaps' exponent $\\beta$")
     ax2.set_ylabel('Density')
-    ax2.set_title('Null Model: Random Cluster Assignment', fontweight='bold')
-    ax2.legend(loc='upper left', framealpha=0.9, fontsize=9)
+    ax2.set_title('Null Models: Cluster Permutation vs Bipartite', fontweight='bold')
+    ax2.legend(loc='upper left', framealpha=0.9, fontsize=8)
 
     plt.tight_layout()
     for fmt in ('pdf', 'png'):
