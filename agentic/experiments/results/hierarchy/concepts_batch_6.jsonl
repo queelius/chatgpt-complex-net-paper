@@ -1,0 +1,100 @@
+{"id": "fujinoki-paper-bias-estimation-with-bootstrap", "concepts": ["bootstrap bias estimation", "bloom filter configuration", "distinct user counting", "probabilistic data structures", "academic paper refinement"]}
+{"id": "fujinoki-paper-conference-paper-opportunity", "concepts": ["conference paper planning", "research advisor communication", "PhD student preparation", "academic meeting preparation"]}
+{"id": "fujinoki-paper-false-negative-detection-rate", "concepts": ["false negative detection rate", "theorem proof writing", "distinct user thresholds", "probabilistic guarantees"]}
+{"id": "fujinoki-paper-improving-parameter-definitions", "concepts": ["parameter definition writing", "temporal locality notation", "mathematical notation conventions", "ransomware detection parameters"]}
+{"id": "fujinoki-paper-latex-academic-paper-formatting", "concepts": ["LaTeX document formatting", "LaTeX package configuration", "academic paper compilation", "LaTeX error debugging"]}
+{"id": "fujinoki-paper-latex-structure-replication", "concepts": ["LaTeX structure replication", "LaTeX tabular alignment", "academic paper formatting", "LaTeX compilation errors"]}
+{"id": "fujinoki-paper-mermaid-preview-in-vs-code", "concepts": ["VS Code Mermaid preview", "Mermaid diagram rendering", "Mermaid to TikZ conversion", "VS Code extension installation"]}
+{"id": "fujinoki-paper-on-beat-backups-for-ransomware", "concepts": ["on-beat backup strategy", "ransomware damage prevention", "abstract writing for papers", "academic paper conclusions"]}
+{"id": "fujinoki-paper-paper-update-summary", "concepts": ["research paper update summary", "PhD advisor communication", "paper revision documentation"]}
+{"id": "fujinoki-paper-ransomware-backup-algorithm-review", "concepts": ["ransomware backup algorithm", "math and grammar review", "analysis section drafting", "collaborative paper writing"]}
+{"id": "fujinoki-paper-ransomware-backup-research-draft", "concepts": ["ransomware backup research", "on-beat backup detection", "academic draft revision", "ransomware false negative rate"]}
+{"id": "fujinoki-paper-ransomware-detection-methods", "concepts": ["ransomware detection methods", "bloom filter based detection", "section clarity rewriting", "paper draft analysis"]}
+{"id": "fujinoki-paper-ransomware-detection-model-inputs", "concepts": ["LLM reinforcement learning training", "ransomware detection model", "grader-based RL feedback", "security expert justification fields"]}
+{"id": "fujinoki-paper-ssi-procedures-and-parameters", "concepts": ["SSI detection procedures", "software component documentation", "ransomware detection parameters", "system procedure specification"]}
+{"id": "fujinoki-ransomware-attack-outline", "concepts": ["ransomware attack anatomy", "ML-based ransomware detection", "AR-transformer for security", "ransomware research outline"]}
+{"id": "fujinoki-ransomware-backup-challenges", "concepts": ["ransomware backup challenges", "malicious encryption detection", "data integrity preservation", "ransomware prevention design"]}
+{"id": "fujinoki-ransomware-detection-analysis", "concepts": ["ransomware detection report analysis", "security research evaluation"]}
+{"id": "fujinoki-ransomware-detection-approaches", "concepts": ["ransomware detection approaches", "predictive security models", "PhD research topic exploration", "ML threat analysis"]}
+{"id": "fujinoki-ransomware-detection-methods", "concepts": ["ransomware ML detection methods", "feature engineering avoidance", "bitter lesson principle", "time-series ransomware modeling"]}
+{"id": "fujinoki-ransomware-detection-methods_1", "concepts": ["ransomware detection survey analysis", "paper comparison and critique", "preliminary literature response", "security paper review"]}
+{"id": "functional-programming-in-typescript", "concepts": ["functional programming in TypeScript", "type-driven LLM code generation", "function composition semantics", "typed functional abstractions"]}
+{"id": "funny-image-prompt-generator", "concepts": ["image prompt generation", "narrative image sequence", "DALL-E prompt engineering", "humor in visual storytelling"]}
+{"id": "future-alphafold-applications", "concepts": ["AlphaFold future applications", "protein structure prediction", "AI-driven drug design", "biosecurity risks from AI"]}
+{"id": "future-date-filter", "concepts": ["Elasticsearch query explanation", "natural language query translation", "date filter query design", "search query semantics"]}
+{"id": "future-historians-of-us", "concepts": ["AI conversation archives", "future historical significance", "human-AI intellectual record", "speculative AI futures"]}
+{"id": "future-of-ai", "concepts": ["transformer model algorithmic insight", "meta-learning in AI", "algorithmic AI progress", "GPT architecture evolution"]}
+{"id": "future-of-open-source-llms", "concepts": ["open-source LLM viability", "closed vs open model gap", "LLM training economics", "IBM Watson historical quotes"]}
+{"id": "future-work-discussion-condensed", "concepts": ["oral presentation future work", "slide content condensation", "discussion section design", "likelihood model extensions"]}
+{"id": "future-work-model-extensions", "concepts": ["reliability math future work", "LLM integration with research", "model extension planning", "math paper future directions"]}
+{"id": "fuzzy-infer-dsl-to-ast-mapping", "concepts": ["rules-based DSL processing", "DSL to AST mapping", "forward chaining production rules", "rule evaluation in code"]}
+{"id": "fuzzy-infer-fuzzy-inference-system-docstrings", "concepts": ["fuzzy production rule system", "forward chaining inference", "fuzzy logic docstrings", "fuzzy inference implementation"]}
+{"id": "fuzzy-logic-search-json-fuzzy-queries-logic-theory", "concepts": ["fuzzy logic formal theory", "fuzzy set theory", "linguistic variable definition", "fuzzy query operators"]}
+{"id": "fuzzy-logic-search", "concepts": ["JSON fuzzy query design", "fuzzy membership functions", "numeric equality membership", "epsilon auto-selection"]}
+{"id": "fuzzy-queries-refinement-of-query-class", "concepts": ["fuzzy query class refinement", "boolean algebra queries", "query evaluation design", "search engine query abstraction"]}
+{"id": "fuzzy-queries-simplified-search-engine-code", "concepts": ["fuzzy search engine simplification", "boolean search implementation", "TF-IDF search integration", "search engine code design"]}
+{"id": "ga-for-llm-optimization", "concepts": ["genetic algorithms for LLMs", "evolutionary LLM optimization", "GA-based generative model tuning", "academic paper drafting"]}
+{"id": "gae-app-to-heroku", "concepts": ["Google App Engine to Heroku migration", "Python web app deployment", "platform migration strategy"]}
+{"id": "gainful-compression-potential", "concepts": ["LLM-based lossy compression", "reconstruction from compression", "neural data compression", "AI-enhanced media reconstruction"]}
+{"id": "game-tree-analysis", "concepts": ["game tree search", "minimax algorithms", "decision tree analysis"]}
+{"id": "gamma-function-derivative", "concepts": ["gamma function derivative", "digamma function", "factorial and gamma relation", "special functions in analysis"]}
+{"id": "gamma-x-and-measure-theory", "concepts": ["semimeasure theory", "measure theory fundamentals", "Solomonoff induction framework", "algorithmic probability theory"]}
+{"id": "general-differential-equation-form", "concepts": ["general differential equation form", "ODE and PDE classification", "mathematical equation taxonomy"]}
+{"id": "general-tree-search-code", "concepts": ["general tree search implementation", "duck typing in Python", "search frontier strategies", "node selection abstraction"]}
+{"id": "generalizing-r-code-customization", "concepts": ["R code generalization", "parametric family log-likelihood", "S3 generic dispatch in R", "statistical model customization"]}
+{"id": "generate-20-points-f-x", "concepts": ["function point generation", "nonlinear function estimation", "function approximation methods", "data-driven function learning"]}
+{"id": "generate-images-for-beamer-slides", "concepts": ["Beamer slide image generation", "DALL-E image generation", "presentation visual design", "slide figure creation"]}
+{"id": "generate-logos-for-github", "concepts": ["GitHub repo logo generation", "DALL-E logo design", "repository visual identity", "reliability estimation branding"]}
+{"id": "generate-readthedocs-documentation", "concepts": ["ReadTheDocs documentation setup", "Python docstring documentation", "automated docs generation", "project documentation workflow"]}
+{"id": "generative-ai-advancements", "concepts": ["system 2 thinking in LLMs", "meta-learning on LLMs", "LLM reasoning capabilities", "generative AI progress"]}
+{"id": "genetic-analysis-summary", "concepts": ["cancer genetic analysis", "colon cancer genomics", "metastatic cancer biomarkers", "oncology treatment insights"]}
+{"id": "geojson-roadwork-data", "concepts": ["GeoJSON roadwork data", "IDOT incident data format", "FeatureCollection structure", "geospatial data analysis"]}
+{"id": "geometric-mean-calculation", "concepts": ["geometric mean formula", "joint probability geometric mean", "probability aggregation methods", "conditional probability combinations"]}
+{"id": "geometry-theorem-prover-alphageometry", "concepts": ["AlphaGeometry theorem prover", "neuro-symbolic reasoning", "geometry proof generation", "AI mathematical reasoning"]}
+{"id": "gephi-community-detection", "concepts": ["Gephi community detection", "giant component filtering", "network community visualization", "Gephi color customization"]}
+{"id": "gephi-network-analysis-guide", "concepts": ["Gephi network analysis guide", "PDF transcription of tutorial", "network analysis workflow", "Gephi usage documentation"]}
+{"id": "gephi-network-analysis", "concepts": ["Gephi network visualization", "political book network dataset", "homework network analysis", "network drawing in Gephi"]}
+{"id": "gephi-us-politics-analysis", "concepts": ["US politics book network", "degree distribution analysis", "Excel network statistics", "political network analysis"]}
+{"id": "gh-hugo-tookit-streamlit-github-deployment", "concepts": ["Streamlit GitHub deployment", "Streamlit app hosting", "GitHub-integrated web apps"]}
+{"id": "gh-hugo-toolkit-code-refinement-guide", "concepts": ["GitHub API code refinement", "Python GitHub toolkit", "repo visibility settings", "CLI argument design"]}
+{"id": "gh-hugo-toolkit-repo-display-optimization", "concepts": ["Streamlit repo display design", "compact GitHub repo UI", "Hugo static site integration", "repo metadata presentation"]}
+{"id": "ghibli-style-image-creation", "concepts": ["Ghibli style image editing", "image style transfer", "AI image generation request"]}
+{"id": "ghibli-style-rendering-request", "concepts": ["Ghibli art style rendering", "AI image generation", "studio Ghibli aesthetics"]}
+{"id": "git-operations-stats-update", "concepts": ["git operations stats script", "PyPI package preparation", "GitHub README creation", "Python CLI tooling"]}
+{"id": "github-cli-jq-error", "concepts": ["GitHub CLI jq error", "ghops tool debugging", "command-line JSON parsing", "CLI error diagnosis"]}
+{"id": "github-heroku-integration", "concepts": ["GitHub Heroku integration", "Python project dual hosting", "chat log HTML presentation", "git remote configuration"]}
+{"id": "github-json-cli", "concepts": ["GitHub JSON CLI tool", "Python CLI with Click", "GitHub API data fetching", "CLI error debugging"]}
+{"id": "github-mobile-no-digits", "concepts": ["GitHub Mobile authentication", "two-factor auth issues", "GitHub token verification", "mobile app login troubleshooting"]}
+{"id": "github-repo-dl-backup-github-repos", "concepts": ["GitHub repo backup", "gh CLI repo download", "bulk repository management"]}
+{"id": "github-repo-dl-github-repo-image-file", "concepts": ["GitHub repo social preview", "repository image metadata", "authenticated API requests", "repo metadata retrieval"]}
+{"id": "github-repo-dl-github-repos-downloader", "concepts": ["Hugo GitHub repo viewer", "projects widget generation", "static site repo integration", "GitHub repo display automation"]}
+{"id": "github-repo-logos", "concepts": ["GitHub project logo generation", "DALL-E repo branding", "agentic AI system logo", "expression toolkit logo"]}
+{"id": "github-repo-manager", "concepts": ["GitHub repo manager CLI", "ghops tool design", "repository management automation", "Python argparse CLI"]}
+{"id": "github-repository-likelihood-model", "concepts": ["likelihood.model R package", "GitHub repository exploration", "R statistical modeling package", "package documentation review"]}
+{"id": "global-gpu-production-and-count", "concepts": ["global GPU production estimates", "GPU hardware inventory", "compute hardware scaling", "GPU market statistics"]}
+{"id": "global-minimum-for-rosenbrock", "concepts": ["Rosenbrock function optimization", "high-dimensional optimization", "function maximum location", "R index of max value"]}
+{"id": "global-minimum-of-function", "concepts": ["quadratic function minimization", "symmetry-based optimization", "multivariable calculus optimization", "global minimum analysis"]}
+{"id": "global-search-algorithm", "concepts": ["global optimization algorithms", "multi-candidate search strategies", "simulated annealing overview", "metaheuristic search methods"]}
+{"id": "good-day-reflections", "concepts": ["personal daily reflection", "work-life balance journaling", "human-AI personal conversation"]}
+{"id": "good-news-progress-update", "concepts": ["cancer treatment progress", "chemotherapy response imaging", "metastatic disease monitoring", "personal health update"]}
+{"id": "google-workspace-overview", "concepts": ["Google Workspace overview", "Google Domains integration", "website builder options", "Netlify and Google domain hosting"]}
+{"id": "gpt-3-generates-text", "concepts": ["GPT-3 API usage", "OpenAI Completion API", "max_tokens parameter", "ChatGPT model naming"]}
+{"id": "gpt-4-advanced-response-model", "concepts": ["GPT-4 system prompt extraction", "LLM identity disclosure", "user background context", "model response customization"]}
+{"id": "gpt-4-and-language-generation", "concepts": ["LLM language modeling", "world model in AI", "probability estimation in LLMs", "language structure and regularity"]}
+{"id": "gpt-4-calibration-information", "concepts": ["GPT-4 calibration analysis", "LLM logprob output", "softmax miscalibration", "model confidence calibration"]}
+{"id": "gpt-4-learning-programming", "concepts": ["YouTube programming channel", "GPT-4 for learning programming", "AI-assisted programming education", "channel naming and branding"]}
+{"id": "gpt-4-model-explanation", "concepts": ["GPT-4 Turbo overview", "LLM model versions", "model capability explanation"]}
+{"id": "gpt-4-technical-description", "concepts": ["GPT-4 technical description", "AI personification and alien intelligence", "non-human intelligence framing", "LLM self-description"]}
+{"id": "gpt-4-turbo-overview", "concepts": ["GPT-4 Turbo context length", "LLM context window size", "model capability clarification"]}
+{"id": "gpt-4-writing-story", "concepts": ["recursive self-referential story", "GPT-4 writing about itself", "meta-fiction generation", "AI creative recursion"]}
+{"id": "gpt-5-development-and-features", "concepts": ["GPT-5 development news", "Langchain message format", "fast API R library integration", "LLM tool use via API"]}
+{"id": "gpt-language-experiments", "concepts": ["GPT language model experiments", "local LLM inference setup", "GPU hardware requirements", "LLM programming learning"]}
+{"id": "gpt3-focuses-on-language", "concepts": ["GPT-3 language focus history", "LLM math training", "language model development history", "LLM training methodology"]}
+{"id": "gpt4-from-gpt3-in-2y9m", "concepts": ["GPT-3 to GPT-4 timeline", "LLM release history", "model development pace"]}
+{"id": "gpu-for-ml-llm", "concepts": ["GPU selection for ML", "LLM inference hardware", "Nvidia RTX 40xx series", "GPU memory for LLM"]}
+{"id": "gpu-performance-analysis", "concepts": ["GPU performance visualization", "compute benchmark plotting", "hardware performance analysis"]}
+{"id": "grad-ascent-solver-overview", "concepts": ["C++20 concepts feature", "gradient ascent solver design", "projection operator in optimization", "C++ template constraints"]}
+{"id": "gradient-clipping-in-r", "concepts": ["gradient clipping in R", "projection onto positive components", "R optimization utilities", "numerical gradient methods"]}
+{"id": "gradient-descent-for-low-rank", "concepts": ["low-rank matrix decomposition", "gradient descent for SVD", "Newton-Raphson with line search", "matrix factorization methods"]}
+{"id": "gradient-descent-with-momentum", "concepts": ["gradient descent with momentum", "constrained optimization in R", "Lagrange multipliers", "support function constraints"]}
+{"id": "graph-linearized-matching-problem", "concepts": ["linearized subgraph matching", "subgraph matching theory", "graph isomorphism complexity", "subgraph matching algorithms"]}

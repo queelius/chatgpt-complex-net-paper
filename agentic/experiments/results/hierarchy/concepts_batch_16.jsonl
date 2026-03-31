@@ -1,0 +1,100 @@
+{"id": "slide-creation-tips", "concepts": ["presentation slide creation", "RMarkdown beamer slides", "incremental slide updates", "LaTeX presentation workflow"]}
+{"id": "slide-splitting-for-clarity", "concepts": ["slide content decomposition", "oral presentation design", "beamer slide structure", "data visualization clarity"]}
+{"id": "slugify-unicode-error-fix", "concepts": ["Python slugify library", "unicode compatibility errors", "metadata title processing", "Calibre library import"]}
+{"id": "sluug-llm-talk", "concepts": ["LLM public talk preparation", "beamer presentation outline", "artificial intelligence history", "large language model concepts"]}
+{"id": "sluug-talk-blog-post", "concepts": ["Hugo blog post structure", "talk announcement formatting", "Marp slide integration", "technical blog publishing"]}
+{"id": "sluug-talk-notes", "concepts": ["Turing lectures note-taking", "generative AI future", "LLM talk inspiration", "facial recognition AI history"]}
+{"id": "sluug", "concepts": ["acute ulcer dysplastic epithelium", "nature of reality perception", "career skills self-assessment", "philosophical consciousness inquiry"]}
+{"id": "small-world-network-explained", "concepts": ["small world problem formulation", "interpersonal network reachability", "population connectivity probability", "six degrees of separation"]}
+{"id": "small-world-study-summary", "concepts": ["small world network key terms", "network study exam preparation", "social network distance metrics", "graph connectivity definitions"]}
+{"id": "smart-dev-task-summary", "concepts": ["custom GPT instructions refinement", "developer task summarization", "AI assistant configuration", "prompt instruction design"]}
+{"id": "soft-lse-vs-max", "concepts": ["log-sum-exp function", "soft maximum approximation", "differentiable discrete functions", "smooth optimization techniques"]}
+{"id": "soft-prompts-for-llms", "concepts": ["soft prompt tuning", "LLM prompt optimization", "associative memory for prompts", "prompt parameter learning"]}
+{"id": "soft-prompts-in-ai", "concepts": ["soft token formalism", "autoregressive model soft prompts", "prompt embedding mathematics", "continuous prompt representation"]}
+{"id": "soft-token-ar-model", "concepts": ["soft token embeddings", "autoregressive transformer tokens", "embedding space soft inputs", "future work LLM design"]}
+{"id": "softcircuit-differentiable-approximate-functions", "concepts": ["differentiable circuit approximation", "soft logic gate functions", "softmax softargmax family", "AND NOT gate soft versions"]}
+{"id": "softcircuit-differentiable-function-replacements", "concepts": ["soft boolean circuit design", "differentiable AND OR gates", "SoftCircuit implementation", "continuous logic approximation"]}
+{"id": "softcircuit-xor-operation-for-booleans", "concepts": ["XOR boolean decomposition", "soft XOR implementation", "log-sum-exp numerical stability", "differentiable XOR function"]}
+{"id": "software-design-for-flexibility-review", "concepts": ["software design for flexibility", "SICP Sussman Hanson book", "composable likelihood functions", "extensible system design patterns"]}
+{"id": "solid-green-line-plot", "concepts": ["matplotlib plot styling", "line vs point plot markers", "pyplot solid line rendering", "visualization debugging"]}
+{"id": "solomonoff-induction-and-llms", "concepts": ["Solomonoff induction LLMs", "next-token prediction theory", "algorithmic probability blog post", "universal prior approximation"]}
+{"id": "solomonoff-induction-approximation", "concepts": ["Solomonoff induction Python", "LZ77 compression approximation", "algorithmic probability implementation", "prediction probability estimation"]}
+{"id": "solomonoff-induction-theory", "concepts": ["Solomonoff induction theory", "algorithmic probability mathematics", "transformer as Solomonoff approximation", "universal prediction framework"]}
+{"id": "solving-for-a-in-norm", "concepts": ["vector norm equation solving", "cosine similarity computation", "unit vector normalization", "dot product calculation"]}
+{"id": "solving-world-hunger-strategies", "concepts": ["world hunger solutions", "global food security strategies", "food distribution policy", "agricultural systems improvement"]}
+{"id": "spacesim-audio-playback-improvements", "concepts": ["pygame audio mixer", "numpy audio processing", "deque-based audio queue", "simulation sound playback"]}
+{"id": "spacesim-barnes-hut-algorithm-implementation", "concepts": ["Barnes-Hut algorithm", "n-body simulation efficiency", "spatial tree data structure", "force approximation quadtree"]}
+{"id": "spacesim-barnes-hut-vs-quadtree-logic", "concepts": ["Barnes-Hut vs quadtree", "n-body space sandbox", "nearby pairs computation", "physics engine spatial queries"]}
+{"id": "spacesim-circle-overlap-distance-area", "concepts": ["circle overlap area calculation", "geometric intersection computation", "pygame circle collision", "radius distance overlap formula"]}
+{"id": "spacesim-code-optimization-for-merging-bodies", "concepts": ["body merging optimization", "in-place list manipulation", "physics simulation efficiency", "object combination algorithm"]}
+{"id": "spacesim-collision-detection-and-response", "concepts": ["circle collision detection", "collision response forces", "force accumulation physics", "velocity update simulation"]}
+{"id": "spacesim-composable-merge-criteria-functions", "concepts": ["composable merge strategy", "functional AND OR NOT combinators", "merge criteria design", "docstring documentation pattern"]}
+{"id": "spacesim-cupy-quadtree-for-physics", "concepts": ["CuPy CUDA quadtree", "GPU proximity queries", "spatial index GPU", "point distance query CUDA"]}
+{"id": "spacesim-determine-velocity-direction", "concepts": ["velocity direction comparison", "cosine similarity velocity", "angular threshold comparison", "vector direction alignment"]}
+{"id": "spacesim-determining-spring-stiffness-coefficients", "concepts": ["spring mass system configuration", "stiffness coefficient determination", "material simulation properties", "anisotropic spring behavior"]}
+{"id": "spacesim-draw-hull-function-error", "concepts": ["convex hull drawing function", "pygame surface rendering", "zoom pan coordinate transform", "hull visualization debugging"]}
+{"id": "spacesim-eccentricity-and-orbital-dynamics", "concepts": ["orbital eccentricity dynamics", "elliptical orbit limiting behavior", "n-body gravitational orbits", "parabolic orbit eccentricity one"]}
+{"id": "spacesim-event-bus-decoupling-mvc", "concepts": ["event bus MVC decoupling", "controller model separation", "publish-subscribe pattern", "pygame event architecture"]}
+{"id": "spacesim-event-handler-organization", "concepts": ["event handler organization", "physics simulation events", "boilerplate reduction patterns", "handler module structure"]}
+{"id": "spacesim-event-handling-refactor-strategy", "concepts": ["state machine event handling", "Pythonic state machine interface", "event processing architecture", "simulation state transitions"]}
+{"id": "spacesim-eventbus-function-scope-issue", "concepts": ["EventBus function scoping", "pygame controller event bus", "publish-subscribe debugging", "Python closure scope"]}
+{"id": "spacesim-eventbus-usage-in-pygame", "concepts": ["EventBus API usage", "pygame event subscription", "body selection event publishing", "event-driven pygame design"]}
+{"id": "spacesim-function-overlap-issue-debugging", "concepts": ["spring network overlap debugging", "body placement function", "overlap detection logic", "simulation initialization debugging"]}
+{"id": "spacesim-importing-in-controller-states", "concepts": ["Python module import patterns", "controller state imports", "circular import resolution", "pygame state controller"]}
+{"id": "spacesim-improve-audioqueue-efficiency", "concepts": ["thread pool audio queue", "audio event system design", "pygame audio efficiency", "concurrent audio playback"]}
+{"id": "spacesim-kinetic-energy-and-relativity", "concepts": ["kinetic energy relativity", "Lorentz gamma factor", "relativistic velocity dependence", "intrinsic vs relative energy"]}
+{"id": "spacesim-large-scale-simulation-models", "concepts": ["Mie Lennard-Jones potentials", "composite body simulation", "Lego-style physics building", "multi-potential n-body system"]}
+{"id": "spacesim-lennard-jones-force-calculation", "concepts": ["Lennard-Jones potential force", "repulsion attraction zones", "potential gradient derivation", "n-body force implementation"]}
+{"id": "spacesim-mouse-drag-fling-feature", "concepts": ["mouse drag fling mechanics", "event bus body flinging", "pygame mouse interaction", "velocity impulse from drag"]}
+{"id": "spacesim-moving-average-for-velocity", "concepts": ["moving average velocity estimation", "fling velocity reliability", "linear regression velocity", "mouse drag velocity smoothing"]}
+{"id": "spacesim-n-body-simulation-optimization", "concepts": ["CuPy n-body optimization", "GPU simulation performance", "multi-body force computation", "simulation benchmark tuning"]}
+{"id": "spacesim-n-body-simulator-code-explanation", "concepts": ["FFT-based PDE solver", "finite difference method comparison", "spectral vs FDM methods", "n-body C code explanation"]}
+{"id": "spacesim-omposite-shape-construction-design", "concepts": ["composite shape design", "triangle primitive composition", "abstract shape base class", "polygon decomposition strategy"]}
+{"id": "spacesim-optimizing-bodylist-class", "concepts": ["BodyList numpy optimization", "preallocated array body list", "force reset vectorization", "simulation data structure"]}
+{"id": "spacesim-parameterizing-bodylist-class", "concepts": ["generic preallocated list", "parameterized body container", "Python type parameterization", "PreallocatedList design"]}
+{"id": "spacesim-pressure-in-big-atoms", "concepts": ["big atom pressure model", "Moore potential interactions", "pressure force conversion", "particle pressure simulation"]}
+{"id": "spacesim-pygame-event-handling-refactor", "concepts": ["pygame event wrapper class", "state-based event handling", "dynamic event dispatcher", "pygame simulation refactor"]}
+{"id": "spacesim-python-convex-hull-libraries", "concepts": ["convex hull algorithms", "scipy ConvexHull library", "pygame Vector2 compatibility", "hull computation efficiency"]}
+{"id": "spacesim-real-time-proximity-queries", "concepts": ["real-time quadtree updates", "spatial hashing proximity", "CPU vs GPU spatial queries", "dynamic proximity detection"]}
+{"id": "spacesim-refactor-body-force-methods", "concepts": ["body force method refactoring", "standalone force functions", "body pair force computation", "simulation loop restructuring"]}
+{"id": "spacesim-restorative-orbit-force-design", "concepts": ["restorative orbit force", "orbital potential energy function", "custom gravitational-like potential", "n-body sandbox force design"]}
+{"id": "spacesim-soft-body-composite-circle", "concepts": ["soft body spring mesh", "composite circle simulation", "spring-connected particle mesh", "radial spring network"]}
+{"id": "spacesim-space-sandbox-simulation", "concepts": ["space sandbox simulation", "n-body physics game", "zoom pan orbit creation", "pygame space simulation"]}
+{"id": "spacesim-spring-class-design-choices", "concepts": ["spring tuple representation", "Springs class design", "spring data structure choice", "simulation speed optimization"]}
+{"id": "spacesim-spring-stability", "concepts": ["spring instability in simulation", "numerical integration stability", "spring stiffness damping", "physics simulation stability"]}
+{"id": "spacesim-subsumption-architecture-design-agent", "concepts": ["subsumption architecture agents", "autonomous agent behavior layers", "space sandbox AI agents", "behavior priority system"]}
+{"id": "spacesim-using-lambdas-for-events", "concepts": ["lambda event subscription", "event bus callback boilerplate", "Python lambda limitations", "event handler simplification"]}
+{"id": "spacesim-verlet-integration-design-review", "concepts": ["Verlet integration abstraction", "Body class physics refactor", "CuPy pycuda comparison", "numerical integration design"]}
+{"id": "spacesim-verlet-integration-property-issue", "concepts": ["Verlet integration position storage", "Python property augmented assignment", "in-place operator class design", "velocity from position history"]}
+{"id": "spacesim-verlet-integration-update-code", "concepts": ["Verlet integration formula", "position update equation", "decoupled simulation timestep", "numerical integration correctness"]}
+{"id": "spacesim-volume-and-pan-calculation", "concepts": ["audio volume pan calculation", "spatial audio simulation", "distance-based audio attenuation", "stereo pan position mapping"]}
+{"id": "specialized-markovian-models", "concepts": ["Markovian model taxonomy", "non-Markovian sequence models", "quantum Markov models", "conditional probability sequence models"]}
+{"id": "specify-r-interpreter-path", "concepts": ["VS Code R interpreter path", "radian R terminal setup", "settings.json R configuration", "R extension VS Code"]}
+{"id": "speed-up-bootstrap-mle", "concepts": ["bootstrap MLE acceleration", "maximum likelihood estimation", "R parallel bootstrap", "statistical resampling optimization"]}
+{"id": "speedlab-network-highlights", "concepts": ["SpeedLab network research", "SIUC network lab overview", "network security research highlights", "academic lab summary"]}
+{"id": "spongebob-car-search-problem", "concepts": ["AI search problem formulation", "pathfinding game scenario", "state space search design", "Pacman search assignment"]}
+{"id": "spongebob-pacman-search-analysis", "concepts": ["Pacman AI search analysis", "search algorithm grid coverage", "completeness of search algorithms", "AI homework analysis"]}
+{"id": "spongebob-pacman-search-analysis_1", "concepts": ["Pacman search algorithm analysis", "grid traversal guarantees", "BFS DFS completeness", "image text extraction OCR"]}
+{"id": "square-root-of-3", "concepts": ["square root computation", "linear system of equations", "system of equations solution set", "basic algebra problem"]}
+{"id": "ssh-file-transfer-methods", "concepts": ["SSH file transfer", "SCP SFTP commands", "remote machine file copy", "command line file transfer"]}
+{"id": "ssh-host-key-update", "concepts": ["SSH host key changed warning", "known_hosts key update", "remote host identification", "SSH security warning resolution"]}
+{"id": "ssh-with-vs-code", "concepts": ["VS Code SSH remote", "remote development setup", "SSH remote extension", "playlist manager app deployment"]}
+{"id": "st-louis-traffic-forecasting", "concepts": ["St. Louis traffic time series", "roadway speed forecasting", "time series mathematical formalism", "traffic data analysis"]}
+{"id": "stack-data-structure-python", "concepts": ["Python stack data structure", "built-in stack alternatives", "deque as stack", "Python collection types"]}
+{"id": "statistical-analysis-task-list", "concepts": ["statistical TODO list", "backlog task prioritization", "data analysis task management", "research task organization"]}
+{"id": "statistical-concept-assessment", "concepts": ["statistical concept learning", "law of large numbers", "i.i.d. random variable averaging", "statistician knowledge assessment"]}
+{"id": "statistical-estimation-notation-guide", "concepts": ["statistical notation guide", "PDF CDF hazard function notation", "likelihood function notation", "survival analysis notation"]}
+{"id": "statistical-system-lifetime-analysis", "concepts": ["system lifetime statistical analysis", "reliability engineering statistics", "TODO list distillation", "statistical backlog organization"]}
+{"id": "stemming-for-llms", "concepts": ["stemming tokenization for LLMs", "byte-pair encoding alternatives", "morphological text preprocessing", "LLM input normalization"]}
+{"id": "stemming-in-llms-semantics-lost", "concepts": ["stemming semantic information loss", "embedding stemming tradeoffs", "reasoning vs generative models", "post-stemming representation"]}
+{"id": "stiff-behavior-in-ode", "concepts": ["stiff ODE numerical solving", "singular ODE behavior", "Python ODE solver advanced", "differential equation singularity"]}
+{"id": "stochastic-embedding-for-transformers", "concepts": ["stochastic token embedding", "jittered embeddings transformer", "noise injection embedding space", "GPT-4 embedding augmentation"]}
+{"id": "storing-non-working-code", "concepts": ["non-compiling code storage", "C++ library dead code", "experimental code organization", "repository code management"]}
+{"id": "story-development-assistance", "concepts": ["fantasy story creation", "ley lines magic world building", "narrative plot development", "creative writing assistance"]}
+{"id": "strengthening-trump-russia-claims", "concepts": ["Trump Russia argument analysis", "Craig Unger research summary", "political claim strengthening", "evidence-based argument critique"]}
+{"id": "string-replacement-logic-solve", "concepts": ["string replacement logic puzzles", "formal string rewriting systems", "pattern substitution rules", "symbolic puzzle solving"]}
+{"id": "string-replacement-logical-puzzle", "concepts": ["string substitution puzzles", "logical string rewriting", "formal language manipulation", "symbol replacement rules"]}
+{"id": "string-substitution-in-commands", "concepts": ["shell string substitution", "command line argument interpolation", "bash variable expansion", "cat export command"]}
+{"id": "stripe-api-spec-creation", "concepts": ["Stripe API specification", "REST API documentation", "customer list endpoint spec", "API curl to spec conversion"]}
+{"id": "structures-of-increasing-complexity", "concepts": ["graph of thoughts LLM", "hypergraph reasoning structure", "LLM output composition", "reasoning graph edge types"]}
+{"id": "structuring-readme-rmd-in-pkgdown", "concepts": ["pkgdown README structure", "README.Rmd formatting", "R package documentation", "pkgdown site organization"]}

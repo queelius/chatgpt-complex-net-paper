@@ -1,0 +1,100 @@
+{"id": "orthogonality-thesis-and-paperclip-maximizer_1", "concepts": ["orthogonality thesis AI goals", "paperclip maximizer thought experiment", "meta-cognitive emergent behavior", "instrumental convergence hypothesis", "AI goal alignment theory"]}
+{"id": "os-copilot-implications-explored", "concepts": ["OS copilot integration", "Windows AI assistant implications", "AI operating system integration", "cross-platform AI comparison"]}
+{"id": "overview-of-the-idiot", "concepts": ["Dostoevsky literary analysis", "Prince Myshkin character study", "Russian novel themes", "naivety and suffering in fiction"]}
+{"id": "p-np-and-timeless-reality", "concepts": ["P equals NP implications", "computational complexity and physics", "information loss in time reversal", "multiverse computational theory"]}
+{"id": "p-values-significance-interpretation", "concepts": ["p-value statistical interpretation", "confidence interval vs p-value", "hypothesis testing methodology", "practical vs statistical significance"]}
+{"id": "p-versus-np-concept", "concepts": ["P vs NP problem", "solution verification asymmetry", "soft prompt sampling techniques", "Moore's law computational limits"]}
+{"id": "p-x-y-without-p-x", "concepts": ["conditional probability computation", "joint distribution estimation", "Bayesian inference without priors", "discrete distribution inference"]}
+{"id": "pacman-agent-code-cleanup", "concepts": ["heuristic search algorithms", "Pacman AI agent code", "search agent implementation", "code refactoring heuristics"]}
+{"id": "pancomp-and-digital-physics", "concepts": ["pancomputationalism philosophy", "digital physics framework", "computational monads of existence", "information as fundamental reality"]}
+{"id": "paper-clarification-request", "concepts": ["component reliability estimation", "incomplete system failure data", "reliability engineering methods", "academic paper analysis"]}
+{"id": "paper-evaluation-summary", "concepts": ["series system reliability", "maximum likelihood estimation", "academic paper grading", "reliability estimation methods"]}
+{"id": "paper-feedback-and-discussion", "concepts": ["academic paper revision feedback", "right censoring in survival analysis", "research paper editing workflow"]}
+{"id": "paper-process-supervision-vs-outcome-supervision", "concepts": ["process vs outcome supervision", "LLM reward modeling", "probability distribution confidence", "fine-tuning uncertainty estimation"]}
+{"id": "paper-summary-requested", "concepts": ["arxiv paper summarization", "LLM capability analysis", "academic paper discussion"]}
+{"id": "parallel-boot-with-multicore", "concepts": ["parallel bootstrapping in R", "multicore R computing", "doParallel package usage", "boot package parallelization"]}
+{"id": "parallelize-bootstrapping-for-speed", "concepts": ["R bootstrapping optimization", "vectorized bootstrap computation", "MLE bootstrap speed", "parallel R code patterns"]}
+{"id": "parallelize-r-code", "concepts": ["R code parallelization", "parallel package in R", "simulation study parallelism", "NULL output debugging R"]}
+{"id": "parallelizing-r-code-tips", "concepts": ["R parallel computing tips", "boot package integration", "parallel bootstrap strategies", "tidyverse parallel workflows"]}
+{"id": "parameter-estimation-analysis", "concepts": ["parameter estimation methods", "statistical parameter analysis"]}
+{"id": "parameter-scaling-in-r", "concepts": ["optim parameter scaling R", "log-likelihood optimization scaling", "numerical optimization tuning", "parameter scale estimation"]}
+{"id": "parametrize-activation-functions-in-nn", "concepts": ["parametric activation functions", "neural network architecture search", "learnable activation parameters", "bias-free neural networks"]}
+{"id": "parse-chrome-window-content", "concepts": ["Chrome browser DOM parsing", "JavaScript browser automation", "browser content extraction", "link URL parsing"]}
+{"id": "partial-derivative-calculation", "concepts": ["Weibull distribution derivatives", "partial derivative computation", "shape parameter calculus", "scale parameter differentiation"]}
+{"id": "partial-derivative-of-expression", "concepts": ["Weibull log-likelihood derivatives", "scale parameter partial derivatives", "series system log-likelihood", "survival analysis calculus"]}
+{"id": "partial-derivative-of-function", "concepts": ["Weibull survival function calculus", "censoring time bias analysis", "shape and scale parameter effects", "survival analysis partial derivatives"]}
+{"id": "partial-derivative-of-r-wrt-k", "concepts": ["Weibull reliability function", "shape parameter derivative", "exponential reliability calculus"]}
+{"id": "partial-derivative-of-survival-function", "concepts": ["competing risks survival function", "survival function partial derivatives", "series system reliability calculus"]}
+{"id": "partial-derivative-request-clarification", "concepts": ["partial derivative basics", "mathematical expression differentiation"]}
+{"id": "partial-derivative-with-respect-to-x", "concepts": ["multivariate calculus basics", "gradient computation", "Hessian matrix calculation", "partial derivative exercises"]}
+{"id": "particular-solution-found", "concepts": ["ordinary differential equation solving", "particular solution verification", "second order ODE methods", "initial value problem"]}
+{"id": "passing-args-to-streamlit", "concepts": ["Streamlit argument passing", "command line args in Streamlit", "file upload vs directory loading", "Streamlit app configuration"]}
+{"id": "passing-list-in-r", "concepts": ["R list argument passing", "variadic function arguments R", "modifyList function usage", "do.call pattern in R"]}
+{"id": "passing-options-for-integration", "concepts": ["R function default argument inheritance", "nested function control parameters", "numerical integration options R", "function wrapper design R"]}
+{"id": "path-notation-for-arrays", "concepts": ["JSON path dot notation", "array indexing in JSON paths", "path notation language design", "JSON query implementation"]}
+{"id": "path-param-default-redirect", "concepts": ["FastAPI default path parameters", "API index route configuration", "FastAPI redirect patterns"]}
+{"id": "pdf-annotation-tools", "concepts": ["PDF annotation Linux tools", "Evince PDF commenting", "free PDF markup software", "Linux document tools"]}
+{"id": "pdf-document-loaded-successfully", "concepts": ["LLM compute efficiency", "attention mechanism complexity", "O(n^2) transformer scaling", "sparse attention architectures"]}
+{"id": "pdf-images-as-rmd-figures", "concepts": ["PDF figures in RMarkdown", "R Markdown image inclusion", "coverage probability visualization", "knitr figure handling"]}
+{"id": "pdf-images-in-rmd", "concepts": ["PDF images in blogdown", "RMarkdown PDF figure embedding", "Hugo version compatibility", "LaTeX figure syntax"]}
+{"id": "pdf-pages-extraction", "concepts": ["PDF page extraction Python", "PyPDF2 library usage", "document manipulation scripts", "PDF splitting workflow"]}
+{"id": "pdf-to-markdown-html", "concepts": ["PDF to Markdown conversion", "pdftotext heuristics", "document structure parsing", "header footer detection"]}
+{"id": "pdf-upload-and-analysis", "concepts": ["PDF figure analysis", "document upload capabilities", "graph figure interpretation"]}
+{"id": "pdf-upload-for-questions", "concepts": ["PDF upload LLM capabilities", "multimodal document analysis", "figure and plot comprehension"]}
+{"id": "pdf-viewing-issue", "concepts": ["arxiv PDF access", "LLM web browsing limitations"]}
+{"id": "peas-task-environment-analysis", "concepts": ["PEAS AI task environment", "agent environment characterization", "observability in AI systems", "AI textbook concepts"]}
+{"id": "perfect-hash-filter-concept", "concepts": ["perfect hash filter design", "probabilistic data structures", "hash function analysis", "space-efficient set membership"]}
+{"id": "performance-metrics-for-cis", "concepts": ["confidence interval performance metrics", "MLE evaluation methodology", "BCa bootstrap confidence intervals", "presentation script design"]}
+{"id": "perplexity-in-neural-language-models", "concepts": ["language model perplexity", "token probability computation", "document-level perplexity", "neural language model evaluation"]}
+{"id": "phd-candidacy-on-orcid", "concepts": ["ORCID profile management", "academic credential listing", "PhD candidacy documentation"]}
+{"id": "phd-co-op-enrollment-steps", "concepts": ["PhD co-op program enrollment", "SIUE SIUC doctoral program", "graduate course registration", "dual university PhD program"]}
+{"id": "phd-faculty-match-siuc", "concepts": ["PhD faculty advisor matching", "federated learning research labs", "SIUC doctoral program", "research alignment strategy"]}
+{"id": "phd-meeting-agenda-summary", "concepts": ["PhD advisor meeting agenda", "doctoral program planning", "graduate student onboarding"]}
+{"id": "phd-summer-plan-approval", "concepts": ["PhD advisor communication", "course registration approval", "academic hold resolution", "graduate semester planning"]}
+{"id": "philosophical-reflections-with-schopenhauer", "concepts": ["philosophical dialogue Schopenhauer", "pessimism philosophy discussion", "casual philosophical reflection"]}
+{"id": "picture-journey-of-symbols", "concepts": ["image interpretation creativity", "visual storytelling backstory", "dark narrative exploration"]}
+{"id": "ping-log-visualization", "concepts": ["network ping log visualization", "ISP connectivity monitoring", "time series network data", "connection timeout detection"]}
+{"id": "plot-adjustments-pdf-clipping", "concepts": ["matplotlib plot clipping", "figure caption layout", "confidence interval visualization", "PDF output formatting"]}
+{"id": "plot-analysis-mle-variance", "concepts": ["MLE variance visualization", "statistical plot analysis"]}
+{"id": "plot-ci-vs-scale3", "concepts": ["confidence interval plotting", "scale parameter visualization", "outlier filtering in plots", "R ggplot CI comparison"]}
+{"id": "plot-dataframe-results", "concepts": ["pandas DataFrame plotting", "IQR outlier removal", "bootstrap MTTF visualization", "Python statistical plotting"]}
+{"id": "plot-format-for-rmarkdown-png-vs-pdf", "concepts": ["plot format selection RMarkdown", "PNG vs PDF figure quality", "LaTeX figure rendering", "publication-quality plots"]}
+{"id": "plot-var-vs-q", "concepts": ["empirical variance visualization", "censoring time effect plots", "simulation study variance", "MLE sampling distribution"]}
+{"id": "plots-mse-mu-var", "concepts": ["MSE plot generation R", "mean squared error visualization", "Monte Carlo simulation plots", "knitr figure code"]}
+{"id": "plots-of-parameters-vs-x", "concepts": ["parameter estimation visualization", "matplotlib multi-parameter plots", "outlier removal IQR method", "MLE parameter comparison"]}
+{"id": "plotting-ci-for-n-p", "concepts": ["confidence interval vs sample size", "bootstrap CI visualization", "masking probability effects", "Weibull parameter CI plots"]}
+{"id": "plotting-data-models-requests", "concepts": ["statistical bias visualization", "true vs estimated parameter plots", "bootstrap results plotting", "simulation study visualization"]}
+{"id": "plotting-density-in-r", "concepts": ["density plot in R", "R base graphics density", "probability density visualization"]}
+{"id": "plotting-mathematical-function", "concepts": ["mathematical function plotting", "function rotation transformation", "Python plot generation", "trigonometric function visualization"]}
+{"id": "plotting-mle-matrix-in-r", "concepts": ["MLE matrix visualization R", "bias and MSE plotting", "simulation result visualization", "R statistical graphics"]}
+{"id": "plotting-mle-matrix", "concepts": ["MLE matrix visualization", "parameter estimate plotting", "simulation study graphics"]}
+{"id": "plotting-points-on-coordinate-plane", "concepts": ["coordinate geometry plotting", "Python geometry visualization", "obtuse angle determination", "point plotting exercises"]}
+{"id": "plugin-code-review", "concepts": ["Python web plugin review", "Quart async web framework", "POST endpoint implementation", "ChatGPT plugin development"]}
+{"id": "point-domain-to-laptop", "concepts": ["domain DNS configuration", "Squarespace domain routing", "dynamic DNS setup", "local server demo deployment"]}
+{"id": "poisson-approximation-of-binomial", "concepts": ["Poisson binomial approximation", "probability distribution approximation", "rare event probability modeling"]}
+{"id": "policy-and-value-in-search", "concepts": ["reinforcement learning policy functions", "game tree search algorithms", "value function approximation", "Pacman AI search strategy"]}
+{"id": "political-slant-analysis", "concepts": ["political bias in books", "conservative vs liberal perspectives", "American foreign intervention analysis", "political slant categorization"]}
+{"id": "politics-and-campaign-slogans", "concepts": ["political philosophy humor", "campaign slogan design", "epistemic humility in politics"]}
+{"id": "politics-rationality-mind-killer", "concepts": ["politics and rationality", "Socratic epistemic humility", "mind-killer tribalism", "rational political discourse"]}
+{"id": "polynomial-differential-equation-solution", "concepts": ["ChatGPT export JSON format", "Elasticsearch data import", "conversation data pipeline", "JSON tree structure"]}
+{"id": "polynomial-differential-equation-solution_1", "concepts": ["ordinary differential equation solving", "particular solution methods", "initial value problems", "ODE perturbation analysis"]}
+{"id": "population-bomb-s-impact-india", "concepts": ["Population Bomb book impact", "India sterilization program", "Paul Ehrlich overpopulation theory", "population policy consequences"]}
+{"id": "popup-chart-toggle", "concepts": ["time series chart toggle UI", "JavaScript popup interaction", "dynamic server URL configuration", "frontend chart design"]}
+{"id": "post-cancer-running-progress", "concepts": ["post-chemotherapy fitness recovery", "interval sprint training", "running progress after illness", "physical rehabilitation running"]}
+{"id": "power-law-and-er-networks", "concepts": ["scale-free network power law", "Erdos-Renyi network models", "complex networks homework", "network degree distribution"]}
+{"id": "power-law-er-networks", "concepts": ["power law degree distribution", "ER random graph theory", "network topology comparison", "mathematical network analysis"]}
+{"id": "powerpoint-slide-fit-tips", "concepts": ["RMarkdown PowerPoint output", "slide layout configuration", "Beamer vs PowerPoint formatting", "presentation margin adjustment"]}
+{"id": "powershell-curl-error-fix", "concepts": ["PowerShell curl error", "Windows HTTP client issues", "IE engine dependency fix", "REST API testing Windows"]}
+{"id": "practice-presentation-with-slides", "concepts": ["presentation practice strategies", "script vs memorization debate", "slide presentation preparation", "academic talk delivery"]}
+{"id": "predicting-reading-behavior-models", "concepts": ["large behavior model concept", "multimodal reading prediction", "PDF reading action modeling", "human behavior prediction AI"]}
+{"id": "presentable-python-code", "concepts": ["Python code formatting", "docstring indentation style", "code presentation aesthetics", "Python string formatting"]}
+{"id": "preventing-wars-novel-strategies", "concepts": ["war prevention strategies", "civil war frustration dynamics", "novel conflict resolution ideas", "political violence prevention"]}
+{"id": "prim-s-algo-fix", "concepts": ["Prim's algorithm debugging", "minimum spanning tree code", "graph algorithm implementation", "Manhattan distance heuristic"]}
+{"id": "print-stats-in-rmarkdown", "concepts": ["RMarkdown compilation logging", "R knitr output messages", "runtime statistics printing", "R build process debugging"]}
+{"id": "printing-r-global-environment", "concepts": ["R global environment inspection", "R environment debugging", "ls and ls.str functions"]}
+{"id": "private-deliberations-in-llm", "concepts": ["LLM private scratchpad tokens", "RLHF phase fine-tuning", "chain of thought reasoning", "internal reasoning before output"]}
+{"id": "prob3-vs-shape", "concepts": ["simulation data merging", "duplicate row detection", "summary statistics interpretation", "shape parameter probability plots"]}
+{"id": "probabilities-independent-of-parameters", "concepts": ["parameter-independent probability conditions", "thesis committee communication", "academic email writing", "model condition explanation"]}
+{"id": "probability-integration-overview", "concepts": ["competing risks probability integration", "hazard function decomposition", "series system survival probability", "competing risks component probability"]}
+{"id": "probability-of-false-positives", "concepts": ["Miller-Rabin primality test", "false positive probability", "primality test error bounds", "probabilistic primality testing"]}
+{"id": "probability-percentages-and-quantiles", "concepts": ["probability as percentage", "quantile interpretation", "statistical terminology clarification", "cumulative distribution function"]}

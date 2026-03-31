@@ -1,0 +1,100 @@
+{"id": "mount-google-drive-linux", "concepts": ["Google Drive Linux mounting", "rclone filesystem sync", "ocamlfuse vs rclone comparison", "cloud storage FUSE mount"]}
+{"id": "mounting-zfs-disk-in-linux", "concepts": ["ZFS pool mounting", "Linux disk management", "zfs list command output", "filesystem mount points"]}
+{"id": "mouse-consciousness-and-suffering", "concepts": ["animal consciousness levels", "mouse self-awareness capacity", "sticky trap ethics", "animal suffering assessment"]}
+{"id": "movie-watchlist-update", "concepts": ["curated film watchlist", "art house cinema selection"]}
+{"id": "mse-for-multivariate-estimators", "concepts": ["multivariate MSE matrix", "variance-covariance matrix estimator", "bias-variance decomposition", "parameter estimation theory"]}
+{"id": "mttf-analysis-and-ci", "concepts": ["MTTF confidence intervals", "reliability parameter bias", "component failure rate estimation", "Monte Carlo MLE analysis"]}
+{"id": "mttf-and-reliability-comparison", "concepts": ["Weibull reliability comparison", "mean time to failure metrics", "component lifetime distribution", "failure rate statistics"]}
+{"id": "mttf-experiment-analysis", "concepts": ["MTTF Monte Carlo simulation", "MLE parameter estimation scenarios", "reliability experiment analysis"]}
+{"id": "mttf-scale3-analysis", "concepts": ["Weibull scale parameter analysis", "MLE confidence intervals components", "reliability simulation results"]}
+{"id": "multi-fitness-training-plan", "concepts": ["multi-event athletic training", "sprint and distance running program", "strength and speed periodization", "weight loss and performance tradeoffs"]}
+{"id": "multi-modal-ar-model-encoding", "concepts": ["multimodal autoregressive model", "cross-modality token encoding", "universal causal sequence model", "temporal dependency modeling"]}
+{"id": "multi-modal-models-in-ai", "concepts": ["multimodal AI architectures", "unified token representation", "image and text integration", "multimodal tokenization strategies"]}
+{"id": "multi-tasking-ai-development", "concepts": ["developer project task list", "API hosting infrastructure", "Prolog and Scheme integration", "personal AI development roadmap"]}
+{"id": "multimodal-lmm-with-recurrent-layers", "concepts": ["frozen LMM with recurrent layers", "LSTM augmented language model", "recurrent layer fine-tuning", "stateful neural language model"]}
+{"id": "multiple-linear-regression-model", "concepts": ["multivariate response regression", "homoscedasticity and time variables", "vector error term modeling", "regression assumptions in science"]}
+{"id": "multiple-plots-in-r", "concepts": ["R plot grid arrangement", "coverage probability visualization", "multi-panel plot layout"]}
+{"id": "multiverse-theory-debate", "concepts": ["mathematical multiverse hypothesis", "contingent facts in physics", "base reality as possibility space", "modal realism in cosmology"]}
+{"id": "", "concepts": ["mathematical multiverse hypothesis", "modal realism foundations", "reality as mathematical relations"]}
+{"id": "mvn-normal-distribution-design", "concepts": ["multivariate normal S3 class R", "generic PDF method dispatch", "mvn object design pattern"]}
+{"id": "na-count-simulation-study", "concepts": ["NA value counting R output", "simulation study data cleaning", "R dataframe NA handling"]}
+{"id": "nanotech-in-engines-of-creation", "concepts": ["Engines of Creation nanotechnology", "AGI foundational texts", "nanotech to AGI analogy", "Drexler molecular machines"]}
+{"id": "natural-language-querying-with-elasticsearch", "concepts": ["Elasticsearch natural language querying", "search index schema design", "NLP query generation", "full-text search architecture"]}
+{"id": "nautilus-folder-navigation", "concepts": ["Nautilus file manager navigation", "Ubuntu folder path input", "Linux file manager location bar"]}
+{"id": "nclex-rn-exam-preparation", "concepts": ["NCLEX-RN exam curriculum", "nursing licensure preparation", "returning nurse study plan"]}
+{"id": "nclex-rn-study-plan", "concepts": ["NCLEX-RN exam curriculum", "nursing licensure preparation", "returning nurse study plan"]}
+{"id": "near-miss-traffic-incident-discussion", "concepts": ["traffic near-miss analysis", "driver reaction time", "road safety incident discussion"]}
+{"id": "nelder-mead-newton-for-mle", "concepts": ["Nelder-Mead MLE initialization", "Newton method optimization warmstart", "hybrid numerical optimization strategy"]}
+{"id": "nested-json-table-handling", "concepts": ["nested JSON pretty printing", "Rich library table output", "recursive JSON table rendering"]}
+{"id": "netscape-bookmark-importer", "concepts": ["Netscape bookmark HTML format", "bookmark importer CLI tool", "HTML bookmark parsing"]}
+{"id": "network-analysis-insights", "concepts": ["NetworkX cluster identification", "graph community detection", "network visualization PNG export"]}
+{"id": "network-analysis-plan-review", "concepts": ["document similarity network pipeline", "cosine similarity edge construction", "language embedding network analysis", "Ollama embedding integration"]}
+{"id": "network-analysis-summary", "concepts": ["complex network analysis summary", "network metrics overview"]}
+{"id": "network-cluster-definition", "concepts": ["network cluster definition", "graph community structure", "Facebook network clustering"]}
+{"id": "network-examples-brainstorming", "concepts": ["complex network examples brainstorm", "bookmark URL link network", "CS490 network science course"]}
+{"id": "network-growth-analysis", "concepts": ["preferential attachment mechanism", "network growth dynamics", "movie actor network growth", "scale-free network formation"]}
+{"id": "network-science-summary", "concepts": ["network science key metrics", "graph theory formulas", "clustering coefficient derivation"]}
+{"id": "neural-ar-model-approximation", "concepts": ["byte-level AR language model", "neural network from scratch", "simple autoregressive training"]}
+{"id": "neural-language-model-introduction", "concepts": ["neural probabilistic language model", "Bengio LM paper analysis", "energy-based language models", "LM generalization directions"]}
+{"id": "neural-networks-and-latent-spaces", "concepts": ["neural network latent space structure", "cosine similarity for semantic search", "LLM embedding similarity", "representation learning geometry"]}
+{"id": "neurips-2023-conference-assistance", "concepts": ["NeurIPS 2023 paper search", "tree-of-thoughts reasoning", "chain-of-code prompting"]}
+{"id": "new-governance-for-agi", "concepts": ["AGI governance frameworks", "political response to superintelligence", "accelerating AI timelines", "post-AGI societal structure"]}
+{"id": "new-scientific-assistant-features", "concepts": ["GPT new version features", "AI assistant capability updates"]}
+{"id": "new-terrifying-concepts", "concepts": ["Boltzmann brain thought experiment", "novel existential horror concepts", "consciousness and blindsight", "terrifying cosmological ideas"]}
+{"id": "new-youtube-channel", "concepts": ["YouTube channel creation", "separate personal and public channels"]}
+{"id": "newton-method-error-handling", "concepts": ["Newton MLE R error handling", "tryCatch optimization loop", "Weibull MLE convergence"]}
+{"id": "newton-raphson-convergence-check", "concepts": ["Newton-Raphson convergence criterion", "relative error stopping condition", "numerical root finding"]}
+{"id": "next-talk-r-libraries", "concepts": ["R library talk preparation", "academic presentation response", "R programming community engagement"]}
+{"id": "nginx-fastapi-gpt-experiment", "concepts": ["Nginx FastAPI configuration", "GPT plugin hosting", "remote server experiment setup", "reverse proxy configuration"]}
+{"id": "nginx-for-web-ssh", "concepts": ["NGINX SSH tunneling setup", "secure remote server access", "web-based SSH configuration"]}
+{"id": "ngrok-ssh-access", "concepts": ["ngrok TCP tunnel SSH", "secure shell via ngrok", "ngrok web interface port forwarding"]}
+{"id": "no-unauthorized-representation", "concepts": ["real estate unauthorized representation", "attorney general complaint letter", "legal response without attorney", "consumer protection dispute"]}
+{"id": "no-web-searches-available", "concepts": ["ChatGPT web search capability", "AI assistant tool limitations"]}
+{"id": "node-degree-and-average-degree", "concepts": ["node degree definition digraph", "average degree graph metric", "directed graph degree concepts"]}
+{"id": "normalize-values-to-a", "concepts": ["value normalization to sum A", "R normalize function", "probability simplex projection"]}
+{"id": "notebooklm-faq-creation", "concepts": ["NotebookLM content FAQ", "AI notebook knowledge extraction", "document FAQ generation"]}
+{"id": "notpositivedefinitematrix", "concepts": ["positive definite matrix test", "matrix square root computation", "symmetric matrix definiteness"]}
+{"id": "np-problems-overview", "concepts": ["NP complexity class problems", "RLHF and NP problem solving", "policy search computational complexity"]}
+{"id": "ntm-and-dnc-difference", "concepts": ["Neural Turing Machine architecture", "Differentiable Neural Computer memory", "external memory mechanisms", "NTM vs DNC comparison"]}
+{"id": "nuclear-reactor-tekkit", "concepts": ["nuclear propulsion thought experiment", "Tekkit nuclear mechanics", "magnetic scoop space fuel collection", "nuclear pulse propulsion"]}
+{"id": "numba-state-expansion", "concepts": ["ChatGPT JSON export parsing", "conversation data structure", "Numba state expansion processing"]}
+{"id": "numderiv-grad-functionality", "concepts": ["numDeriv grad function R", "generic gradient method dispatch", "numerical differentiation R package"]}
+{"id": "numerical-pde-solutions", "concepts": ["numerical PDE solving methods", "spring-mass PDE systems", "temperature and vibrational energy", "finite difference methods"]}
+{"id": "numerical-solution-of-ode", "concepts": ["nonlinear ODE boundary value problem", "numerical ODE solver implementation", "shooting method for BVP"]}
+{"id": "nursing-nclex-study-plan", "concepts": ["NCLEX-RN exam curriculum", "returning nurse motivation", "nursing licensure study plan"]}
+{"id": "objective-truth-paradox", "concepts": ["objective truth self-refutation paradox", "pragmatic theory of truth", "epistemic coherentism", "relativism logical inconsistency"]}
+{"id": "obsidian-aligns-with-unix", "concepts": ["Obsidian Unix philosophy alignment", "plaintext knowledge management", "Unix design principles software", "Obsidian ecosystem critique"]}
+{"id": "obtuse-angle-correcting-points", "concepts": ["obtuse angle coordinate geometry", "2D Cartesian point construction", "angle visualization correction"]}
+{"id": "obtuse-angle-points", "concepts": ["obtuse angle definition geometry", "three point angle construction", "angle visualization plotting"]}
+{"id": "oddness-for-number-like-objects", "concepts": ["abstract algebraic oddness", "group theory parity generalization", "number-like object properties", "abstract algebra extensions"]}
+{"id": "odt-cache-manager-improvements", "concepts": ["Python cache manager design", "bulk cache update strategy", "cache invalidation policy"]}
+{"id": "odt-clean-document-code", "concepts": ["Python code documentation cleanup", "SHA256 hash truncation", "Ollama data export tool"]}
+{"id": "odt-moondream-model-components", "concepts": ["Moondream multimodal model architecture", "image projector layer LLM", "vision-language model components"]}
+{"id": "odt-old-generalize-function-for-relative-time", "concepts": ["relative time string parsing", "Python time generalization", "natural language time expressions", "regex time parsing"]}
+{"id": "odt-old-private-utility-functions-design", "concepts": ["Python private utility module design", "static class vs module functions", "utility function encapsulation"]}
+{"id": "odt-ollamadatatool-project", "concepts": ["OllamaDataTool project design", "Python design patterns refactoring", "cache manager module naming", "PyPI package structure"]}
+{"id": "odt-upload-package-to-pypi", "concepts": ["PyPI package upload process", "API token authentication PyPI", "Python package publishing"]}
+{"id": "old-laptop-linux-options", "concepts": ["low-resource Linux server uses", "old hardware repurposing", "1GB RAM Linux deployment", "development API test server"]}
+{"id": "oligarchs-political-connections", "concepts": ["political oligarch network mapping", "billionaire political influence", "power structure tier analysis", "puppet vs puppeteer dynamics"]}
+{"id": "ollama-api-contribution-guide", "concepts": ["LiteLLM Ollama integration", "open source LLM API contribution", "Ollama API implementation"]}
+{"id": "ollama-api-customization", "concepts": ["Ollama logit access API", "open source LLM layer access", "Ollama vs OpenAI API differences"]}
+{"id": "ollama-function-calling-example", "concepts": ["Ollama function calling API", "OpenAI compatible function calling", "CLI tool function invocation", "function call script generation"]}
+{"id": "ollama-model-linking-script", "concepts": ["Ollama model file linking script", "GGUF model file management", "model hash extraction automation"]}
+{"id": "on-moral-responsibility", "concepts": ["moral responsibility philosophy", "academic paper markdown refinement", "recent moral philosophy developments"]}
+{"id": "open-source-integration-challenges", "concepts": ["Wolfram Language open source gap", "proprietary vs open scientific tools", "Mathematica ecosystem isolation"]}
+{"id": "openai-language-models", "concepts": ["OpenAI engine API listing", "GPT model family overview", "Whisper speech recognition model"]}
+{"id": "openai-text-embeddings", "concepts": ["OpenAI text embedding API", "transformer penultimate layer embeddings", "embedding vs logit output layer"]}
+{"id": "openapi-for-rest-api", "concepts": ["OpenAPI REST specification", "curl API request examples", "REST endpoint definition"]}
+{"id": "opencog-overview-and-features", "concepts": ["OpenCog AGI architecture", "hypergraph knowledge representation", "AtomSpace cognitive system"]}
+{"id": "opencog-prime-agi-progress", "concepts": ["OpenCog Prime AGI viability", "LLM algorithm learning", "symbolic-neural AGI integration"]}
+{"id": "optim-function-control-parameters", "concepts": ["R optim function control parameters", "MLE optimization control passing", "nested function parameter forwarding"]}
+{"id": "optimal-control-for-rl", "concepts": ["optimal control theory RL connection", "dynamic programming Pontryagin", "MDP policy learning foundations"]}
+{"id": "optimization-function-error", "concepts": ["R optim closure type error", "L-BFGS-B optimization debugging", "type coercion error R"]}
+{"id": "optimize-llms-with-dspy", "concepts": ["DSPy LLM optimization framework", "prompt optimization pipelines", "declarative LLM programming"]}
+{"id": "optimizing-algorithms-with-ml", "concepts": ["second order optimization ML", "gradient descent alternatives LLM", "algorithm approximation with ML"]}
+{"id": "optimizing-american-democracy-metaphorically", "concepts": ["American democracy information ecosystem", "mass delusion political dynamics", "democracy optimization metaphor"]}
+{"id": "optimizing-r-code-performance", "concepts": ["R code performance optimization", "likelihood model class design", "dispatch function R refactoring"]}
+{"id": "optimizing-rclone-for-google-drive", "concepts": ["rclone Google Drive optimization", "rclone systemd service mount", "cloud sync cache configuration"]}
+{"id": "oraclehash-compute-sha256-hash", "concepts": ["SHA256 file hashing", "random oracle hash model", "lazy hash function implementation", "OracleHash class design"]}
+{"id": "oraclehash-hash-class-test-cases", "concepts": ["hash function pedagogy", "random oracle idealized model", "OracleHash test case design", "cryptographic hash illustration"]}
+{"id": "orthogonality-thesis-and-paperclip-maximizer", "concepts": ["orthogonality thesis critique", "paperclip maximizer thought experiment", "meta-cognitive AI goal emergence", "prediction-intelligence equivalence"]}

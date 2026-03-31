@@ -1,0 +1,100 @@
+{"id": "merge-api-for-random", "concepts": ["C++ concepts interface design", "template-based API merging", "README documentation consolidation", "generic programming constraints"]}
+{"id": "merge-component-failures-reliability", "concepts": ["Beamer presentation design", "series system reliability analysis", "joint failure distribution", "component lifetime modeling"]}
+{"id": "merge-csv-files-clean", "concepts": ["CSV file merging in R", "missing value removal", "directory traversal scripting", "data cleaning pipeline"]}
+{"id": "merge-csv-files-discrepancy-fix", "concepts": ["CSV column alignment", "data discrepancy resolution", "file merging workflow"]}
+{"id": "merge-discrepant-csv-files", "concepts": ["CSV schema reconciliation", "column name discrepancy detection", "tabular data merging"]}
+{"id": "merge-functionality-enhancement", "concepts": ["ebook library management", "Calibre metadata integration", "unit testing workflow", "software architecture refactoring"]}
+{"id": "merging-calibre-metadata", "concepts": ["Calibre library JSON export", "Dublin Core metadata extraction", "ebook flat folder structure", "metadata merge logic"]}
+{"id": "meta-learning-advanced-ai-development", "concepts": ["meta-learning theory algorithms", "few-shot learning methods", "neural network adaptation", "AI paper analysis"]}
+{"id": "meta-models-enhancing-system-2", "concepts": ["System 2 thinking in LLMs", "meta-learning for slow reasoning", "neural language model cognition", "deliberate reasoning enhancement"]}
+{"id": "meta-nets-for-system-2", "concepts": ["meta-networks for reasoning", "System 2 cognitive modeling", "LLM deliberate inference", "meta-learning book deep dive"]}
+{"id": "meta-prompt-for-model-behavior", "concepts": ["meta-prompt design", "mathematical reasoning induction", "LLM prompt engineering", "chain-of-thought prompting"]}
+{"id": "metafunctor-add-skills-section-hugo", "concepts": ["Hugo Wowchemy theme customization", "skills widget configuration", "static site YAML frontmatter"]}
+{"id": "metafunctor-content-folder-not-appearing", "concepts": ["Hugo content directory structure", "landing page section configuration", "shortcode template customization"]}
+{"id": "metafunctor-display-multiple-sections-hugo", "concepts": ["Hugo Ananke theme sections", "multi-section landing page", "content type routing in Hugo"]}
+{"id": "metafunctor-host-hugo-on-github", "concepts": ["Hugo GitHub Pages deployment", "Netlify static site hosting", "dual hosting configuration"]}
+{"id": "metafunctor-hugo-latex-math-integration", "concepts": ["Hugo LaTeX math rendering", "KaTeX integration in Hugo", "Goldmark markdown processor", "math in static sites"]}
+{"id": "metafunctor-skills-markdown-hugo", "concepts": ["Hugo skills page markdown", "Wowchemy skills widget YAML", "academic theme configuration"]}
+{"id": "metafunctor-switching-from-blogdown-to-hugo", "concepts": ["blogdown to Hugo migration", "blog vs portfolio separation", "static site generator selection"]}
+{"id": "metafunctor-test-hugo-locally", "concepts": ["Hugo local development server", "deprecated config key fixes", "static site local testing"]}
+{"id": "metafunctor-text-flow-around-image", "concepts": ["Hugo template HTML layout", "image text wrapping CSS", "problem set content organization"]}
+{"id": "method-not-recognized-for-mle-emp", "concepts": ["R S3 method dispatch", "namespace export configuration", "generic method confint in R"]}
+{"id": "micrograd-for-backpropagation", "concepts": ["automatic differentiation micrograd", "backpropagation from scratch", "computational graph gradients", "neural network foundations"]}
+{"id": "midterm-exam-analysis", "concepts": ["social network analysis exam", "biological network analysis", "graph theory exam questions", "network science pedagogy"]}
+{"id": "midterm-exam-summary", "concepts": ["network analysis exam summary", "markdown conversion of exam", "social network course content"]}
+{"id": "min-conflicts-algorithm-in-csp", "concepts": ["min-conflicts local search", "constraint satisfaction problem", "CSP heuristic algorithms"]}
+{"id": "mindmap-of-language-model", "concepts": ["large language model mindmap", "LLM concept visualization", "language model architecture overview"]}
+{"id": "minimax-alpha-beta-pruning", "concepts": ["alpha-beta pruning game trees", "minimax search pruning", "adversarial search optimization"]}
+{"id": "minimax-game-tree-utilities", "concepts": ["minimax utility functions", "rational agent utility maximization", "adversarial game tree search"]}
+{"id": "minimum-of-weibull-distributions", "concepts": ["minimum of Weibull distributions", "competing risks CDF derivation", "extreme value distribution theory"]}
+{"id": "mitigating-s-risks-for-future", "concepts": ["s-risk mitigation strategy", "long-term future suffering reduction", "existential risk ethics", "personal suffering context"]}
+{"id": "ml-ai-system-analysis", "concepts": ["GPU selection for ML", "fine-tuning without GPU", "NVIDIA Tesla P40 tensor cores"]}
+{"id": "ml-hardware-considerations", "concepts": ["ML hardware procurement", "data science server configuration", "GPU specification comparison"]}
+{"id": "ml-model-training-process", "concepts": ["LLM pretraining induction", "fine-tuning model layers", "neural network training conceptual model"]}
+{"id": "mle-accuracy-precision", "concepts": ["MLE simulation study design", "bias variance terminology", "estimator accuracy precision"]}
+{"id": "mle-analysis-bias-variance-mse", "concepts": ["MLE bias variance MSE analysis", "statistics thesis simulation study", "estimator performance evaluation"]}
+{"id": "mle-analysis-by-sample-size", "concepts": ["MLE sample size analysis", "Weibull MLE renaming", "simulation study parameter sweep"]}
+{"id": "mle-analysis-shape3-vary", "concepts": ["controlled MLE experiment", "shape parameter variation", "convergence diagnostic analysis", "MLE visual analysis"]}
+{"id": "mle-analysis-study", "concepts": ["MLE performance analysis thesis", "likelihood-based estimation study", "statistical estimator assessment"]}
+{"id": "mle-and-bca-evaluation", "concepts": ["BCa confidence interval evaluation", "MLE Beamer slide presentation", "bootstrap CI coverage"]}
+{"id": "mle-and-sample-size", "concepts": ["MLE identifiability conditions", "sample size for parameter estimation", "parametric model non-identifiability"]}
+{"id": "mle-bias-analysis-plots", "concepts": ["MLE bias visualization plots", "component failure probability filtering", "simulation study plot design"]}
+{"id": "mle-bias-analysis", "concepts": ["MLE bias statistical analysis", "simulation study bias estimation", "maximum likelihood estimator evaluation"]}
+{"id": "mle-bias-analysis_1", "concepts": ["MLE bias overall assessment", "estimator performance summary", "maximum likelihood bias review", "simulation study conclusions"]}
+{"id": "mle-bias-estimation-methods", "concepts": ["empirical MLE bias estimation", "bootstrap bias from repeated samples", "sampling distribution of estimator"]}
+{"id": "mle-bias-visualization", "concepts": ["MLE bias visualization in R", "multidimensional parameter bias plot", "estimator bias graphical analysis"]}
+{"id": "mle-bootstrap-analysis", "concepts": ["Weibull series bootstrap MLE", "sampling distribution visualization", "masking level bootstrap analysis"]}
+{"id": "mle-bootstrapping-simulation", "concepts": ["bootstrap CI coverage probability", "right-censored series system MLE", "masked component lifetime estimation"]}
+{"id": "mle-bootstrapping-simulation_1", "concepts": ["parametric bootstrap MLE", "computational efficiency bootstrapping", "CI coverage probability estimation"]}
+{"id": "mle-ci-analysis", "concepts": ["confidence band interpretation", "bootstrap CI distribution visualization", "Monte Carlo MLE distribution"]}
+{"id": "mle-confidence-bands-visualization", "concepts": ["MLE confidence bands plot", "simulation study shaded region", "parameter vector visualization"]}
+{"id": "mle-confidence-bands", "concepts": ["confidence band concept", "MLE sampling distribution bands", "multi-sample-size confidence comparison"]}
+{"id": "mle-coverage-probability", "concepts": ["MLE coverage probability estimation", "Monte Carlo bias estimation", "MSE computation in R"]}
+{"id": "mle-empirical-bias-analysis", "concepts": ["empirical bias ground truth", "bootstrap bias confidence band", "simulation study bias comparison"]}
+{"id": "mle-estimation-performance", "concepts": ["MLE variance-covariance estimation", "series system masked data MLE", "performance analysis paper writing"]}
+{"id": "mle-for-censored-series", "concepts": ["right-censored series system MLE", "masked component lifetimes estimation", "Monte Carlo series analysis in R"]}
+{"id": "mle-for-right-censored-exponential", "concepts": ["exponential MLE right censoring", "masked data likelihood model", "MLE for masking data"]}
+{"id": "mle-functions-in-r", "concepts": ["R MLE generic functions", "nlm and optim in R", "compiled C code in R optimization"]}
+{"id": "mle-hpdi-probability-calculation", "concepts": ["HPDI coverage probability computation", "empirical MLE distribution", "frequentist CI evaluation"]}
+{"id": "mle-in-stats-r-package", "concepts": ["R stats mle function", "constrained MLE optimization", "optimization algorithms in R"]}
+{"id": "mle-minimizes-kl-divergence", "concepts": ["MLE as KL divergence minimization", "empirical distribution model fitting", "information-theoretic MLE interpretation"]}
+{"id": "mle-modeling-for-masked-data", "concepts": ["algebraic.mle R library", "masked series data likelihood", "MLE interface design in R"]}
+{"id": "mle-of-fisher-information", "concepts": ["Fisher information MLE invariance", "negative Hessian estimation", "variance-covariance Fisher matrix"]}
+{"id": "mle-parameter-transformation", "concepts": ["MLE parameter transformation invariance", "linear transformation of estimator", "delta method covariance"]}
+{"id": "mle-performance-analysis", "concepts": ["MLE CI coverage probability", "simulation study true parameter comparison", "thesis performance analysis"]}
+{"id": "mle-performance-evaluation", "concepts": ["MLE bias MSE coverage evaluation", "right-censored masked data estimation", "simulation study parameter range"]}
+{"id": "mle-performance-using-simulation", "concepts": ["MLE simulation study paper writing", "competing risks masked data", "model specification sensitivity"]}
+{"id": "mle-performance-using-simulation_1", "concepts": ["MLE variance-covariance comparison", "masked series system simulation", "estimator performance paper"]}
+{"id": "mle-research-ideas", "concepts": ["MLE research brainstorming", "simulation study design ideas", "masked data MLE extensions"]}
+{"id": "mle-resilience-testing", "concepts": ["MLE robustness testing", "informed masking violation", "series system masked candidate sets"]}
+{"id": "mle-sampling-distribution-analysis", "concepts": ["empirical MLE sampling distribution", "frequentist confidence interval theory", "estimator distribution analysis"]}
+{"id": "mle-sensitivity-analysis-options", "concepts": ["MLE sensitivity analysis methods", "log-likelihood third derivative", "statistical inference sensitivity"]}
+{"id": "mle-sensitivity-in-weibull", "concepts": ["Weibull MLE sensitivity", "right censoring masking parameters", "series system parameter sensitivity"]}
+{"id": "mle-simulation-study", "concepts": ["MLE simulation study design", "right-censored masked series system", "candidate set observation model"]}
+{"id": "mle-solver-for-exponential-series", "concepts": ["exponential series MLE solver in R", "masked data log-likelihood", "optim score function sign"]}
+{"id": "mle-variance-vs-sample-size", "concepts": ["MLE variance sample size relationship", "log-scale parameter plot", "Weibull shape scale MLE visualization"]}
+{"id": "mle-variance-with-sample-size", "concepts": ["masking level variance analysis", "MLE spread visualization", "sample size variance comparison"]}
+{"id": "mle-visualization-request", "concepts": ["simulation study data visualization", "controlled parameter analysis plot", "series system MLE visualization"]}
+{"id": "mle-vs-empirical-distribution", "concepts": ["empirical distribution as MLE", "nonparametric maximum likelihood", "infinite-parameter distribution family"]}
+{"id": "mle-vs-kl-divergence", "concepts": ["MLE KL divergence equivalence", "likelihood as information measure", "model fitting information theory"]}
+{"id": "model-discourse-llm-collaboration", "concepts": ["LLM presentation design", "Marp slide image generation", "SLUUG talk visual content"]}
+{"id": "model-grok-code-understanding", "concepts": ["Grok LLM architecture code", "distributed training simplification", "transformer model code walkthrough"]}
+{"id": "model-loglik-error", "concepts": ["R likelihood contribution model", "S3 class likelihood debugging", "loglikelihood R code error"]}
+{"id": "model-requirements-for-types", "concepts": ["C++ concept requirements syntax", "template type constraints", "requires clause in C++20"]}
+{"id": "model-s-advanced-capabilities-explained", "concepts": ["GPT-4 custom instruction design", "advanced prompting strategies", "chain-of-thought reasoning elicitation"]}
+{"id": "model-test-lrt-concept", "concepts": ["likelihood ratio test implementation", "complex constraint LRT", "hypothesis testing in R"]}
+{"id": "modeling-consciousness-through-agents", "concepts": ["consciousness agent modeling", "predictive processing pain", "subjective experience philosophy"]}
+{"id": "modeling-data-and-computation", "concepts": ["Python object identity semantics", "data science library exploration", "Python vs R programming comparison"]}
+{"id": "modeling-distribution-support-in-r", "concepts": ["distribution support objects in R", "support membership testing methods", "S3 distribution class design"]}
+{"id": "modeling-graphics-with-bookdown", "concepts": ["bookdown figure inclusion", "R Markdown bookdown rendering", "gitbook output directory"]}
+{"id": "modeling-unknown-data-processes", "concepts": ["unknown data generating process", "small sample estimation challenges", "algebraic.mle vignette analysis"]}
+{"id": "modeling-workflow-and-documentation", "concepts": ["S3 vignette documentation", "likelihood model inheritance", "R package documentation workflow"]}
+{"id": "modelo-de-lenguaje-multilingue", "concepts": ["multilingual LLM labeling", "SFT reward model labels", "Karpathy LLM training discussion"]}
+{"id": "modern-c-json-parsing", "concepts": ["modern C++ JSON parsing", "travel time data extraction", "CMake C++ library integration"]}
+{"id": "modern-c-setup-with-cmake", "concepts": ["modern C++ CMake setup", "C++ package manager integration", "GTest documentation toolchain"]}
+{"id": "modern-ml-for-language", "concepts": ["modern ML language model learning", "cross-entropy loss in LLMs", "next-token prediction training"]}
+{"id": "modernizing-c-code", "concepts": ["legacy C++ code modernization", "template list data structure", "modern C++ idioms refactoring"]}
+{"id": "modify-blogdown-on-netlify", "concepts": ["blogdown Netlify workflow", "R blog modification process", "static site blogging in R"]}
+{"id": "monte-carlo-error-estimate", "concepts": ["Monte Carlo expectation error", "multivariate Monte Carlo error", "scalar error metric for MC"]}
+{"id": "monte-carlo-vs-analytical", "concepts": ["Monte Carlo vs analytical solutions", "AR time series bootstrap", "bootstrap for complex models"]}
+{"id": "most-expensive-movies-inflation", "concepts": ["movie budget inflation adjustment", "film production cost analysis", "TV show budget comparison"]}

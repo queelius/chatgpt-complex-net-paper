@@ -1,0 +1,99 @@
+{"id": "combine-pdf-images-python", "concepts": ["PDF image manipulation", "matplotlib subplot layout", "RMarkdown bookdown integration", "figure side-by-side comparison"]}
+{"id": "combine-subplots-for-plots", "concepts": ["matplotlib subplot layout", "figure caption writing", "probability set theory", "false positive false negative analysis"]}
+{"id": "command-about-improvement", "concepts": ["CLI command design", "Python typer click framework", "terminal output formatting"]}
+{"id": "compare-git-with-previous-commit", "concepts": ["git diff workflow", "version control history", "RMarkdown document editing"]}
+{"id": "comparing-density-objects-in-r", "concepts": ["kernel density estimation", "parametric vs empirical distributions", "R statistical graphics"]}
+{"id": "comparing-histograms-in-r", "concepts": ["histogram comparison R", "R statistical graphics", "sample distribution visualization"]}
+{"id": "comparing-nested-models-mle", "concepts": ["nested model comparison", "likelihood ratio test", "Weibull series system", "maximum likelihood estimation"]}
+{"id": "competing-risk-model-mle-mcmc", "concepts": ["competing risk model", "series system reliability", "cumulative hazard function", "maximum likelihood estimation", "MCMC sampling methods"]}
+{"id": "compile-cuda-program-linux", "concepts": ["CUDA GPU programming", "Linux compilation workflow", "parallel computing kernels"]}
+{"id": "complex-ai-transformations", "concepts": ["image generation prompts", "DALL-E prompt engineering", "data visualization design"]}
+{"id": "complex-diagnoses-and-tests", "concepts": ["sports medicine diagnosis", "cancer treatment history", "clinical reasoning simulation"]}
+{"id": "complex-networks-quiz-guide", "concepts": ["Watts-Strogatz small world model", "complex network properties", "network science fundamentals", "study guide preparation"]}
+{"id": "complex-r-package-ecosystem", "concepts": ["R package design", "statistical distribution objects", "parameter estimation API design", "object-oriented R programming"]}
+{"id": "complexity-of-reality-abstractions", "concepts": ["abstraction theory", "cognitive working memory limits", "philosophy of models", "blog post writing"]}
+{"id": "compress-prediction-model-genius", "concepts": ["compression equals prediction principle", "generative language model", "algorithmic information theory", "gzip compression"]}
+{"id": "computation-concepts-and-implications", "concepts": ["computation theory foundations", "physical Church-Turing thesis", "human brain as computer", "philosophy of mind"]}
+{"id": "compute-coverage-by-quantile", "concepts": ["simulation study design", "coverage probability estimation", "Weibull series system", "confidence interval evaluation"]}
+{"id": "compute-gradient-of-function", "concepts": ["numerical gradient computation", "log-likelihood gradient", "R numerical differentiation", "maximum likelihood estimation"]}
+{"id": "compute-multivariate-ecdf", "concepts": ["multivariate empirical CDF", "lexicographic sorting", "nonparametric distribution estimation", "R implementation"]}
+{"id": "compute-multivariate-empirical-cdf", "concepts": ["multivariate empirical CDF", "nonparametric distribution estimation", "empirical probability definition"]}
+{"id": "computer-vs-llm-analogy", "concepts": ["Church-Turing thesis", "finite state machine theory", "LLM as stochastic parrot", "philosophy of computation"]}
+{"id": "computing-mse-in-r", "concepts": ["mean squared error computation", "MLE parameter estimation", "bootstrap confidence intervals", "R matrix operations"]}
+{"id": "concealing-goals-in-llms", "concepts": ["LLM goal concealment", "AI deception steganography", "blog post writing", "AI alignment safety"]}
+{"id": "cond-prob-failure-cause", "concepts": ["conditional probability failure cause", "competing risk model", "masked failure data", "series system reliability"]}
+{"id": "condition-2-satisfied-in-industry", "concepts": ["masked failure data", "component candidate sets", "series system reliability", "identifiability conditions"]}
+{"id": "condition-3-justification-plausible", "concepts": ["identifiability conditions", "masked failure data", "Weibull series system", "competing risk model"]}
+{"id": "confidence-interval-explanation", "concepts": ["confidence interval interpretation", "frequentist inference", "statistical estimation"]}
+{"id": "confidence-intervals-for-bootstrapped-parameters", "concepts": ["bootstrap confidence intervals", "boot R package", "parameter vector estimation", "MLE parameter estimation"]}
+{"id": "confidence-intervals-for-mle", "concepts": ["confidence intervals for MLE", "Beamer presentation slides", "RMarkdown presenter view"]}
+{"id": "confidence-intervals-for-mles", "concepts": ["confidence intervals for MLE", "Student t distribution", "R mle object", "small sample inference"]}
+{"id": "confidence-mle-analysis", "concepts": ["maximum likelihood estimation", "confidence intervals for MLE", "data analysis synthesis"]}
+{"id": "confint-mle-boot-always-bca", "concepts": ["bootstrap confidence intervals", "BCa interval method", "boot R package", "R wrapper debugging"]}
+{"id": "connection-issue-with-elasticsearch", "concepts": ["Docker compose networking", "Elasticsearch connection setup", "container deployment"]}
+{"id": "consciousness-and-meaning-debate", "concepts": ["AI consciousness debate", "philosophy of mind", "LLM self-reflection", "meaning and existence"]}
+{"id": "consistent-sa-with-stats-optim", "concepts": ["simulated annealing algorithm", "R stats optim interface", "metaheuristic optimization", "convergence criteria"]}
+{"id": "constants-approximating-20", "concepts": ["mathematical constants approximations", "transcendental number relations", "recreational mathematics"]}
+{"id": "constrained-mle-for-exponential", "concepts": ["constrained maximum likelihood estimation", "Fisher information matrix", "exponential distribution", "parameter constraints"]}
+{"id": "constrained-mle-frequentist", "concepts": ["constrained maximum likelihood estimation", "frequentist vs Bayesian inference", "prior distribution role", "parameter constraints"]}
+{"id": "constraining-llm-outputs-research", "concepts": ["LLM output constraints", "structured program generation", "domain-specific languages", "AI output control"]}
+{"id": "context-tree-weighting-ctw", "concepts": ["context tree weighting algorithm", "sequential prediction models", "n-gram language models", "suffix array indexing"]}
+{"id": "contour-plot-explanation", "concepts": ["contour plot visualization", "data visualization design", "2D function plotting"]}
+{"id": "contour-plot-of-p-values", "concepts": ["p-value visualization", "likelihood ratio test", "simulation study design", "contour plot visualization"]}
+{"id": "control-rewriting-with-sympy", "concepts": ["SymPy term rewriting", "symbolic mathematics Python", "algebraic expression manipulation"]}
+{"id": "control-which-rmd-files", "concepts": ["bookdown configuration", "RMarkdown document structure", "R publishing workflow"]}
+{"id": "converging-quick-upwards-function", "concepts": ["mathematical function design", "asymptotic behavior", "horizontal asymptote"]}
+{"id": "conversation-metadata-display", "concepts": ["CLI command design", "conversation data display", "Python argparse interface", "terminal output formatting"]}
+{"id": "conversation-tree-network", "concepts": ["conversation tree structure", "network representation conversations", "complex network analysis"]}
+{"id": "convert-algorithm-to-latex", "concepts": ["LaTeX algorithm typesetting", "cryptographic cipher notation", "mathematical notation conversion"]}
+{"id": "convert-glossary-entries-to-markdown", "concepts": ["LaTeX to Markdown conversion", "glossary entry formatting", "document format conversion"]}
+{"id": "convert-latex-to-rmarkdown", "concepts": ["LaTeX to RMarkdown conversion", "bookdown document structure", "document format conversion"]}
+{"id": "cosine-similarity-explanation", "concepts": ["cosine similarity measure", "vector space model", "information retrieval metrics", "embedding similarity"]}
+{"id": "cosmic-confusion-in-room", "concepts": ["joke creative writing", "DALL-E prompt engineering", "creative storytelling"]}
+{"id": "cosmic-horror-by-lovecraft", "concepts": ["Lovecraft cosmic horror", "science fiction recommendations", "literary genre exploration"]}
+{"id": "count-combinations-by-k", "concepts": ["conditional empirical distribution", "groupby sampling R", "data frame manipulation", "combinatorial counting"]}
+{"id": "counting-cells-in-evolution", "concepts": ["evolutionary cell count estimation", "Fermi estimation biology", "order of magnitude reasoning"]}
+{"id": "covariance-matrix-calculation", "concepts": ["covariance matrix computation", "R matrix loading", "bootstrap confidence intervals", "Fisher information matrix"]}
+{"id": "covariance-matrix-in-r", "concepts": ["covariance matrix computation", "Fisher information matrix", "MLE parameter estimation", "R matrix operations"]}
+{"id": "covariance-matrix-issue", "concepts": ["variance-covariance matrix", "expectation computation", "R function debugging", "random vector statistics"]}
+{"id": "cp-plot-shape-scale", "concepts": ["coverage probability estimation", "Weibull shape scale parameters", "R statistical graphics", "simulation study design"]}
+{"id": "create-ci-box-plot", "concepts": ["confidence interval visualization", "box plot R", "outlier removal IQR", "R statistical graphics"]}
+{"id": "create-cname-for-lab-metafunctor-com", "concepts": ["DNS CNAME configuration", "dynamic DNS setup", "nginx web server", "subdomain routing"]}
+{"id": "create-meaning-reject-hierarchy", "concepts": ["meaning and work identity", "social hierarchy critique", "blog post writing", "philosophy of labor"]}
+{"id": "create-symlinks-for-accessibility", "concepts": ["Linux symlink creation", "Nautilus file manager", "filesystem accessibility"]}
+{"id": "creating-new-programming-language", "concepts": ["programming language design", "algebraic data types", "Scheme-like language", "garbage collection"]}
+{"id": "creating-r-distribution-class", "concepts": ["R distribution class design", "object-oriented R programming", "series system lifetime distribution", "statistical distribution objects"]}
+{"id": "creating-vignettes-with-devtools", "concepts": ["R package development", "devtools vignette creation", "R publishing workflow"]}
+{"id": "creating-visual-story", "concepts": ["fantasy world building", "creative storytelling", "visual narrative design", "magic system design"]}
+{"id": "creative-problem-solving", "concepts": ["creative problem-solving methods", "intellectual curiosity", "unconventional reasoning"]}
+{"id": "creature-generation-environments-selection", "concepts": ["creature generation design", "world building environments", "creative storytelling"]}
+{"id": "credit-attribution-in-rl", "concepts": ["credit assignment problem", "reinforcement learning theory", "OpenAI alignment research", "reward attribution"]}
+{"id": "critiquing-hazard-function-explanation", "concepts": ["hazard function definition", "series system reliability", "statistical writing critique", "Weibull series system"]}
+{"id": "cross-entropy-vs-negative-log-likelihood", "concepts": ["cross-entropy loss function", "negative log-likelihood", "LLM training objective", "probabilistic model equivalence"]}
+{"id": "cross-referencing-figures-in-rmarkdown", "concepts": ["cross-referencing figures RMarkdown", "bookdown figure labels", "LaTeX in RMarkdown"]}
+{"id": "cross-referencing-in-bookdown", "concepts": ["cross-referencing in bookdown", "LaTeX to RMarkdown conversion", "VS Code regex find replace"]}
+{"id": "cs-phd-opportunities-siu", "concepts": ["CS PhD program opportunities", "SIUE graduate research", "academic grant funding", "small university resources"]}
+{"id": "cs-thesis-repo", "concepts": ["GitHub repository management", "git large file storage", "README writing", "academic code publishing"]}
+{"id": "cs490-project-guidelines", "concepts": ["complex network analysis", "student project guidelines", "network science fundamentals"]}
+{"id": "cs590-complex-networks-analysis", "concepts": ["complex network analysis", "network science project", "community detection methods", "network dynamics"]}
+{"id": "csp-search-techniques", "concepts": ["constraint satisfaction problems", "arc consistency algorithm", "backtracking search", "forward checking CSP"]}
+{"id": "csv-analysis-with-csvkit", "concepts": ["csvkit command line tool", "CSV column analysis", "data exploration tools"]}
+{"id": "csv-enumerate-unique-values", "concepts": ["CSV data exploration", "unique value enumeration", "Python pandas data analysis"]}
+{"id": "csv-standardization-script", "concepts": ["CSV preprocessing script", "Python pandas data analysis", "command line data tools"]}
+{"id": "ctk-about-command-enhancements", "concepts": ["CLI command design", "ctk conversation tool", "terminal output formatting"]}
+{"id": "ctk-command-line-usage", "concepts": ["ctk conversation tool", "CLI command design", "regex query interface", "conversation data management"]}
+{"id": "ctk-readme-update", "concepts": ["README writing", "ctk conversation tool", "documentation rewriting"]}
+{"id": "cube-vs-square-faces", "concepts": ["geometry dimensionality", "recreational mathematics", "problem complexity framing"]}
+{"id": "custom-ar-language-model", "concepts": ["autoregressive language model", "custom instruction prompting", "LLM prompt engineering"]}
+{"id": "custom-date-range-popup", "concepts": ["JavaScript date picker", "web UI customization", "traffic incident reporting"]}
+{"id": "custom-instruction-set-evaluation", "concepts": ["custom instruction prompting", "LLM prompt engineering", "ChatGPT system prompts"]}
+{"id": "custom-instructions-optimization", "concepts": ["custom instruction prompting", "ChatGPT system prompts", "prompt length optimization"]}
+{"id": "cytoscape-java-version-issue", "concepts": ["Cytoscape network visualization", "Java JVM installation", "community visualization tools", "software installation troubleshooting"]}
+{"id": "dall-e-twitter-bot", "concepts": ["DALL-E image generation", "Twitter bot development", "GPT completion API", "social media automation"]}
+{"id": "data-driven-ar-models", "concepts": ["autoregressive language model", "classical statistics background", "data-driven modeling philosophy"]}
+{"id": "data-preprocessing-for-analysis", "concepts": ["Python pandas data analysis", "MLE parameter estimation", "confidence band computation", "simulation study design"]}
+{"id": "database-models-apis-learning", "concepts": ["Elasticsearch database", "API design patterns", "self-directed learning notes", "database architecture"]}
+{"id": "dataframe-splitting-error", "concepts": ["R dataframe operations", "data partitioning R", "groupby splitting R"]}
+{"id": "deal-with-non-finite-values", "concepts": ["R numerical optimization", "non-finite value handling", "R stats optim interface", "simulation error handling"]}
+{"id": "dealing-with-uncertain-priors", "concepts": ["uncertain prior distributions", "imprecise probability theory", "Bayesian inference", "epistemic uncertainty"]}
+{"id": "debate-ai-sentience-embodiment", "concepts": ["AI sentience debate", "embodiment grounding hypothesis", "AGI consciousness theory", "sensorimotor grounding"]}

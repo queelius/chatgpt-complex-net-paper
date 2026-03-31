@@ -1,0 +1,21 @@
+I'm thinking about implementing a simple programming language like scheme, but with algebraic data types. These types should not constrain the program | Do I need garbage collection? I don't want the programmer to be forced to manage memory, but I would like them to be able to optionally specify mem
+| A lot of the stuff I'm computing can be d
+# for downloading the incident raw data for IDOT-D8 from Catro's server ------------------------------------
+# cd / | what is this json an example of?  {     "type": "FeatureCollection",     "timestamp": "1969-12-31 18:00:00",     "features": [         {
+Fetching repositories... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   0% -:--:--[17:3
+helion-s-fusion-progress
+Let f denote a function from the set of real numbers to the set of real numbers. We are interested in estimating f, but we only have pairs of numbers  | Apply a least squares estimate of f, where we assume f can be reasonably approximated by a linear function of the form m*x+b. | Can  you do the cal
+Is base reality the multiverse of possibilities? | Are these possibilities in the form of mathematical relations? | I'm more interested in the mathematical multiverse hypothesis. I want to frame reality in a way that doesn't require some seemingly contingent facts,
+title: "Reliability Estimation in Series Systems"
+subtitle: "Maximum Likelihood Techniqu
+I'd like to create an rmarkdown site. We can start off very basic, and we can talk after that to see what needs changed or added. | Okay, I've done this. Now, I'd like to customize the navigation bar. | How can I incorporate a blog into this site?
+Could transformers eventually be superseded by recurrent neural networks? | How can they be fine-tuned in a way that RNNs can't? | What are RNNs better at?
+Title: R SummGen Method
+This is a todo list app. The initial JSON blob for the database state is {todo_items: [{title: "eat breakfast", completed: true}, {title: "go to schoo | Add a todo item with the title "Read a book on deep learning". | Add another item "Greet folks"
+Unknown: Who is El G.?
+Unknown: Need more information.
+Assistant response: Create conversation title
+Title: Summarize conversation
+Title: Summarize conversation
+Hi | Tell me about the scientific method? I think you have something in your KB. | Help with do science, but for a mathematical problem, so I suppose science over the computational universe, or simulation on a computer?
+hi  | give me the latest news on israeli-palestine conflict  | what API tools do you have access to right now? is Wolfram alpha enabled?

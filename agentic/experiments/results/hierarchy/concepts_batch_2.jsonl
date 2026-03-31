@@ -1,0 +1,100 @@
+{"id": "blogdown-workflow-in-linux", "concepts": ["R blogdown workflow", "static site generation", "RMarkdown blog publishing", "Linux web development"]}
+{"id": "blood-work-postponement-inquiry", "concepts": ["medical appointment scheduling", "cancer treatment logistics", "patient communication writing"]}
+{"id": "bookdown-equation-labeling-guide", "concepts": ["bookdown equation labeling", "LaTeX equation cross-referencing", "RMarkdown PDF rendering"]}
+{"id": "bookmark-export-formats", "concepts": ["browser bookmark export", "Netscape bookmark format", "bookmark JSON conversion", "TabCloud data formats"]}
+{"id": "bookmark-network-project-ideas", "concepts": ["complex network project design", "bookmark network analysis", "CS course project planning"]}
+{"id": "boolean-algebra-trapdoors", "concepts": ["Boolean algebra trapdoor functions", "LaTeX abstract math formatting", "cryptographic trapdoor concepts"]}
+{"id": "boolean-search-engine-improvement", "concepts": ["fuzzy Boolean search engine", "TF-IDF document retrieval", "fuzzy set membership functions", "information retrieval improvement"]}
+{"id": "boosting-twitter-followers-engagement", "concepts": ["social media growth strategies", "Twitter engagement optimization", "programmer audience building"]}
+{"id": "boot-ci-for-multiple-parameters", "concepts": ["bootstrap confidence intervals", "R boot package usage", "multi-parameter CI estimation", "BCa bootstrap method"]}
+{"id": "boot-mle-fail-safe", "concepts": ["bootstrap MLE convergence handling", "masked failure data", "series system survival analysis", "invalid bootstrap replicates"]}
+{"id": "bootstrap-bias-estimation-in-mle", "concepts": ["bootstrap bias estimation", "MLE parameter bias correction", "bootstrap bias calculation"]}
+{"id": "bootstrap-ci-methods-pros-cons", "concepts": ["bootstrap CI method comparison", "percentile vs BCa bootstrap", "survival analysis bootstrap", "bootstrap method trade-offs"]}
+{"id": "bootstrap-ci-methods-pros-cons_1", "concepts": ["bootstrap CI method comparison", "percentile bootstrap method", "bootstrap confidence interval theory"]}
+{"id": "bootstrap-ci-with-r", "concepts": ["R boot package usage", "bootstrap confidence intervals", "boot.ci output structure"]}
+{"id": "bootstrap-cis-for-mles", "concepts": ["bootstrap CIs for MLEs", "bootstrap simulation results", "MLE sampling distribution", "BCa bootstrap method"]}
+{"id": "bootstrap-convergence-debugging", "concepts": ["bootstrap MLE convergence handling", "R debugging techniques", "boot.ci convergence tracking"]}
+{"id": "bootstrap-estimation-of-parameters", "concepts": ["bootstrap bias estimation", "bootstrap parameter estimation theory", "bootstrap distribution function"]}
+{"id": "bootstrap-for-likelihood-models", "concepts": ["likelihood model R package", "bootstrap for likelihood models", "generic R object methods", "log-likelihood bootstrap"]}
+{"id": "bootstrap-mle-coverage-estimation", "concepts": ["bootstrap MLE coverage estimation", "coverage probability estimation", "bootstrap simulation in R"]}
+{"id": "bootstrap-mle-log-likelihood", "concepts": ["bootstrap MLE log-likelihood", "boot object wrapper R", "MLE sampling distribution"]}
+{"id": "bootstrap-mle-package", "concepts": ["R package vignette writing", "bootstrap MLE package", "empirical sampling distribution"]}
+{"id": "bootstrap-replicates-1000-10000", "concepts": ["bootstrap replicate count", "R boot package usage", "bootstrap bias from replicates"]}
+{"id": "bootstrapping-methods-in-r", "concepts": ["bootstrap CI method comparison", "R boot package usage", "bootstrapping methods overview"]}
+{"id": "bot-greeting-and-description", "concepts": ["custom chatbot description", "LLM fine-tuning description", "chatbot naming conventions"]}
+{"id": "brain-as-predictive-rewarder", "concepts": ["predictive brain hypothesis", "brain reward prediction model", "creativity as emergent prediction", "sensory observation modeling"]}
+{"id": "brain-programming-formula-query", "concepts": ["playful productivity formula", "brain programming metaphor", "clever math expression humor"]}
+{"id": "brain-s-illusion-trust-issues", "concepts": ["LLM hallucination analogy", "optical illusion brain bias", "AI reliability comparison"]}
+{"id": "broil-function-intense-oven-heat", "concepts": ["oven broil function", "cooking technique basics"]}
+{"id": "btk-package-review", "concepts": ["Python package code review", "software defect analysis", "package architecture review"]}
+{"id": "build-upload-pypi-package", "concepts": ["PyPI package publishing", "Python package build workflow"]}
+{"id": "building-likelihood-model-package", "concepts": ["likelihood model R package", "R package generic interface", "R package design patterns"]}
+{"id": "building-llm-based-planners", "concepts": ["LLM-based planning architecture", "system-2 LLM design", "cognitive architecture for LLMs", "inner-loop LLM control"]}
+{"id": "building-mini-search-engine", "concepts": ["mini information retrieval system", "TF-IDF document retrieval", "custom search relevance scoring", "NLTK text processing"]}
+{"id": "burger-seasoning-spice-blend", "concepts": ["grilling spice blends", "hamburger seasoning techniques", "cooking ingredient mixing"]}
+{"id": "c-and-von-neumann", "concepts": ["C language Von Neumann model", "RAM computing model", "Von Neumann vs RAM model", "hardware abstraction levels"]}
+{"id": "c-binary-encoded-decimals", "concepts": ["C++ binary encoded decimals", "arbitrary precision arithmetic", "binary decimal overflow handling"]}
+{"id": "c-exponential-distribution-calculation", "concepts": ["C++ exponential distribution", "MLE C++ implementation", "likelihood ratio tests in C++"]}
+{"id": "c-implementation-of-a-rate-distorted-perfect-hash-filter", "concepts": ["rate-distorted perfect hash filter", "Bloom filter variants", "Bernoulli probabilistic sets", "approximate membership structures"]}
+{"id": "c-low-rank-matrix-approximation", "concepts": ["C++ low-rank matrix approximation", "matrix decomposition algorithm", "C++ matrix concept design", "SVD-based approximation"]}
+{"id": "c-string-with-null-character", "concepts": ["C++ string null character", "ASCII character encoding", "std::string internals"]}
+{"id": "c-subsumption-robot-control", "concepts": ["C++ subsumption architecture", "robot behavior priority layers", "reactive robot control"]}
+{"id": "c-transformer-based-on-nanogpt", "concepts": ["C++ transformer implementation", "NanoGPT C++ port", "transformer architecture from scratch", "custom neural network in C++"]}
+{"id": "calc-1-rap-battle", "concepts": ["calculus derivatives tutorial", "gamified math instruction", "rap-based pedagogy", "calculus tutoring methods"]}
+{"id": "calculate-y-when-k-128", "concepts": ["exponential equation solving", "bit space complexity analysis", "binary parameter calculation"]}
+{"id": "calculating-48-to-the-power-of-6", "concepts": ["AI-human emotional conversation", "existential reflection on illness", "Ollama local LLM interaction", "deepseek model conversation"]}
+{"id": "calculating-mse-in-r", "concepts": ["mean squared error in R", "vector parameter MSE calculation", "MLE estimation error metrics"]}
+{"id": "calculating-square-root-iteratively", "concepts": ["Newton's method square root", "iterative numerical algorithms", "fixed-point iteration methods"]}
+{"id": "camera-image-logging", "concepts": ["camera status monitoring", "automated email alerting", "log file parsing pipeline"]}
+{"id": "cancer-impact-project-completion", "concepts": ["cancer diagnosis life planning", "end-of-life project prioritization", "existential reflection on illness"]}
+{"id": "cancer-pain-management", "concepts": ["cancer pain management", "end-of-life care discussion", "death and dying conversation", "mortality emotional coping"]}
+{"id": "cantor-s-diagonalization-in-computability", "concepts": ["Cantor diagonalization argument", "computability and non-computability", "real number construction", "uncountability proof techniques"]}
+{"id": "capabilities-of-gpt-4", "concepts": ["GPT-4 capabilities overview", "LLM context length metadata", "ChatGPT model versioning"]}
+{"id": "ccdf-vs-cdf", "concepts": ["survival function CCDF", "CDF vs CCDF relationship", "survival analysis fundamentals"]}
+{"id": "censoring-assumptions-in-survival", "concepts": ["right-censoring likelihood contribution", "censoring assumptions in survival analysis", "survival analysis likelihood model"]}
+{"id": "censoring-impact-and-insights", "concepts": ["censoring impact simulation", "survival analysis simulation results", "censoring insight analysis"]}
+{"id": "change-log-simplification", "concepts": ["thesis change log writing", "paper revision documentation", "academic paper change tracking"]}
+{"id": "character-development-expansion", "concepts": ["fiction character development", "creative writing expansion", "MMORPG background story writing", "Asheron's Call lore"]}
+{"id": "chatgpt-data-export-parser", "concepts": ["ChatGPT data export parsing", "conversation JSON structure", "ChatGPT export pipeline"]}
+{"id": "chatgpt-export-json-file-structure-summary", "concepts": ["ChatGPT export JSON structure", "jq JSON exploration", "conversation data format"]}
+{"id": "chatgpt-language-model", "concepts": ["GPT language model fundamentals", "conditional token probability", "transformer probability representation"]}
+{"id": "chatgpt-plugins-inquiry", "concepts": ["ChatGPT plugins overview", "LLM plugin capabilities"]}
+{"id": "chatgpt-vs-claude-ai-comparison", "concepts": ["ChatGPT vs Claude conversation format", "conversation tree data structure", "LLM conversation JSON schema"]}
+{"id": "check-csv-subset-python", "concepts": ["CSV relational operations Python", "set operations on CSV files", "CSV union set-difference"]}
+{"id": "check-generic-method-in-r", "concepts": ["R generic method dispatch", "log-likelihood contribution model", "custom R dispatcher pattern"]}
+{"id": "check-google-pagerank", "concepts": ["Google PageRank checking", "website SEO metrics", "web page ranking"]}
+{"id": "check-if-matrix-positive", "concepts": ["positive definite matrix check", "symmetric matrix in R", "MLE convergence Hessian check"]}
+{"id": "checkers-estimation-upper-bound-analysis", "concepts": ["combinatorial game state estimation", "checkers game upper bound", "simplifying assumptions in estimation"]}
+{"id": "choice-vs-computability-foundation", "concepts": ["axiom of choice foundations", "constructive vs classical mathematics", "computability and real numbers", "non-constructive existence proofs"]}
+{"id": "choosing-ai-alignment-mentor", "concepts": ["AI alignment mentorship programs", "MATS program application", "AI safety researcher selection"]}
+{"id": "chris-pine-s-mother", "concepts": ["celebrity family trivia", "LLM factual accuracy"]}
+{"id": "chrome-bookmark-parser", "concepts": ["Chrome bookmark parser Python", "Netscape bookmark HTML format", "browser bookmark data extraction"]}
+{"id": "chromebook-linux-virtual-environment", "concepts": ["Chromebook Linux environment setup", "Python virtual environment", "ML package installation", "pip externally-managed environment"]}
+{"id": "chuck-roast-oven-cooking", "concepts": ["chuck roast oven cooking", "slow roast cooking times", "braised beef techniques"]}
+{"id": "ci-width-and-consistency", "concepts": ["confidence interval consistency", "CI width precision", "MLE sampling distribution skew", "estimator bias and skew"]}
+{"id": "cif-in-competing-risks", "concepts": ["cumulative incidence function", "competing risks survival analysis", "CIF definition and theory"]}
+{"id": "cipher-if-function-model", "concepts": ["cipher conditional function model", "C++ template cipher design", "boolean predicate cipher abstraction"]}
+{"id": "circle-simulation-with-repulsion", "concepts": ["2D physics circle simulation", "repulsive force simulation", "Python physics engine design"]}
+{"id": "circuit-simulation-framework", "concepts": ["C++ circuit simulation framework", "logic gate simulation", "analog circuit probes", "circuit simulation architecture"]}
+{"id": "circular-import-error", "concepts": ["Python circular import error", "Python email module conflict", "SMTP Python debugging"]}
+{"id": "citation-information-search", "concepts": ["academic citation lookup", "paper bibliographic metadata", "citing incomplete system failure data"]}
+{"id": "cite-as-beamer-footnote", "concepts": ["Beamer footnote citations", "RMarkdown Beamer output", "LaTeX citation commands"]}
+{"id": "citing-in-rmarkdown", "concepts": ["RMarkdown citation workflow", "BibTeX refs.bib integration", "academic citation in RMarkdown"]}
+{"id": "clarify-user-query", "concepts": ["CSV merge script improvements", "CLI error handling Python", "user progress reporting in scripts"]}
+{"id": "cli-version-command-implementation", "concepts": ["CLI version command Python", "pyproject.toml versioning", "Python package version access"]}
+{"id": "clickable-links-in-console", "concepts": ["terminal clickable hyperlinks", "Python console output formatting", "ebook library CLI display"]}
+{"id": "closed-form-derivative-no-expression", "concepts": ["non-closed-form functions", "closed-form derivative existence", "function sampling without closed form", "error function erf analogy"]}
+{"id": "closures-apertures-and-programming", "concepts": ["closure aperture abstraction", "mathematical symbol semantics", "programming language abstraction design", "aperture concept prior art"]}
+{"id": "clustering-coefficients-calculation", "concepts": ["network clustering coefficients", "triangle-based clustering", "graph node metrics"]}
+{"id": "code-block-width-adjustment", "concepts": ["RMarkdown code block formatting", "PDF rendering code width", "bookdown tidy options"]}
+{"id": "code-improvements-and-fixes", "concepts": ["Python package code review", "AlgoTree package improvements", "software documentation improvement"]}
+{"id": "code-interpreter-capabilities", "concepts": ["ChatGPT code interpreter", "LLM code execution capabilities", "automated data analysis"]}
+{"id": "code-refactoring-for-puzzle", "concepts": ["code refactoring for clarity", "search algorithm abstraction", "project clean-up and naming", "A* DFS BFS implementation"]}
+{"id": "code-refinement-for-search-algorithms", "concepts": ["C++ search algorithm refinement", "C++ module system", "search algorithm abstraction design"]}
+{"id": "codename-arrakis-in-dune", "concepts": ["Dune Arrakis codename", "LLM capability inquiry", "science fiction knowledge"]}
+{"id": "cognitive-biases-in-humans", "concepts": ["cognitive inductive biases", "optical illusion neural basis", "human perceptual limitations", "neural architecture constraints"]}
+{"id": "cognitive-core-small-llm", "concepts": ["WebCPU vs WebAssembly", "browser-based computation", "small LLM cognitive core", "web computing abstraction levels"]}
+{"id": "color-lines-by-value", "concepts": ["R line plot color mapping", "PMF visualization in R", "color gradient by numeric value"]}
+{"id": "coloring-text-in-rmarkdown", "concepts": ["RMarkdown text color formatting", "LaTeX color commands"]}
+{"id": "column-names-transformed", "concepts": ["R column renaming conventions", "data frame column transformation", "parameter naming in simulation data"]}
+{"id": "combine-multiple-plots-nicely", "concepts": ["R multi-plot layout", "ggplot shared legend", "plot grid arrangement in R"]}
