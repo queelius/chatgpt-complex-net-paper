@@ -1,0 +1,334 @@
+{
+  "E1_windowed_beta": {
+    "window_size": 300,
+    "step": 50,
+    "windows": [
+      {
+        "start_idx": 0,
+        "end_idx": 300,
+        "midpoint_idx": 150,
+        "beta": 0.5742,
+        "K": 11.688,
+        "final_vocab": 299
+      },
+      {
+        "start_idx": 50,
+        "end_idx": 350,
+        "midpoint_idx": 200,
+        "beta": 0.5736,
+        "K": 11.672,
+        "final_vocab": 297
+      },
+      {
+        "start_idx": 100,
+        "end_idx": 400,
+        "midpoint_idx": 250,
+        "beta": 0.6369,
+        "K": 8.129,
+        "final_vocab": 295
+      },
+      {
+        "start_idx": 150,
+        "end_idx": 450,
+        "midpoint_idx": 300,
+        "beta": 0.5717,
+        "K": 11.302,
+        "final_vocab": 285
+      },
+      {
+        "start_idx": 200,
+        "end_idx": 500,
+        "midpoint_idx": 350,
+        "beta": 0.6186,
+        "K": 8.916,
+        "final_vocab": 300
+      },
+      {
+        "start_idx": 250,
+        "end_idx": 550,
+        "midpoint_idx": 400,
+        "beta": 0.6372,
+        "K": 7.929,
+        "final_vocab": 291
+      },
+      {
+        "start_idx": 300,
+        "end_idx": 600,
+        "midpoint_idx": 450,
+        "beta": 0.633,
+        "K": 7.972,
+        "final_vocab": 269
+      },
+      {
+        "start_idx": 350,
+        "end_idx": 650,
+        "midpoint_idx": 500,
+        "beta": 0.6098,
+        "K": 8.625,
+        "final_vocab": 259
+      },
+      {
+        "start_idx": 400,
+        "end_idx": 700,
+        "midpoint_idx": 550,
+        "beta": 0.5056,
+        "K": 15.197,
+        "final_vocab": 258
+      },
+      {
+        "start_idx": 450,
+        "end_idx": 750,
+        "midpoint_idx": 600,
+        "beta": 0.4813,
+        "K": 15.798,
+        "final_vocab": 245
+      },
+      {
+        "start_idx": 500,
+        "end_idx": 800,
+        "midpoint_idx": 650,
+        "beta": 0.6079,
+        "K": 6.616,
+        "final_vocab": 233
+      },
+      {
+        "start_idx": 550,
+        "end_idx": 850,
+        "midpoint_idx": 700,
+        "beta": 0.9398,
+        "K": 1.112,
+        "final_vocab": 234
+      },
+      {
+        "start_idx": 600,
+        "end_idx": 900,
+        "midpoint_idx": 750,
+        "beta": 0.8111,
+        "K": 2.484,
+        "final_vocab": 242
+      },
+      {
+        "start_idx": 650,
+        "end_idx": 950,
+        "midpoint_idx": 800,
+        "beta": 0.7486,
+        "K": 3.676,
+        "final_vocab": 265
+      },
+      {
+        "start_idx": 700,
+        "end_idx": 1000,
+        "midpoint_idx": 850,
+        "beta": 0.7141,
+        "K": 4.834,
+        "final_vocab": 292
+      },
+      {
+        "start_idx": 750,
+        "end_idx": 1050,
+        "midpoint_idx": 900,
+        "beta": 0.6694,
+        "K": 6.697,
+        "final_vocab": 311
+      },
+      {
+        "start_idx": 800,
+        "end_idx": 1100,
+        "midpoint_idx": 950,
+        "beta": 0.739,
+        "K": 4.735,
+        "final_vocab": 314
+      },
+      {
+        "start_idx": 850,
+        "end_idx": 1150,
+        "midpoint_idx": 1000,
+        "beta": 0.7088,
+        "K": 5.87,
+        "final_vocab": 312
+      },
+      {
+        "start_idx": 900,
+        "end_idx": 1200,
+        "midpoint_idx": 1050,
+        "beta": 0.5608,
+        "K": 13.619,
+        "final_vocab": 324
+      },
+      {
+        "start_idx": 950,
+        "end_idx": 1250,
+        "midpoint_idx": 1100,
+        "beta": 0.5759,
+        "K": 12.507,
+        "final_vocab": 322
+      },
+      {
+        "start_idx": 1000,
+        "end_idx": 1300,
+        "midpoint_idx": 1150,
+        "beta": 0.5822,
+        "K": 12.125,
+        "final_vocab": 320
+      },
+      {
+        "start_idx": 1050,
+        "end_idx": 1350,
+        "midpoint_idx": 1200,
+        "beta": 0.6085,
+        "K": 10.319,
+        "final_vocab": 320
+      },
+      {
+        "start_idx": 1100,
+        "end_idx": 1400,
+        "midpoint_idx": 1250,
+        "beta": 0.5683,
+        "K": 12.93,
+        "final_vocab": 326
+      },
+      {
+        "start_idx": 1150,
+        "end_idx": 1450,
+        "midpoint_idx": 1300,
+        "beta": 0.5797,
+        "K": 12.518,
+        "final_vocab": 334
+      },
+      {
+        "start_idx": 1200,
+        "end_idx": 1500,
+        "midpoint_idx": 1350,
+        "beta": 0.5931,
+        "K": 11.292,
+        "final_vocab": 321
+      },
+      {
+        "start_idx": 1250,
+        "end_idx": 1550,
+        "midpoint_idx": 1400,
+        "beta": 0.6268,
+        "K": 9.271,
+        "final_vocab": 317
+      },
+      {
+        "start_idx": 1300,
+        "end_idx": 1600,
+        "midpoint_idx": 1450,
+        "beta": 0.5798,
+        "K": 12.152,
+        "final_vocab": 330
+      },
+      {
+        "start_idx": 1350,
+        "end_idx": 1650,
+        "midpoint_idx": 1500,
+        "beta": 0.6722,
+        "K": 7.503,
+        "final_vocab": 341
+      },
+      {
+        "start_idx": 1400,
+        "end_idx": 1700,
+        "midpoint_idx": 1550,
+        "beta": 0.6361,
+        "K": 9.554,
+        "final_vocab": 342
+      },
+      {
+        "start_idx": 1450,
+        "end_idx": 1750,
+        "midpoint_idx": 1600,
+        "beta": 0.6235,
+        "K": 10.365,
+        "final_vocab": 349
+      },
+      {
+        "start_idx": 1500,
+        "end_idx": 1800,
+        "midpoint_idx": 1650,
+        "beta": 0.5946,
+        "K": 11.208,
+        "final_vocab": 318
+      }
+    ],
+    "trend_slope": -1e-06,
+    "trend_direction": "decreasing (CLS)"
+  },
+  "E2_ordering": {
+    "alphabetical": 0.3198,
+    "chronological": 0.3279,
+    "reverse_chronological": 0.3045,
+    "random_mean": 0.2482,
+    "random_std": 0.008,
+    "random_ci_95": [
+      0.233,
+      0.2634
+    ],
+    "chrono_vs_random_z": 9.99
+  },
+  "E3_model_era": [
+    {
+      "era": "GPT-3.5 era (Dec 2022-Mar 2023)",
+      "date_range": [
+        "2022-12-01",
+        "2023-03-31"
+      ],
+      "n_episodes": 190,
+      "beta": 0.6094,
+      "final_vocab": 243
+    },
+    {
+      "era": "Early GPT-4 (Apr-Sep 2023)",
+      "date_range": [
+        "2023-04-01",
+        "2023-09-30"
+      ],
+      "n_episodes": 626,
+      "beta": 0.4487,
+      "final_vocab": 363
+    },
+    {
+      "era": "Late GPT-4 (Oct 2023-May 2024)",
+      "date_range": [
+        "2023-10-01",
+        "2024-05-31"
+      ],
+      "n_episodes": 473,
+      "beta": 0.658,
+      "final_vocab": 376
+    },
+    {
+      "era": "GPT-4o era (Jun-Nov 2024)",
+      "date_range": [
+        "2024-06-01",
+        "2024-11-30"
+      ],
+      "n_episodes": 237,
+      "beta": 0.6375,
+      "final_vocab": 286
+    },
+    {
+      "era": "o1/o3 era (Dec 2024-Apr 2025)",
+      "date_range": [
+        "2024-12-01",
+        "2025-04-30"
+      ],
+      "n_episodes": 293,
+      "beta": 0.5777,
+      "final_vocab": 310
+    }
+  ],
+  "E4_new_concept_rate": {
+    "first_half_mean": 0.1351,
+    "second_half_mean": 0.0247,
+    "trend_slope": -0.000145,
+    "direction": "decreasing (CLS)",
+    "n_episodes": 1819
+  },
+  "E5_domain_expansion": {
+    "full_activation_episode": 2,
+    "spanning_first_quarter": 0.7993,
+    "spanning_last_quarter": 0.7525
+  }
+}
