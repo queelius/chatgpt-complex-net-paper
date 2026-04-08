@@ -8,6 +8,15 @@
 \usepackage{hyperref}
 \usepackage{placeins}  % \FloatBarrier to keep figures near their text
 
+% --- Tighten float spacing (camera-ready page budget) ---
+\setlength{\textfloatsep}{6pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{0pt}
+\setlength{\dbltextfloatsep}{6pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{6pt plus 2pt minus 2pt}
+
 \begin{document}
 \mainmatter
 
@@ -20,7 +29,8 @@
 
 \institute{Southern Illinois University Edwardsville,
 Edwardsville, IL, USA\\
-\email{\{atowell, jmatta\}@siue.edu}}
+\email{queelius@gmail.com, jmatta@siue.edu}\\
+ORCID: 0000-0001-6443-9897 (A.T.), 0000-0002-7666-1409 (J.M.)}
 
 \maketitle
 
@@ -139,23 +149,14 @@ Tenenbaum~\cite{steyvers2005large}, one can compute $\sigma$ values of
 5.6--15.3 across their three semantic networks, supporting their argument
 that small-world structure is a universal property of semantic memory.
 
-\paragraph{Topic Modeling and Hierarchical Theme Discovery.}
-LDA~\cite{blei2003latent} discovers latent themes from word co-occurrence
-statistics; BERTopic~\cite{grootendorst2022bertopic} extends this with
-transformer embeddings and hierarchical topic merging. Hierarchical
-Dirichlet Processes~\cite{teh2006hierarchical} learn topic hierarchies
-nonparametrically. These approaches discover latent themes but do not produce named,
-interpretable concept nodes linked to specific episodes in a bipartite graph
-that supports downstream network analysis.
-
-\paragraph{LLM-Based Knowledge Extraction.}
-Recent work uses LLMs for ontology
-construction~\cite{funk2023towards} and knowledge graph
-construction~\cite{pan2024unifying}. Graph
-RAG~\cite{edge2024graphrag} uses LLM community summarization for
-retrieval-augmented generation. These systems extract structured knowledge
-from text but focus on downstream retrieval rather than analyzing the
-\emph{structure} of the extracted knowledge itself.
+\paragraph{Theme Discovery and Knowledge Extraction.}
+LDA~\cite{blei2003latent}, BERTopic~\cite{grootendorst2022bertopic}, and
+Hierarchical Dirichlet Processes~\cite{teh2006hierarchical} discover latent
+themes but do not produce named concept nodes linked to episodes in a
+bipartite graph. LLMs have been used for ontology
+construction~\cite{funk2023towards}, knowledge graphs~\cite{pan2024unifying},
+and Graph RAG~\cite{edge2024graphrag}, but these focus on downstream retrieval
+rather than analyzing the \emph{structure} of extracted knowledge.
 
 \paragraph{Conversation Corpus Analysis.}
 Large-scale LLM conversation datasets include
@@ -281,10 +282,9 @@ Episode pairs sharing concepts & 9,304 & 165,000 \\
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\textwidth]{semantic_frequency_distributions.pdf}
-\caption{Concept frequency distributions. \textbf{Left}: Zipf rank-frequency
-plot (Zipf exponent $\approx 0.86$). \textbf{Center}: Concepts per episode
-(mean 3.96). \textbf{Right}: Episodes per concept showing the long tail
-(79\% singletons).}
+\caption{Concept frequency distributions. Left: Zipf rank-frequency
+(exponent $\approx 0.86$). Center: concepts per episode (mean 3.96).
+Right: episodes per concept (79\% singletons).}
 \label{fig:frequency}
 \end{figure}
 
@@ -322,69 +322,41 @@ LLM Engineering & 86 & prompts, agents, tools \\
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.85\textwidth]{domain_cooccurrence.pdf}
-\caption{Domain co-occurrence heatmap showing how many episodes span
-each pair of domains. Software Engineering co-occurs broadly; specialized
-pairs (Statistics--Math) show focused affinity.}
+\caption{Domain co-occurrence heatmap. Software Engineering co-occurs broadly;
+specialized pairs (Statistics--Math) show focused affinity.}
 \label{fig:cooccurrence}
 \end{figure}
 
 \subsection{Vocabulary Growth and Null Model}
 
-Processing episodes in alphabetical order by ID, the meta-concept vocabulary
-grows sublinearly following Heaps' law
-$V(n) = K \cdot n^\beta$ with $\beta = 0.320$ (Fig.~\ref{fig:heaps}).
-Under 100 random episode orderings, $\beta = 0.241 \pm 0.007$, confirming
-that sublinear growth is robust to ordering, though the specific $\beta$
-value depends on the sequence (alphabetical ordering inflates $\beta$ due to
-topical autocorrelation among lexicographically adjacent episode IDs).
-The raw concept vocabulary (before clustering) grows nearly linearly
-($\beta = 0.931$), confirming that sublinear growth arises from the
-clustering step, not the extraction process.
+The meta-concept vocabulary grows sublinearly following Heaps' law
+$V(n) = K \cdot n^\beta$ with $\beta = 0.320$ (Fig.~\ref{fig:heaps});
+under 100 random episode orderings, $\beta = 0.241 \pm 0.007$, confirming
+robustness to ordering. The raw vocabulary grows nearly linearly
+($\beta = 0.931$), so sublinear growth arises from clustering, not extraction.
 
-Since clustering at $k = 500$ imposes a vocabulary ceiling that
-guarantees sublinear growth regardless of semantic content, we test whether
-the observed $\beta$ reflects genuine semantic structure or is purely a
-ceiling artifact using two null models of increasing stringency.
-
-\textbf{Null model 1} (cluster permutation): Using the same alphabetical
-episode ordering, we randomly permute concept-to-cluster assignments
-(preserving cluster sizes) and compute $\beta$ for 1,000 permutations. The
-null distribution has $\beta_\text{null} = 0.268 \pm 0.006$, and the
-observed $\beta = 0.320$ lies above the entire null distribution
-($p < 0.001$).
-
-\textbf{Null model 2} (bipartite configuration): A stricter baseline
-randomizes which meta-concepts appear in which episodes while preserving
-both marginals (the number of meta-concepts per episode and the number of
-episodes per meta-concept) using the Curveball algorithm for uniform
-sampling of binary matrices with fixed row and column sums. This null
-disentangles temporal exploration dynamics from the bipartite degree
-sequence. The result: $\beta_\text{null} = 0.254 \pm 0.007$,
-with $p < 0.001$.
-
-Both nulls confirm that the observed growth dynamics
-are not artifacts of ceiling effects or degree-sequence constraints.
-Semantic clustering produces a \emph{higher} $\beta$ (less sublinear,
-closer to linear) than either null: the semantically coherent clusters
-create meaningful distinctions, so encountering a genuinely new meta-concept
-requires exploring novel intellectual territory rather than merely
-encountering new vocabulary.
-
-Clustering sensitivity analysis confirms robustness: $\beta$ increases
-monotonically from 0.061 ($k=50$) to 0.467 ($k=1{,}000$), but the
-qualitative finding of sublinear growth is stable across $k = 200$--$1{,}000$
+Since fixed $k = 500$ guarantees sublinear growth regardless of content,
+we test whether the observed $\beta$ reflects genuine structure using two
+null models. \textbf{Null 1} (cluster permutation): randomly permute
+concept-to-cluster assignments (preserving sizes, 1{,}000 permutations);
+$\beta_\text{null} = 0.268 \pm 0.006$, $p < 0.001$.
+\textbf{Null 2} (bipartite configuration): randomize which meta-concepts
+appear in which episodes while preserving both marginals via the Curveball
+algorithm; $\beta_\text{null} = 0.254 \pm 0.007$, $p < 0.001$.
+Both confirm that the observed growth dynamics are not ceiling or
+degree-sequence artifacts. Semantic clustering produces \emph{higher}
+$\beta$ than either null: coherent clusters create meaningful distinctions,
+so encountering a new meta-concept requires genuinely novel territory.
+Sensitivity analysis confirms robustness across $k = 200$--$1{,}000$
 (Table~\ref{tab:sensitivity}).
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\textwidth]{heaps_law.pdf}
-\caption{Vocabulary growth and null model validation.
-\textbf{Left}: Cumulative vocabulary following Heaps' law ($\beta = 0.931$ for
-raw concepts, $\beta = 0.320$ at the meta-concept level).
-\textbf{Right}: Two null model distributions. Gray: cluster-permutation null
-($\beta_\text{null} = 0.268$, $p < 0.001$). Blue: bipartite configuration
-null preserving both marginals ($\beta_\text{null} = 0.254$, $p < 0.001$).
-The observed $\beta = 0.320$ lies entirely above both null distributions.}
+\caption{Left: Heaps' law vocabulary growth ($\beta = 0.931$ raw,
+$0.320$ meta-concept). Right: null model distributions---cluster-permutation
+($\beta_\text{null} = 0.268$) and bipartite configuration
+($\beta_\text{null} = 0.254$), both $p < 0.001$.}
 \label{fig:heaps}
 \end{figure}
 
@@ -409,31 +381,21 @@ remaining above 1 across all tested values of $k$
 
 \begin{table}[!htb]
 \centering
-\caption{Small-world analysis of the concept co-occurrence network.
-Random graph baselines are means over 100 Erd\H{o}s-R\'{e}nyi $G(n,m)$
-graphs.}
+\caption{Small-world analysis at $k\!=\!500$ (top) and sensitivity across
+meta-concept granularity (bottom). Random graph baselines: 100 $G(n,m)$ graphs.}
 \label{tab:smallworld}
 \begin{tabular}{lrl}
 \toprule
 Property & Value & Interpretation \\
 \midrule
-Nodes & 499 & \\
-Edges & 5,935 & \\
+Nodes / Edges & 499 / 5,935 & \\
 Clustering $C$ & 0.329 & \\
 $C / C_\text{rand}$ & 6.89 & High local clustering \\
-Path length $L$ & 2.37 & \\
 $L / L_\text{rand}$ & 1.05 & Short global paths \\
 \textbf{Small-world $\sigma$} & \textbf{6.57} & Strongly small-world \\
-Mean degree & 23.8 & \\
 \bottomrule
 \end{tabular}
-\end{table}
-
-\begin{table}[!htb]
-\centering
-\caption{Clustering sensitivity: key metrics across meta-concept granularity $k$.
-Both $\beta$ and $\sigma$ vary with $k$ but the qualitative findings (sublinear
-growth, small-world topology) are robust across $k = 200$--$1{,}000$.}
+\vspace{4pt}
 \label{tab:sensitivity}
 \begin{tabular}{rrrrr}
 \toprule
@@ -481,63 +443,43 @@ interdisciplinary junction where concepts from multiple domains converge.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{domain_flow.pdf}
-\caption{Asymmetric concept flow between domains. \textbf{Left}: Flow matrix
-showing the fraction of target-domain episodes (columns) containing
-source-domain concepts (rows). The matrix is asymmetric: Software Engineering
-exports broadly (top row), while ML \& Network Science absorbs from all domains
-(column~4). \textbf{Right}: Broadcast reach (fraction of foreign episodes
-containing a domain's concepts) versus porosity (fraction of a domain's
-episodes containing foreign concepts). Numbers indicate reach breadth
-(domains penetrated above 15\%).}
+\includegraphics[width=0.92\textwidth]{domain_flow.pdf}
+\caption{Asymmetric concept flow. Left: fraction of target-domain episodes
+(columns) containing source-domain concepts (rows). Right: broadcast reach
+vs.\ porosity per domain; numbers indicate reach breadth ($>$15\%).}
 \label{fig:flow}
 \end{figure}
 
 \subsection{Bipartite Network Visualization}
 
 Figure~\ref{fig:knowledge_map} visualizes the full bipartite structure as a
-radial layout: meta-concepts occupy an inner ring, episodes an outer ring, both
-grouped by domain sector. Bipartite edges connect episodes to their constituent
-meta-concepts, while co-occurrence edges link concepts that share episodes.
-The visualization makes the asymmetric flow visible: Software Engineering
-episodes (lower right) send concept links into every sector, while Philosophy
-episodes (lower left) connect almost exclusively to their own domain's concepts.
+radial layout (meta-concepts inner ring, episodes outer ring, grouped by domain).
+Cross-sector edges make the asymmetric flow visible: Software Engineering
+sends concept links into every sector, while Philosophy connects almost
+exclusively within its own domain.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\textwidth]{knowledge_map_bipartite.pdf}
-\caption{Bipartite knowledge map. Inner ring: 499 meta-concepts (colored and
-sized by domain and frequency). Outer ring: 1,908 episodes (colored by primary
-domain). Radial lines show episode--concept associations (filtered to
-meta-concepts appearing in $\geq 8$ episodes); gray lines show concept
-co-occurrence ($\geq 4$ shared episodes). Sector size is proportional to
-episode count. Cross-sector bipartite edges reveal the directed concept flow:
-foundational domains export concepts broadly, while applied domains absorb.}
+\caption{Bipartite knowledge map. Inner ring: 499 meta-concepts; outer ring:
+1,908 episodes (both colored by domain). Cross-sector edges reveal directed
+concept flow: foundational domains export broadly, applied domains absorb.}
 \label{fig:knowledge_map}
 \end{figure}
 
-Figure~\ref{fig:bridge} provides a complementary zoom-in view: two specific
-episodes from different domains---``AI Language Models Compared'' (Statistical
-Methods) and ``Language Models and Computation'' (Philosophy \& AI
-Theory)---share five meta-concepts spanning four knowledge domains. These
-episodes approach the same intellectual territory (the nature of language model
-prediction) from fundamentally different disciplinary angles, yet the bipartite
-graph reveals their deep connection through shared concepts like Solomonoff
-induction, Kolmogorov complexity, and autoregressive language models. A
-partition-based method~\cite{fortunato2010community} would assign these episodes
-to separate communities; the bipartite concept hierarchy captures their
-relationship explicitly.
+Figure~\ref{fig:bridge} illustrates how two episodes from different
+domains---``AI Language Models Compared'' (Statistical Methods) and ``Language
+Models and Computation'' (Philosophy \& AI Theory)---share five meta-concepts
+spanning four domains through shared concepts like Solomonoff
+induction and Kolmogorov complexity. A partition-based
+method~\cite{fortunato2010community} would assign them to separate communities;
+the bipartite hierarchy captures their relationship explicitly.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\textwidth]{zoom_in_bridge.pdf}
-\caption{Zoom-in: two episodes from different domains connected through shared
-concepts. ``AI Language Models Compared'' (Statistical Methods) and ``Language
-Models and Computation'' (Philosophy \& AI Theory) share 5 meta-concepts
-spanning 4 domains (top row). Solid circles and lines show shared concepts;
-dashed circles show concepts unique to each episode. Each episode also has
-unique concepts reflecting its disciplinary focus: inductive bias (Statistics)
-vs.\ philosophy of mind and LLM capabilities (Philosophy/LLM Engineering).}
+\caption{Two episodes from different domains sharing 5 meta-concepts across 4
+domains. Solid: shared concepts; dashed: unique to each episode.}
 \label{fig:bridge}
 \end{figure}
 
@@ -547,81 +489,49 @@ vs.\ philosophy of mind and LLM capabilities (Philosophy/LLM Engineering).}
 \label{sec:discussion}
 
 \paragraph{Vocabulary Growth and Semantic Structure.}
-The meta-concept vocabulary grows sublinearly ($\beta = 0.320$), but since
-clustering at fixed $k = 500$ guarantees sublinear growth regardless of
-content, the absolute $\beta$ value is not itself evidence of consolidation.
-Two null model comparisons reveal a more nuanced finding: semantic clustering
-produces \emph{higher} $\beta$ (less sublinear) than both random cluster
-assignment ($\beta_\text{null} = 0.268$, $p < 0.001$) and a stricter
-bipartite configuration null that preserves both episode and meta-concept
-degree sequences ($\beta_\text{null} = 0.254$, $p < 0.001$). The second
-null, which randomizes meta-concept co-occurrence across episodes while
-preserving marginals, confirms that the observed growth dynamics reflect
-genuine temporal exploration structure, not merely the bipartite degree
-sequence. Under either null, conceptually unrelated items share clusters
-by chance, so any new episode is likely to fall into an existing cluster
-through accidental overlap; under semantic clustering, clusters are internally
-coherent and only genuinely related episodes share a meta-concept.
-CLS theory would predict that meaningful categories \emph{facilitate}
-consolidation (lower $\beta$), but we observe the opposite: semantically
-coherent categories \emph{resist} consolidation. This suggests that the
-archive's categorical structure maintains discriminable knowledge
-representations---a property consistent with the role of semantic memory in
-preserving distinctions, even if it does not follow the consolidation-efficiency
-prediction of CLS.
+Since clustering at fixed $k$ guarantees sublinear growth, the absolute
+$\beta$ is not evidence of consolidation. The null model comparisons are
+therefore essential: semantic clustering produces \emph{higher} $\beta$
+than both random cluster assignment ($\beta_\text{null} = 0.268$) and the
+bipartite configuration null preserving degree sequences
+($\beta_\text{null} = 0.254$), both $p < 0.001$. Under either null,
+unrelated items share clusters by chance; under semantic clustering,
+only genuinely related episodes share a meta-concept, so encountering a
+new category requires exploring novel territory.
+CLS theory predicts that meaningful categories \emph{facilitate}
+consolidation (lower $\beta$); we observe the opposite. The archive's
+categorical structure maintains discriminable representations, consistent
+with semantic memory's role in preserving distinctions rather than
+collapsing them.
 
 \paragraph{Small-World Topology and Comparison with Human Memory Networks.}
-The small-world coefficient $\sigma \approx 6.6$, validated against 100
-Erd\H{o}s-R\'{e}nyi random graphs~\cite{humphries2008network}, falls within the
+The small-world coefficient $\sigma \approx 6.6$ falls within the
 range reported for human semantic memory networks
-($\sigma \approx 5$--$15$)~\cite{steyvers2005large}. This convergence
-provides a direct quantitative comparison: the AI conversation archive
-exhibits the same balance of local coherence and global accessibility
-observed in human word association and category fluency networks.
-While we do not claim
-conversation archives \emph{are} semantic memory, this structural similarity
-suggests they function as an externalized analog: concepts connected through
-co-occurrence in knowledge episodes, exhibiting the same balance of local
-coherence and global accessibility. The sensitivity analysis
-(Table~\ref{tab:sensitivity}) shows $\sigma > 1$ is robust across
-$k = 100$--$1{,}000$, with the qualitative finding independent of the
-specific clustering granularity.
+($\sigma \approx 5$--$15$)~\cite{steyvers2005large}. We do not claim
+conversation archives \emph{are} semantic memory, but this structural
+convergence suggests they function as an externalized analog exhibiting the
+same balance of local coherence and global accessibility. The sensitivity
+analysis (Table~\ref{tab:sensitivity}) shows $\sigma > 1$ across
+$k = 100$--$1{,}000$.
 
 \paragraph{Many-to-Many Associations and Cross-Domain Flow.}
-The bipartite graph captures knowledge polysemy: 77\% of episodes span multiple
-domains, with 35\% spanning three or more. Partition-based
-methods~\cite{fortunato2010community} cannot represent this multiplicity.
-The bipartite structure also reveals asymmetric concept flow between domains.
-After normalizing for domain size, most cross-domain flow is \emph{below}
-what random concept-domain assignment would predict (mean observed/expected
-$= 0.61$), confirming that the domains represent genuine semantic clusters
-rather than arbitrary partitions. A few specific pairs show elevated flow
-(LLM Engineering $\to$ ML \& Network Science at $2.67\times$ expected),
-suggesting targeted conceptual dependencies. For downstream applications
-like Graph RAG~\cite{edge2024graphrag}, the bipartite structure and domain
-hierarchy could enable concept-level indexing and retrieval.
+The bipartite graph captures knowledge polysemy invisible to
+partition-based methods~\cite{fortunato2010community}: 77\% of episodes span
+multiple domains. Size-normalized flow confirms genuine semantic boundaries
+(mean observed/expected $= 0.61$) punctuated by targeted dependencies
+(LLM Engineering $\to$ ML \& Network Science at $2.67\times$ expected).
+The bipartite structure and domain hierarchy could enable
+concept-level indexing for Graph RAG~\cite{edge2024graphrag}.
 
 \paragraph{Limitations.}
-This is a single-user case study; different users would produce different
-concept sets and different hierarchies. We frame this work as a
-\emph{proof-of-concept} that motivates, rather than establishes,
-generalization. Validating whether sublinear growth and small-world topology
-are preserved across users requires replication on multi-user corpora such
-as WildChat~\cite{zhao2024wildchat} or LMSYS-Chat-1M~\cite{zheng2024lmsys}.
-Hierarchy cut points ($k = 500, 50, 8$) are chosen for interpretability,
-not discovered; the silhouette analysis shows generally increasing scores
-with $k$ (monotonic for $k \geq 20$, with no distinct peak),
-indicating no natural cluster boundaries. Automated thresholding methods
-(e.g., gap statistic, stability-based selection) could reduce this
-subjectivity. Concept extraction depends on the specific LLM and prompt used;
-alternative models or prompts would produce different concept sets, though
-the downstream structural properties (small-world, Heaps' law) may be more
-robust than the specific concept vocabulary. Despite these limitations, the
-convergence with human semantic memory benchmarks across multiple
-independent metrics (small-world topology, vocabulary growth dynamics,
-cross-domain integration patterns) suggests that the structural properties
-may reflect general features of categorical knowledge systems rather than
-idiosyncrasies of this particular archive.
+This single-user case study is a \emph{proof-of-concept}; replication on
+multi-user corpora such as WildChat~\cite{zhao2024wildchat} or
+LMSYS-Chat-1M~\cite{zheng2024lmsys} is needed to establish generalizability.
+Hierarchy cut points are chosen for interpretability (silhouette analysis
+shows no natural cluster boundaries), and concept extraction depends on the
+LLM and prompt used. Despite these limitations, convergence with human
+semantic memory benchmarks across independent metrics suggests the structural
+properties may reflect general features of categorical knowledge systems.
 
 \FloatBarrier
 % ============================================================================

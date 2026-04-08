@@ -233,7 +233,7 @@ def draw_bipartite_map(mc_pos, ep_pos, mc_to_domain, mc_labels, mc_episode_count
                         ep_mcs, ep_domain_dist, cooc_weights,
                         sector_centers, sector_starts, sector_widths):
     """Draw the full bipartite knowledge map."""
-    fig, ax = plt.subplots(1, 1, figsize=(20, 20), facecolor="white")
+    fig, ax = plt.subplots(1, 1, figsize=(8, 8), facecolor="white")
 
     # ── 1. Draw sector wedge backgrounds ──
     for dom_id in DOMAIN_ORDER:
@@ -247,7 +247,7 @@ def draw_bipartite_map(mc_pos, ep_pos, mc_to_domain, mc_labels, mc_episode_count
     # ── 2. Draw bipartite edges (episode → concept) ──
     # Threshold: only show links to meta-concepts appearing in MC_FREQ_MIN+ episodes
     # This is analogous to the cosine similarity cutoff θ in the conference paper
-    MC_FREQ_MIN = 8  # show links to frequent concepts only
+    MC_FREQ_MIN = 15  # show links to frequent concepts only
     frequent_mcs = {mc for mc, cnt in mc_episode_count.items() if cnt >= MC_FREQ_MIN}
 
     bip_segments = []
@@ -263,7 +263,7 @@ def draw_bipartite_map(mc_pos, ep_pos, mc_to_domain, mc_labels, mc_episode_count
             bip_segments.append([(ex, ey), (mx, my)])
             dom = mc_to_domain.get(mc_id, "MC3_C1")
             bip_colors.append(mcolors.to_rgba(DOMAIN_COLORS.get(dom, "#ccc"),
-                                               alpha=0.06))
+                                               alpha=0.10))
 
     if bip_segments:
         lc = LineCollection(bip_segments, colors=bip_colors,
@@ -273,7 +273,7 @@ def draw_bipartite_map(mc_pos, ep_pos, mc_to_domain, mc_labels, mc_episode_count
           f"(meta-concepts with freq >= {MC_FREQ_MIN}: {len(frequent_mcs)})")
 
     # ── 3. Draw co-occurrence edges (concept ↔ concept) ──
-    COOC_THRESHOLD = 4
+    COOC_THRESHOLD = 6
     cooc_segments = []
     cooc_colors = []
     max_cooc = max(cooc_weights.values()) if cooc_weights else 1
@@ -311,7 +311,7 @@ def draw_bipartite_map(mc_pos, ep_pos, mc_to_domain, mc_labels, mc_episode_count
         ep_colors.append(DOMAIN_COLORS.get(primary, "#cccccc"))
         # Size by number of concepts (more concepts → slightly larger)
         n_concepts = len(ep_mcs.get(eid, set()))
-        ep_sizes.append(6 + 2.0 * n_concepts)
+        ep_sizes.append(4 + 1.5 * n_concepts)
 
     ax.scatter(ep_x, ep_y, s=ep_sizes, c=ep_colors,
                edgecolors="none", alpha=0.65, zorder=3)
@@ -327,14 +327,14 @@ def draw_bipartite_map(mc_pos, ep_pos, mc_to_domain, mc_labels, mc_episode_count
     # Size by episode count (log-scaled)
     mc_freqs = np.array([mc_episode_count.get(n, 1) for n in mc_nodes], dtype=float)
     log_freq = np.log1p(mc_freqs)
-    mc_sizes = 15 + 200 * (log_freq - log_freq.min()) / (log_freq.max() - log_freq.min() + 1e-10)
+    mc_sizes = 20 + 250 * (log_freq - log_freq.min()) / (log_freq.max() - log_freq.min() + 1e-10)
 
     ax.scatter(mc_x, mc_y, s=mc_sizes, c=mc_colors,
                edgecolors="white", linewidths=0.4, alpha=0.9, zorder=5,
                marker="o")
 
     # ── 6. Domain labels ── horizontal, positioned outside each sector
-    LABEL_RADIUS = 16.0
+    LABEL_RADIUS = 14.8
     for dom_id in DOMAIN_ORDER:
         angle = sector_centers[dom_id]
         lx = LABEL_RADIUS * np.cos(angle)
@@ -355,60 +355,34 @@ def draw_bipartite_map(mc_pos, ep_pos, mc_to_domain, mc_labels, mc_episode_count
                           edgecolor=DOMAIN_COLORS[dom_id], alpha=0.85,
                           linewidth=1.5))
 
-    # ── 7. Label top concepts per domain ──
+    # ── 7. Label top concept per domain ──
     labels_per_domain = defaultdict(list)
     for mc_id in sorted(mc_nodes, key=lambda n: -mc_episode_count.get(n, 0)):
         dom = mc_to_domain.get(mc_id)
-        if len(labels_per_domain[dom]) < 2:
+        if len(labels_per_domain[dom]) < 1:
             labels_per_domain[dom].append(mc_id)
 
     for mc_id in [n for ns in labels_per_domain.values() for n in ns]:
         label = mc_labels.get(mc_id, mc_id)
-        if len(label) > 30:
-            label = label[:28] + "…"
+        if len(label) > 25:
+            label = label[:23] + "…"
         x, y = mc_pos[mc_id]
-        ax.annotate(label, (x, y), fontsize=6.5, fontstyle="italic",
+        ax.annotate(label, (x, y), fontsize=8, fontstyle="italic",
                     ha="center", va="bottom",
-                    xytext=(0, 4), textcoords="offset points",
-                    color="#333333", zorder=8)
+                    xytext=(0, 5), textcoords="offset points",
+                    color="#222222", zorder=8,
+                    bbox=dict(boxstyle="round,pad=0.15", facecolor="white",
+                              alpha=0.7, edgecolor="none"))
 
-    # ── 8. Ring guides and annotations ──
-    # Faint circle at concept radius and episode radius
-    for r, lbl in [(6.0, ""), (10.0, ""), (16.0, "")]:
+    # ── 8. Ring guides ──
+    for r in [6.0, 10.0, 14.5]:
         circle = plt.Circle((0, 0), r, fill=False, color="#dddddd",
                            linewidth=0.3, linestyle="--", zorder=0)
         ax.add_patch(circle)
 
-    # Ring labels
-    ax.text(0, -7.8, "meta-concepts", ha="center", fontsize=9,
-            color="#777777", fontstyle="italic", zorder=0)
-    ax.text(0, -13.5, "episodes", ha="center", fontsize=9,
-            color="#777777", fontstyle="italic", zorder=0)
-
-    # ── 9. Legend ──
-    legend_elements = [
-        mpatches.Patch(facecolor="#888888", alpha=0.7, label="Meta-concept (inner ring)"),
-        plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='#888888',
-                   markersize=4, alpha=0.5, label="Episode (outer ring)"),
-        plt.Line2D([0], [0], color='#999999', linewidth=0.4, alpha=0.3,
-                   label="Episode → Concept link"),
-        plt.Line2D([0], [0], color='#555555', linewidth=0.8, alpha=0.4,
-                   label="Concept co-occurrence"),
-    ]
-    ax.legend(handles=legend_elements, loc="lower left", fontsize=10,
-              framealpha=0.95, edgecolor="#cccccc", title="Node & Edge Types",
-              title_fontsize=11)
-
-    # ── 10. Stats ──
-    stats_text = (f"1,908 episodes  ·  499 meta-concepts  ·  "
-                  f"{len(bip_segments):,} bipartite links  ·  "
-                  f"{len(cooc_segments):,} co-occurrence edges")
-    ax.text(0.5, 0.01, stats_text, transform=ax.transAxes,
-            ha="center", fontsize=10, color="#666666")
-
     # Styling
-    ax.set_xlim(-19, 19)
-    ax.set_ylim(-19, 19)
+    ax.set_xlim(-17, 17)
+    ax.set_ylim(-17, 17)
     ax.set_aspect("equal")
     ax.axis("off")
 
@@ -440,7 +414,7 @@ def main():
 
     for fmt in ["pdf", "png"]:
         out = FIGURES_DIR / f"knowledge_map_bipartite.{fmt}"
-        fig.savefig(out, dpi=250, bbox_inches="tight",
+        fig.savefig(out, dpi=300, bbox_inches="tight",
                     facecolor="white", edgecolor="none")
         print(f"  Saved: {out}")
     plt.close(fig)

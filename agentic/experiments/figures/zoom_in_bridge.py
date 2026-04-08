@@ -106,7 +106,7 @@ def draw_bridge(ep1_concepts, ep2_concepts):
         mc_info[c["mc_id"]] = c
 
     # Layout parameters
-    fig, ax = plt.subplots(1, 1, figsize=(16, 10), facecolor="white")
+    fig, ax = plt.subplots(1, 1, figsize=(12, 7), facecolor="white")
 
     # Positions — generous spacing
     EP_Y = 0.0       # episodes at bottom
@@ -114,13 +114,20 @@ def draw_bridge(ep1_concepts, ep2_concepts):
     UNIQUE_Y = 2.2   # unique concepts near their episode
     DOMAIN_Y = 8.5   # domain labels at top
 
-    EP1_X = -5.5
-    EP2_X = 5.5
+    EP1_X = -6.5
+    EP2_X = 6.5
     CENTER_X = 0.0
 
     # --- Draw episodes ---
-    ep1_title = EP1_ID.replace("-", " ").title()
-    ep2_title = EP2_ID.replace("-", " ").title()
+    def smart_title(s):
+        """Title-case but keep acronyms like AI, LLM uppercase."""
+        acronyms = {"ai", "llm", "mle", "api"}
+        words = s.replace("-", " ").split()
+        return " ".join(w.upper() if w.lower() in acronyms else w.title()
+                        for w in words)
+
+    ep1_title = smart_title(EP1_ID)
+    ep2_title = smart_title(EP2_ID)
 
     # Episode 1 box
     ep1_dom = Counter(c["domain"] for c in ep1_concepts).most_common(1)[0][0]
@@ -131,18 +138,14 @@ def draw_bridge(ep1_concepts, ep2_concepts):
         (EP2_X, ep2_title, ep2_dom, ep2_concepts),
     ]:
         color = DOMAIN_COLORS.get(dom, "#999")
-        box = mpatches.FancyBboxPatch(
-            (ex - 2.8, EP_Y - 0.5), 5.6, 1.0,
-            boxstyle="round,pad=0.15",
-            facecolor=mcolors.to_rgba(color, 0.15),
-            edgecolor=color, linewidth=2.0, zorder=5)
-        ax.add_patch(box)
         ax.text(ex, EP_Y, title, ha="center", va="center",
-                fontsize=10, fontweight="bold", color="#333333", zorder=6,
-                wrap=True)
+                fontsize=13, fontweight="bold", color="#333333", zorder=6,
+                bbox=dict(boxstyle="round,pad=0.4",
+                          facecolor=mcolors.to_rgba(color, 0.15),
+                          edgecolor=color, linewidth=2.0))
         # Domain label under episode
         ax.text(ex, EP_Y - 0.85, DOMAIN_LABELS.get(dom, ""),
-                ha="center", va="top", fontsize=9, fontstyle="italic",
+                ha="center", va="top", fontsize=11, fontstyle="italic",
                 color=color, zorder=6)
 
     # --- Draw shared concepts (center column) ---
@@ -150,7 +153,7 @@ def draw_bridge(ep1_concepts, ep2_concepts):
     n_shared = len(shared_list)
 
     shared_positions = {}
-    spacing = min(2.5, 11.0 / max(n_shared, 1))
+    spacing = min(3.0, 13.0 / max(n_shared, 1))
     start_x = CENTER_X - (n_shared - 1) * spacing / 2
 
     for i, mc_id in enumerate(shared_list):
@@ -167,15 +170,12 @@ def draw_bridge(ep1_concepts, ep2_concepts):
 
         # Concept label
         label = info["mc_label"]
-        ax.text(x, y + 0.7, label, ha="center", va="bottom",
-                fontsize=8.5, fontweight="bold", color="#333333", zorder=6,
-                rotation=25, rotation_mode="anchor",
+        y_off = 0.7
+        ax.text(x, y + y_off, label, ha="left", va="bottom",
+                fontsize=10, fontweight="bold", color="#333333", zorder=6,
+                rotation=20, rotation_mode="anchor",
                 bbox=dict(boxstyle="round,pad=0.12", facecolor="white",
                           edgecolor="none", alpha=0.9))
-
-        # Domain tag below concept
-        ax.text(x, y - 0.7, info["domain_label"], ha="center", va="top",
-                fontsize=8, color=color, fontstyle="italic", zorder=6)
 
         # Lines from both episodes to this shared concept
         for ex in [EP1_X, EP2_X]:
@@ -205,10 +205,11 @@ def draw_bridge(ep1_concepts, ep2_concepts):
             label = info["mc_label"]
             if len(label) > 40:
                 label = label[:38] + "…"
-            ax.text(x, y + 0.55, label, ha="center", va="bottom",
-                    fontsize=8, color="#555555", zorder=6)
-            ax.text(x, y - 0.55, info["domain_label"], ha="center", va="top",
-                    fontsize=7.5, color=color, fontstyle="italic", zorder=6)
+            ax.text(x, y + 0.55, label, ha="left", va="bottom",
+                    fontsize=9, color="#555555", zorder=6,
+                    rotation=20, rotation_mode="anchor",
+                    bbox=dict(boxstyle="round,pad=0.1", facecolor="white",
+                              alpha=0.8, edgecolor="none"))
 
             # Line from episode only
             ax.plot([ep_x, x], [EP_Y + 0.5, y - 0.35],
@@ -228,29 +229,46 @@ def draw_bridge(ep1_concepts, ep2_concepts):
         domain_positions[dom] = (dx, dy)
         color = DOMAIN_COLORS.get(dom, "#999")
 
-        ax.text(dx, dy, DOMAIN_LABELS.get(dom, dom), ha="center", va="center",
+        ax.text(dx, dy, DOMAIN_LABELS.get(dom, dom), ha="left", va="bottom",
                 fontsize=11, fontweight="bold", color="white", zorder=6,
-                bbox=dict(boxstyle="round,pad=0.4", facecolor=mcolors.to_rgba(color, 0.75),
+                rotation=30, rotation_mode="anchor",
+                bbox=dict(boxstyle="round,pad=0.3", facecolor=mcolors.to_rgba(color, 0.75),
                           edgecolor=color, linewidth=2.0))
 
         # Lines from domain to its shared concepts
         for mc_id in shared_list:
             if mc_info[mc_id]["domain"] == dom:
                 cx, cy = shared_positions[mc_id]
-                ax.plot([dx, cx], [dy - 0.5, cy + 0.35],
-                       color=color, alpha=0.25, linewidth=1.0,
-                       linestyle=":", zorder=1)
+                ax.annotate("", xy=(cx, cy + 0.45), xytext=(dx, dy - 0.3),
+                           arrowprops=dict(arrowstyle="->", color=color,
+                                          alpha=0.5, lw=1.5,
+                                          connectionstyle="arc3,rad=0.1"),
+                           zorder=1)
 
-    # --- Annotations ---
-    # "Shared concepts" label
-    ax.text(CENTER_X, SHARED_Y + 2.2, "shared meta-concepts",
-            ha="center", va="center", fontsize=9, color="#999999",
-            fontstyle="italic")
+    # --- Structural labels (left margin) ---
+    ax.text(-12.5, DOMAIN_Y, "DOMAINS", ha="left", va="center",
+            fontsize=8, fontweight="bold", color="#aaaaaa", rotation=0)
+    ax.text(-12.5, SHARED_Y, "SHARED\nCONCEPTS", ha="left", va="center",
+            fontsize=8, fontweight="bold", color="#aaaaaa", rotation=0)
+    ax.text(-12.5, UNIQUE_Y, "UNIQUE\nCONCEPTS", ha="left", va="center",
+            fontsize=8, fontweight="bold", color="#aaaaaa", rotation=0)
+    ax.text(-12.5, EP_Y, "EPISODES", ha="left", va="center",
+            fontsize=8, fontweight="bold", color="#aaaaaa", rotation=0)
 
-    # Arrow annotation showing the bridge
-    ax.annotate("", xy=(2.5, SHARED_Y), xytext=(-2.5, SHARED_Y),
-                arrowprops=dict(arrowstyle="<->", color="#cccccc",
-                               lw=1.5, connectionstyle="arc3,rad=0.2"))
+    # --- Legend ---
+    leg_y = -1.6
+    ax.plot([-5, -4.5], [leg_y, leg_y], color="#666", linewidth=2.0, linestyle="-")
+    ax.text(-4.2, leg_y, "shared link", fontsize=8, va="center", color="#666")
+    ax.plot([0, 0.5], [leg_y, leg_y], color="#666", linewidth=1.5, linestyle="--")
+    ax.text(0.8, leg_y, "unique link", fontsize=8, va="center", color="#666")
+    circle_s = plt.Circle((5.0, leg_y), 0.2, facecolor="#ccc", edgecolor="#666",
+                          linewidth=1.5, zorder=5)
+    ax.add_patch(circle_s)
+    ax.text(5.5, leg_y, "solid = shared", fontsize=8, va="center", color="#666")
+    circle_d = plt.Circle((9.0, leg_y), 0.2, facecolor="white", edgecolor="#666",
+                          linewidth=1.2, linestyle="--", zorder=5)
+    ax.add_patch(circle_d)
+    ax.text(9.5, leg_y, "dashed = unique", fontsize=8, va="center", color="#666")
 
     # Stats
     n_unique1 = len(unique1_mcs)
@@ -258,11 +276,11 @@ def draw_bridge(ep1_concepts, ep2_concepts):
     stats = (f"{n_shared} shared concepts across {len(shared_domains)} domains  ·  "
              f"{n_unique1} + {n_unique2} unique")
     ax.text(0.5, 0.02, stats, transform=ax.transAxes,
-            ha="center", fontsize=9, color="#888888")
+            ha="center", fontsize=10, color="#888888")
 
     # Styling
-    ax.set_xlim(-11, 11)
-    ax.set_ylim(-2.2, 10.5)
+    ax.set_xlim(-14, 13)
+    ax.set_ylim(-2.5, 10.5)
     ax.set_aspect("equal")
     ax.axis("off")
 
@@ -291,7 +309,7 @@ def main():
 
     for fmt in ["pdf", "png"]:
         out = FIGURES_DIR / f"zoom_in_bridge.{fmt}"
-        fig.savefig(out, dpi=250, bbox_inches="tight",
+        fig.savefig(out, dpi=300, bbox_inches="tight",
                     facecolor="white", edgecolor="none")
         print(f"  Saved: {out}")
     plt.close(fig)
