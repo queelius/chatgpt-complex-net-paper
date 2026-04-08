@@ -1,10 +1,24 @@
 \documentclass{svproc}
-
-\usepackage{graphicx}
+%
+% RECOMMENDED (ISCS 2026 template packages — do not remove)
+%
+\usepackage{graphicx}%
 \graphicspath{{../experiments/figures/}}
-\usepackage{amsmath,amssymb}
-\usepackage{booktabs}
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm}%
+\usepackage{algorithmicx}%
+\usepackage{algpseudocode}%
+\usepackage{listings}%
 \usepackage{url}
+\def\UrlFont{\rmfamily}
+% Additional packages
 \usepackage{hyperref}
 \usepackage{placeins}  % \FloatBarrier to keep figures near their text
 
@@ -553,7 +567,7 @@ Code: \url{https://github.com/queelius/chatgpt-complex-net}
 \end{sloppypar}
 
 % ============================================================================
-\bibliographystyle{splncs04}
+\bibliographystyle{spmpsci}
 \bibliography{refs}
 
 \end{document}
