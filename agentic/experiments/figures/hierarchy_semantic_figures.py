@@ -30,15 +30,15 @@ FIGURES_DIR = Path(__file__).parent
 
 def setup_style():
     plt.rcParams.update({
-        'font.size': 11,
+        'font.size': 13,
         'font.family': 'serif',
         'savefig.dpi': 300,
         'figure.dpi': 100,
-        'axes.labelsize': 11,
-        'axes.titlesize': 12,
-        'xtick.labelsize': 9,
-        'ytick.labelsize': 9,
-        'legend.fontsize': 9,
+        'axes.labelsize': 13,
+        'axes.titlesize': 14,
+        'xtick.labelsize': 11,
+        'ytick.labelsize': 11,
+        'legend.fontsize': 10,
     })
     sns.set_style("white")
 
@@ -260,7 +260,7 @@ def figure_frequency_distributions(data, extraction_state):
     setup_style()
     sns.set_style("whitegrid")
 
-    fig, axes = plt.subplots(1, 3, figsize=(16, 5))
+    fig, axes = plt.subplots(1, 3, figsize=(10, 3.5))
 
     # ── Panel A: Concept rank-frequency (Zipf's law test) ──
     ax = axes[0]
@@ -294,16 +294,6 @@ def figure_frequency_distributions(data, extraction_state):
     ax.set_ylabel('Frequency (episodes)')
     ax.set_title('(a) Concept rank-frequency', fontweight='bold')
 
-    # Annotate top concepts
-    top_5 = concept_counter.most_common(5)
-    for i, (concept, count) in enumerate(top_5):
-        if i < 3:
-            short = concept[:25] + '...' if len(concept) > 25 else concept
-            ax.annotate(short, xy=(i+1, count),
-                       xytext=(10, 5 + i*12), textcoords='offset points',
-                       fontsize=6, color='#E74C3C',
-                       arrowprops=dict(arrowstyle='->', color='#E74C3C', lw=0.5))
-
     # ── Panel B: Concepts per episode ──
     ax = axes[1]
     concepts_per_ep = [len(ep['concepts']) for ep in extraction_state['episodes']]
@@ -334,10 +324,8 @@ def figure_frequency_distributions(data, extraction_state):
     # Annotate singleton count
     singleton_count = freq_of_freq.get(1, 0)
     total = sum(y_vals)
-    ax.annotate(f'{singleton_count} singletons\n({100*singleton_count/total:.0f}%)',
-                xy=(1, singleton_count), xytext=(3, singleton_count * 0.5),
-                fontsize=8, color='#9B59B6', fontweight='bold',
-                arrowprops=dict(arrowstyle='->', color='#9B59B6', lw=1))
+    ax.text(8, singleton_count * 0.5, f'{singleton_count} singletons\n({100*singleton_count/total:.0f}%)',
+            fontsize=8, color='#9B59B6', fontweight='bold', va='center')
 
     plt.tight_layout()
     for fmt in ('pdf', 'png'):

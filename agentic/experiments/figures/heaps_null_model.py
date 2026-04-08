@@ -35,9 +35,9 @@ FIGURES_DIR = Path(__file__).parent
 
 def setup_style():
     plt.rcParams.update({
-        'font.size': 11, 'font.family': 'serif', 'savefig.dpi': 300,
+        'font.size': 13, 'font.family': 'serif', 'savefig.dpi': 300,
         'figure.dpi': 100, 'axes.labelsize': 11, 'axes.titlesize': 12,
-        'xtick.labelsize': 9, 'ytick.labelsize': 9, 'legend.fontsize': 9,
+        'xtick.labelsize': 11, 'ytick.labelsize': 11, 'legend.fontsize': 10,
     })
     sns.set_style("whitegrid")
 
@@ -535,7 +535,7 @@ def main():
     x = np.arange(1, len(episodes) + 1, dtype=float)
     popt_raw, _ = curve_fit(heaps_law, x, raw_counts, p0=[1.0, 0.9], maxfev=10000)
 
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4))
 
     # Panel 1: Vocabulary growth with null band
     ax = axes[0]
