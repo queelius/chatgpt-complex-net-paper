@@ -221,6 +221,15 @@ Velocity (mean) vs.\ Velocity (exp) & 0.131 \\
 \end{tabular}
 \end{table}
 
+The NMI matrix (Figure~\ref{fig:nmi}) shows that all cross-space comparisons fall below 0.21, indicating near-independence of community structure.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.55\textwidth]{figures/fig2_nmi_heatmap.pdf}
+\caption{Normalized Mutual Information between community assignments in four representation spaces. Values near zero indicate independent community structure.}
+\label{fig:nmi}
+\end{figure}
+
 \textbf{Velocity communities are conversation archetypes.} The four velocity communities correspond not to topics but to dynamical styles (Table~\ref{tab:archetypes}).
 
 \begin{table}[h]
@@ -285,7 +294,14 @@ All & 0.785 & 0.800 & 3.1 \\
 \end{tabular}
 \end{table}
 
-The distribution of $\alpha$ is approximately normal, centered at 0.80, with range 0.35--0.95. Correlation with conversation length is negligible ($r = 0.039$): alpha measures cognitive tempo, not duration.
+The distribution of $\alpha$ is approximately normal, centered at 0.80, with range 0.35--0.95 (Figure~\ref{fig:alpha}). Correlation with conversation length is negligible ($r = 0.039$): alpha measures cognitive tempo, not duration.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig3_alpha_distribution.pdf}
+\caption{Distribution of adaptive $\alpha$ by platform. ChatGPT conversations have shorter semantic half-life (faster topic evolution) than Claude Code sessions.}
+\label{fig:alpha}
+\end{figure}
 
 \subsection{Episode Detection}
 \label{sec:stabilization}
@@ -331,11 +347,32 @@ Length & ChatGPT (msgs/ep) & Claude Code (msgs/ep) \\
 
 \textbf{Partial validation via session continuation markers.} Claude Code sessions contain explicit continuation markers (``This session is being continued from a previous conversation'') when the context window resets mid-session. We found 586 such markers across the corpus. Of these, 24\% fall within 3 messages of a detected episode boundary (median distance: 7 messages). Session continuation markers and episode boundaries capture related but distinct phenomena: continuations are platform artifacts (context window resets), while episodes are semantic shifts. They coincide when the user starts a new topic after a reset, but diverge when the user continues the same topic.
 
-\textbf{Qualitative validation.} A 188-message conversation on consciousness decomposes into 5 episodes: (1)~philosophical inquiry, (2)~thought experiments with p-zombies, (3)~role-play simulation, (4)~collaborative fiction, and (5)~personal reflection. Each episode represents a distinct cognitive mode. A 1,764-message Claude Code session decomposes into 43 episodes, each a distinct development task.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/fig4_episode_signal.pdf}
+\caption{Sliding-window divergence signal for ``Understanding Consciousness'' (188 messages). Dashed vertical lines mark detected episode boundaries. Episode labels indicate the cognitive mode of each segment.}
+\label{fig:episodes}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig1_trajectory.pdf}
+\caption{PCA projection of the exponential trajectory for the same conversation. Each color represents one episode. The trajectory moves through distinct regions of embedding space, with sharp turns at episode boundaries.}
+\label{fig:trajectory}
+\end{figure}
+
+\textbf{Qualitative validation.} A 188-message conversation on consciousness decomposes into 5 episodes (Figures~\ref{fig:episodes} and~\ref{fig:trajectory}): (1)~philosophical inquiry, (2)~thought experiments with p-zombies, (3)~role-play simulation, (4)~collaborative fiction, and (5)~personal reflection. Each episode represents a distinct cognitive mode. A 1,764-message Claude Code session decomposes into 43 episodes, each a distinct development task.
 
 \subsection{Lens Family}
 
-Eight lenses applied to 2,298 conversations reveal nearly orthogonal neighborhoods. The First-only and Last-only lenses have a neighbor overlap of 0.07: the conversations most similar to where you started are almost entirely disjoint from those most similar to where you ended.
+Eight lenses applied to 2,298 conversations reveal nearly orthogonal neighborhoods (Figure~\ref{fig:lenses}). The First-only and Last-only lenses have a neighbor overlap of 0.07: the conversations most similar to where you started are almost entirely disjoint from those most similar to where you ended.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/fig5_lens_overlap.pdf}
+\caption{Nearest-neighbor overlap matrix across eight lenses. First-only and Last-only have near-zero overlap (0.07), meaning a conversation's opening and closing neighborhoods are disjoint.}
+\label{fig:lenses}
+\end{figure}
 
 \subsection{Continuation vs.\ Revisitation}
 
