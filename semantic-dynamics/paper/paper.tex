@@ -77,7 +77,7 @@ These findings emerge from a single user's archive of 3,097 conversations (2,496
 
 \subsection{Complex Network Analysis of Conversation Archives}
 
-Prior work by the first author has applied complex network analysis to AI conversation archives. Paper~1~\citep{towell2025cognitive} constructed semantic similarity graphs from 1,908 ChatGPT conversations, finding small-world topology ($\sigma = 14.9$), Heaps' law vocabulary consolidation ($\beta = 0.286$), and stable community structure matching predictions from Complementary Learning Systems theory. Paper~2~\citep{towell2026agentic} extended this to Claude Code sessions, discovering that the densification exponent $\gamma = 1.41$ is a near-universal constant across platforms, and that delegation (parent--child session spawning) and semantic similarity define orthogonal network layers.
+Prior work by the first author has applied complex network analysis to AI conversation archives. Paper~1~\citep{towell2025cognitive} constructed semantic similarity graphs from 1,908 ChatGPT conversations, finding small-world topology ($\sigma = 14.9$), Heaps' law vocabulary consolidation ($\beta = 0.286$), and stable community structure matching predictions from Complementary Learning Systems theory. Paper~2~\citep{towell2026episodes} extended this to Claude Code sessions, discovering that the densification exponent $\gamma = 1.41$ is a near-universal constant across platforms, and that delegation (parent--child session spawning) and semantic similarity define orthogonal network layers.
 
 The present work departs from this line by shifting from static graph analysis to dynamical analysis. Rather than asking ``which conversations are similar?'', we ask ``how do conversations move through embedding space?''
 
@@ -241,6 +241,31 @@ Comm. & Size & Drift & Speed & Source & Interpretation \\
 
 Degree correlation between semantic and velocity spaces is moderate (Spearman $\rho = 0.576$, $p < 0.001$), indicating that hub conversations tend to be hubs in both spaces but with substantial disagreement.
 
+\textbf{Pairwise similarity is correlated; community structure is not.} DTW trajectory distance correlates strongly with topic similarity (Spearman $\rho = -0.774$, $p < 0.001$): conversations about similar topics do tend to follow similar paths. The orthogonality we observe is at the \emph{community level}, not the pairwise level. Louvain community detection amplifies subtle structural differences into qualitatively different partitions. This is an emergent property of the clustering algorithm, not a pairwise independence.
+
+\subsection{User vs.\ Assistant Trajectory Divergence}
+
+Do the user and assistant ``end up in the same place'' by the end of a conversation? We computed separate exponential trajectories for user and assistant messages and measured the cosine distance between their final embeddings.
+
+\begin{table}[h]
+\centering
+\caption{User/assistant trajectory divergence by platform.}
+\label{tab:divergence}
+\begin{tabular}{lrr}
+\toprule
+Platform & Mean divergence & $n$ \\
+\midrule
+ChatGPT & 0.220 & 1,214 \\
+Claude Code & 0.260 & 335 \\
+Anthropic Claude & 0.242 & 66 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Claude Code sessions show higher user/assistant divergence: by the end of the conversation, the user's trajectory and the assistant's trajectory point in more different directions. This reflects the agentic modality: the assistant ranges across files, code, and tool output (technical content) while the user stays focused on the goal (high-level directives). In ChatGPT, user and assistant explore together and remain more aligned.
+
+The conversations with lowest divergence are deep conceptual explorations (``Understanding and Computation Debate,'' ``Objective Truth Paradox'') where user and AI co-develop an idea. The highest-divergence conversations are long Claude Code sessions where the assistant executed diverse technical operations while the user watched and steered.
+
 \subsection{Semantic Half-Life and Adaptive Alpha}
 
 We estimated the optimal $\alpha$ per conversation by fitting the exponential trajectory to predict the next message (Table~\ref{tab:alpha}).
@@ -286,6 +311,26 @@ Conversation length & Mean episodes & Episodes per message \\
 \end{tabular}
 \end{table}
 
+\textbf{Episode density is platform-independent at matched length.} When conversations are binned by message count, ChatGPT and Claude Code have nearly identical episode density (Table~\ref{tab:platform_density}). The overall difference in segment counts (ChatGPT mean 2.9, Claude Code mean 8.2) is driven by Claude Code sessions being longer, not by a different episode density.
+
+\begin{table}[h]
+\centering
+\caption{Messages per episode by length bin and platform.}
+\label{tab:platform_density}
+\begin{tabular}{lrr}
+\toprule
+Length & ChatGPT (msgs/ep) & Claude Code (msgs/ep) \\
+\midrule
+20--50 & 15.2 & 15.6 \\
+51--100 & 21.2 & 20.5 \\
+101--200 & 25.0 & 22.8 \\
+201--500 & 27.7 & 24.8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Partial validation via session continuation markers.} Claude Code sessions contain explicit continuation markers (``This session is being continued from a previous conversation'') when the context window resets mid-session. We found 586 such markers across the corpus. Of these, 24\% fall within 3 messages of a detected episode boundary (median distance: 7 messages). Session continuation markers and episode boundaries capture related but distinct phenomena: continuations are platform artifacts (context window resets), while episodes are semantic shifts. They coincide when the user starts a new topic after a reset, but diverge when the user continues the same topic.
+
 \textbf{Qualitative validation.} A 188-message conversation on consciousness decomposes into 5 episodes: (1)~philosophical inquiry, (2)~thought experiments with p-zombies, (3)~role-play simulation, (4)~collaborative fiction, and (5)~personal reflection. Each episode represents a distinct cognitive mode. A 1,764-message Claude Code session decomposes into 43 episodes, each a distinct development task.
 
 \subsection{Lens Family}
@@ -307,13 +352,25 @@ These link types are nearly orthogonal (Jaccard overlap = 0.034). Continuation l
 
 \subsection{Conversations as Dynamical Systems}
 
-The central finding is that conversation archives have a dynamical structure independent of their semantic content. Semantic graphs answer ``what is this conversation about?'' Velocity and curvature graphs answer ``how does the conversation move?'' and ``where does it turn?'' These questions have different answers: the NMI between semantic and velocity communities is 0.13--0.21.
+The central finding is that conversation archives have a dynamical structure that complements their semantic content. At the pairwise level, trajectory similarity and topic similarity are correlated ($\rho = -0.774$): conversations about similar things tend to move in similar ways. But at the community level, the structure diverges (NMI = 0.13--0.21): the \emph{clusters} found by velocity-based community detection are not the same as those found by semantic community detection. The same conversations are partitioned differently depending on whether you ask ``what is this about?'' or ``how does this move?''
 
-This suggests that a complete representation of a conversation archive requires multiple views, analogous to how a complete description of a physical system requires both position and momentum. The semantic embedding is position. The velocity embedding is momentum. Neither alone is sufficient.
+This is analogous to the distinction between position and momentum in physics. A particle's position and momentum are correlated (fast-moving particles tend to be found in certain regions), but the \emph{phase space} structure (the patterns visible only when you consider both position and momentum together) is richer than either dimension alone. The semantic embedding is position: where the conversation sits in topic space. The velocity embedding is momentum: in which direction and at what speed the conversation is heading. The curvature embedding captures acceleration: where the trajectory bends. Each reveals structure invisible to the others.
+
+The practical implication is that conversation retrieval and recommendation systems should support multiple query modes. ``Find conversations about X'' (semantic search) and ``find conversations that \emph{evolved like} this one'' (trajectory search) are different questions with different answers.
 
 \subsection{Episodes, Not Conversations}
 
-The episode detection results challenge the standard practice of treating conversations as atomic units. A 1,764-message session is 43 distinct episodes sharing a session container. This connects to Complementary Learning Systems theory~\citep{mcclelland1995complementary,kumaran2016complementary}: episodes (segments) are the hippocampal units, sessions (conversations) are platform artifacts, and trails (links between episodes across sessions) are the neocortical consolidation process.
+The episode detection results challenge the standard practice of treating conversations as atomic units. A 1,764-message session is not one cognitive unit: it is 43 distinct episodes sharing a session container. The episode density of 1 per 15--25 messages is remarkably consistent across conversation lengths and platforms, suggesting that topic shifts are a property of the conversational process itself.
+
+This connects to Complementary Learning Systems theory~\citep{mcclelland1995complementary,kumaran2016complementary}. In our framing, \emph{episodes} (detected segments) are the hippocampal units: individual, coherent experiences. \emph{Sessions} (conversations as stored by the platform) are artifacts of the technology, not cognitive boundaries. \emph{Trails} (links between episodes across sessions, detected via end-to-start continuation scoring) are the neocortical consolidation process: the integration of episodic memories into semantic knowledge structures.
+
+The partial alignment between session continuation markers and episode boundaries (24\% within 3 messages) supports this interpretation. When the platform forces a session restart, the user sometimes continues the same topic (no episode boundary) and sometimes starts fresh (episode boundary). The platform boundary and the cognitive boundary are independent events.
+
+\subsection{Continuation and Revisitation as Distinct Memory Processes}
+
+The near-orthogonality of continuation links (end-to-start) and revisitation links (mean-to-mean) suggests two distinct mechanisms by which a user returns to prior knowledge. Revisitation is a \emph{semantic} process: the user encounters a similar topic and recalls prior work. Continuation is a \emph{procedural} process: the user picks up an unfinished line of thought and carries it forward, often onto a different platform (continuation links are 1.8$\times$ more likely to cross platforms).
+
+This distinction has implications for recommendation systems: ``related conversations'' (revisitation) and ``conversations you might want to continue'' (continuation) are different suggestion types, drawn from different link pools.
 
 \subsection{Limitations}
 
@@ -321,7 +378,9 @@ The episode detection results challenge the standard practice of treating conver
 
 \textbf{Embedding model dependence.} The stabilization window and similarity distributions are properties of text-embedding-3-small at 256 dimensions.
 
-\textbf{No ground truth for episodes.} Episode boundaries are evaluated qualitatively.
+\textbf{No ground truth for episodes.} Episode boundaries are evaluated qualitatively and via partial proxy (session continuation markers, 24\% alignment). A labeled dataset of episode boundaries would enable quantitative evaluation.
+
+\textbf{Pairwise vs.\ community orthogonality.} Velocity and semantic spaces are orthogonal at the community level (NMI $\approx$ 0.19) but correlated at the pairwise level (DTW vs.\ cosine $\rho = -0.77$). The community-level independence is an emergent property of clustering, not a statement about individual conversation pairs. We are careful to distinguish these levels throughout.
 
 \textbf{N=1 is also N=3,097.} The corpus spans 3,097 conversations over 3.4 years across three platforms. Findings are robust within this archive; generalization is an empirical question.
 
