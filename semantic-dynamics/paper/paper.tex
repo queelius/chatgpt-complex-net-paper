@@ -1,0 +1,341 @@
+\documentclass[11pt]{article}
+
+% Layout
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% Math
+\usepackage{amsmath,amssymb,amsthm}
+
+% Tables and figures
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+
+% Typography
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% References
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{url}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+
+% Code
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  breaklines=true,
+  frame=single,
+  language=Python
+}
+
+% ORCID
+\usepackage{orcidlink}
+
+\title{Semantic Dynamics of AI Conversation Archives:\\
+Velocity, Curvature, and Episodes in Embedding Space}
+
+\author{
+  Alexander Towell\,\orcidlink{0000-0001-6443-9897}\\
+  Department of Computer Science\\
+  Southern Illinois University Edwardsville\\
+  \texttt{lex@metafunctor.com}
+}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We analyze a 3.4-year, 3,097-conversation personal AI archive spanning ChatGPT, Claude, and Claude Code. By embedding individual messages and treating conversations as trajectories through embedding space, we discover structure invisible to standard semantic analysis. First, we show that the derivative of the embedding trajectory (\emph{velocity}) and its second derivative (\emph{curvature}) define representation spaces that are nearly orthogonal to semantic space: community detection in velocity space finds conversation \emph{archetypes} (how thinking moves), not topics (what thinking is about), with NMI of 0.13--0.21 against semantic communities. Second, we introduce the \emph{semantic half-life}: a per-conversation decay parameter that measures how quickly a conversation forgets its beginning. This parameter is platform-dependent (ChatGPT: 2.4 messages, Claude Code: 4.3 messages), reflecting the different cognitive tempos of conversational versus agentic AI interaction. Third, we show that conversations decompose into approximately 3--7 natural episodes via sliding-window changepoint detection on embedding trajectories, with a universal episode density of approximately one topic shift per 12--15 messages. These findings reframe conversation archives as dynamical systems: the same calculus of projection, differentiation, and segmentation that applies to physical trajectories reveals cognitive structure in sequential text. We release \texttt{embflow}, a Python package implementing the embedding flow calculus.
+\end{abstract}
+
+\section{Introduction}
+
+When a person uses an AI assistant, the resulting conversation is typically stored as a flat transcript: a sequence of messages, filed under a title, retrievable by keyword search. This representation captures \emph{what} was discussed but discards \emph{how} the discussion evolved. A conversation that opens with a philosophical question, pivots to fiction writing, and closes with personal reflection is stored identically to one that stays on a single technical topic from start to finish.
+
+We propose treating conversations as \emph{trajectories} through embedding space. Each message maps to a point in a high-dimensional semantic space via a pre-trained embedding model. The ordered sequence of these points traces a curve. This curve has a direction (velocity), a rate of change of direction (curvature), and a measurable deviation from its starting point (drift). These dynamical properties constitute a representation of the conversation that is distinct from, and largely orthogonal to, its semantic content.
+
+This reframing is not merely metaphorical. We show empirically that:
+
+\begin{enumerate}
+\item \textbf{Velocity and curvature define independent representation spaces.} Graphs constructed from velocity similarity find different communities than graphs constructed from semantic similarity (NMI = 0.13--0.21). Velocity communities correspond to \emph{conversation archetypes} (exploratory, focused, high-drift, steady) rather than topics.
+
+\item \textbf{Conversations have a measurable cognitive tempo.} An exponentially weighted embedding, parameterized by a decay rate $\alpha$, captures the ``semantic half-life'' of a conversation: how quickly the influence of earlier messages decays. This parameter varies systematically by platform (ChatGPT conversations evolve faster than Claude Code sessions) and can be estimated per conversation from the data itself.
+
+\item \textbf{Conversations decompose into natural episodes.} Sliding-window changepoint detection on the embedding trajectory identifies topic shifts with a consistent density of approximately one episode per 12--15 messages, independent of conversation length. This challenges the standard treatment of conversations as atomic units and suggests that the true episodic units of a conversation archive are segments, not sessions.
+\end{enumerate}
+
+These findings emerge from a single user's archive of 3,097 conversations (2,496 ChatGPT, 472 Claude Code, 129 Anthropic Claude) spanning December 2022 to April 2026, comprising 149,623 embedded messages. The analysis uses per-message embeddings (OpenAI text-embedding-3-small, 256 dimensions) stored with content-hash provenance for incremental updates. All computations use \texttt{embflow}, a Python package we release that implements the embedding flow calculus: composable lens functions for weighted aggregation, trajectory computation via scan, and derivative operations (velocity, curvature, angular velocity, drift).
+
+\section{Related Work}
+
+\subsection{Complex Network Analysis of Conversation Archives}
+
+Prior work by the first author has applied complex network analysis to AI conversation archives. Paper~1~\citep{towell2025cognitive} constructed semantic similarity graphs from 1,908 ChatGPT conversations, finding small-world topology ($\sigma = 14.9$), Heaps' law vocabulary consolidation ($\beta = 0.286$), and stable community structure matching predictions from Complementary Learning Systems theory. Paper~2~\citep{towell2026agentic} extended this to Claude Code sessions, discovering that the densification exponent $\gamma = 1.41$ is a near-universal constant across platforms, and that delegation (parent--child session spawning) and semantic similarity define orthogonal network layers.
+
+The present work departs from this line by shifting from static graph analysis to dynamical analysis. Rather than asking ``which conversations are similar?'', we ask ``how do conversations move through embedding space?''
+
+\subsection{Embedding Aggregation}
+
+The standard approach to representing a multi-sentence document is mean pooling of token or sentence embeddings. The MEGA architecture~\citep{ma2023mega} integrates exponential moving averages into transformer attention. DemaFormer~\citep{nguyen2023demaformer} uses a learnable damped exponential moving average for temporal language grounding. Our approach differs in two ways: we apply exponential weighting \emph{post-hoc} to pre-computed embeddings (making the method applicable to any frozen model), and we treat the decay parameter not as a hyperparameter but as a \emph{measurable property} of the data.
+
+\subsection{Temporal Network Embeddings}
+
+The weg2vec method~\citep{torricelli2020weg2vec} applies exponential decay to temporal network events. This is the closest prior work to our approach: both use exponential decay to encode recency in an embedding. The key difference is that weg2vec embeds events (interactions between network nodes), while we embed messages within a conversation. Our trajectory and derivative operations have no analogue in weg2vec.
+
+\subsection{Changepoint Detection}
+
+Bayesian online changepoint detection~\citep{adams2007bayesian} and topic segmentation~\citep{hearst1997texttiling,eisenstein2008bayesian} detect distributional shifts in sequential data. Our sliding-window method is conceptually simple but operates in embedding space rather than on raw text features. The empirical finding that the local mean stabilizes at approximately 10 messages provides a principled default window size.
+
+\section{Data and Embedding Infrastructure}
+
+\subsection{Corpus}
+
+The corpus consists of 3,097 conversations from a single user across three AI platforms (Table~\ref{tab:corpus}).
+
+\begin{table}[h]
+\centering
+\caption{Corpus composition.}
+\label{tab:corpus}
+\begin{tabular}{lrrr}
+\toprule
+Platform & Conversations & Messages & Range \\
+\midrule
+ChatGPT (OpenAI) & 2,496 & ${\sim}$104,000 & Dec 2022 -- Apr 2026 \\
+Claude Code & 472 & ${\sim}$42,000 & Nov 2025 -- Apr 2026 \\
+Anthropic Claude & 129 & ${\sim}$3,600 & Mar 2024 -- Aug 2025 \\
+\midrule
+\textbf{Total} & \textbf{3,097} & \textbf{${\sim}$149,600} & \textbf{3.4 years} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+ChatGPT conversations are human-driven: the user poses questions, explores topics, and drives the direction. Claude Code sessions are agent-driven: the user provides high-level directives while the assistant performs multi-step technical work. This distinction is central to several findings.
+
+\subsection{Per-Message Embeddings}
+
+Each message is embedded individually using OpenAI's text-embedding-3-small model at 256 dimensions (Matryoshka truncation). Embeddings are stored in a SQLite database with sqlite-vec for vector operations. Each record includes a SHA-256 content hash for incremental updates. Total storage: 266\,MB for 149,623 embeddings.
+
+\subsection{Conversation-Level Embeddings via Lenses}
+
+A conversation's messages form a sequence of embedding vectors $\mathbf{e}_1, \mathbf{e}_2, \ldots, \mathbf{e}_n$. A \emph{lens} is a weight function $w: \{1,\ldots,n\} \to \mathbb{R}^+$ that produces a conversation-level embedding:
+
+\begin{equation}
+\mathbf{z}_w = \frac{\sum_{k=1}^{n} w(k) \cdot \mathbf{e}_k}{\left\|\sum_{k=1}^{n} w(k) \cdot \mathbf{e}_k\right\|}
+\end{equation}
+
+Different lenses capture different aspects of the conversation. Key lenses include: \emph{Uniform} ($w(k) = 1$, the mean), \emph{Exponential} ($w(k) = \alpha^{n-k}$, recency-weighted), \emph{Reverse exponential} ($w(k) = \alpha^{k-1}$, primacy-weighted), and \emph{Surprise} ($w(k) = 1 - \cos(\mathbf{e}_k, \bar{\mathbf{e}}_{<k})$, topic-shifting messages). Lenses compose via pointwise multiplication of weight vectors; the Uniform lens is the identity element.
+
+\section{The Embedding Flow Calculus}
+
+\subsection{Trajectory}
+
+The \emph{trajectory} of a conversation under a lens is the running projection at each position:
+
+\begin{equation}
+\text{traj}(j) = \text{normalize}\left(\sum_{k=1}^{j} w(k, j) \cdot \mathbf{e}_k\right)
+\end{equation}
+
+where $w(k, j)$ denotes the weight assigned to message $k$ when projecting at position $j$. For the exponential lens, $w(k, j) = \alpha^{j-k}$.
+
+\subsection{Velocity and Curvature}
+
+The \emph{velocity} at step $j$ is:
+\begin{equation}
+\mathbf{v}_j = \text{traj}(j+1) - \text{traj}(j)
+\end{equation}
+
+The velocity vector encodes the direction and magnitude of semantic change. Two conversations with similar velocity vectors are ``changing in the same way,'' regardless of what they are about.
+
+The \emph{curvature} is the second difference:
+\begin{equation}
+\mathbf{c}_j = \mathbf{v}_{j+1} - \mathbf{v}_j
+\end{equation}
+
+The \emph{angular velocity} is the cosine distance between consecutive trajectory points:
+\begin{equation}
+\omega_j = 1 - \cos\bigl(\text{traj}(j),\; \text{traj}(j+1)\bigr)
+\end{equation}
+
+\subsection{Semantic Half-Life}
+
+The exponential lens is parameterized by $\alpha \in (0, 1]$. The \emph{semantic half-life} is:
+\begin{equation}
+h = \frac{\ln 0.5}{\ln \alpha}
+\end{equation}
+
+This gives the number of messages after which the influence of a given message has halved. At $\alpha = 0.85$, $h \approx 4.3$ messages.
+
+\subsection{Episode Detection}
+
+Episode boundaries are detected via sliding-window divergence. At each position $j$:
+\begin{equation}
+d(j) = 1 - \cos\left(\bar{\mathbf{e}}_{j-w:j},\; \bar{\mathbf{e}}_{j:j+w}\right)
+\end{equation}
+
+Peaks in $d(j)$ above a threshold of $\mu + \sigma$ identify episode boundaries. The window size $w = 10$ is derived from the empirical stabilization point of the local mean (Section~\ref{sec:stabilization}).
+
+\section{Results}
+
+\subsection{Orthogonal Representation Spaces}
+
+We constructed similarity graphs in four spaces (Table~\ref{tab:spaces}).
+
+\begin{table}[h]
+\centering
+\caption{Graph properties at matched density (p95 threshold per space).}
+\label{tab:spaces}
+\begin{tabular}{lrrrrrr}
+\toprule
+Space & Threshold & Edges & GC\% & Modularity & Comm. \\
+\midrule
+Semantic & 0.654 & 79,077 & 95.6\% & 0.429 & 8 \\
+Velocity (mean) & 0.222 & 79,077 & 100\% & 0.480 & 4 \\
+Velocity (exp) & 0.166 & 79,077 & 100\% & 0.374 & 5 \\
+Curvature & 0.204 & 79,077 & 99.9\% & 0.474 & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Community agreement is low across spaces (Table~\ref{tab:nmi}).
+
+\begin{table}[h]
+\centering
+\caption{Normalized Mutual Information between community assignments.}
+\label{tab:nmi}
+\begin{tabular}{lr}
+\toprule
+Pair & NMI \\
+\midrule
+Semantic vs.\ Velocity (mean) & 0.189 \\
+Semantic vs.\ Curvature & 0.154 \\
+Velocity (mean) vs.\ Curvature & 0.207 \\
+Velocity (mean) vs.\ Velocity (exp) & 0.131 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Velocity communities are conversation archetypes.} The four velocity communities correspond not to topics but to dynamical styles (Table~\ref{tab:archetypes}).
+
+\begin{table}[h]
+\centering
+\caption{Velocity communities as conversation archetypes.}
+\label{tab:archetypes}
+\begin{tabular}{lrrrll}
+\toprule
+Comm. & Size & Drift & Speed & Source & Interpretation \\
+\midrule
+0 & 784 & 0.459 & 0.202 & 94\% ChatGPT & Exploratory \\
+1 & 534 & 0.412 & 0.204 & 81\% ChatGPT & Focused \\
+3 & 329 & 0.350 & 0.197 & 66\% Claude Code & Technical \\
+2 & 132 & 0.553 & 0.208 & 80\% Claude Code & High-drift \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Degree correlation between semantic and velocity spaces is moderate (Spearman $\rho = 0.576$, $p < 0.001$), indicating that hub conversations tend to be hubs in both spaces but with substantial disagreement.
+
+\subsection{Semantic Half-Life and Adaptive Alpha}
+
+We estimated the optimal $\alpha$ per conversation by fitting the exponential trajectory to predict the next message (Table~\ref{tab:alpha}).
+
+\begin{table}[h]
+\centering
+\caption{Adaptive alpha by platform.}
+\label{tab:alpha}
+\begin{tabular}{lrrr}
+\toprule
+Platform & Mean $\alpha$ & Median $\alpha$ & Half-life (msgs) \\
+\midrule
+ChatGPT & 0.762 & 0.750 & 2.4 \\
+Claude Code & 0.827 & 0.850 & 4.3 \\
+All & 0.785 & 0.800 & 3.1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The distribution of $\alpha$ is approximately normal, centered at 0.80, with range 0.35--0.95. Correlation with conversation length is negligible ($r = 0.039$): alpha measures cognitive tempo, not duration.
+
+\subsection{Episode Detection}
+\label{sec:stabilization}
+
+\textbf{The local mean stabilizes at 10 messages.} Across 701 conversations, the number of messages required for the running mean embedding to change by less than 0.5\% with each additional message is 10--11 (mean = 10.4, median = 11). This provides a principled default window size that is independent of conversation length.
+
+\textbf{Episode density is approximately constant} at one episode per 12--25 messages across all conversation lengths (Table~\ref{tab:episodes}).
+
+\begin{table}[h]
+\centering
+\caption{Episode detection with window $w = 10$, sensitivity $0.8\sigma$.}
+\label{tab:episodes}
+\begin{tabular}{lrr}
+\toprule
+Conversation length & Mean episodes & Episodes per message \\
+\midrule
+20--50 messages & 2.2 & 1 per 16 \\
+51--100 & 3.6 & 1 per 21 \\
+101--200 & 6.4 & 1 per 24 \\
+201--500 & 12.4 & 1 per 28 \\
+500+ & 40.1 & 1 per 15 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Qualitative validation.} A 188-message conversation on consciousness decomposes into 5 episodes: (1)~philosophical inquiry, (2)~thought experiments with p-zombies, (3)~role-play simulation, (4)~collaborative fiction, and (5)~personal reflection. Each episode represents a distinct cognitive mode. A 1,764-message Claude Code session decomposes into 43 episodes, each a distinct development task.
+
+\subsection{Lens Family}
+
+Eight lenses applied to 2,298 conversations reveal nearly orthogonal neighborhoods. The First-only and Last-only lenses have a neighbor overlap of 0.07: the conversations most similar to where you started are almost entirely disjoint from those most similar to where you ended.
+
+\subsection{Continuation vs.\ Revisitation}
+
+Two types of inter-conversation links emerge:
+
+\begin{itemize}
+\item \textbf{Revisitation} (mean-to-mean similarity): ``I returned to this topic.'' (9,920 links)
+\item \textbf{Continuation} (end-to-start similarity): ``I picked up where I left off.'' (868 links)
+\end{itemize}
+
+These link types are nearly orthogonal (Jaccard overlap = 0.034). Continuation links are 1.8$\times$ more likely to cross platform boundaries (7.6\% vs.\ 4.3\%) and 1.5$\times$ more likely to cross community boundaries (25.1\% vs.\ 17.0\%). When a user finishes one line of thinking and begins a new conversation, the continuation is more likely to occur on a different platform and in a different knowledge domain than a topical revisit.
+
+\section{Discussion}
+
+\subsection{Conversations as Dynamical Systems}
+
+The central finding is that conversation archives have a dynamical structure independent of their semantic content. Semantic graphs answer ``what is this conversation about?'' Velocity and curvature graphs answer ``how does the conversation move?'' and ``where does it turn?'' These questions have different answers: the NMI between semantic and velocity communities is 0.13--0.21.
+
+This suggests that a complete representation of a conversation archive requires multiple views, analogous to how a complete description of a physical system requires both position and momentum. The semantic embedding is position. The velocity embedding is momentum. Neither alone is sufficient.
+
+\subsection{Episodes, Not Conversations}
+
+The episode detection results challenge the standard practice of treating conversations as atomic units. A 1,764-message session is 43 distinct episodes sharing a session container. This connects to Complementary Learning Systems theory~\citep{mcclelland1995complementary,kumaran2016complementary}: episodes (segments) are the hippocampal units, sessions (conversations) are platform artifacts, and trails (links between episodes across sessions) are the neocortical consolidation process.
+
+\subsection{Limitations}
+
+\textbf{Single user.} All findings derive from one person's archive. Episode density, platform-dependent alpha, and conversation archetypes may be user-specific.
+
+\textbf{Embedding model dependence.} The stabilization window and similarity distributions are properties of text-embedding-3-small at 256 dimensions.
+
+\textbf{No ground truth for episodes.} Episode boundaries are evaluated qualitatively.
+
+\textbf{N=1 is also N=3,097.} The corpus spans 3,097 conversations over 3.4 years across three platforms. Findings are robust within this archive; generalization is an empirical question.
+
+\section{Conclusion}
+
+We have shown that AI conversation archives possess a dynamical structure that complements their semantic structure. By treating conversations as trajectories through embedding space and applying a calculus of projection, differentiation, and segmentation, we discovered three independent dimensions of organization: topic (semantic space), transition pattern (velocity space), and structural shape (curvature space). We introduced the semantic half-life as an interpretable measure of conversational tempo and showed that conversations naturally decompose into episodes at a consistent density.
+
+These findings suggest that personal AI archives are richer objects than they appear. The flat transcript is a lossy representation. The trajectory, its derivatives, and its episodes capture cognitive structure that may prove useful for retrieval, recommendation, and self-knowledge.
+
+\subsection*{Software Availability}
+
+The \texttt{embflow} package is available at \url{https://github.com/queelius/embflow}. The conversation archive was managed using \texttt{memex} (\url{https://github.com/queelius/memex}).
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}
