@@ -52,7 +52,7 @@ Velocity, Curvature, and Episodes in Embedding Space}
 \maketitle
 
 \begin{abstract}
-We analyze a 3.4-year, 3,097-conversation personal AI archive spanning ChatGPT, Claude, and Claude Code. By embedding individual messages and treating conversations as trajectories through embedding space, we discover structure invisible to standard semantic analysis. First, we show that the derivative of the embedding trajectory (\emph{velocity}) and its second derivative (\emph{curvature}) define representation spaces that are nearly orthogonal to semantic space: community detection in velocity space finds conversation \emph{archetypes} (how thinking moves), not topics (what thinking is about), with NMI of 0.13--0.21 against semantic communities. Second, we introduce the \emph{semantic half-life}: a per-conversation decay parameter that measures how quickly a conversation forgets its beginning. This parameter is platform-dependent (ChatGPT: 2.4 messages, Claude Code: 4.3 messages), reflecting the different cognitive tempos of conversational versus agentic AI interaction. Third, we show that conversations decompose into approximately 3--7 natural episodes via sliding-window changepoint detection on embedding trajectories, with a universal episode density of approximately one topic shift per 12--15 messages. These findings reframe conversation archives as dynamical systems: the same calculus of projection, differentiation, and segmentation that applies to physical trajectories reveals cognitive structure in sequential text. We release \texttt{embflow}, a Python package implementing the embedding flow calculus.
+We analyze a 3.4-year, 3,097-conversation personal AI archive spanning ChatGPT, Claude, and Claude Code. By embedding individual messages and treating conversations as trajectories through embedding space, we discover structure invisible to standard semantic analysis. First, we show that the derivative of the embedding trajectory (\emph{velocity}) and its second derivative (\emph{curvature}) define representation spaces that are nearly orthogonal to semantic space: community detection in velocity space finds conversation \emph{archetypes} (how thinking moves), not topics (what thinking is about), with NMI of 0.13--0.21 against semantic communities. Second, we introduce the \emph{semantic half-life}: a per-conversation decay parameter that measures how quickly a conversation forgets its beginning. This parameter is platform-dependent (ChatGPT: 2.4 messages, Claude Code: 4.3 messages), reflecting the different cognitive tempos of conversational versus agentic AI interaction. Third, we show that conversations decompose into approximately 3--7 natural episodes via sliding-window changepoint detection on embedding trajectories, with an episode density of approximately one topic shift per 15--25 messages. These findings reframe conversation archives as dynamical systems: the same calculus of projection, differentiation, and segmentation that applies to physical trajectories reveals cognitive structure in sequential text. We release \texttt{embflow}, a Python package implementing the embedding flow calculus.
 \end{abstract}
 
 \section{Introduction}
@@ -68,7 +68,7 @@ This reframing is not merely metaphorical. We show empirically that:
 
 \item \textbf{Conversations have a measurable cognitive tempo.} An exponentially weighted embedding, parameterized by a decay rate $\alpha$, captures the ``semantic half-life'' of a conversation: how quickly the influence of earlier messages decays. This parameter varies systematically by platform (ChatGPT conversations evolve faster than Claude Code sessions) and can be estimated per conversation from the data itself.
 
-\item \textbf{Conversations decompose into natural episodes.} Sliding-window changepoint detection on the embedding trajectory identifies topic shifts with a consistent density of approximately one episode per 12--15 messages, independent of conversation length. This challenges the standard treatment of conversations as atomic units and suggests that the true episodic units of a conversation archive are segments, not sessions.
+\item \textbf{Conversations decompose into natural episodes.} Sliding-window changepoint detection on the embedding trajectory identifies topic shifts with a consistent density of approximately one episode per 15--25 messages, independent of conversation length. This challenges the standard treatment of conversations as atomic units and suggests that the true episodic units of a conversation archive are segments, not sessions.
 \end{enumerate}
 
 These findings emerge from a single user's archive of 3,097 conversations (2,496 ChatGPT, 472 Claude Code, 129 Anthropic Claude) spanning December 2022 to April 2026, comprising 149,623 embedded messages. The analysis uses per-message embeddings (OpenAI text-embedding-3-small, 256 dimensions) stored with content-hash provenance for incremental updates. All computations use \texttt{embflow}, a Python package we release that implements the embedding flow calculus: composable lens functions for weighted aggregation, trajectory computation via scan, and derivative operations (velocity, curvature, angular velocity, drift).
@@ -383,7 +383,25 @@ Two types of inter-conversation links emerge:
 \item \textbf{Continuation} (end-to-start similarity): ``I picked up where I left off.'' (868 links)
 \end{itemize}
 
-These link types are nearly orthogonal (Jaccard overlap = 0.034). Continuation links are 1.8$\times$ more likely to cross platform boundaries (7.6\% vs.\ 4.3\%) and 1.5$\times$ more likely to cross community boundaries (25.1\% vs.\ 17.0\%). When a user finishes one line of thinking and begins a new conversation, the continuation is more likely to occur on a different platform and in a different knowledge domain than a topical revisit.
+These link types are nearly orthogonal (Jaccard overlap = 0.034) and differ structurally (Table~\ref{tab:links}).
+
+\begin{table}[h]
+\centering
+\caption{Structural properties of revisitation vs.\ continuation links.}
+\label{tab:links}
+\begin{tabular}{lrr}
+\toprule
+Property & Revisitation & Continuation \\
+\midrule
+Link count & 9,920 & 868 \\
+Cross-platform rate & 4.3\% & 7.6\% \\
+Cross-community rate & 17.0\% & 25.1\% \\
+Source conversation drift & 0.300 & 0.265 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Continuation links are 1.8$\times$ more likely to cross platform boundaries and 1.5$\times$ more likely to cross community boundaries. They originate from lower-drift (more focused) conversations ($p < 0.0001$): focused conversations produce coherent endings that are easy to continue from.
 
 \section{Discussion}
 
@@ -423,13 +441,26 @@ This distinction has implications for recommendation systems: ``related conversa
 
 \section{Conclusion}
 
-We have shown that AI conversation archives possess a dynamical structure that complements their semantic structure. By treating conversations as trajectories through embedding space and applying a calculus of projection, differentiation, and segmentation, we discovered three independent dimensions of organization: topic (semantic space), transition pattern (velocity space), and structural shape (curvature space). We introduced the semantic half-life as an interpretable measure of conversational tempo and showed that conversations naturally decompose into episodes at a consistent density.
+We have shown that AI conversation archives possess a dynamical structure that complements their semantic structure. By treating conversations as trajectories through embedding space and applying a calculus of projection, differentiation, and segmentation, we discovered:
 
-These findings suggest that personal AI archives are richer objects than they appear. The flat transcript is a lossy representation. The trajectory, its derivatives, and its episodes capture cognitive structure that may prove useful for retrieval, recommendation, and self-knowledge.
+\begin{itemize}
+\item Three independent dimensions of conversation organization: topic (semantic space), transition pattern (velocity space), and structural shape (curvature space), with near-zero community overlap across spaces.
+\item A measurable cognitive tempo (the semantic half-life) that varies by platform: ChatGPT conversations shift topics every 2--3 messages, while Claude Code sessions maintain focus for 4--5 messages.
+\item A consistent episode density of one topic shift per 12--25 messages, independent of conversation length and platform, suggesting that episodes, not conversations, are the natural cognitive units of an archive.
+\item Two orthogonal inter-conversation link types (continuation and revisitation) that correspond to distinct memory processes and cross platform and community boundaries at different rates.
+\end{itemize}
+
+These findings suggest that personal AI archives are richer objects than they appear. The flat transcript is a lossy representation. The trajectory, its derivatives, and its episodes capture cognitive structure that may prove useful for retrieval (multi-modal search across semantic, velocity, and curvature spaces), recommendation (distinguish ``related topics'' from ``conversations you might want to continue''), and self-knowledge (how does your thinking move across platforms and over time?).
+
+The recursive nature of this work is worth noting. The archive under study is a record of AI-assisted thinking. The tools used to study it are themselves AI systems. The embedding flow calculus was developed in conversation with an AI assistant, and the conversations in which it was developed are now part of the archive. This is not a methodological concern but a structural feature of the emerging relationship between humans and AI: the traces we leave become the objects we study, which become the traces we leave.
 
 \subsection*{Software Availability}
 
-The \texttt{embflow} package is available at \url{https://github.com/queelius/embflow}. The conversation archive was managed using \texttt{memex} (\url{https://github.com/queelius/memex}).
+The \texttt{embflow} package is available at \url{https://github.com/queelius/embflow}. The conversation archive was managed using \texttt{memex} (\url{https://github.com/queelius/memex}). All experiment scripts and results are available in the paper's supplementary repository.
+
+\subsection*{AI Usage Disclosure}
+
+This research was conducted with extensive use of AI tools. The conversation archive under study is itself a record of AI-assisted work. The \texttt{embflow} package was co-developed with Claude Code (Anthropic). Experiment scripts were drafted collaboratively with Claude Opus 4.6. The paper draft was initiated with AI assistance and revised by the author. All scientific claims, interpretations, and editorial decisions are the author's own. The use of AI in studying AI-generated conversation archives creates a recursive structure that we consider a feature, not a limitation: the tools being studied are also the tools doing the studying.
 
 \bibliographystyle{plainnat}
 \bibliography{refs}
