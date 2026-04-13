@@ -48,3 +48,36 @@ The four spaces capture orthogonal aspects of conversation:
 
 This supports the embflow framework: the same calculus (projection, trajectory,
 derivatives) applied in different spaces reveals different cognitive dimensions.
+
+## Experiment 2: Episode Detection
+
+See exp02_episode_detection.py. Window-based segmentation, qualitative validation.
+Moved to separate paper scope (time-series framing).
+
+Acceleration-based changepoints (from the dynamics) reintroduced via Experiment 5.
+
+## Experiment 3: Strengthening Experiments
+
+**Script:** experiments/exp03_strengthen.py
+**Results:** experiments/results/exp03_strengthen.json
+
+- Episode density platform-independent at matched length (15-16 msgs/ep for both platforms at 20-50 msgs)
+- Session continuation markers: 24% within 3 msgs of episode boundary (partial validation)
+- DTW trajectory distance correlates with topic similarity (rho=-0.774)
+- Pairwise correlation does NOT imply community correlation (key nuance)
+
+## Experiment 4: Prefix vs Accumulation [BLOCKED]
+
+**Script:** experiments/exp04_prefix_vs_accumulation.py
+**Status:** Written, blocked on OpenAI API quota.
+
+CRITICAL EXPERIMENT. Tests whether accumulate(embed(msg_1), ..., embed(msg_k))
+approximates embed(concat(msg_1..k)). Validates "message as force, trajectory as
+position" interpretation. Run as soon as embedding API is available.
+
+## Experiment 5: Acceleration Experiments [RUNNING]
+
+- 5a: Adaptive alpha vs fixed alpha for changepoint precision
+- 5b: Acceleration profiles as conversation fingerprints
+- 5c: Role transitions as acceleration amplifiers
+- 5d: Mean acceleration as conversation feature

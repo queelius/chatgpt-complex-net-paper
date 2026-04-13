@@ -134,6 +134,27 @@ Different lenses capture different aspects of the conversation. Key lenses inclu
 
 \section{The Embedding Flow Calculus}
 
+\subsection{Messages as Forces, Trajectory as Position}
+
+We propose a dynamical interpretation of conversation embeddings. Each message embedding $\mathbf{e}_k$ is not the semantic \emph{position} of the conversation at time $k$, but rather the \emph{force} (impulse) applied to the conversation's semantic state. The semantic state of the conversation at time $k$ is the accumulated effect of all messages up to $k$, i.e., the trajectory.
+
+Under this interpretation, the standard calculus of discrete sequences maps cleanly:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Operation & Physical analogue & Semantic interpretation \\
+\midrule
+$\text{traj}(k)$ & Position & Accumulated meaning up to message $k$ \\
+$\mathbf{e}_k$ & Force / impulse & Semantic push of message $k$ \\
+$\mathbf{e}_{k+1} - \mathbf{e}_k$ & Acceleration & Change in the force (topic shift) \\
+$\frac{1}{n}\sum \text{traj}(k)$ & Center of mass & Average semantic state \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A \emph{changepoint} is a moment of high acceleration: a sudden change in the direction of the semantic force. The magnitude $\|\mathbf{e}_{k+1} - \mathbf{e}_k\|$ measures how abruptly the conversation changes direction. This provides a dynamics-native changepoint detector that requires no sliding windows or arbitrary parameters beyond a threshold.
+
 \subsection{Trajectory}
 
 The \emph{trajectory} of a conversation under a lens is the running projection at each position:
@@ -142,23 +163,25 @@ The \emph{trajectory} of a conversation under a lens is the running projection a
 \text{traj}(j) = \text{normalize}\left(\sum_{k=1}^{j} w(k, j) \cdot \mathbf{e}_k\right)
 \end{equation}
 
-where $w(k, j)$ denotes the weight assigned to message $k$ when projecting at position $j$. For the exponential lens, $w(k, j) = \alpha^{j-k}$.
+where $w(k, j)$ denotes the weight assigned to message $k$ when projecting at position $j$. For the exponential lens, $w(k, j) = \alpha^{j-k}$. The trajectory is a smoothed estimate of the conversation's semantic position. The lens parameter $\alpha$ controls the memory length: how much influence older messages retain on the current state estimate.
 
-\subsection{Velocity and Curvature}
+\subsection{Derivatives}
 
-The \emph{velocity} at step $j$ is:
+Under the dynamical interpretation, the derivative hierarchy is:
+
+\textbf{Velocity} (first derivative of trajectory): how the semantic state is changing.
 \begin{equation}
 \mathbf{v}_j = \text{traj}(j+1) - \text{traj}(j)
 \end{equation}
 
-The velocity vector encodes the direction and magnitude of semantic change. Two conversations with similar velocity vectors are ``changing in the same way,'' regardless of what they are about.
-
-The \emph{curvature} is the second difference:
+\textbf{Acceleration} (first difference of messages, or second derivative of trajectory): how the force is changing. This is equivalent to the curvature of the trajectory.
 \begin{equation}
-\mathbf{c}_j = \mathbf{v}_{j+1} - \mathbf{v}_j
+\mathbf{a}_j = \mathbf{e}_{j+1} - \mathbf{e}_j \quad \text{(raw)} \qquad \mathbf{a}_j^{(\alpha)} = \mathbf{v}_{j+1} - \mathbf{v}_j \quad \text{(smoothed)}
 \end{equation}
 
-The \emph{angular velocity} is the cosine distance between consecutive trajectory points:
+The raw acceleration $\|\mathbf{a}_j\|$ detects every message-level topic shift but is noisy. The smoothed acceleration $\|\mathbf{a}_j^{(\alpha)}\|$ (trajectory curvature) applies exponential filtering before differentiation: $\alpha$ controls the noise/sensitivity tradeoff. At $\alpha = 0.50$ (heavy smoothing), 87\% of smoothed changepoints agree with raw changepoints. At $\alpha = 0.95$ (light smoothing), only 55\% agree, as the smoother filters out minor shifts.
+
+\textbf{Angular velocity}: the rate of directional change, independent of magnitude.
 \begin{equation}
 \omega_j = 1 - \cos\bigl(\text{traj}(j),\; \text{traj}(j+1)\bigr)
 \end{equation}
@@ -171,15 +194,6 @@ h = \frac{\ln 0.5}{\ln \alpha}
 \end{equation}
 
 This gives the number of messages after which the influence of a given message has halved. At $\alpha = 0.85$, $h \approx 4.3$ messages.
-
-\subsection{Episode Detection}
-
-Episode boundaries are detected via sliding-window divergence. At each position $j$:
-\begin{equation}
-d(j) = 1 - \cos\left(\bar{\mathbf{e}}_{j-w:j},\; \bar{\mathbf{e}}_{j:j+w}\right)
-\end{equation}
-
-Peaks in $d(j)$ above a threshold of $\mu + \sigma$ identify episode boundaries. The window size $w = 10$ is derived from the empirical stabilization point of the local mean (Section~\ref{sec:stabilization}).
 
 \section{Results}
 
@@ -362,6 +376,18 @@ Length & ChatGPT (msgs/ep) & Claude Code (msgs/ep) \\
 \end{figure}
 
 \textbf{Qualitative validation.} A 188-message conversation on consciousness decomposes into 5 episodes (Figures~\ref{fig:episodes} and~\ref{fig:trajectory}): (1)~philosophical inquiry, (2)~thought experiments with p-zombies, (3)~role-play simulation, (4)~collaborative fiction, and (5)~personal reflection. Each episode represents a distinct cognitive mode. A 1,764-message Claude Code session decomposes into 43 episodes, each a distinct development task.
+
+\subsection{Acceleration and Changepoints}
+
+Under the ``message as force'' interpretation, the magnitude of acceleration $\|\mathbf{e}_{k+1} - \mathbf{e}_k\|$ (cosine distance between consecutive messages) directly measures topic shift intensity. Peaks in this signal identify changepoints without sliding windows or trajectory computation.
+
+\textbf{Smoothed vs.\ raw acceleration.} The raw acceleration detects every message-level jump. The smoothed version (trajectory curvature at decay rate $\alpha$) filters noise. Agreement between the two decreases from 87\% at $\alpha = 0.50$ (heavy smoothing) to 55\% at $\alpha = 0.95$ (light smoothing), confirming that $\alpha$ controls the noise/sensitivity tradeoff.
+
+\textbf{Acceleration profiles are independent of topic.} The resampled acceleration profile (normalized to 20 points) of each conversation serves as a ``rhythm fingerprint.'' The correlation between acceleration profile similarity and semantic similarity is weak ($\rho = 0.160$), and 21,449 conversation pairs share similar rhythms but different topics (profile similarity $> 0.8$, semantic similarity $< 0.4$). How a conversation shifts topics is nearly independent of what the topics are.
+
+\textbf{Role transitions amplify acceleration.} Acceleration at role transitions (user $\to$ assistant or vice versa) is 1.57$\times$ higher than within the same role ($p < 0.001$). This effect is stronger in Claude Code (1.77$\times$) than in ChatGPT (1.51$\times$), reflecting the larger semantic gap between user directives and assistant technical output in agentic sessions.
+
+\textbf{Mean acceleration correlates with adaptive alpha ($r = 0.479$)} but not with drift ($r = 0.12$) or conversation length ($r = -0.12$). Conversations with higher mean acceleration require longer memory (higher $\alpha$) for trajectory stability. The conversation's dynamics determine its own optimal smoothing parameter.
 
 \subsection{Lens Family}
 
