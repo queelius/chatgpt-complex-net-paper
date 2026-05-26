@@ -248,14 +248,14 @@
 
     \note{%
         \textbf{Slide 2 -- The Problem (50 s, $\sim$115w)}\\[2pt]
-        \textit{[Gesture: left panel.]} When you open your ChatGPT history, you see
-        this: a chronological list. Bayesian inference next to cooking pasta next to
-        Solomonoff induction. Adjacency in \emph{time} tells you nothing about which
-        conversations are about the same \emph{thing}.\\[2pt]
-        \textit{[Gesture: right panel.]} But you know structure is there. You came
-        back to Solomonoff three times last month; Bayesian inference is part of a
-        domain you've been exploring. The hierarchy on the right is real --- it's
-        just invisible from a list.\\[2pt]
+        On the left of the slide, what you actually have when you open your
+        ChatGPT history: a chronological list. Bayesian inference next to cooking
+        pasta next to Solomonoff induction. Adjacency in \emph{time} tells you
+        nothing about which conversations are about the same \emph{thing}.\\[2pt]
+        On the right, what's hidden. You know structure is there --- you came back
+        to Solomonoff three times last month; Bayesian inference is part of a
+        domain you've been exploring. That hierarchy is real; it's just invisible
+        from a list.\\[2pt]
         So: can we recover that structure automatically? And is it the kind of
         structure cognitive science predicts for semantic memory?\\[2pt]
         To answer that, I borrow a framework from a different field.
@@ -343,17 +343,18 @@
     \note{%
         \textbf{Slide 3 -- Cognitive Framework (1:15, $\sim$130w)}\\[2pt]
         Two ideas from cognitive science.\\[2pt]
-        \textit{[Gesture: left.]} Complementary Learning Systems. The hippocampus
-        encodes individual experiences fast; the neocortex extracts statistical
+        On the left, Complementary Learning Systems. The hippocampus encodes
+        individual experiences fast; the neocortex extracts statistical
         regularities across many of them. As you learn, new experiences
         increasingly map onto categories you already have. We can measure that
         saturation as sublinear vocabulary growth.\\[2pt]
-        \textit{[Gesture: right.]} The structural side. Steyvers and Tenenbaum
-        mapped human semantic memory as a network and consistently found
-        small-world topology --- dense local clusters plus a few long-range
-        shortcuts. Small-worldness scores between roughly 5 and 15.\\[2pt]
-        \textit{[Gesture: bottom block.]} The hypothesis: if conversation archives
-        are an externalised semantic memory, we should see \emph{both} signatures.
+        On the right, the structural side. Steyvers and Tenenbaum mapped human
+        semantic memory as a network and consistently found small-world topology
+        --- dense local clusters plus a few long-range shortcuts. Small-worldness
+        scores between roughly 5 and 15.\\[2pt]
+        That gives us the hypothesis at the bottom of the slide: if conversation
+        archives are an externalised semantic memory, we should see \emph{both}
+        signatures.
         In one user's 1{,}908-conversation archive.\\[2pt]
         Here's how we tested it.
     }
@@ -405,16 +406,16 @@
 
     \note{%
         \textbf{Slide 4 -- Pipeline (1:00, $\sim$120w)}\\[2pt]
-        \textit{[Gesture along the pipeline arrows.]} Four stages.\\[2pt]
+        Following the pipeline from left to right, four stages.\\[2pt]
         \emph{Raw episodes}: 1{,}908 ChatGPT conversations over 29 months from one
         user --- me. Single-user case study; I'll come back to that.\\[2pt]
         \emph{Extract concepts}: an LLM pulls three to ten concepts from each
-        episode. \textit{[Gesture: prompt box.]} The key detail is specificity.
-        Not ``statistics''; ``Metropolis-Hastings algorithm.'' Specific concepts
-        are what makes the geometry work later.\\[2pt]
+        episode. The orange box below the pipeline shows the key instruction in
+        the prompt --- specificity. Not ``statistics''; ``Metropolis-Hastings
+        algorithm.'' Specific concepts are what makes the geometry work later.\\[2pt]
         \emph{Embed}: each concept becomes a 768-dimensional vector.\\[2pt]
         \emph{Cluster}: hierarchical clustering, cut at three heights.\\[2pt]
-        \textit{[Gesture: bottom output.]} The output is a graph linking episodes to
+        The line at the bottom names the output: a graph linking episodes to
         concepts, plus a four-level hierarchy. Everything that follows is just
         \emph{measuring} this structure.\\[2pt]
         Here's what came out.
@@ -494,21 +495,19 @@
     \end{columns}
 
     \note{%
-        \textbf{Slide 5 -- The Reveal (1:10, $\sim$145w)}\\[2pt]
+        \textbf{Slide 5 -- The Reveal (1:00, $\sim$120w)}\\[2pt]
         \textit{[Pause. Let the picture land.]}\\[2pt]
-        \textit{[Gesture top to bottom along the cascade.]} 1{,}908 episodes consolidate
-        into 500 meta-concepts, then 50 themes, then 8 domains. Each level groups
-        roughly 3.5 of the level below --- the geometric signature of a hierarchy.\\[2pt]
-        \textit{[Gesture: domain table.]} The eight domains are easy to name. I didn't
-        pre-specify them. Software engineering largest, then math, statistics,
-        philosophy of AI, ML and network science, devops, AI safety, LLM engineering.
-        They reflect my actual research and project history.\\[2pt]
-        \textit{[Gesture: ``Two surprises'' block.]} Two surprises.\\[2pt]
-        \emph{First}: there's no clean number of clusters. Knowledge is a continuum,
-        not a set of crisp categories. Eight domains is a useful summary, not a
-        ``right answer.''\\[2pt]
-        \emph{Second}: most episodes belong to several domains at once. We'll come
-        back to that.\\[2pt]
+        Reading down the cascade on the left: 1{,}908 episodes consolidate into 500
+        meta-concepts, then 50 themes, then 8 domains. Each level groups roughly
+        3.5 of the level below --- the geometric signature of a hierarchy.\\[2pt]
+        The table on the right names the eight domains. I didn't pre-specify
+        them --- they emerged from the clustering and reflect my actual research
+        and project history.\\[2pt]
+        Two surprises, in the block below.\\[2pt]
+        \emph{First}: there's no clean number of clusters. Knowledge is a
+        continuum; eight is a useful summary, not a ``right answer.''\\[2pt]
+        \emph{Second}: most episodes belong to several domains at once. We'll
+        come back to that.\\[2pt]
         Cognitive science predicts two signatures here. Both have to land for the
         analogy to hold. Here's the first.
     }
@@ -525,7 +524,8 @@
         \begin{tikzpicture}[scale=0.95, transform shape]
             % Title
             \node[font=\small\bfseries] at (0, 3.0) {Concept co-occurrence network};
-            \node[font=\footnotesize, gray] at (0, 2.65) {499 nodes, 5{,}935 edges};
+            \node[font=\footnotesize, gray] at (0, 2.65)
+                {499 meta-concept nodes \,$\cdot$\, 5{,}935 co-occurrence edges};
 
             % Small-world cartoon: 6 dense local clusters around a ring,
             % with 3 long-range shortcuts crossing the centre.
@@ -564,6 +564,13 @@
                 \draw[AccentOrange, line width=1.3pt] (hB) -- (hE);
                 \draw[AccentOrange, line width=1.0pt, dashed] (hC) -- (hF);
             \end{scope}
+
+            % Legend: spell out what a node and an edge are
+            \node[font=\scriptsize, align=left] at (0, -2.85) {%
+                \begin{tabular}{@{}l@{\;\;}l@{}}
+                    \textbf{Node:} & 1 of 500 meta-concepts \\
+                    \textbf{Edge:} & both concepts appear in the same episode
+                \end{tabular}};
         \end{tikzpicture}
 
         \column{0.45\textwidth}
@@ -598,21 +605,20 @@
     \end{columns}
 
     \note{%
-        \textbf{Slide 6 -- Small-World Topology (1:15, $\sim$130w)}\\[2pt]
-        \textit{[Gesture: network cartoon.]} The concept co-occurrence network:
-        499 meta-concepts as nodes, edges when concepts share an episode.\\[2pt]
-        \textit{[Gesture: clusters, then orange shortcuts.]} Dense local clusters
-        with a few long-range shortcuts. The Humphries-Gurney test compares
-        clustering and path length against random graphs at matched size.\\[2pt]
-        \textit{[Gesture: ratio table.]} Clustering 6.9 times higher than random.
-        Path length essentially unchanged. Small-worldness of 6.6.\\[2pt]
-        \textit{[Gesture: human-memory block.]} Roget's, WordNet, free-association
-        norms give small-worldness between 5 and 15. The archive sits inside that
+        \textbf{Slide 6 -- Small-World Topology (45 s, $\sim$95w)}\\[2pt]
+        Quick recap: these are the same 500 meta-concepts from the cascade, now
+        drawn as a network. A node is one meta-concept. An edge means the two
+        showed up in the same conversation. So if one chat covered both Bayesian
+        inference and MCMC, those nodes get linked --- even across domains.\\[2pt]
+        The cartoon shape --- tight local clusters with a few long-range
+        shortcuts crossing the middle --- is the classic small-world
+        signature.\\[2pt]
+        Clustering comes in roughly seven times higher than random. Path lengths
+        are unchanged. Small-worldness lands at 6.6. For comparison: human
+        semantic memory networks score between 5 and 15. So we sit right in that
         range.\\[2pt]
-        One caveat: I'm not claiming archives \emph{are} semantic memory. They show
-        the same structural signature --- an externalised analog.\\[2pt]
-        Signature one, confirmed. Now signature two: does the meta-concept layer
-        consolidate the way CLS predicts?
+        I'm not claiming archives \emph{are} semantic memory --- just that they
+        show the same structural fingerprint. Signature one, done.
     }
 \end{frame}
 
@@ -670,22 +676,14 @@
     coherent categories require novel territory to add a new label.}
 
     \note{%
-        \textbf{Slide 7 -- Vocabulary saturates (1:15, $\sim$135w)}\\[2pt]
-        \textit{[Gesture: plot.]} Heaps' law: vocabulary grows like $n^\beta$.
-        Real text has $\beta$ around 0.4 to 0.6. Lower means stronger saturation
-        --- the consolidation CLS predicts.\\[2pt]
-        \textit{[Gesture: top curve.]} Raw concepts grow nearly linearly,
-        $\beta = 0.93$. We keep inventing new noun phrases. \textit{[Gesture:
-        bottom curve.]} Meta-concepts: $\beta = 0.32$. Strongly sublinear.\\[2pt]
-        \textit{[Gesture: caveat.]} But fixing the number of clusters at 500 means
-        some saturation is automatic. We need null models.\\[2pt]
-        \textit{[Gesture: two-nulls block.]} First null: shuffle which raw concept
-        goes in which cluster. $\beta = 0.27$. Second null: shuffle the
-        episode-concept links while keeping the row and column totals.
-        $\beta = 0.25$. Our $0.32$ exceeds both at $p < 10^{-3}$.\\[2pt]
-        Why \emph{higher}, not lower? Coherent clusters draw real distinctions;
-        random clusters absorb anything. The saturation is real --- and it only
-        showed up because we kept the set-based structure. Which is the next slide.
+        \textbf{Slide 7 -- Vocabulary saturates (30 s, $\sim$70w)}\\[2pt]
+        This is Heaps' law: vocabulary grows like $n$ raised to beta. Real text
+        usually sits at beta around 0.4 to 0.6 --- and lower means stronger
+        saturation.\\[2pt]
+        The top curve is raw concepts at beta 0.93 --- nearly linear. The bottom
+        curve is meta-concepts at beta 0.32 --- strongly sublinear. Two null
+        models both come in below ours, so the saturation is real --- not just
+        an artifact of fixing $k$ at 500.
     }
 \end{frame}
 
@@ -711,23 +709,16 @@
     \end{columns}
 
     \note{%
-        \textbf{Slide 8 -- 77\% span multiple domains (1:10, $\sim$125w)}\\[2pt]
-        \textit{[Gesture: the two episode boxes.]} Two real episodes. One lives in
-        Statistical Methods. The other lives in Philosophy and AI Theory. Different
-        domains.\\[2pt]
-        \textit{[Gesture: the shared concept list in the middle.]} But they share
-        five concepts --- Kolmogorov complexity, Solomonoff induction, and three
-        others --- and those five concepts span \emph{four} different domains.\\[2pt]
-        Any one-label-per-episode method assigns each episode to a single cluster.
-        These two episodes end up in different clusters and the connection
-        \emph{vanishes}.\\[2pt]
-        The set-based model preserves it. An episode \emph{is} a set of concepts; two
-        episodes link through any shared concept, regardless of which domain that
-        concept lives in.\\[2pt]
-        And this isn't rare: \textbf{77\% of episodes span two or more domains;
-        35\% span three or more.} Cross-domain is the rule. That's the
-        methodological contribution.\\[2pt]
-        With this structure, we can ask a question single-label methods can't.
+        \textbf{Slide 8 -- 77\% span multiple domains (40 s, $\sim$90w)}\\[2pt]
+        Look at the two episodes shown in the figure. One came from a
+        conversation about statistical methods; the other from philosophy of AI
+        --- so they're in different domains. But they share five concepts in
+        common, and those concepts actually span \emph{four} different domains
+        between them.\\[2pt]
+        If you used any one-label clustering method --- Louvain, $k$-means,
+        BERTopic --- you'd put these in separate buckets and that link would
+        just disappear. Set-based clustering keeps them connected. And this
+        isn't rare: 77\% of episodes span two or more domains.
     }
 \end{frame}
 
@@ -769,25 +760,17 @@
     \end{columns}
 
     \note{%
-        \textbf{Slide 9 -- Who borrows from whom (1:10, $\sim$135w)}\\[2pt]
-        \textit{[Gesture: heatmap.]} For each pair of domains $(A,B)$: what fraction
-        of $B$'s episodes contain a concept from $A$? Reading across a row tells you
-        where $A$'s concepts go. The reverse direction is usually different ---
-        asymmetry an undirected network can't see.\\[2pt]
-        \textit{[Trace Software Engineering's row.]} Software Engineering broadcasts
-        into every other domain. \textit{[Gesture: math$\leftrightarrow$statistics.]}
-        Math and statistics feed each other heavily. \textit{[Gesture: LLM Eng.\ row.]}
-        LLM Engineering is small but punches above its weight.\\[2pt]
-        The catch: Software Engineering owns 30\% of raw concepts. Are we just
-        measuring size? We control against a null that shuffles concept--domain
-        labels while keeping the sizes fixed.\\[2pt]
-        On average, sharing comes in \textbf{39\% below random}. Domains really are
+        \textbf{Slide 9 -- Who borrows from whom (40 s, $\sim$90w)}\\[2pt]
+        The heatmap shows directional concept flow between domains. Reading
+        across a row tells you where that domain's concepts flow out to;
+        reading down a column tells you what comes in. That asymmetry is
+        something an undirected network can't capture.\\[2pt]
+        After controlling against a size-preserving null, sharing actually
+        comes in \textbf{39\% below random} --- so domains really are
         separate.\\[2pt]
-        \textit{[Gesture: heatmap-says block.]} But specific pipelines stand out.
-        LLM Engineering $\to$ ML and Networks: \textbf{2.67$\times$} the random
-        expectation. That's a targeted dependency, not spillover.\\[2pt]
-        The story: \emph{real boundaries, with a few specific pipelines}.\\[2pt]
-        Here's what the whole thing looks like.
+        But one outlier survives that control: LLM Engineering feeds ML and
+        Networks at \textbf{2.67 times} the random expectation. That's a real
+        targeted dependency, not spillover.
     }
 \end{frame}
 
@@ -801,15 +784,12 @@
     {\scriptsize\textit{Inner: 499 concepts (coloured by domain). \ Outer: 1{,}908 episodes. \ Edges: episode$\to$concept.}}
 
     \note{%
-        \textbf{Slide 10 -- The Full Picture (35 s, $\sim$70w)}\\[2pt]
-        \textit{[Gesture: the whole image; caption already names the rings.]} The
-        whole archive in one image.\\[2pt]
-        \textit{[Trace Software Engineering's sector.]} Software Engineering sends
-        links everywhere. \textit{[Gesture to Philosophy.]} Philosophy and AI Theory
-        stays mostly within its own sector. Statistics, math, AI safety, the small
-        LLM sliver --- each visible as a distinct coloured region.\\[2pt]
-        \textit{[Pause for the gestalt.]}\\[2pt]
-        Three takeaways.
+        \textbf{Slide 10 -- The Full Picture (20 s, $\sim$40w)}\\[2pt]
+        This is the whole archive in one image: 499 concepts in the inner ring,
+        all 1{,}908 episodes around the outside, coloured by domain. The point
+        isn't to read individual lines --- it's to see that this is structured,
+        not random.\\[2pt]
+        \textit{[Brief pause.]}
     }
 \end{frame}
 
@@ -838,7 +818,7 @@
             \small
             \begin{itemize}\setlength\itemsep{0.35em}
                 \item Archives = \textbf{externalised semantic memory}
-                \item Natural index for \textbf{concept-level Graph~RAG}
+                \item \textbf{Concept-level retrieval} (Graph~RAG)
                 \item Knowledge is a \textbf{continuum, not a partition}
             \end{itemize}
         \end{block}
@@ -849,8 +829,7 @@
             \footnotesize
             \begin{itemize}\setlength\itemsep{0.25em}
                 \item \textbf{N=1} single user.\\ Replicate on WildChat
-                \item No natural $k$
-                \item Extend to \textbf{agentic} sessions
+                \item \textbf{Cluster count} is a design choice
             \end{itemize}
         \end{alertblock}
     \end{columns}
@@ -868,109 +847,20 @@
 
     \vspace{0.1cm}
     \centering
-    \footnotesize \textcolor{PrimaryBlue}{\textbf{Questions?}} \quad
-    \faGithub\ \texttt{queelius/chatgpt-complex-net}
+    \footnotesize \textcolor{PrimaryBlue}{\textbf{Thank you}}
 
     \note{%
-        \textbf{Slide 11 -- Takeaways (1:10, $\sim$155w)}\\[2pt]
-        Three angles to take away.\\[2pt]
-        \textit{[Gesture: ``What we found'' column.]} Four-level hierarchy: 1{,}908
-        episodes, 500 concepts, 50 themes, 8 domains. Small-world structure matching
-        human-memory benchmarks. Vocabulary saturates, as CLS predicts. And most
-        episodes span multiple domains.\\[2pt]
-        \textit{[Gesture: ``Why it matters'' column.]} A principled way to treat AI
-        archives as externalised semantic memory. A natural index for concept-level
-        retrieval over your own conversations. And: knowledge is a continuum, not a
-        partition.\\[2pt]
-        \textit{[Gesture: ``Limits and next'' column.]} N equals one --- next step is
-        replicating on WildChat. No natural number of clusters. And we're extending
-        the method to \emph{agentic} sessions, where parent-child delegation adds a
-        layer.\\[2pt]
-        \textit{[Gesture: bottom takeaway box.]} The headline: treat AI conversation
-        archives as structured cognitive artifacts. The structure was there all
-        along; we just needed the right lens.\\[2pt]
-        Thank you. Code and data at the link. Happy to take questions.
+        \textbf{Slide 11 -- Takeaways (45 s, $\sim$95w)}\\[2pt]
+        To wrap up, three findings. A four-level hierarchy emerged from this one
+        user's archive. Small-world topology and saturating vocabulary --- the
+        same signatures cognitive science predicts for human semantic memory.
+        And 77\% of episodes span multiple domains, which is why set-based
+        clustering captures what one-label methods would lose.\\[2pt]
+        The headline is at the bottom of the slide: AI conversation archives are
+        structured cognitive artifacts. The structure was there all along; we
+        just needed the right lens.\\[2pt]
+        Thank you for watching.
     }
-\end{frame}
-
-% =====================================================================
-% BACKUP: METHOD DETAILS
-% =====================================================================
-\begin{frame}[noframenumbering]{Backup: Method Details}
-    \begin{columns}[T]
-        \column{0.5\textwidth}
-        \textbf{Concept extraction}
-        \begin{itemize}
-            \footnotesize
-            \item Model: \texttt{claude-3-5-sonnet-20241022}, T=0
-            \item Per episode: first 20 messages, 500-char cap
-            \item Target: 3--10 noun phrases, 2--5 words
-            \item 20 parallel agents (no shared vocabulary)
-            \item Post-hoc dedup: geometric (no string matching)
-        \end{itemize}
-
-        \vspace{0.2cm}
-
-        \textbf{Embedding}
-        \begin{itemize}
-            \footnotesize
-            \item Model: \texttt{nomic-embed-text}
-            \item 768-dim, 8k context, L2-normalised
-        \end{itemize}
-
-        \column{0.5\textwidth}
-        \textbf{Hierarchical clustering}
-        \begin{itemize}
-            \footnotesize
-            \item Ward linkage, Euclidean distance
-            \item Cuts at $k = 500, 50, 8$
-            \item Silhouette monotonic for $k \geq 20$ (no natural boundaries)
-        \end{itemize}
-
-        \vspace{0.2cm}
-
-        \textbf{Yield}
-        \begin{itemize}
-            \footnotesize
-            \item 7{,}555 raw concept mentions
-            \item 3{,}517 unique (after case dedup)
-            \item 500 meta-concepts after Ward
-            \item 7{,}153 bipartite edges
-            \item 5{,}935 co-occurrence edges on 499 nodes
-        \end{itemize}
-    \end{columns}
-\end{frame}
-
-% =====================================================================
-% BACKUP: SENSITIVITY
-% =====================================================================
-\begin{frame}[noframenumbering]{Backup: Robustness to $k$}
-    \centering
-
-    \begin{tabular}{rrrrr}
-        \toprule
-        $k$ & Heaps' $\beta$ & Small-worldness & Clustering $C$ & Edges \\
-        \midrule
-        50   & 0.061 &  1.1 & 0.830 &    906 \\
-        100  & 0.103 &  1.4 & 0.652 &  2{,}286 \\
-        200  & 0.158 &  2.0 & 0.425 &  4{,}111 \\
-        300  & 0.225 &  2.9 & 0.351 &  5{,}073 \\
-        \textbf{500} & \textbf{0.320} & \textbf{6.57} & \textbf{0.329} & \textbf{5{,}935} \\
-        700  & 0.382 & 12.6 & 0.351 &  6{,}593 \\
-        1000 & 0.467 & 25.9 & 0.401 &  7{,}291 \\
-        \bottomrule
-    \end{tabular}
-
-    \vspace{0.4cm}
-
-    \begin{block}{}
-        \footnotesize
-        \centering
-        \emph{Qualitative} conclusions (small-worldness $> 1$, sublinear $\beta$, null rejection)
-        hold for every $k$ tested.\\
-        \emph{Quantitative} numbers shift smoothly: the 500-cluster cut is a useful summary,
-        not a privileged scale.
-    \end{block}
 \end{frame}
 
 \end{document}
