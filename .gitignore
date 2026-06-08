@@ -82,5 +82,6 @@ archive/
 .benchmarks/
 .pytest_cache/
 
-# Child paper repos are independent git repositories, not tracked by the umbrella
+# Independent repos that live in the cluster but are not tracked by the umbrella
 papers/
+chatgpt-conversation-corpus/

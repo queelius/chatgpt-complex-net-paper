@@ -40,13 +40,15 @@ in the `knowledge-networks` repository; the temporal-evolution journal extension
 
 - `papers/`: the independent paper repositories (gitignored here; clone each `cmri-*` repo
   into place, or work with them separately).
+- `chatgpt-conversation-corpus/`: the sanitized, publishable conversation dataset, its own git
+  repository (gitignored here). Derived from `dev/`; **pre-release, sanitization in progress.**
 - `dev/`: shared working corpus (gitignored; the raw conversation JSON the pipelines read).
 - `future-ideas/`: early-stage directions not yet promoted to their own repos.
 - `docs/`: program-level design and planning documents.
 
 ## Shared data and pipeline
 
-- Conversation corpus (dataset): [chatgpt-conversation-corpus](https://github.com/queelius/chatgpt-conversation-corpus)
+- Conversation corpus (dataset): [chatgpt-conversation-corpus](https://github.com/queelius/chatgpt-conversation-corpus), co-located in this cluster at `chatgpt-conversation-corpus/`. The sanitized, publishable version of the corpus (pre-release; sanitization in progress).
 - Analysis pipeline of record: [chatgpt-complex-net](https://github.com/queelius/chatgpt-complex-net) (DOI: [10.5281/zenodo.15314235](https://doi.org/10.5281/zenodo.15314235))
 
 Child code reads the raw corpus from `$CMRI_CORPUS_DIR`, which defaults to this repo's `dev/`.

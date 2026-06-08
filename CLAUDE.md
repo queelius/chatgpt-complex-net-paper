@@ -35,6 +35,8 @@ working mirror of the standalone `chatgpt-complex-net`).
 ## Umbrella layout
 
 - `papers/`: independent paper repos (gitignored; clone each `cmri-*` repo into place).
+- `chatgpt-conversation-corpus/`: the sanitized, publishable corpus, its own git repo
+  (gitignored here). Derived from `dev/`; pre-release, sanitization in progress.
 - `dev/`: shared working corpus (gitignored). Raw conversation JSON the pipelines read.
   - `chatgpt-4-11-2025_json_no_embeddings/`: 1,908 raw conversation JSONs.
   - `conversations-sanitized/`: 1,906 sanitized JSONs and metadata (work in progress).
