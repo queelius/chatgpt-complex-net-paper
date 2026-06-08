@@ -1,0 +1,749 @@
+[
+  {
+    "cluster_id": 9,
+    "n_messages": 647,
+    "n_conversations": 326,
+    "cohesion": 0.3957,
+    "date_range": "2023-01-24 to 2026-04-02",
+    "span_days": 1164,
+    "sources": {
+      "openai": 241,
+      "claude_code": 66,
+      "anthropic": 19
+    },
+    "cross_source": true,
+    "representative": "[from: Curried Greeting Sifakis] (2788 chars)"
+  },
+  {
+    "cluster_id": 130,
+    "n_messages": 439,
+    "n_conversations": 316,
+    "cohesion": 0.2207,
+    "date_range": "2023-01-24 to 2026-04-06",
+    "span_days": 1168,
+    "sources": {
+      "openai": 225,
+      "claude_code": 83,
+      "anthropic": 8
+    },
+    "cross_source": true,
+    "representative": "[from: JsonLang - Lambda Shorthand Suggestion] (43 chars)"
+  },
+  {
+    "cluster_id": 183,
+    "n_messages": 560,
+    "n_conversations": 286,
+    "cohesion": 0.4378,
+    "date_range": "2023-03-18 to 2026-04-09",
+    "span_days": 1118,
+    "sources": {
+      "claude_code": 167,
+      "openai": 109,
+      "anthropic": 10
+    },
+    "cross_source": true,
+    "representative": "[from: Floating Watching Platypus] (573 chars)"
+  },
+  {
+    "cluster_id": 140,
+    "n_messages": 620,
+    "n_conversations": 273,
+    "cohesion": 0.4734,
+    "date_range": "2023-01-23 to 2026-03-30",
+    "span_days": 1162,
+    "sources": {
+      "openai": 240,
+      "anthropic": 18,
+      "claude_code": 15
+    },
+    "cross_source": true,
+    "representative": "[from: LLM Design and Optimization] (4622 chars)"
+  },
+  {
+    "cluster_id": 143,
+    "n_messages": 500,
+    "n_conversations": 263,
+    "cohesion": 0.2844,
+    "date_range": "2023-02-22 to 2026-04-02",
+    "span_days": 1135,
+    "sources": {
+      "claude_code": 136,
+      "openai": 122,
+      "anthropic": 5
+    },
+    "cross_source": true,
+    "representative": "[from: Snug Swimming Marble] (191 chars)"
+  },
+  {
+    "cluster_id": 170,
+    "n_messages": 464,
+    "n_conversations": 263,
+    "cohesion": 0.4111,
+    "date_range": "2023-02-06 to 2026-04-06",
+    "span_days": 1155,
+    "sources": {
+      "openai": 171,
+      "claude_code": 81,
+      "anthropic": 11
+    },
+    "cross_source": true,
+    "representative": "[from: Improving AGI Fast-Takeoff Scenario] (507 chars)"
+  },
+  {
+    "cluster_id": 114,
+    "n_messages": 435,
+    "n_conversations": 260,
+    "cohesion": 0.3127,
+    "date_range": "2023-01-26 to 2026-04-02",
+    "span_days": 1162,
+    "sources": {
+      "claude_code": 80,
+      "openai": 168,
+      "anthropic": 12
+    },
+    "cross_source": true,
+    "representative": "[from: Peppy Squishing Pudding] (29 chars)"
+  },
+  {
+    "cluster_id": 85,
+    "n_messages": 507,
+    "n_conversations": 242,
+    "cohesion": 0.349,
+    "date_range": "2023-01-24 to 2026-04-01",
+    "span_days": 1163,
+    "sources": {
+      "openai": 216,
+      "claude_code": 22,
+      "anthropic": 4
+    },
+    "cross_source": true,
+    "representative": "[from: Understanding BFGS Optimization Algorithm] (459 chars)"
+  },
+  {
+    "cluster_id": 59,
+    "n_messages": 338,
+    "n_conversations": 241,
+    "cohesion": 0.3215,
+    "date_range": "2023-01-30 to 2026-04-06",
+    "span_days": 1162,
+    "sources": {
+      "claude_code": 69,
+      "openai": 165,
+      "anthropic": 7
+    },
+    "cross_source": true,
+    "representative": "[from: User Feedback: Check Progress] (49 chars)"
+  },
+  {
+    "cluster_id": 192,
+    "n_messages": 502,
+    "n_conversations": 236,
+    "cohesion": 0.4081,
+    "date_range": "2023-01-30 to 2026-04-08",
+    "span_days": 1164,
+    "sources": {
+      "openai": 120,
+      "claude_code": 99,
+      "anthropic": 17
+    },
+    "cross_source": true,
+    "representative": "[from: Atomic Napping Eagle] (241 chars)"
+  },
+  {
+    "cluster_id": 193,
+    "n_messages": 475,
+    "n_conversations": 234,
+    "cohesion": 0.3917,
+    "date_range": "2023-01-24 to 2026-04-06",
+    "span_days": 1168,
+    "sources": {
+      "openai": 199,
+      "anthropic": 12,
+      "claude_code": 23
+    },
+    "cross_source": true,
+    "representative": "[from: The Emergence of Superintelligent AI] (1941 chars)"
+  },
+  {
+    "cluster_id": 113,
+    "n_messages": 342,
+    "n_conversations": 231,
+    "cohesion": 0.3732,
+    "date_range": "2023-01-30 to 2026-04-01",
+    "span_days": 1157,
+    "sources": {
+      "claude_code": 29,
+      "openai": 164,
+      "anthropic": 38
+    },
+    "cross_source": true,
+    "representative": "[from: The Hard Problem of Consciousness] (290 chars)"
+  },
+  {
+    "cluster_id": 155,
+    "n_messages": 403,
+    "n_conversations": 228,
+    "cohesion": 0.3424,
+    "date_range": "2023-01-30 to 2026-04-01",
+    "span_days": 1157,
+    "sources": {
+      "claude_code": 30,
+      "openai": 189,
+      "anthropic": 9
+    },
+    "cross_source": true,
+    "representative": "[from: AlgoTree - Identity vs Equality in Trees] (68 chars)"
+  },
+  {
+    "cluster_id": 15,
+    "n_messages": 365,
+    "n_conversations": 220,
+    "cohesion": 0.4307,
+    "date_range": "2023-03-17 to 2026-04-09",
+    "span_days": 1119,
+    "sources": {
+      "claude_code": 134,
+      "openai": 83,
+      "anthropic": 3
+    },
+    "cross_source": true,
+    "representative": "[from: Sharded Wobbling Tome] (20 chars)"
+  },
+  {
+    "cluster_id": 142,
+    "n_messages": 375,
+    "n_conversations": 219,
+    "cohesion": 0.2878,
+    "date_range": "2023-01-28 to 2026-04-02",
+    "span_days": 1160,
+    "sources": {
+      "claude_code": 80,
+      "openai": 132,
+      "anthropic": 7
+    },
+    "cross_source": true,
+    "representative": "[from: Posthumous Automation System] (497 chars)"
+  },
+  {
+    "cluster_id": 51,
+    "n_messages": 335,
+    "n_conversations": 217,
+    "cohesion": 0.2391,
+    "date_range": "2023-01-28 to 2026-04-08",
+    "span_days": 1166,
+    "sources": {
+      "claude_code": 74,
+      "openai": 139,
+      "anthropic": 4
+    },
+    "cross_source": true,
+    "representative": "[from: Iterative Meandering Allen] (74 chars)"
+  },
+  {
+    "cluster_id": 49,
+    "n_messages": 321,
+    "n_conversations": 216,
+    "cohesion": 0.3164,
+    "date_range": "2023-01-26 to 2026-03-27",
+    "span_days": 1156,
+    "sources": {
+      "openai": 156,
+      "anthropic": 10,
+      "claude_code": 50
+    },
+    "cross_source": true,
+    "representative": "[from: LogLik Model Dynamic Handling] (226 chars)"
+  },
+  {
+    "cluster_id": 24,
+    "n_messages": 369,
+    "n_conversations": 210,
+    "cohesion": 0.3545,
+    "date_range": "2023-01-31 to 2026-04-01",
+    "span_days": 1156,
+    "sources": {
+      "openai": 158,
+      "anthropic": 8,
+      "claude_code": 44
+    },
+    "cross_source": true,
+    "representative": "[from: Plaintext Relational DB Approaches] (46 chars)"
+  },
+  {
+    "cluster_id": 162,
+    "n_messages": 300,
+    "n_conversations": 207,
+    "cohesion": 0.3509,
+    "date_range": "2023-02-16 to 2026-04-02",
+    "span_days": 1141,
+    "sources": {
+      "openai": 125,
+      "claude_code": 76,
+      "anthropic": 6
+    },
+    "cross_source": true,
+    "representative": "[from: Bright Hatching Fern] (26 chars)"
+  },
+  {
+    "cluster_id": 30,
+    "n_messages": 357,
+    "n_conversations": 206,
+    "cohesion": 0.4145,
+    "date_range": "2023-03-17 to 2026-04-09",
+    "span_days": 1119,
+    "sources": {
+      "claude_code": 97,
+      "openai": 98,
+      "anthropic": 11
+    },
+    "cross_source": true,
+    "representative": "[from: Tender Snuggling Cocoa] (20 chars)"
+  },
+  {
+    "cluster_id": 108,
+    "n_messages": 330,
+    "n_conversations": 204,
+    "cohesion": 0.288,
+    "date_range": "2023-03-16 to 2026-04-02",
+    "span_days": 1113,
+    "sources": {
+      "claude_code": 54,
+      "anthropic": 7,
+      "openai": 143
+    },
+    "cross_source": true,
+    "representative": "[from: Improve Hugo Section Design] (21 chars)"
+  },
+  {
+    "cluster_id": 2,
+    "n_messages": 564,
+    "n_conversations": 203,
+    "cohesion": 0.3431,
+    "date_range": "2023-01-29 to 2026-04-02",
+    "span_days": 1159,
+    "sources": {
+      "openai": 175,
+      "anthropic": 6,
+      "claude_code": 22
+    },
+    "cross_source": true,
+    "representative": "[from: Wire-format Program Representation] (512 chars)"
+  },
+  {
+    "cluster_id": 13,
+    "n_messages": 391,
+    "n_conversations": 203,
+    "cohesion": 0.3611,
+    "date_range": "2023-02-24 to 2026-04-02",
+    "span_days": 1133,
+    "sources": {
+      "openai": 84,
+      "claude_code": 118,
+      "anthropic": 1
+    },
+    "cross_source": true,
+    "representative": "[from: Frolicking Questing Fiddle] (229 chars)"
+  },
+  {
+    "cluster_id": 23,
+    "n_messages": 462,
+    "n_conversations": 197,
+    "cohesion": 0.4861,
+    "date_range": "2023-01-23 to 2026-03-31",
+    "span_days": 1163,
+    "sources": {
+      "openai": 180,
+      "anthropic": 11,
+      "claude_code": 6
+    },
+    "cross_source": true,
+    "representative": "[from: Zoom with ML/AI Researcher] (660 chars)"
+  },
+  {
+    "cluster_id": 47,
+    "n_messages": 641,
+    "n_conversations": 196,
+    "cohesion": 0.378,
+    "date_range": "2023-01-24 to 2026-04-06",
+    "span_days": 1168,
+    "sources": {
+      "openai": 175,
+      "anthropic": 7,
+      "claude_code": 14
+    },
+    "cross_source": true,
+    "representative": "[from: Educational gaps analysis] (1811 chars)"
+  },
+  {
+    "cluster_id": 64,
+    "n_messages": 298,
+    "n_conversations": 194,
+    "cohesion": 0.2578,
+    "date_range": "2023-01-30 to 2026-04-02",
+    "span_days": 1158,
+    "sources": {
+      "openai": 149,
+      "claude_code": 33,
+      "anthropic": 12
+    },
+    "cross_source": true,
+    "representative": "[from: Image Prompt Generator] (37 chars)"
+  },
+  {
+    "cluster_id": 69,
+    "n_messages": 272,
+    "n_conversations": 193,
+    "cohesion": 0.3828,
+    "date_range": "2023-01-30 to 2026-03-28",
+    "span_days": 1153,
+    "sources": {
+      "openai": 162,
+      "anthropic": 11,
+      "claude_code": 20
+    },
+    "cross_source": true,
+    "representative": "[from: Plotting CI for n, p] (35 chars)"
+  },
+  {
+    "cluster_id": 120,
+    "n_messages": 355,
+    "n_conversations": 192,
+    "cohesion": 0.395,
+    "date_range": "2023-01-26 to 2026-03-29",
+    "span_days": 1158,
+    "sources": {
+      "openai": 162,
+      "claude_code": 24,
+      "anthropic": 6
+    },
+    "cross_source": true,
+    "representative": "[from: MLE Estimation Performance.] (35 chars)"
+  },
+  {
+    "cluster_id": 186,
+    "n_messages": 410,
+    "n_conversations": 191,
+    "cohesion": 0.3008,
+    "date_range": "2023-01-30 to 2026-04-02",
+    "span_days": 1158,
+    "sources": {
+      "openai": 136,
+      "claude_code": 49,
+      "anthropic": 6
+    },
+    "cross_source": true,
+    "representative": "[from: Dazzling Meandering Planet] (61 chars)"
+  },
+  {
+    "cluster_id": 71,
+    "n_messages": 485,
+    "n_conversations": 188,
+    "cohesion": 0.98,
+    "date_range": "2025-11-24 to 2026-04-09",
+    "span_days": 136,
+    "sources": {
+      "claude_code": 188
+    },
+    "cross_source": false,
+    "representative": "[from: Unified Hopping Widget] (245 chars)"
+  },
+  {
+    "cluster_id": 36,
+    "n_messages": 386,
+    "n_conversations": 187,
+    "cohesion": 0.3836,
+    "date_range": "2023-03-24 to 2026-03-28",
+    "span_days": 1100,
+    "sources": {
+      "claude_code": 79,
+      "openai": 104,
+      "anthropic": 4
+    },
+    "cross_source": true,
+    "representative": "[from: Snug Imagining Pelican] (780 chars)"
+  },
+  {
+    "cluster_id": 176,
+    "n_messages": 427,
+    "n_conversations": 186,
+    "cohesion": 0.3465,
+    "date_range": "2023-01-26 to 2026-04-06",
+    "span_days": 1166,
+    "sources": {
+      "openai": 159,
+      "claude_code": 19,
+      "anthropic": 8
+    },
+    "cross_source": true,
+    "representative": "[from: Enhancing Theorem Proving Data] (111 chars)"
+  },
+  {
+    "cluster_id": 37,
+    "n_messages": 441,
+    "n_conversations": 185,
+    "cohesion": 0.4463,
+    "date_range": "2023-03-18 to 2026-04-06",
+    "span_days": 1115,
+    "sources": {
+      "claude_code": 43,
+      "openai": 120,
+      "anthropic": 22
+    },
+    "cross_source": true,
+    "representative": "[from: Improving AGI Fast-Takeoff Scenario] (29 chars)"
+  },
+  {
+    "cluster_id": 159,
+    "n_messages": 378,
+    "n_conversations": 185,
+    "cohesion": 0.3569,
+    "date_range": "2023-01-23 to 2026-03-30",
+    "span_days": 1162,
+    "sources": {
+      "openai": 172,
+      "anthropic": 5,
+      "claude_code": 8
+    },
+    "cross_source": true,
+    "representative": "[from: Enhancing Python Theorem Prover] (1483 chars)"
+  },
+  {
+    "cluster_id": 14,
+    "n_messages": 463,
+    "n_conversations": 184,
+    "cohesion": 0.4571,
+    "date_range": "2023-01-30 to 2026-03-29",
+    "span_days": 1154,
+    "sources": {
+      "openai": 160,
+      "claude_code": 23,
+      "anthropic": 1
+    },
+    "cross_source": true,
+    "representative": "[from: Generalizing R Code Customization] (2441 chars)"
+  },
+  {
+    "cluster_id": 168,
+    "n_messages": 264,
+    "n_conversations": 182,
+    "cohesion": 0.2871,
+    "date_range": "2023-01-30 to 2026-03-31",
+    "span_days": 1156,
+    "sources": {
+      "openai": 138,
+      "claude_code": 34,
+      "anthropic": 10
+    },
+    "cross_source": true,
+    "representative": "[from: Melodic Napping Graham] (383 chars)"
+  },
+  {
+    "cluster_id": 58,
+    "n_messages": 326,
+    "n_conversations": 180,
+    "cohesion": 0.3528,
+    "date_range": "2023-02-24 to 2026-04-08",
+    "span_days": 1139,
+    "sources": {
+      "claude_code": 62,
+      "openai": 108,
+      "anthropic": 10
+    },
+    "cross_source": true,
+    "representative": "[from: Map LaTeX to HTML] (3361 chars)"
+  },
+  {
+    "cluster_id": 90,
+    "n_messages": 401,
+    "n_conversations": 179,
+    "cohesion": 0.3934,
+    "date_range": "2023-01-24 to 2026-03-19",
+    "span_days": 1150,
+    "sources": {
+      "openai": 163,
+      "claude_code": 9,
+      "anthropic": 7
+    },
+    "cross_source": true,
+    "representative": "[from: Autoregressive Models Inductive Biases] (281 chars)"
+  },
+  {
+    "cluster_id": 129,
+    "n_messages": 299,
+    "n_conversations": 177,
+    "cohesion": 0.3024,
+    "date_range": "2023-01-23 to 2026-03-27",
+    "span_days": 1159,
+    "sources": {
+      "openai": 157,
+      "claude_code": 18,
+      "anthropic": 2
+    },
+    "cross_source": true,
+    "representative": "[from: AI Solving Complex Problems] (1256 chars)"
+  },
+  {
+    "cluster_id": 152,
+    "n_messages": 373,
+    "n_conversations": 173,
+    "cohesion": 0.292,
+    "date_range": "2023-01-23 to 2026-04-06",
+    "span_days": 1169,
+    "sources": {
+      "openai": 131,
+      "anthropic": 10,
+      "claude_code": 32
+    },
+    "cross_source": true,
+    "representative": "[from: Image Prompt Generator] (443 chars)"
+  },
+  {
+    "cluster_id": 188,
+    "n_messages": 252,
+    "n_conversations": 173,
+    "cohesion": 0.4073,
+    "date_range": "2023-03-08 to 2026-03-31",
+    "span_days": 1119,
+    "sources": {
+      "openai": 137,
+      "claude_code": 26,
+      "anthropic": 10
+    },
+    "cross_source": true,
+    "representative": "[from: Perfect Hash Filter Concept] (30 chars)"
+  },
+  {
+    "cluster_id": 16,
+    "n_messages": 222,
+    "n_conversations": 172,
+    "cohesion": 0.3428,
+    "date_range": "2023-01-29 to 2026-04-02",
+    "span_days": 1159,
+    "sources": {
+      "openai": 116,
+      "claude_code": 47,
+      "anthropic": 9
+    },
+    "cross_source": true,
+    "representative": "[from: SpaceSim- Spring Class Design Choices] (160 chars)"
+  },
+  {
+    "cluster_id": 31,
+    "n_messages": 272,
+    "n_conversations": 172,
+    "cohesion": 0.3395,
+    "date_range": "2023-01-24 to 2026-03-31",
+    "span_days": 1162,
+    "sources": {
+      "openai": 147,
+      "claude_code": 22,
+      "anthropic": 3
+    },
+    "cross_source": true,
+    "representative": "[from: Comparing Nested Models: MLE] (589 chars)"
+  },
+  {
+    "cluster_id": 84,
+    "n_messages": 383,
+    "n_conversations": 172,
+    "cohesion": 0.4768,
+    "date_range": "2022-12-22 to 2026-03-29",
+    "span_days": 1193,
+    "sources": {
+      "openai": 160,
+      "anthropic": 4,
+      "claude_code": 8
+    },
+    "cross_source": true,
+    "representative": "[from: Improving R Code Efficiency] (639 chars)"
+  },
+  {
+    "cluster_id": 5,
+    "n_messages": 456,
+    "n_conversations": 170,
+    "cohesion": 0.7321,
+    "date_range": "2024-02-06 to 2026-04-01",
+    "span_days": 785,
+    "sources": {
+      "claude_code": 163,
+      "openai": 7
+    },
+    "cross_source": true,
+    "representative": "[from: Snug Swimming Marble] (14828 chars)"
+  },
+  {
+    "cluster_id": 144,
+    "n_messages": 437,
+    "n_conversations": 166,
+    "cohesion": 0.2771,
+    "date_range": "2023-01-30 to 2026-04-02",
+    "span_days": 1158,
+    "sources": {
+      "openai": 140,
+      "claude_code": 21,
+      "anthropic": 5
+    },
+    "cross_source": true,
+    "representative": "[from: Supporting a Struggling Nephew] (587 chars)"
+  },
+  {
+    "cluster_id": 7,
+    "n_messages": 612,
+    "n_conversations": 165,
+    "cohesion": 0.3473,
+    "date_range": "2023-01-30 to 2026-03-31",
+    "span_days": 1156,
+    "sources": {
+      "openai": 142,
+      "anthropic": 10,
+      "claude_code": 13
+    },
+    "cross_source": true,
+    "representative": "[from: Janelle Shane AI Predictions] (677 chars)"
+  },
+  {
+    "cluster_id": 8,
+    "n_messages": 377,
+    "n_conversations": 164,
+    "cohesion": 0.4152,
+    "date_range": "2023-02-06 to 2026-03-19",
+    "span_days": 1137,
+    "sources": {
+      "openai": 150,
+      "claude_code": 9,
+      "anthropic": 5
+    },
+    "cross_source": true,
+    "representative": "[from: Distilling the Abstraction and Reasoning Corpus] (1494 chars)"
+  },
+  {
+    "cluster_id": 6,
+    "n_messages": 206,
+    "n_conversations": 155,
+    "cohesion": 0.446,
+    "date_range": "2023-01-26 to 2026-04-02",
+    "span_days": 1162,
+    "sources": {
+      "openai": 74,
+      "claude_code": 74,
+      "anthropic": 7
+    },
+    "cross_source": true,
+    "representative": "[from: ODT: Clean & document code.] (37 chars)"
+  },
+  {
+    "cluster_id": 128,
+    "n_messages": 343,
+    "n_conversations": 154,
+    "cohesion": 0.3107,
+    "date_range": "2023-03-19 to 2026-04-01",
+    "span_days": 1109,
+    "sources": {
+      "claude_code": 32,
+      "openai": 121,
+      "anthropic": 1
+    },
+    "cross_source": true,
+    "representative": "[from: Windows Server 2022 memory] (100 chars)"
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "densification": {
+    "gamma": 5.979952877850979,
+    "r_squared": 0.9164838410078199,
+    "theta": 0.78,
+    "n_snapshots": 40,
+    "snapshots": [
+      {
+        "month": "2025-12",
+        "nodes": 2481,
+        "edges": 8132
+      },
+      {
+        "month": "2026-01",
+        "nodes": 2594,
+        "edges": 8622
+      },
+      {
+        "month": "2026-02",
+        "nodes": 2890,
+        "edges": 23447
+      },
+      {
+        "month": "2026-03",
+        "nodes": 3074,
+        "edges": 42811
+      },
+      {
+        "month": "2026-04",
+        "nodes": 3097,
+        "edges": 44674
+      }
+    ]
+  },
+  "heaps": {
+    "beta": 0.7430862736124051,
+    "r_squared": 0.998887662457676,
+    "final_vocab": 3947,
+    "n_titles": 3144
+  },
+  "per_source_gamma": {
+    "anthropic": 0.927763485027634,
+    "openai": 1.3285161009175726
+  },
+  "prior_comparison": {
+    "paper1_gamma": 1.405,
+    "paper2_gamma": 1.41,
+    "paper1_heaps_beta": 0.286
+  }
+}

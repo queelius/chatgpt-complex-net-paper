@@ -1,0 +1,118 @@
+{
+  "openai": [
+    {
+      "user_weight": 0.5,
+      "modularity": 0.395738842922572,
+      "num_communities": 5,
+      "edges": 445,
+      "gc_nodes": 54,
+      "small_world_sigma": 3.6098780347963424
+    },
+    {
+      "user_weight": 1.0,
+      "modularity": 0.348344899997977,
+      "num_communities": 5,
+      "edges": 443,
+      "gc_nodes": 50,
+      "small_world_sigma": 3.077831301165814
+    },
+    {
+      "user_weight": 2.0,
+      "modularity": 0.6640745566439601,
+      "num_communities": 7,
+      "edges": 406,
+      "gc_nodes": 39,
+      "small_world_sigma": 3.621649487074842
+    },
+    {
+      "user_weight": 3.0,
+      "modularity": 0.6892393717742157,
+      "num_communities": 6,
+      "edges": 381,
+      "gc_nodes": 42,
+      "small_world_sigma": 3.5005671365120006
+    },
+    {
+      "user_weight": 5.0,
+      "modularity": 0.6712804013878515,
+      "num_communities": 6,
+      "edges": 338,
+      "gc_nodes": 39,
+      "small_world_sigma": 3.8278436709358625
+    },
+    {
+      "user_weight": 8.0,
+      "modularity": 0.636818713605364,
+      "num_communities": 6,
+      "edges": 312,
+      "gc_nodes": 33,
+      "small_world_sigma": 3.1599855179087895
+    },
+    {
+      "user_weight": 10.0,
+      "modularity": 0.6263639587801846,
+      "num_communities": 6,
+      "edges": 301,
+      "gc_nodes": 32,
+      "small_world_sigma": 2.4288186994659404
+    }
+  ],
+  "claude_code": [
+    {
+      "user_weight": 0.5,
+      "modularity": 0.31983932621831934,
+      "num_communities": 6,
+      "edges": 9663,
+      "gc_nodes": 371,
+      "small_world_sigma": 3.2523574002942355
+    },
+    {
+      "user_weight": 1.0,
+      "modularity": 0.26850032330458945,
+      "num_communities": 6,
+      "edges": 8554,
+      "gc_nodes": 352,
+      "small_world_sigma": 3.18876566066991
+    },
+    {
+      "user_weight": 2.0,
+      "modularity": 0.2502065958941081,
+      "num_communities": 6,
+      "edges": 6738,
+      "gc_nodes": 326,
+      "small_world_sigma": 3.31834101768921
+    },
+    {
+      "user_weight": 3.0,
+      "modularity": 0.2507780153878733,
+      "num_communities": 6,
+      "edges": 5750,
+      "gc_nodes": 311,
+      "small_world_sigma": 3.519926996942605
+    },
+    {
+      "user_weight": 5.0,
+      "modularity": 0.2653801995993771,
+      "num_communities": 7,
+      "edges": 4829,
+      "gc_nodes": 299,
+      "small_world_sigma": 3.75369354511117
+    },
+    {
+      "user_weight": 8.0,
+      "modularity": 0.271214783883747,
+      "num_communities": 6,
+      "edges": 4323,
+      "gc_nodes": 287,
+      "small_world_sigma": 3.7971755277047783
+    },
+    {
+      "user_weight": 10.0,
+      "modularity": 0.2801572014149267,
+      "num_communities": 5,
+      "edges": 4101,
+      "gc_nodes": 285,
+      "small_world_sigma": 3.878959151567805
+    }
+  ]
+}

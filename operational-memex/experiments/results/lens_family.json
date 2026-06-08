@@ -1,0 +1,74 @@
+{
+  "mean": {
+    "mean_divergence": -7.454630665781621e-17,
+    "median_divergence": 0.0,
+    "max_divergence": 6.661338147750939e-16,
+    "trail_links": 857,
+    "ann_internal_sim": 0.5652495701604318,
+    "non_internal_sim": 0.44858967793565996,
+    "p_internal_sim": 4.4030365013872573e-20
+  },
+  "exponential": {
+    "mean_divergence": 0.05946128594024646,
+    "median_divergence": 0.03698871084456934,
+    "max_divergence": 0.579092565176225,
+    "trail_links": 345,
+    "ann_internal_sim": 0.5093330270528823,
+    "non_internal_sim": 0.41067697207909637,
+    "p_internal_sim": 8.462698218724981e-18
+  },
+  "reverse_exponential": {
+    "mean_divergence": 0.05946707197557077,
+    "median_divergence": 0.038090346741973646,
+    "max_divergence": 0.6655279202232316,
+    "trail_links": 477,
+    "ann_internal_sim": 0.5181853117623458,
+    "non_internal_sim": 0.4057188348900634,
+    "p_internal_sim": 7.112941090139106e-19
+  },
+  "surprise": {
+    "mean_divergence": 0.012727364549762994,
+    "median_divergence": 0.010949375922586546,
+    "max_divergence": 0.11257361823375811,
+    "trail_links": 835,
+    "ann_internal_sim": 0.5876837694733792,
+    "non_internal_sim": 0.46856629984448395,
+    "p_internal_sim": 1.1607685220120498e-21
+  },
+  "gaussian": {
+    "mean_divergence": 0.028268346100128922,
+    "median_divergence": 0.025126085796250086,
+    "max_divergence": 0.14123217025154688,
+    "trail_links": 609,
+    "ann_internal_sim": 0.5167354866839415,
+    "non_internal_sim": 0.41169911971222983,
+    "p_internal_sim": 2.5855731964402325e-17
+  },
+  "first_only": {
+    "mean_divergence": 0.3086804141068752,
+    "median_divergence": 0.28541201557341284,
+    "max_divergence": 0.8471745673817352,
+    "trail_links": 150,
+    "ann_internal_sim": 0.2956981882558032,
+    "non_internal_sim": 0.23142707059201073,
+    "p_internal_sim": 5.028421745093708e-09
+  },
+  "last_only": {
+    "mean_divergence": 0.2788828633835981,
+    "median_divergence": 0.25084755341592196,
+    "max_divergence": 0.8449506773019906,
+    "trail_links": 70,
+    "ann_internal_sim": 0.32596377315998193,
+    "non_internal_sim": 0.2447661547530101,
+    "p_internal_sim": 1.7968118802226253e-12
+  },
+  "bookend": {
+    "mean_divergence": 0.10701901078358991,
+    "median_divergence": 0.09558326787728788,
+    "max_divergence": 0.39764929098770674,
+    "trail_links": 333,
+    "ann_internal_sim": 0.49886182951235597,
+    "non_internal_sim": 0.378974411043972,
+    "p_internal_sim": 3.170672546348023e-20
+  }
+}

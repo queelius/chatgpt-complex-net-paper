@@ -1,0 +1,10 @@
+{
+  "revisitation_count": 9920,
+  "continuation_count": 868,
+  "overlap": 358,
+  "jaccard": 0.03432406519654842,
+  "gap_revis_mean": 53.4320564516129,
+  "gap_conti_mean": 63.08755760368663,
+  "cross_source_revis_pct": 0.042943548387096776,
+  "cross_source_conti_pct": 0.07603686635944701
+}

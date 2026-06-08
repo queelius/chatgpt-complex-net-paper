@@ -105,17 +105,17 @@ def draw_bridge(ep1_concepts, ep2_concepts):
     for c in ep1_concepts + ep2_concepts:
         mc_info[c["mc_id"]] = c
 
-    # Layout parameters
-    fig, ax = plt.subplots(1, 1, figsize=(12, 7), facecolor="white")
+    # Layout parameters -- widened to give labels horizontal room.
+    fig, ax = plt.subplots(1, 1, figsize=(14, 7.5), facecolor="white")
 
-    # Positions — generous spacing
+    # Positions -- generous spacing (more headroom for the domain row).
     EP_Y = 0.0       # episodes at bottom
     SHARED_Y = 5.0   # shared concepts in middle
     UNIQUE_Y = 2.2   # unique concepts near their episode
-    DOMAIN_Y = 8.5   # domain labels at top
+    DOMAIN_Y = 9.0   # domain labels at top (more headroom)
 
-    EP1_X = -6.5
-    EP2_X = 6.5
+    EP1_X = -7.5
+    EP2_X = 7.5
     CENTER_X = 0.0
 
     # --- Draw episodes ---
@@ -156,6 +156,13 @@ def draw_bridge(ep1_concepts, ep2_concepts):
     spacing = min(3.0, 13.0 / max(n_shared, 1))
     start_x = CENTER_X - (n_shared - 1) * spacing / 2
 
+    # Two staggered y-levels above and two below so adjacent labels never
+    # collide horizontally even when text is long.
+    y_offsets = [1.95, -1.95, 1.05, -1.05]
+
+    def shorten(label, n=24):
+        return label if len(label) <= n else label[:n - 1] + "..."
+
     for i, mc_id in enumerate(shared_list):
         info = mc_info[mc_id]
         x = start_x + i * spacing
@@ -163,19 +170,25 @@ def draw_bridge(ep1_concepts, ep2_concepts):
         shared_positions[mc_id] = (x, y)
         color = DOMAIN_COLORS.get(info["domain"], "#999")
 
-        # Concept node — larger
+        # Concept node
         circle = plt.Circle((x, y), 0.45, facecolor=mcolors.to_rgba(color, 0.3),
                            edgecolor=color, linewidth=2.0, zorder=5)
         ax.add_patch(circle)
 
-        # Concept label
-        label = info["mc_label"]
-        y_off = 0.7
-        ax.text(x, y + y_off, label, ha="left", va="bottom",
-                fontsize=10, fontweight="bold", color="#333333", zorder=6,
-                rotation=20, rotation_mode="anchor",
-                bbox=dict(boxstyle="round,pad=0.12", facecolor="white",
-                          edgecolor="none", alpha=0.9))
+        # Label at one of four staggered y positions.
+        y_off = y_offsets[i % 4]
+        va = "bottom" if y_off > 0 else "top"
+        label = shorten(info["mc_label"])
+        ax.text(x, y + y_off, label, ha="center", va=va,
+                fontsize=10, fontweight="bold", color="#222222", zorder=6,
+                bbox=dict(boxstyle="round,pad=0.18", facecolor="white",
+                          edgecolor=mcolors.to_rgba(color, 0.4), linewidth=0.6,
+                          alpha=0.95))
+        # Tether line from label to node so the offset reads clearly.
+        node_edge_y = y + (0.45 if y_off > 0 else -0.45)
+        label_edge_y = y + y_off - (0.18 if y_off > 0 else -0.18)
+        ax.plot([x, x], [node_edge_y, label_edge_y],
+                color=color, alpha=0.35, linewidth=0.8, zorder=4)
 
         # Lines from both episodes to this shared concept
         for ex in [EP1_X, EP2_X]:
@@ -184,6 +197,8 @@ def draw_bridge(ep1_concepts, ep2_concepts):
                    linestyle="-")
 
     # --- Draw unique concepts ---
+    # Stagger above/below the EP→shared connection lines so each unique
+    # concept's label has its own row and never collides with its sibling.
     for unique_mcs, ep_x, side in [
         (unique1_mcs, EP1_X, -1),
         (unique2_mcs, EP2_X, 1),
@@ -191,28 +206,28 @@ def draw_bridge(ep1_concepts, ep2_concepts):
         unique_list = sorted(unique_mcs)
         for i, mc_id in enumerate(unique_list):
             info = mc_info[mc_id]
-            x = ep_x + side * (1.0 + i * 2.2)
-            y = UNIQUE_Y
+            x = ep_x + side * (1.6 + i * 2.4)
+            # Alternate y so two stacked uniques never collide horizontally.
+            y = UNIQUE_Y + (0.9 if i % 2 == 0 else -0.5)
             color = DOMAIN_COLORS.get(info["domain"], "#999")
 
             # Concept node (dashed = unique)
-            circle = plt.Circle((x, y), 0.35,
+            circle = plt.Circle((x, y), 0.32,
                                facecolor=mcolors.to_rgba(color, 0.12),
                                edgecolor=color, linewidth=1.2,
                                linestyle="--", zorder=5)
             ax.add_patch(circle)
 
             label = info["mc_label"]
-            if len(label) > 40:
-                label = label[:38] + "…"
-            ax.text(x, y + 0.55, label, ha="left", va="bottom",
-                    fontsize=9, color="#555555", zorder=6,
-                    rotation=20, rotation_mode="anchor",
-                    bbox=dict(boxstyle="round,pad=0.1", facecolor="white",
-                              alpha=0.8, edgecolor="none"))
+            if len(label) > 20:
+                label = label[:18] + "..."
+            ax.text(x, y + 0.50, label, ha="center", va="bottom",
+                    fontsize=8.5, color="#555555", zorder=6,
+                    bbox=dict(boxstyle="round,pad=0.12", facecolor="white",
+                              alpha=0.90, edgecolor="none"))
 
             # Line from episode only
-            ax.plot([ep_x, x], [EP_Y + 0.5, y - 0.35],
+            ax.plot([ep_x, x], [EP_Y + 0.5, y - 0.32],
                    color=color, alpha=0.35, linewidth=1.5, linestyle="--",
                    zorder=2)
 
@@ -220,7 +235,9 @@ def draw_bridge(ep1_concepts, ep2_concepts):
     shared_domains = set(mc_info[mc]["domain"] for mc in shared_mcs)
     domain_positions = {}
     dom_list = sorted(shared_domains)
-    dom_spacing = 12.0 / max(len(dom_list), 1)
+    # Spread domain labels across the full figure width; horizontal labels
+    # need ~5-6 units each to not collide.
+    dom_spacing = 7.5
     dom_start = CENTER_X - (len(dom_list) - 1) * dom_spacing / 2
 
     for i, dom in enumerate(dom_list):
@@ -229,10 +246,10 @@ def draw_bridge(ep1_concepts, ep2_concepts):
         domain_positions[dom] = (dx, dy)
         color = DOMAIN_COLORS.get(dom, "#999")
 
-        ax.text(dx, dy, DOMAIN_LABELS.get(dom, dom), ha="left", va="bottom",
-                fontsize=11, fontweight="bold", color="white", zorder=6,
-                rotation=30, rotation_mode="anchor",
-                bbox=dict(boxstyle="round,pad=0.3", facecolor=mcolors.to_rgba(color, 0.75),
+        # Horizontal domain labels (was 30 degrees).
+        ax.text(dx, dy, DOMAIN_LABELS.get(dom, dom), ha="center", va="center",
+                fontsize=12, fontweight="bold", color="white", zorder=6,
+                bbox=dict(boxstyle="round,pad=0.32", facecolor=mcolors.to_rgba(color, 0.80),
                           edgecolor=color, linewidth=2.0))
 
         # Lines from domain to its shared concepts
@@ -278,9 +295,9 @@ def draw_bridge(ep1_concepts, ep2_concepts):
     ax.text(0.5, 0.02, stats, transform=ax.transAxes,
             ha="center", fontsize=10, color="#888888")
 
-    # Styling
-    ax.set_xlim(-14, 13)
-    ax.set_ylim(-2.5, 10.5)
+    # Styling -- widened to match the new figure size.
+    ax.set_xlim(-15, 15)
+    ax.set_ylim(-2.5, 11)
     ax.set_aspect("equal")
     ax.axis("off")
 

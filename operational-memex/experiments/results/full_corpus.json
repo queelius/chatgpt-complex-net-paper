@@ -1,0 +1,31 @@
+{
+  "label": "full_corpus",
+  "nodes": 3097,
+  "edges": 9049,
+  "density": 0.0018875063723416594,
+  "components": 2404,
+  "gc_nodes": 357,
+  "gc_edges": 8514,
+  "gc_fraction": 0.11527284468840814,
+  "degree_mean": 5.843719728769777,
+  "degree_median": 0.0,
+  "degree_max": 175,
+  "isolates": 2272,
+  "clustering": 0.6603050940989239,
+  "avg_path_length": 2.3532244358417524,
+  "modularity": 0.24924629803415094,
+  "num_communities": 6,
+  "community_sizes": [
+    141,
+    109,
+    68,
+    32,
+    4,
+    3
+  ],
+  "small_world_sigma": 3.1939513594061832,
+  "degree_assortativity": 0.03995375100741987,
+  "user_weight": 1.0,
+  "asst_weight": 1.0,
+  "threshold": 0.88
+}

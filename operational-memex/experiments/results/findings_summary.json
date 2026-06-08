@@ -1,0 +1,45 @@
+{
+  "chatgpt_2d_sweep": {
+    "analytical_optimum": {
+      "theta": 0.84,
+      "user_weight": 5.0,
+      "modularity": 0.752,
+      "sigma": 12.3,
+      "communities": 14,
+      "gc_pct": 0.156,
+      "connected_pct": 0.26
+    },
+    "operational_optimum": {
+      "theta": 0.78,
+      "user_weight": 3.0,
+      "modularity": 0.7,
+      "sigma": 23.3,
+      "communities": 18,
+      "gc_pct": 0.45,
+      "connected_pct": 0.53
+    },
+    "paper1_comparison": {
+      "theta": 0.9,
+      "model": "nomic-768",
+      "modularity": 0.749,
+      "sigma": 14.9
+    },
+    "finding": "Cross-paper replication confirmed: ChatGPT modularity 0.752 (this paper) vs 0.749 (Paper 1), despite different embedding model (OAI-small-256 vs nomic-768) and threshold (0.84 vs 0.90)."
+  },
+  "weight_sensitivity": {
+    "chatgpt_optimal_uw": 3.0,
+    "claude_code_optimal_uw": 0.5,
+    "finding": "Optimal role weighting is platform-dependent. ChatGPT peaks with user-heavy weighting (uw=3-5), Claude Code peaks with assistant-heavy weighting (uw=0.5). Reflects conversational vs agentic interaction modalities."
+  },
+  "dual_threshold": {
+    "analytical": {
+      "theta": 0.84,
+      "purpose": "maximize community structure for paper findings"
+    },
+    "operational": {
+      "theta": 0.78,
+      "purpose": "navigable graph for semantic search and recommendations"
+    },
+    "finding": "Analytical and operational thresholds diverge. Community structure is maximized at sparser graphs, but utility requires denser connectivity."
+  }
+}

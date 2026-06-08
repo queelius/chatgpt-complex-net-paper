@@ -1,0 +1,162 @@
+[
+  {
+    "user_weight": 0.5,
+    "modularity": 0.3214929671944372,
+    "num_communities": 6,
+    "edges": 10161,
+    "gc_nodes": 375,
+    "clustering": 0.6926998398255668
+  },
+  {
+    "user_weight": 1.0,
+    "modularity": 0.26696924751802775,
+    "num_communities": 6,
+    "edges": 9049,
+    "gc_nodes": 357,
+    "clustering": 0.6603050940989239
+  },
+  {
+    "user_weight": 1.5,
+    "modularity": 0.2568018193143416,
+    "num_communities": 6,
+    "edges": 7998,
+    "gc_nodes": 339,
+    "clustering": 0.6552133923295651
+  },
+  {
+    "user_weight": 2.0,
+    "modularity": 0.246342664227877,
+    "num_communities": 6,
+    "edges": 7199,
+    "gc_nodes": 330,
+    "clustering": 0.6500126434093311
+  },
+  {
+    "user_weight": 2.5,
+    "modularity": 0.25064838780315235,
+    "num_communities": 8,
+    "edges": 6613,
+    "gc_nodes": 317,
+    "clustering": 0.6578657066706084
+  },
+  {
+    "user_weight": 3.0,
+    "modularity": 0.2529304707970249,
+    "num_communities": 7,
+    "edges": 6183,
+    "gc_nodes": 315,
+    "clustering": 0.6448067534006191
+  },
+  {
+    "user_weight": 3.5,
+    "modularity": 0.2573640966786625,
+    "num_communities": 7,
+    "edges": 5875,
+    "gc_nodes": 312,
+    "clustering": 0.6520969549704473
+  },
+  {
+    "user_weight": 4.0,
+    "modularity": 0.26026640790154765,
+    "num_communities": 7,
+    "edges": 5620,
+    "gc_nodes": 307,
+    "clustering": 0.6495297322940804
+  },
+  {
+    "user_weight": 4.5,
+    "modularity": 0.26335513972032787,
+    "num_communities": 7,
+    "edges": 5400,
+    "gc_nodes": 304,
+    "clustering": 0.6351644475952517
+  },
+  {
+    "user_weight": 5.0,
+    "modularity": 0.26711662450227863,
+    "num_communities": 7,
+    "edges": 5210,
+    "gc_nodes": 303,
+    "clustering": 0.6222877627176148
+  },
+  {
+    "user_weight": 5.5,
+    "modularity": 0.2680213453363724,
+    "num_communities": 6,
+    "edges": 5083,
+    "gc_nodes": 300,
+    "clustering": 0.6147243802863123
+  },
+  {
+    "user_weight": 6.0,
+    "modularity": 0.2652158658230677,
+    "num_communities": 8,
+    "edges": 4976,
+    "gc_nodes": 300,
+    "clustering": 0.6133142470052186
+  },
+  {
+    "user_weight": 6.5,
+    "modularity": 0.25542045170106126,
+    "num_communities": 7,
+    "edges": 4887,
+    "gc_nodes": 297,
+    "clustering": 0.6175016478959867
+  },
+  {
+    "user_weight": 7.0,
+    "modularity": 0.27219566705317116,
+    "num_communities": 6,
+    "edges": 4803,
+    "gc_nodes": 298,
+    "clustering": 0.5994922624785123
+  },
+  {
+    "user_weight": 7.5,
+    "modularity": 0.27106532239568426,
+    "num_communities": 7,
+    "edges": 4737,
+    "gc_nodes": 295,
+    "clustering": 0.6057338780446216
+  },
+  {
+    "user_weight": 8.0,
+    "modularity": 0.2661059074021518,
+    "num_communities": 6,
+    "edges": 4673,
+    "gc_nodes": 291,
+    "clustering": 0.6119760089105443
+  },
+  {
+    "user_weight": 8.5,
+    "modularity": 0.26954806144109916,
+    "num_communities": 7,
+    "edges": 4608,
+    "gc_nodes": 291,
+    "clustering": 0.6096382071235524
+  },
+  {
+    "user_weight": 9.0,
+    "modularity": 0.2759786403973208,
+    "num_communities": 7,
+    "edges": 4540,
+    "gc_nodes": 290,
+    "clustering": 0.6097166937998891
+  },
+  {
+    "user_weight": 9.5,
+    "modularity": 0.27856353134213097,
+    "num_communities": 5,
+    "edges": 4492,
+    "gc_nodes": 290,
+    "clustering": 0.6074271623085663
+  },
+  {
+    "user_weight": 10.0,
+    "modularity": 0.2785257497084653,
+    "num_communities": 5,
+    "edges": 4438,
+    "gc_nodes": 288,
+    "clustering": 0.6042253258914442
+  }
+]
