@@ -76,13 +76,11 @@ archive/
 .papermill/
 .papermill.md
 
-# --- reorg: keep large generated/orphan content out of git (preserved on disk) ---
+# Umbrella-level tooling artifacts
 .coverage
 .playwright-mcp/
-**/html_paper/
-**/plos-template/
-**/plos-template.zip
-**/CNALatexTemplate/main.pdf
-**/*-eps-converted-to.pdf
-operational-memex/data/
-comp-net-2025-camera-ready/images/
+.benchmarks/
+.pytest_cache/
+
+# Child paper repos are independent git repositories, not tracked by the umbrella
+papers/

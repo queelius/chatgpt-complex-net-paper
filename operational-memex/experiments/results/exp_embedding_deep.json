@@ -1,8 +1,0 @@
-{
-  "trajectory_pairs_found": 60399,
-  "role_divergence_mean": 0.22903937510402067,
-  "role_divergence_median": 0.21907408406572382,
-  "adaptive_alpha_mean": 0.7846666666666666,
-  "adaptive_alpha_median": 0.7999999999999998,
-  "alpha_length_correlation": 0.038617721076308585
-}

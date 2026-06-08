@@ -1,6 +1,0 @@
-{
-  "shared_episodes": 601,
-  "louvain_communities": 73,
-  "nmi_louvain_vs_hierarchy_k15": 0.7054,
-  "ari_louvain_vs_hierarchy_k15": 0.5443
-}

@@ -1,8 +1,0 @@
-{
-  "generation_date": "2025-08-28T11:16:42.522243",
-  "embeddings_source": "../dev/ablation_study/data/embeddings",
-  "edges_output": "../dev/ablation_study/data/edges",
-  "parallel_jobs": 12,
-  "threshold": 0.9,
-  "ratios": []
-}

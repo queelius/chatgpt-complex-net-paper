@@ -1,9 +1,0 @@
-# Generated data (regenerable via extract_corpus.py / build_graph.py / compute_embeddings.py)
-data/
-output/
-
-# Python
-__pycache__/
-*.pyc
-venv/
-.venv/

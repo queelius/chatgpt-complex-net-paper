@@ -2,92 +2,61 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18778376.svg)](https://doi.org/10.5281/zenodo.18778376)
 
-Applying complex network analysis to ChatGPT conversation archives to reveal knowledge organization, community structure, and temporal evolution patterns.
+Applying complex network analysis to ChatGPT conversation archives to reveal knowledge
+organization, community structure, and temporal evolution patterns.
 
 **Authors:**
 [Alexander Towell](https://orcid.org/0000-0001-6443-9897) and
-[John Matta](https://orcid.org/0000-0002-7666-1409)
-— Southern Illinois University Edwardsville
+[John Matta](https://orcid.org/0000-0002-7666-1409),
+Southern Illinois University Edwardsville
 
 ## Overview
 
-This repository transforms sequential AI conversation logs into semantic similarity networks, revealing latent cognitive structure in AI-assisted knowledge exploration. We analyze 1,908 ChatGPT conversations spanning December 2022 to April 2025, constructing networks that expose knowledge communities, bridge conversations, and temporal evolution patterns invisible in linear logs.
+This is the umbrella for a research program that transforms sequential AI conversation logs
+into semantic similarity networks, revealing latent cognitive structure in AI-assisted
+knowledge exploration. The program analyzes 1,908 ChatGPT conversations spanning December
+2022 to April 2025. This repository is a landing page: it indexes the individual paper
+repositories and points to the shared data and pipeline.
 
 ## Papers
 
-| Paper | Venue | Status |
-|-------|-------|--------|
-| **Temporal Evolution of Cognitive Knowledge Networks in AI-Assisted Conversations** | PLOS Complex Systems | Submitted |
-| **Cognitive MRI of AI Conversations: Analyzing AI Interactions through Semantic Embedding Networks** | Complex Networks 2025 (Springer) | Published |
+Each paper is its own independent git repository under `papers/` (not tracked by this
+umbrella). Clone them individually.
 
-## Repository Structure
+| Paper | Venue / status | Path | Repository |
+|-------|----------------|------|------------|
+| Cognitive MRI of AI Conversations (semantic embedding networks) | Complex Networks 2025, Springer (published) | `papers/knowledge-networks/` | [cmri-knowledge-networks](https://github.com/queelius/cmri-knowledge-networks) |
+| Temporal Evolution of Cognitive Knowledge Networks | PLOS Complex Systems (rejected 2026-04-27, seeking venue) | `papers/temporal-networks/` | [cmri-temporal-networks](https://github.com/queelius/cmri-temporal-networks) |
+| From Episodes to Abstractions: Latent Hierarchical Memory | ISCS 2026 | `papers/hierarchical-memory/` | [cmri-hierarchical-memory](https://github.com/queelius/cmri-hierarchical-memory) |
+| Embedding Dynamics | in progress | `papers/embedding-dynamics/` | [cmri-embedding-dynamics](https://github.com/queelius/cmri-embedding-dynamics) |
+| Semantic Dynamics | in progress | `papers/semantic-dynamics/` | [cmri-semantic-dynamics](https://github.com/queelius/cmri-semantic-dynamics) |
+| Operational Memex | early draft | `papers/operational-memex/` | [cmri-operational-memex](https://github.com/queelius/cmri-operational-memex) |
 
-```
-├── comp-net-2025-journal/           # Journal extension (PLOS Complex Systems)
-│   ├── paper/PLOS/                  # Submission-ready paper, figures, refs
-│   └── code/                        # Temporal analysis scripts
-├── comp-net-2025-camera-ready/      # Published conference paper (Springer)
-│   ├── paper/                       # Camera-ready paper
-│   └── slides/                      # Conference presentation (Beamer)
-├── data/                            # Reproducibility data for both papers
-│   ├── embeddings/                  # 1,908 conversation embeddings (2:1 ratio)
-│   ├── network/                     # Primary edge list (601 nodes, 1,718 edges)
-│   ├── temporal/                    # Journal paper: monthly network snapshots
-│   ├── ablation/                    # Conference paper: 63-config parameter study
-│   └── conversations/               # Placeholder (sanitization in progress)
-└── code/                            # Embedding + network construction pipeline
-    ├── cli.py                       # Main CLI (embeddings, edges, export)
-    ├── networks.py                  # Network statistics & metrics
-    ├── embedding/                   # LLM & TF-IDF embedding models
-    ├── graph/                       # Edge generation, GPU acceleration
-    └── run_ablation_study.py        # 63-config ablation study
-```
+The published conference paper and the shared analysis pipeline (`code/` and `data/`) live
+in the `knowledge-networks` repository; the temporal-evolution journal extension is
+`temporal-networks`.
 
-## Reproducing Results
+## How this repository is organized
 
-All derived data needed to reproduce every figure and table in both papers is included in `data/`. See [`data/README.md`](data/README.md) for full documentation.
+- `papers/`: the independent paper repositories (gitignored here; clone each `cmri-*` repo
+  into place, or work with them separately).
+- `dev/`: shared working corpus (gitignored; the raw conversation JSON the pipelines read).
+- `future-ideas/`: early-stage directions not yet promoted to their own repos.
+- `docs/`: program-level design and planning documents.
 
-To regenerate all journal paper figures from the curated data:
+## Shared data and pipeline
 
-```bash
-pip install -r code/requirements.txt
-bash data/reproduce.sh
-```
+- Conversation corpus (dataset): [chatgpt-conversation-corpus](https://github.com/queelius/chatgpt-conversation-corpus)
+- Analysis pipeline of record: [chatgpt-complex-net](https://github.com/queelius/chatgpt-complex-net) (DOI: [10.5281/zenodo.15314235](https://doi.org/10.5281/zenodo.15314235))
 
-This runs the temporal analysis pipeline (~42 seconds) using the embeddings and edge list in `data/`, producing all figures in `comp-net-2025-journal/paper/figures/temporal/`.
-
-## Building the Pipeline from Scratch
-
-To regenerate embeddings and networks from raw conversations (requires [Ollama](https://ollama.ai) with `nomic-embed-text`):
-
-```bash
-pip install -r code/requirements.txt
-
-cd code
-python cli.py node-embeddings --input-dir <conversations-dir> \
-    --method role-aggregate --embedding-method llm --output-dir <output-dir>
-python cli.py edges-gpu --input-dir <output-dir> --output-file edges.json
-python cli.py cut-off --input-file edges.json --output-file filtered.json --cutoff 0.9
-python cli.py export --nodes-dir <output-dir> --edges-file filtered.json --format gexf -o graph.gexf
-```
-
-The pipeline code is also available as a standalone package at [chatgpt-complex-net](https://github.com/queelius/chatgpt-complex-net) (DOI: [10.5281/zenodo.15314235](https://doi.org/10.5281/zenodo.15314235)).
+Child code reads the raw corpus from `$CMRI_CORPUS_DIR`, which defaults to this repo's `dev/`.
 
 ## Citation
 
-If you use this work, please cite the journal paper:
-
-```bibtex
-@article{towell2026temporal,
-  author  = {Towell, Alexander and Matta, John},
-  title   = {Temporal Evolution of Cognitive Knowledge Networks in AI-Assisted Conversations},
-  journal = {PLOS Complex Systems},
-  year    = {2026},
-  note    = {Submitted}
-}
-```
-
-See [CITATION.cff](CITATION.cff) for machine-readable citation metadata.
+Cite the specific paper you use (each paper repository has its own `CITATION.cff`). To cite
+the program as a whole, use the compendium DOI:
+[10.5281/zenodo.18778376](https://doi.org/10.5281/zenodo.18778376). See
+[CITATION.cff](CITATION.cff) for machine-readable metadata.
 
 ## License
 
